@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kfac_pinn"
+version = "0.1.0"
+description = "KFAC optimizer for Physics-informed Neural Networks"
+authors = [{name="Example Author"}]
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+dev = ["pytest", "jax", "jaxlib"]
