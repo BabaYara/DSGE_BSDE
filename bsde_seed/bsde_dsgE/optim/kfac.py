@@ -1,4 +1,9 @@
-"""Kronecker-Factored Approximate Curvature optimizer utilities."""
+"""Kronecker-Factored Approximate Curvature utilities for PINNs.
+
+This module exposes the same public API as :mod:`bsde_seed.kfac` while keeping a
+simple solver implementation tailored for the teaching examples in this
+repository.
+"""
 
 from __future__ import annotations
 
@@ -8,29 +13,14 @@ import jax
 import jax.numpy as jnp
 import equinox as eqx
 
-
-def init_kfac_state(params: Any) -> Any:
-    """Initialise running estimates for the Fisher information."""
-    return jax.tree_util.tree_map(lambda p: jnp.zeros_like(p), params)
+from bsde_seed.kfac import kfac_update, _init_state
 
 
-def kfac_update(
-    params: Any,
-    grads: Any,
-    state: Any,
-    lr: float,
-    decay: float = 0.95,
-    damping: float = 1e-3,
-) -> Tuple[Any, Any]:
-    """Applies a single KFAC-style update step."""
-    new_state = jax.tree_util.tree_map(
-        lambda s, g: decay * s + (1.0 - decay) * jnp.square(g), state, grads
-    )
-    nat_grads = jax.tree_util.tree_map(
-        lambda g, s: g / (s + damping), grads, new_state
-    )
-    new_params = jax.tree_util.tree_map(lambda p, ng: p - lr * ng, params, nat_grads)
-    return new_params, new_state
+# ---------------------------------------------------------------------------
+# Public functions
+# ---------------------------------------------------------------------------
+
+init_kfac_state = _init_state
 
 
 class KFACPINNSolver(eqx.Module):
