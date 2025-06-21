@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bsde-seed"
+version = "0.1.0"
+dependencies = [
+    "jax",
+    "jaxlib",
+    "equinox"
+]
+
+[tool.setuptools.packages.find]
+where = ["bsde_seed"]
