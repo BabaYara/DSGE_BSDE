@@ -8,3 +8,6 @@ pip install -e .
 ```
 
 Example notebooks can be found in the `notebooks` directory demonstrating the KFAC solver.
+
+The main optimizer lives in `bsde_seed/bsde_dsgE/optim/kfac.py` and integrates
+with JAX and Equinox modules to support simple PINN training loops.
