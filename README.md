@@ -1,14 +1,5 @@
-# DSGE_BSDE
-
-This repository provides a minimal yet extendable code base for experimenting
-with **physics‑informed neural networks (PINNs)** and the
-Kronecker‑Factored Approximate Curvature (KFAC) optimiser.
-It grew out of a teaching project on solving continuous‑time DSGE models with
-backward stochastic differential equations (BSDEs), but the tools here are
-general purpose and can be used for many small‑scale PINN experiments.
-
-The core KFAC implementation lives inside the :mod:`bsde_seed.kfac` package and
-is used throughout the example notebooks.
+# DSGE_BSDE 
+A self-contained, progressively expanding GitHub repository that teaches the BSDE method for solving continuous-time DSGE models—from the simplest toy case to state-of-the-art research examples—using a series of well-curated Jupyter notebooks and a clean, modular Python package.
 
 ## Installation
 
