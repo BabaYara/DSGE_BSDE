@@ -1,0 +1,1 @@
+# (scalar Lucas tree, CRRA)
