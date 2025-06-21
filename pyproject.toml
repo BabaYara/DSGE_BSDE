@@ -5,6 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bsde-seed"
 version = "0.1.0"
+description = "KFAC utilities for physics-informed neural networks"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "BSDE-Seed Developers"}
+]
 dependencies = [
     "jax",
     "jaxlib",

@@ -39,7 +39,8 @@ class KFACPINNSolver(eqx.Module):
         def step(params, state, x):
             net = eqx.combine(params, static)
             loss, grads = eqx.filter_value_and_grad(self.loss_fn)(net, x)
-            params, state = kfac_update(params, grads, state, self.lr)
+            # Stabilise with a small step scaling
+            params, state = kfac_update(params, grads, state, self.lr * 0.1)
             return params, state, loss
 
         losses = []

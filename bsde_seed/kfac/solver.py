@@ -26,7 +26,8 @@ class KFACPINNSolver(eqx.Module):
         @jax.jit
         def step(params, opt_state, fisher_state, x):
             loss, grads = jax.value_and_grad(self.loss_fn)(eqx.combine(params, opt_state), x)
-            params, fisher_state = kfac_update(params, grads, fisher_state, self.lr)
+            # A small dampening factor stabilises optimisation on stiff problems
+            params, fisher_state = kfac_update(params, grads, fisher_state, self.lr * 0.1)
             return params, fisher_state, loss
 
         loss_history = []
