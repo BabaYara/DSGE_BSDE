@@ -31,7 +31,6 @@ class Solver(eqx.Module):
     problem: BSDEProblem
     dt: float
 
-    @jax.jit
     def __call__(self, x0: jnp.ndarray, key: jax.random.PRNGKey) -> jnp.ndarray:
         """Forward simulation returning terminal loss."""
         N = int((self.problem.t1 - self.problem.t0) / self.dt)

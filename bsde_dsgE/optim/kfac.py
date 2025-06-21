@@ -1,6 +1,6 @@
 """Kronecker-Factored Approximate Curvature utilities for PINNs.
 
-This module exposes the same public API as :mod:`bsde_seed.kfac` while keeping a
+This module exposes the same public API as :mod:`bsde_dsgE.kfac` while keeping a
 simple solver implementation tailored for the teaching examples in this
 repository.
 """
@@ -13,7 +13,7 @@ import jax
 import jax.numpy as jnp
 import equinox as eqx
 
-from bsde_seed.kfac import kfac_update, _init_state
+from bsde_dsgE.kfac import kfac_update, _init_state
 
 
 # ---------------------------------------------------------------------------
