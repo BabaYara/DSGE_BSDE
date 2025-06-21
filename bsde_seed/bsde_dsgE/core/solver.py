@@ -1,25 +1,40 @@
-# 25 LoC stub with 1 public class
-class Solver:
+"""
+Minimal BSDE solver stub.
+
+Implements the interface::
+    loss = Solver(net, generator).run(x0, key)
+
+The real logic will be filled by later milestones.
+"""
+
+from __future__ import annotations
+from typing import Callable
+import jax, jax.numpy as jnp
+import equinox as eqx
+
+
+class Solver(eqx.Module):
     """
-    A stub for the BSDE solver.
+    Single-step dummy solver.
+    For this version, it calls the network at t=0, x0 to get (y0, z0),
+    then calls the generator with these values, and returns the generator's output.
     """
-    def __init__(self, model):
-        self.model = model
 
-    def solve(self):
+    net: eqx.Module                     # placeholder neural net
+    generator: Callable[..., jnp.ndarray] # driver f(t, x, y, z)
+
+    def run(self, x0: jnp.ndarray, key: jax.random.PRNGKey) -> jnp.ndarray:
         """
-        Solves the model.
-        Placeholder implementation.
+        Calls the network and then the generator.
+        Returns the output of the generator function.
+        The PRNGKey is currently unused but maintained for API consistency.
         """
-        print(f"Solving model: {self.model}")
-        return "solution_placeholder"
+        # Assume net takes t (scalar) and x (array) and returns (y_approx, z_approx)
+        # t=0.0 is a common convention for the start of the BSDE interval.
+        y0_approx, z0_approx = self.net(0.0, x0)
 
-# Example usage (optional, for direct execution)
-if __name__ == '__main__':
-    class MockModel:
-        def __str__(self):
-            return "MockModelInstance"
+        # Generator f(t, x, y, z)
+        # Pass t=0.0, the initial state x0, and network outputs y0_approx, z0_approx
+        loss_value = self.generator(0.0, x0, y0_approx, z0_approx)
 
-    solver_instance = Solver(MockModel())
-    solution = solver_instance.solve()
-    print(f"Received solution: {solution}")
+        return loss_value
