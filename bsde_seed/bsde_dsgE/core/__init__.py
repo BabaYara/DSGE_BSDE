@@ -1,1 +1,3 @@
-# This file can be empty.
+from .solver import Solver  # re-export
+
+__all__ = ["Solver"]
