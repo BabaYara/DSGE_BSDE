@@ -1,39 +1,50 @@
-# DSGE_BSDE 
-A self-contained, progressively expanding GitHub repository that teaches the BSDE method for solving continuous-time DSGE models—from the simplest toy case to state-of-the-art research examples—using a series of well-curated Jupyter notebooks and a clean, modular Python package.
+# Deep‑BSDE ‑‑ Continuous‑Time DSGE Solver
+### *A progressive curriculum & modular JAX library*
 
-## Installation
+---
 
-The project is a normal Python package.  Clone the repository and install it in
-editable mode:
+## 1 Vision
+
+**Deep‑BSDE methods are the new workhorse** for solving high‑dimensional
+non‑linear PDEs.  Continuous‑time DSGE models—Lucas trees, two‑agent
+Epstein–Zin economies, production networks—fit exactly that mould.  Yet
+economists interested in BSDEs face a fragmented landscape of code
+snippets and theory papers.
+
+This repository bridges that gap by providing
+
+* a **step‑by‑step notebook series** ▷ from the one‑state Lucas toy model
+  to state‑of‑the‑art stochastic‑volatility, two‑tree, two‑agent models,
+  each notebook building on the previous;
+* a **clean, type‑hinted JAX library** (`bsde_dsgE`)—solver classes,
+  model primitives, residual nets, control‑variates—designed for
+  research extension;
+* rigorous **testing & CI** so every new contribution (human or agent)
+  preserves correctness and style;
+* exhaustive inline **commentary** that teaches *why* the method works,
+  not only *how* to run it.
+
+Our aim: **from zero to publishable replication** in a weekend.
+
+---
+
+## 2 Quick‑start
+
+### 2.1 Dependencies
+
+* Python 3.11+
+* [JAX](https://github.com/google/jax) ≥ 0.4 with CPU **or** CUDA 12 wheel
+* [Equinox](https://github.com/patrick-kidger/equinox)
+* [Optax](https://github.com/deepmind/optax)
 
 ```bash
-pip install -e .
-```
+# ⬇️ user install
+pip install "jax[cpu]"  equinox optax bsde_dsgE            # PyPI stub
 
-The installation requires a working JAX and Equinox environment.  The
-``pyproject.toml`` lists these dependencies explicitly.
-
-## Basic Usage
-
-Once installed you can import the `KFACPINNSolver` from
-`bsde_seed.bsde_dsgE.optim` (or directly from `bsde_seed.kfac`).  A minimal
-training loop only needs a neural network and a loss function::
-
-```python
-import jax.numpy as jnp
-import equinox as eqx
-from bsde_seed.bsde_dsgE.optim import KFACPINNSolver
-
-def residual(net: eqx.Module, x: jnp.ndarray) -> jnp.ndarray:
-    y = net(x)
-    return jnp.mean(y ** 2)
-
-net = eqx.nn.MLP(in_size=1, out_size=1, width_size=8, depth=2, key=jax.random.PRNGKey(0))
-solver = KFACPINNSolver(net=net, loss_fn=residual, num_steps=100)
-losses = solver.run(jnp.zeros((1, 1)), jax.random.PRNGKey(1))
-```
-
-Further tutorials and demonstrations are available in the `notebooks/`
-directory.  The newly added `pinn_kfac_training.ipynb` walks through building a
-simple PINN with JAX/Equinox, optimising it using the KFAC solver and plotting
-its convergence.
+# ⬇️ developer clone
+git clone https://github.com/your‑org/deep‑bsde‑ct‑dsge.git
+cd deep‑bsde‑ct‑dsge
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev,docs]"
+pre‑commit install
+pytest -q                     # 30 s smoke‑tests
