@@ -1,15 +1,16 @@
 [build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
 
 [project]
-name = "bsde-seed"
-version = "0.1.0"
-dependencies = [
-    "jax",
-    "jaxlib",
-    "equinox"
-]
-
-[tool.setuptools.packages.find]
-where = ["bsde_seed"]
+name = "bsde-dsge"
+version = "0.0.1a0"
+description = "Deep‑BSDE library for continuous‑time DSGE"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["jax>=0.4", "equinox>=0.11", "optax>=0.2"]
+[project.optional-dependencies]
+gpu = ["jax[cuda12_pip]"]
+docs = ["myst-parser", "sphinx", "sphinx-autodoc-typehints"]
+dev  = ["pytest", "ruff", "black", "mypy", "pre-commit"]
+examples = ["dvc"]
