@@ -4,12 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bsde-dsge"
-version = "0.0.1a0"
+version = "0.0.1a1"
 description = "Deep‑BSDE library for continuous‑time DSGE"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = ["jax>=0.4", "equinox>=0.11", "optax>=0.2"]
+dependencies = ["jax>=0.4", "equinox>=0.11", "optax>=0.2", "scipy"]
 [project.optional-dependencies]
 gpu = ["jax[cuda12_pip]"]
 docs = ["myst-parser", "sphinx", "sphinx-autodoc-typehints"]
