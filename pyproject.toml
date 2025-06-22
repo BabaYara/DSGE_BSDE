@@ -27,3 +27,4 @@ pinn-poisson2d = "bsde_dsgE.cli:pinn_poisson2d"
 
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]
+include = ["bsde_dsgE/py.typed"]
