@@ -62,22 +62,29 @@ class KFACPINNSolver(eqx.Module):
         key : jax.random.PRNGKey
             Random key used for JIT compilation and stochastic layers.
 
+        Notes
+        -----
+        The model parameters are partitioned into ``params`` (trainable) and
+        ``static`` (frozen) arrays. Only ``params`` are updated during
+        optimisation while ``static`` is recombined with ``params`` after
+        training.
+
         Returns
         -------
         jnp.ndarray
             Array of loss values with length ``num_steps``.
         """
-        params, opt_state = eqx.partition(self.net, eqx.is_array)
+        params, static = eqx.partition(self.net, eqx.is_array)
         fisher_state = _init_state(params)
 
         @jax.jit
         def step(
             params: Any,
-            opt_state: Any,
+            static: Any,
             fisher_state: Any,
             x: jnp.ndarray,
         ) -> Tuple[Any, Any, jnp.ndarray]:
-            net = eqx.combine(params, opt_state)
+            net = eqx.combine(params, static)
             loss, grads = jax.value_and_grad(self.loss_fn)(net, x)
             params, fisher_state = kfac_update(
                 params, grads, fisher_state, self.lr
@@ -86,9 +93,9 @@ class KFACPINNSolver(eqx.Module):
 
         loss_history = []
         for _ in range(self.num_steps):
-            params, fisher_state, loss = step(params, opt_state, fisher_state, x0)
+            params, fisher_state, loss = step(params, static, fisher_state, x0)
             loss_history.append(loss)
-        self.net = eqx.combine(params, opt_state)
+        self.net = eqx.combine(params, static)
         return jnp.stack(loss_history)
 
 
