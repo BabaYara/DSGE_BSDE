@@ -1,32 +1,87 @@
-"""Minimal KFAC solver for physics-informed neural networks."""
+"""A simple solver using the Kronecker-Factored Approximate Curvature.
+
+This submodule defines :class:`KFACPINNSolver`, a minimal training loop for
+Physics-informed neural networks.  The solver relies on
+:func:`bsde_dsgE.kfac.kfac_update` to perform natural gradient steps.
+
+Examples
+--------
+>>> import jax
+>>> import jax.numpy as jnp
+>>> import equinox as eqx
+>>> from bsde_dsgE.kfac import KFACPINNSolver
+
+>>> key = jax.random.PRNGKey(0)
+>>> net = eqx.nn.MLP(in_size=1, out_size=1, width_size=8, depth=2, key=key)
+>>> def loss_fn(net, x):
+...     y = net(x)
+...     return jnp.mean(y ** 2)
+
+>>> solver = KFACPINNSolver(net=net, loss_fn=loss_fn, lr=1e-2, num_steps=10)
+>>> losses = solver.run(jnp.zeros((1, 1)), key)
+"""
 
 from __future__ import annotations
 
-from typing import Callable
+from typing import Any, Callable, Tuple
 
+import equinox as eqx
 import jax
 import jax.numpy as jnp
-import equinox as eqx
+
 from .optimizer import _init_state, kfac_update
 
 
 class KFACPINNSolver(eqx.Module):
-    """A stub KFAC solver for PINNs."""
+    """Trainer for PINNs using a KFAC update.
+
+    Parameters
+    ----------
+    net : eqx.Module
+        Neural network to be optimised.
+    loss_fn : Callable[[eqx.Module, jnp.ndarray], jnp.ndarray]
+        Function computing the scalar loss given ``net`` and the input data.
+    lr : float, default=1e-3
+        Learning rate for :func:`bsde_dsgE.kfac.kfac_update`.
+    num_steps : int, default=100
+        Number of optimisation steps performed in :meth:`run`.
+    """
 
     net: eqx.Module
     loss_fn: Callable[[eqx.Module, jnp.ndarray], jnp.ndarray]
     lr: float = 1e-3
     num_steps: int = 100
 
-    def run(self, x0: jnp.ndarray, key: jax.random.PRNGKey) -> jnp.ndarray:
-        """Performs a simple KFAC optimization loop."""
+    def run(self, x0: jnp.ndarray, key: jax.Array) -> jnp.ndarray:
+        """Execute the optimisation loop.
+
+        Parameters
+        ----------
+        x0 : jnp.ndarray
+            Input data passed to ``loss_fn`` at every step.
+        key : jax.random.PRNGKey
+            Random key used for JIT compilation and stochastic layers.
+
+        Returns
+        -------
+        jnp.ndarray
+            Array of loss values with length ``num_steps``.
+        """
         params, opt_state = eqx.partition(self.net, eqx.is_array)
         fisher_state = _init_state(params)
 
         @jax.jit
-        def step(params, opt_state, fisher_state, x):
-            loss, grads = jax.value_and_grad(self.loss_fn)(eqx.combine(params, opt_state), x)
-            params, fisher_state = kfac_update(params, grads, fisher_state, self.lr)
+        def step(
+            params: Any,
+            opt_state: Any,
+            fisher_state: Any,
+            x: jnp.ndarray,
+        ) -> Tuple[Any, Any, jnp.ndarray]:
+            net = eqx.combine(params, opt_state)
+            loss, grads = jax.value_and_grad(self.loss_fn)(net, x)
+            params, fisher_state = kfac_update(
+                params, grads, fisher_state, self.lr
+            )
             return params, fisher_state, loss
 
         loss_history = []
@@ -35,3 +90,6 @@ class KFACPINNSolver(eqx.Module):
             loss_history.append(loss)
         self.net = eqx.combine(params, opt_state)
         return jnp.stack(loss_history)
+
+
+__all__ = ["KFACPINNSolver"]
