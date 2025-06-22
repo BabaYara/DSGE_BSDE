@@ -46,7 +46,7 @@ git clone https://github.com/your‑org/deep‑bsde‑ct‑dsge.git
 cd deep‑bsde‑ct‑dsge
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,docs]"
-pre‑commit install
+pre-commit install  # uses .pre-commit-config.yaml
 pytest -q                     # 30 s smoke‑tests
 ```
 
