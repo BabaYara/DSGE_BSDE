@@ -7,7 +7,7 @@ import jax
 import jax.numpy as jnp
 
 from .kfac import KFACPINNSolver
-from .kfac.pde import poisson_1d_residual
+from .kfac.pde import poisson_1d_residual, poisson_nd_residual
 
 
 def pinn_demo() -> None:
@@ -32,4 +32,33 @@ def pinn_demo() -> None:
     print("final loss", float(losses[-1]))
 
 
-__all__ = ["pinn_demo"]
+def pinn_poisson2d() -> None:
+    """Train a tiny 2-D Poisson PINN and print the final loss."""
+
+    net = eqx.nn.MLP(
+        in_size=2, out_size=1, width_size=16, depth=2, key=jax.random.PRNGKey(0)
+    )
+
+    def loss_fn(model: eqx.Module, interior: jax.Array) -> jax.Array:
+        def net_scalar(z: jax.Array) -> jax.Array:
+            return model(z)[0]
+
+        bc = jnp.array(
+            [
+                [0.0, 0.0],
+                [0.0, 1.0],
+                [1.0, 0.0],
+                [1.0, 1.0],
+            ]
+        )
+        res = poisson_nd_residual(net_scalar, interior)
+        bc_res = jax.vmap(net_scalar)(bc)
+        return jnp.mean(res**2) + jnp.mean(bc_res**2)
+
+    solver = KFACPINNSolver(net=net, loss_fn=loss_fn, lr=1e-2, num_steps=10)
+    xs = jax.random.uniform(jax.random.PRNGKey(1), (16, 2))
+    losses = solver.run(xs, jax.random.PRNGKey(2))
+    print("final loss", float(losses[-1]))
+
+
+__all__ = ["pinn_demo", "pinn_poisson2d"]
