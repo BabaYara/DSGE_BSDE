@@ -4,9 +4,6 @@ from __future__ import annotations
 
 from typing import Callable
 
-import jax
-import jax.numpy as jnp
-
 __all__ = ["pareto_bisection"]
 
 
@@ -37,17 +34,13 @@ def pareto_bisection(
         Approximate root of ``f``.
     """
 
-    def body(state):
-        lo, hi, it = state
+    while (hi - lo > tol) and (max_iter > 0):
         mid = 0.5 * (lo + hi)
         val = f(mid)
-        lo = jnp.where(val > 0, lo, mid)
-        hi = jnp.where(val > 0, mid, hi)
-        return lo, hi, it + 1
+        if val > 0:
+            hi = mid
+        else:
+            lo = mid
+        max_iter -= 1
 
-    def cond(state):
-        lo, hi, it = state
-        return (it < max_iter) & (hi - lo > tol)
-
-    lo, hi, _ = jax.lax.while_loop(cond, body, (lo, hi, 0))
-    return float(0.5 * (lo + hi))
+    return 0.5 * (lo + hi)
