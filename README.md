@@ -77,6 +77,7 @@ examples:
   – using the `bsde_dsgE.kfac` package
 * [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
   – integrated module
+* [`grid_search.py`](examples/grid_search.py) – sweep risk aversion values
 
 See the generated documentation in [`docs/`](docs/) for a rendered version of
 these tutorials.
