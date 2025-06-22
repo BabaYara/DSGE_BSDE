@@ -22,6 +22,9 @@ docs = [
 dev  = ["pytest", "ruff", "black", "mypy", "pre-commit"]
 examples = ["dvc"]
 
+[project.scripts]
+pinn-demo = "bsde_dsgE.cli:pinn_demo"
+
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]
 
