@@ -14,7 +14,9 @@ def test_setup_cfg_has_tool_settings() -> None:
     parser.read(cfg_path)
 
     assert parser["tool.ruff"]["src"] == "bsde_dsgE"
+    assert parser["tool.ruff"]["exclude"] == '["notebooks/**"]'
     assert parser["tool.ruff.lint"]["select"] == "E, F, I, B"
+    assert parser["tool.ruff.lint"]["ignore"] == '["E401", "E731", "I001", "E501"]'
 
     assert parser["mypy"]["python_version"] == "3.11"
     assert parser.getboolean("mypy", "strict")
