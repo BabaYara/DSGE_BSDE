@@ -102,6 +102,20 @@ The project exposes a single package:
 The package follows standard JAX/Equinox design with optax-style updates and
 NumPy-style docstrings.
 
+### 5.1 Public API
+
+| Import path | Description | Source file |
+|-------------|-------------|-------------|
+| `bsde_dsgE.core.Solver` | Base BSDE solver | [`bsde_dsgE/core/solver.py`](bsde_dsgE/core/solver.py) |
+| `bsde_dsgE.core.ResNet` | Minimal residual network | [`bsde_dsgE/core/nets.py`](bsde_dsgE/core/nets.py) |
+| `bsde_dsgE.core.load_solver` | Factory for ``Solver`` and ``ResNet`` | [`bsde_dsgE/core/init.py`](bsde_dsgE/core/init.py) |
+| `bsde_dsgE.kfac.KFACPINNSolver` | KFAC training loop | [`bsde_dsgE/kfac/solver.py`](bsde_dsgE/kfac/solver.py) |
+| `bsde_dsgE.kfac.kfac_update` | Single KFAC step | [`bsde_dsgE/kfac/optimizer.py`](bsde_dsgE/kfac/optimizer.py) |
+| `bsde_dsgE.kfac.poisson_1d_residual` | 1‑D Poisson residual | [`bsde_dsgE/kfac/pde.py`](bsde_dsgE/kfac/pde.py) |
+| `bsde_dsgE.kfac.pinn_loss` | Poisson loss helper | [`bsde_dsgE/kfac/pde.py`](bsde_dsgE/kfac/pde.py) |
+| `bsde_dsgE.utils.sobol_brownian` | Sobol Brownian paths | [`bsde_dsgE/utils/sde_tools.py`](bsde_dsgE/utils/sde_tools.py) |
+| `bsde_dsgE.models.ct_lucas.scalar_lucas` | Example Lucas model | [`bsde_dsgE/models/ct_lucas.py`](bsde_dsgE/models/ct_lucas.py) |
+
 ## 6\tDevelopment setup
 
 After cloning the repository install the development dependencies and activate
