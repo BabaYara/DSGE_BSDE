@@ -63,4 +63,4 @@ shows the basic training loop on a 1D Poisson problem.
 smaller demonstration: open the notebook and execute the cells to see
 `KFACPINNSolver` minimise a trivial quadratic loss.
 [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
-illustrates the standalone `kfac_pinn` package introduced in this release.
+illustrates the unified `bsde_dsgE.kfac` module introduced in this release.

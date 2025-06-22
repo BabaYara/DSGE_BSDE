@@ -1,5 +1,5 @@
 import jax.numpy as jnp
-from kfac_pinn.pde import poisson_1d_residual, pinn_loss
+from bsde_dsgE.kfac.pde import poisson_1d_residual, pinn_loss
 
 
 def test_poisson_zero_residual_pkg():

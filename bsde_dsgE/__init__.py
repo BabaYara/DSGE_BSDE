@@ -1,17 +1,24 @@
-"""Convenience imports for the :mod:`bsde_dsgE` package.
+"""Convenience re-exports for the :mod:`bsde_dsgE` package.
 
-This module re-exports the key KFAC optimisation utilities and solver
-constructors used throughout the repository.
+All public optimisation utilities live in :mod:`bsde_dsgE.kfac`.  They are
+imported here so users can simply ``import bsde_dsgE`` and access the KFAC
+helpers without remembering the submodule layout.
 """
 
-from .kfac import kfac_update, KFACPINNSolver as KFACPINNSolverFull
-from .optim import init_kfac_state, KFACPINNSolver
+from .kfac import (
+    init_state as init_kfac_state,
+    kfac_update,
+    KFACPINNSolver,
+    pinn_loss,
+    poisson_1d_residual,
+)
 from .core.init import load_solver
 
 __all__ = [
     "kfac_update",
-    "KFACPINNSolverFull",
     "init_kfac_state",
     "KFACPINNSolver",
+    "pinn_loss",
+    "poisson_1d_residual",
     "load_solver",
 ]

@@ -1,5 +1,0 @@
-"""Optimization utilities for PINNs."""
-
-from bsde_dsgE.optim.kfac import init_kfac_state, kfac_update, KFACPINNSolver
-
-__all__ = ["init_kfac_state", "kfac_update", "KFACPINNSolver"]

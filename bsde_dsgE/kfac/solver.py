@@ -80,12 +80,11 @@ class KFACPINNSolver(eqx.Module):
         @jax.jit
         def step(
             params: Any,
-            static: Any,
             fisher_state: Any,
             x: jnp.ndarray,
         ) -> Tuple[Any, Any, jnp.ndarray]:
             net = eqx.combine(params, static)
-            loss, grads = jax.value_and_grad(self.loss_fn)(net, x)
+            loss, grads = eqx.filter_value_and_grad(self.loss_fn)(net, x)
             params, fisher_state = kfac_update(
                 params, grads, fisher_state, self.lr
             )
@@ -93,9 +92,9 @@ class KFACPINNSolver(eqx.Module):
 
         loss_history = []
         for _ in range(self.num_steps):
-            params, fisher_state, loss = step(params, static, fisher_state, x0)
+            params, fisher_state, loss = step(params, fisher_state, x0)
             loss_history.append(loss)
-        self.net = eqx.combine(params, static)
+        object.__setattr__(self, "net", eqx.combine(params, static))
         return jnp.stack(loss_history)
 
 
