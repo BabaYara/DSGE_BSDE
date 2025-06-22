@@ -211,3 +211,61 @@ incrementally while keeping the code base easy to understand.
 This project is licensed under the terms of the MIT license.  See
 [`LICENSE`](LICENSE) for details.
 
+## 13\tDeployment notes
+
+Running the library effectively requires a functional JAX installation. The package works on pure CPU but was designed with GPU or TPU acceleration in mind, especially for high-dimensional PDEs where the memory footprint grows rapidly. The solvers rely on `eqx.filter_jit`, so JAX's JIT compiler must be available. If you plan to run the tutorial notebooks locally, a consumer-grade GPU with at least 8 GB of memory is strongly recommended. CUDA 12 wheels for JAX are available on PyPI and can be installed with `pip`.
+
+For high performance environments, we have experimented with container-based deployments. The project includes a sample `Dockerfile` in the `scripts` folder that installs all dependencies and copies the tutorial notebooks. You can build the image with
+
+```bash
+docker build -f scripts/Dockerfile -t bsde-dsge .
+```
+
+and run it with
+
+```bash
+docker run --rm -it -p 8888:8888 bsde-dsge jupyter lab --no-browser --ip=0.0.0.0
+```
+
+This provides a reproducible environment for tutorials and helps avoid version mismatches across machines. On managed clusters, you can use the same container as a base image and add system-specific launch scripts for the scheduler of choice, e.g. Slurm or Torque. The `scripts/` directory includes small templates for interactive versus batch jobs. Note that the container requires a recent version of CUDA and the corresponding driver.
+
+## 14\tDesign rationale
+
+The core library aims to remain small yet expressive. We deliberately avoid hiding the underlying JAX mechanics: users are expected to interact with pure functions and explicit updates. The choice of Equinox over other neural network libraries reflects a preference for minimalism and first-class PyTree support, which simplifies state management when differentiating through solver iterations.
+
+KFAC was selected as the base optimiser because it provides stable updates even for stiff BSDEs. Standard gradient descent often struggles with vanishing or exploding gradients in long time horizons. KFAC uses a Kronecker-factored approximation of the curvature matrix, capturing the geometry of residual networks at a modest computational cost. The modular design means you can replace `kfac_update` with any Optax-compatible optimiser. Inside the solver loop, the residual function is kept separate from the network forward pass, making it straightforward to swap in alternative PDEs or add custom boundary conditions.
+
+A secondary design goal is teaching. Every class and helper function is thoroughly typed and documented. Many functions include extensive inline comments that walk through the mathematical derivation or highlight subtle implementation details. This approach makes the repository a friendly reference for newcomers to continuous-time DSGE models while still offering advanced hooks for researchers.
+
+## 15\tAdvanced API usage
+
+While the quick-start examples cover basic training loops, the API also supports more specialised workflows. For instance, you can inject custom callback functions into `KFACPINNSolver` to log diagnostics or modify the optimisation state on the fly. Simply pass a callable through the `callbacks` argument when constructing the solver:
+
+```python
+from bsde_dsgE.kfac import KFACPINNSolver
+
+solver = KFACPINNSolver(
+    net, loss, step_size=1e-2,
+    callbacks=[my_logging_hook, anneal_step]
+)
+```
+
+Callbacks receive the current iteration number, parameter tree and auxiliary data returned by the loss function. They can return an updated parameter tree or operate purely for side effects. This mechanism allows for easy integration with experiment tracking tools like Weights & Biases or custom learning rate schedules without modifying the core training loop.
+
+Another advanced feature is partial freezing of network layers. Because the parameters live in a PyTree, you can filter specific subtrees when passing them to `eqx.apply_updates`. The built-in utility `filter_params` demonstrates this pattern and can be extended to implement layer-wise adaptation or two-timescale updates where the last residual block receives a smaller learning rate.
+
+## 16\tExample results & reproducibility
+
+The repository ships with a set of synthetic data in `data/` that reproduces the Lucas tree experiments. For each notebook we provide a fixed random seed so the figures should match the ones in the documentation. To verify the installation, run
+
+```bash
+pytest tests/test_pde.py::test_poisson_solution
+```
+
+which checks that the Poisson residual network converges to a known analytic solution. The test executes quickly on CPU and serves as a minimal smoke test. More comprehensive integration tests cover the outer loop of the DSGE solver and ensure consistent output across multiple devices.
+
+If you plan to publish results based on this repository, we encourage you to create a new virtual environment or container and start from a tagged release. The changelog tracks API-breaking changes, and the pinned dependencies in `pyproject.toml` guarantee deterministic builds. When possible, open-source your configuration files and note the commit hash of the version you used in your paper or presentation.
+
+## 17\tExtended support
+
+We maintain a small set of community resources beyond the documentation. The `docs/faq.md` file answers frequent questions about JAX installation, while the issue tracker is monitored for bug reports and feature requests. If you encounter difficulties adapting the code to a custom PDE or integrating with other libraries, please open an issue with a minimal reproducer. We cannot promise immediate replies, but we do our best to point you in the right direction or review pull requests that fix a well-defined problem.
