@@ -16,3 +16,6 @@ These notebooks walk through defining a network, setting up ``KFACPINNSolver`` a
 The repository includes a small CSV dataset `data/dividend_draws.csv` which is
 committed to the repository. To regenerate the file run
 ``python scripts/generate_dividend_draws.py``.
+
+For a history of notable changes, see the
+[`CHANGELOG`](../CHANGELOG.md) in the repository root.
