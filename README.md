@@ -69,13 +69,14 @@ out of the box.
 ### 2.2\tData
 
 Sample Lucas dividend draws are stored in ``data/dividend_draws.csv`` and
-tracked with `dvc`.  After cloning the repository, run
+tracked with `dvc`. After cloning the repository, run
 
 ```bash
-dvc pull data/dividend_draws.csv.dvc
+dvc repro fetch-data
 ```
 
-to fetch the CSV file.
+to fetch the CSV file using the ``fetch-data`` stage defined in
+``dvc.yaml``.
 
 ## 3\tKFAC for PINNs
 
