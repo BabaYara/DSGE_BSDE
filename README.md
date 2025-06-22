@@ -66,6 +66,17 @@ imported as ``bsde_dsgE``.
 JupyterLab comes with the ``[dev]`` extras so that the tutorial notebooks run
 out of the box.
 
+### 2.2\tData
+
+Sample Lucas dividend draws are stored in ``data/dividend_draws.csv`` and
+tracked with `dvc`.  After cloning the repository, run
+
+```bash
+dvc pull
+```
+
+to fetch the CSV file.
+
 ## 3\tKFAC for PINNs
 
 `KFACPINNSolver` wraps a network and loss in a tiny training loop. Each
