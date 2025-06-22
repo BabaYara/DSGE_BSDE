@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 import jax.numpy as jnp
 
-# Ensure the project root is on ``sys.path`` so ``bsde_dsgE`` and
-# ``kfac_pinn`` can be imported when running tests via ``pytest``.
+# Ensure the project root is on ``sys.path`` so ``bsde_dsgE`` can be
+# imported when running tests via ``pytest``.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 @pytest.fixture
