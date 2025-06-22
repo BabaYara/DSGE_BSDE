@@ -16,8 +16,8 @@ class ResNet(eqx.Module):
 
     mlp: eqx.nn.MLP
 
-    def __call__(self, t: jnp.ndarray, x: jnp.ndarray) -> tuple[jnp.ndarray, jnp.ndarray]:
-        def single(xi):
+    def __call__(self, t: jax.Array, x: jax.Array) -> tuple[jax.Array, jax.Array]:
+        def single(xi: jax.Array) -> jax.Array:
             return self.mlp(jnp.array([xi]))[0]
 
         y = jax.vmap(single)(x)
@@ -25,7 +25,7 @@ class ResNet(eqx.Module):
         return y, z
 
     @staticmethod
-    def make(depth: int, width: int, *, key: jax.random.PRNGKey) -> "ResNet":
+    def make(depth: int, width: int, *, key: jax.Array) -> "ResNet":
         mlp = eqx.nn.MLP(in_size=1, out_size=1, width_size=width, depth=depth, key=key)
         return ResNet(mlp)
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Sequence
 
+import jax
 import jax.numpy as jnp
 from scipy import stats  # type: ignore
 from scipy.stats import qmc  # type: ignore
@@ -17,7 +18,7 @@ def sobol_brownian(
     batch: int,
     dt: float | Sequence[float],
     dim: int = 1,
-) -> jnp.ndarray:
+) -> jax.Array:
     """Sobol quasi-random Brownian increments.
 
     Parameters
@@ -45,7 +46,7 @@ def sobol_brownian(
     engine = qmc.Sobol(d=dim * steps, scramble=False)
     sob = engine.random(batch // 2)
     sob = jnp.clip(jnp.asarray(sob), 1e-6, 1 - 1e-6)
-    g = stats.norm.ppf(sob)
+    g = jnp.asarray(stats.norm.ppf(sob))
     g = jnp.concatenate([g, -g], axis=0).reshape(batch, steps, dim)
 
     dt_arr = jnp.asarray(dt)

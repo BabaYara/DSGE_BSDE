@@ -15,7 +15,11 @@ import jax.numpy as jnp
 __all__ = ["poisson_1d_residual", "pinn_loss"]
 
 
-def poisson_1d_residual(net: Callable[[jnp.ndarray], jnp.ndarray], x: jnp.ndarray, f: Callable[[jnp.ndarray], jnp.ndarray] | None = None) -> jnp.ndarray:
+def poisson_1d_residual(
+    net: Callable[[jax.Array], jax.Array],
+    x: jax.Array,
+    f: Callable[[jax.Array], jax.Array] | None = None,
+) -> jax.Array:
     """Compute the residual of ``u''(x) = f(x)`` with zero boundary conditions.
 
     Parameters
@@ -28,18 +32,21 @@ def poisson_1d_residual(net: Callable[[jnp.ndarray], jnp.ndarray], x: jnp.ndarra
         Right hand side function ``f(x)``. Defaults to zero.
     """
     if f is None:
-        f = lambda x: jnp.zeros_like(x)
+        def default_f(x: jax.Array) -> jax.Array:
+            return jnp.zeros_like(x)
 
-    d2u_dx2 = jax.vmap(jax.grad(jax.grad(net)))(x)
+        f = default_f
+
+    d2u_dx2 = jnp.asarray(jax.vmap(jax.grad(jax.grad(net)))(x))
     return d2u_dx2 - f(x)
 
 
 def pinn_loss(
-    net: Callable[[jnp.ndarray], jnp.ndarray],
-    interior_x: jnp.ndarray,
-    bc_x: jnp.ndarray,
-    f: Callable[[jnp.ndarray], jnp.ndarray] | None = None,
-) -> jnp.ndarray:
+    net: Callable[[jax.Array], jax.Array],
+    interior_x: jax.Array,
+    bc_x: jax.Array,
+    f: Callable[[jax.Array], jax.Array] | None = None,
+) -> jax.Array:
     """Return the squared residual loss for the Poisson problem."""
     res = poisson_1d_residual(net, interior_x, f)
     bc_res = net(bc_x)

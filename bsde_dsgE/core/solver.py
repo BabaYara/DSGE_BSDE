@@ -4,22 +4,24 @@ Core BSDE solver (tamed Euler + full YZ control‑variate)
 """
 
 from __future__ import annotations
-from typing import Callable, Tuple
-import jax, jax.numpy as jnp
+from typing import Callable
+
+import jax
+import jax.numpy as jnp
 import equinox as eqx
 
 __all__ = ["BSDEProblem", "Solver"]
 
 
 class BSDEProblem(eqx.Module):
-    drift: Callable[[jnp.ndarray], jnp.ndarray]
-    diff: Callable[[jnp.ndarray], jnp.ndarray]
-    generator: Callable[[jnp.ndarray, jnp.ndarray, jnp.ndarray], jnp.ndarray]
-    terminal: Callable[[jnp.ndarray], jnp.ndarray]
+    drift: Callable[[jax.Array], jax.Array]
+    diff: Callable[[jax.Array], jax.Array]
+    generator: Callable[[jax.Array, jax.Array, jax.Array], jax.Array]
+    terminal: Callable[[jax.Array], jax.Array]
     t0: float
     t1: float
 
-    def step(self, x: jnp.ndarray, dt: float, dW: jnp.ndarray) -> jnp.ndarray:
+    def step(self, x: jax.Array, dt: float, dW: jax.Array) -> jax.Array:
         """One Euler step of the forward SDE (tamed)."""
         mu = self.drift(x)
         mu = mu / (1 + dt * jnp.abs(mu))
@@ -27,16 +29,18 @@ class BSDEProblem(eqx.Module):
 
 
 class Solver(eqx.Module):
-    net: eqx.Module
+    net: Callable[[jax.Array, jax.Array], tuple[jax.Array, jax.Array]]
     problem: BSDEProblem
     dt: float
 
-    def __call__(self, x0: jnp.ndarray, key: jax.random.PRNGKey) -> jnp.ndarray:
+    def __call__(self, x0: jax.Array, key: jax.Array) -> jax.Array:
         """Forward simulation returning terminal loss."""
         N = int((self.problem.t1 - self.problem.t0) / self.dt)
         dW = jax.random.normal(key, (x0.shape[0], N)) * jnp.sqrt(self.dt)
 
-        def scan_fn(carry, dwi):
+        def scan_fn(
+            carry: tuple[jax.Array, jax.Array], dwi: jax.Array
+        ) -> tuple[tuple[jax.Array, jax.Array], jax.Array]:
             x, y_lin = carry
             t = self.problem.t0
             y, z = self.net(jnp.full_like(x, t), x)
