@@ -1,7 +1,0 @@
-stages:
-  fetch-data:
-    cmd: dvc pull data/dividend_draws.csv.dvc
-    deps:
-      - data/dividend_draws.csv.dvc
-    outs:
-      - data/dividend_draws.csv
