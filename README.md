@@ -59,3 +59,6 @@ gradient step. See
 minimal demonstration. A shorter
 [`kfac_pinn_quickstart.ipynb`](notebooks/kfac_pinn_quickstart.ipynb)
 shows the basic training loop on a 1D Poisson problem.
+[`kfac_toy_example.ipynb`](notebooks/kfac_toy_example.ipynb) is an even
+smaller demonstration: open the notebook and execute the cells to see
+`KFACPINNSolver` minimise a trivial quadratic loss.
