@@ -13,8 +13,8 @@ def test_setup_cfg_has_tool_settings() -> None:
     parser = configparser.ConfigParser()
     parser.read(cfg_path)
 
-    assert parser["tool:ruff"]["src"] == "bsde_dsgE"
-    assert parser["tool:ruff.lint"]["select"] == "E, F, I, B"
+    assert parser["tool.ruff"]["src"] == "bsde_dsgE"
+    assert parser["tool.ruff.lint"]["select"] == "E, F, I, B"
 
     assert parser["mypy"]["python_version"] == "3.11"
     assert parser.getboolean("mypy", "strict")
