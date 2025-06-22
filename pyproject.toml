@@ -12,7 +12,13 @@ requires-python = ">=3.10"
 dependencies = ["jax>=0.4", "equinox>=0.11", "optax>=0.2", "scipy"]
 [project.optional-dependencies]
 gpu = ["jax[cuda12_pip]"]
-docs = ["myst-parser", "sphinx", "sphinx-autodoc-typehints"]
+docs = [
+  "myst-parser",
+  "sphinx",
+  "sphinx-autodoc-typehints",
+  "nbsphinx",
+  "jupyter",
+]
 dev  = ["pytest", "ruff", "black", "mypy", "pre-commit"]
 examples = ["dvc"]
 
