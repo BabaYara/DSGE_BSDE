@@ -27,12 +27,3 @@ pinn-poisson2d = "bsde_dsgE.cli:pinn_poisson2d"
 
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]
-
-[tool.ruff]
-src = ["bsde_dsgE"]
-exclude = ["notebooks/**"]
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "B"]
-ignore = ["E401", "E731", "I001", "E501"]
-
