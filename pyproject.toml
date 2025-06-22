@@ -24,6 +24,7 @@ examples = ["dvc"]
 
 [project.scripts]
 pinn-demo = "bsde_dsgE.cli:pinn_demo"
+pinn-poisson2d = "bsde_dsgE.cli:pinn_poisson2d"
 
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]

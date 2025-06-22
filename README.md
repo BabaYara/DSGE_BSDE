@@ -86,6 +86,12 @@ examples:
   – integrated module
 * [`grid_search.py`](examples/grid_search.py) – sweep risk aversion values
 * `pinn-demo` – command-line Poisson PINN demo
+* `pinn-poisson2d` – 2-D Poisson PINN demo
+
+```bash
+$ pinn-poisson2d
+final loss ...
+```
 
 The helper :func:`bsde_dsgE.kfac.pinn_loss` now accepts custom Dirichlet or
 Neumann boundary functions.  Pass ``dirichlet_bc`` or ``neumann_bc`` when
