@@ -87,6 +87,10 @@ examples:
 * [`grid_search.py`](examples/grid_search.py) – sweep risk aversion values
 * `pinn-demo` – command-line Poisson PINN demo
 
+The helper :func:`bsde_dsgE.kfac.pinn_loss` now accepts custom Dirichlet or
+Neumann boundary functions.  Pass ``dirichlet_bc`` or ``neumann_bc`` when
+constructing the loss to enforce non-zero conditions.
+
 See the generated documentation in [`docs/`](docs/) for a rendered version of
 these tutorials.
 
