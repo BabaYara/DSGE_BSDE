@@ -48,3 +48,12 @@ python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,docs]"
 pre‑commit install
 pytest -q                     # 30 s smoke‑tests
+```
+
+## 3 KFAC for PINNs
+
+`KFACPINNSolver` wraps a network and loss in a tiny training loop. Each
+iteration calls `kfac_update` to apply a diagonal K‑FAC natural
+gradient step. See
+[`kfac_pinn_example.ipynb`](notebooks/kfac_pinn_example.ipynb) for a
+minimal demonstration.
