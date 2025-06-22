@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 bsde_seed.egg-info/
+data/dividend_draws.csv

@@ -72,7 +72,7 @@ Sample Lucas dividend draws are stored in ``data/dividend_draws.csv`` and
 tracked with `dvc`.  After cloning the repository, run
 
 ```bash
-dvc pull
+dvc pull data/dividend_draws.csv.dvc
 ```
 
 to fetch the CSV file.
