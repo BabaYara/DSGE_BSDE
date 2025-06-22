@@ -74,7 +74,7 @@ examples:
 * [`kfac_pinn_quickstart.ipynb`](notebooks/kfac_pinn_quickstart.ipynb) – Poisson
   example
 * [`kfac_pinn_pkg_quickstart.ipynb`](notebooks/kfac_pinn_pkg_quickstart.ipynb)
-  – using the stand-alone package
+  – using the `bsde_dsgE.kfac` package
 * [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
   – integrated module
 
@@ -93,13 +93,12 @@ jupyter lab notebooks/
 
 ## 5\tLibrary overview
 
-The project exposes two closely related packages:
+The project exposes a single package:
 
-* **`bsde_dsgE`** – full library containing KFAC utilities, PDE helpers and
+* **`bsde_dsgE`** – library containing KFAC utilities, PDE helpers and
   skeleton continuous-time DSGE solvers.
-* **`kfac_pinn`** – stand-alone minimal KFAC optimiser used in the notebooks.
 
-Both packages follow standard JAX/Equinox design with optax-style updates and
+The package follows standard JAX/Equinox design with optax-style updates and
 NumPy-style docstrings.
 
 ## 6\tDevelopment setup
