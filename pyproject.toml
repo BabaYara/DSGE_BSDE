@@ -19,7 +19,7 @@ docs = [
   "nbsphinx",
   "jupyter",
 ]
-dev  = ["pytest", "ruff", "black", "mypy", "pre-commit", "jupyterlab"]
+dev  = ["pytest", "ruff", "black", "mypy", "pre-commit", "jupyterlab", "sphinx"]
 
 [project.scripts]
 pinn-demo = "bsde_dsgE.cli:pinn_demo"
