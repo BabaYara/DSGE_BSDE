@@ -11,12 +11,22 @@ def test_csv_dvc_exists() -> None:
     assert text.strip() == "outs:", ".dvc file format unexpected"
 
 
-def test_readme_dvc_pull() -> None:
+def test_readme_dvc_repro() -> None:
     readme = Path("README.md").read_text()
-    assert "dvc pull data/dividend_draws.csv.dvc" in readme
+    assert "dvc repro fetch-data" in readme
 
 
-def test_generate_dividend_draws(tmp_path):
+def test_dvc_yaml_stage_exists() -> None:
+    dvc_yaml = Path("dvc.yaml")
+    assert dvc_yaml.exists(), "dvc.yaml missing"
+    text = dvc_yaml.read_text()
+    assert "fetch-data:" in text, "fetch-data stage missing"
+    assert "data/dividend_draws.csv.dvc" in text, "dependency missing"
+    assert "data/dividend_draws.csv" in text, "output missing"
+    assert "cmd: dvc pull data/dividend_draws.csv.dvc" in text
+
+
+def test_generate_dividend_draws(tmp_path: Path) -> None:
     out_file = tmp_path / "dividend_draws.csv"
     generate(out_file)
     text = out_file.read_text().strip().splitlines()

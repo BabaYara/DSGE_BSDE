@@ -13,4 +13,5 @@ This site collects minimal documentation for the `bsde_dsgE.kfac` utilities. The
 
 These notebooks walk through defining a network, setting up ``KFACPINNSolver`` and running the optimisation loop.
 
-The repository includes a small CSV dataset `data/dividend_draws.csv` tracked with `dvc`. Run ``dvc pull`` after cloning to fetch the file.
+The repository includes a small CSV dataset `data/dividend_draws.csv` tracked with
+`dvc`. Run ``dvc repro fetch-data`` after cloning to fetch the file.
