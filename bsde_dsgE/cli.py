@@ -6,6 +6,8 @@ import equinox as eqx
 import jax
 import jax.numpy as jnp
 
+from typing import Callable, cast
+
 from .kfac import KFACPINNSolver
 from .kfac.pde import poisson_1d_residual, poisson_nd_residual
 
@@ -17,9 +19,11 @@ def pinn_demo() -> None:
         in_size=1, out_size=1, width_size=16, depth=2, key=jax.random.PRNGKey(0)
     )
 
-    def loss_fn(model: eqx.Module, interior: jax.Array) -> jax.Array:
+    def loss_fn(net_module: eqx.Module, interior: jax.Array) -> jax.Array:
+        net_fn: Callable[[jax.Array], jax.Array] = cast(Callable[[jax.Array], jax.Array], net_module)
+
         def net_scalar(z: jax.Array) -> jax.Array:
-            return model(jnp.array([z]))[0]
+            return net_fn(jnp.array([z]))[0]
 
         bc = jnp.array([0.0, 1.0])
         res = poisson_1d_residual(net_scalar, interior)
@@ -39,9 +43,11 @@ def pinn_poisson2d() -> None:
         in_size=2, out_size=1, width_size=16, depth=2, key=jax.random.PRNGKey(0)
     )
 
-    def loss_fn(model: eqx.Module, interior: jax.Array) -> jax.Array:
+    def loss_fn(net_module: eqx.Module, interior: jax.Array) -> jax.Array:
+        net_fn: Callable[[jax.Array], jax.Array] = cast(Callable[[jax.Array], jax.Array], net_module)
+
         def net_scalar(z: jax.Array) -> jax.Array:
-            return model(z)[0]
+            return net_fn(z)[0]
 
         bc = jnp.array(
             [
