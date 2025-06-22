@@ -5,9 +5,9 @@ Curvature update along with a simple training loop for PINNs.  Additional
 helpers for common PDEs are provided for convenience.
 """
 
-from .optimizer import kfac_update, _init_state
+from .optimizer import _init_state, kfac_update
+from .pde import pinn_loss, poisson_1d_residual, poisson_nd_residual
 from .solver import KFACPINNSolver
-from .pde import poisson_1d_residual, pinn_loss
 
 # Public alias for the optimiser state initialiser
 init_state = _init_state
@@ -17,5 +17,6 @@ __all__ = [
     "kfac_update",
     "init_state",
     "poisson_1d_residual",
+    "poisson_nd_residual",
     "pinn_loss",
 ]

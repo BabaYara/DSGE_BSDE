@@ -12,7 +12,7 @@ from typing import Callable
 import jax
 import jax.numpy as jnp
 
-__all__ = ["poisson_1d_residual", "pinn_loss"]
+__all__ = ["poisson_1d_residual", "poisson_nd_residual", "pinn_loss"]
 
 
 def poisson_1d_residual(
@@ -32,6 +32,7 @@ def poisson_1d_residual(
         Right hand side function ``f(x)``. Defaults to zero.
     """
     if f is None:
+
         def default_f(x: jax.Array) -> jax.Array:
             return jnp.zeros_like(x)
 
@@ -39,6 +40,37 @@ def poisson_1d_residual(
 
     d2u_dx2 = jnp.asarray(jax.vmap(jax.grad(jax.grad(net)))(x))
     return d2u_dx2 - f(x)
+
+
+def poisson_nd_residual(
+    net: Callable[[jax.Array], jax.Array],
+    x: jax.Array,
+    f: Callable[[jax.Array], jax.Array] | None = None,
+) -> jax.Array:
+    """Compute the residual of ``\nabla^2 u(x) = f(x)`` for arbitrary dimension.
+
+    Parameters
+    ----------
+    net:
+        Callable neural network approximating ``u(x)``.
+    x:
+        Array of shape ``(n, d)`` of interior points where the residual is
+        evaluated.
+    f:
+        Right hand side function ``f(x)``. Defaults to zero.
+    """
+    if f is None:
+
+        def default_f(z: jax.Array) -> jax.Array:
+            return jnp.zeros((), dtype=z.dtype)
+
+        f = default_f
+
+    def laplacian(z: jax.Array) -> jax.Array:
+        return jnp.trace(jax.hessian(net)(z))
+
+    res = jax.vmap(laplacian)(x)
+    return res - jax.vmap(f)(x)
 
 
 def pinn_loss(
@@ -50,4 +82,4 @@ def pinn_loss(
     """Return the squared residual loss for the Poisson problem."""
     res = poisson_1d_residual(net, interior_x, f)
     bc_res = net(bc_x)
-    return jnp.mean(res ** 2) + jnp.mean(bc_res ** 2)
+    return jnp.mean(res**2) + jnp.mean(bc_res**2)
