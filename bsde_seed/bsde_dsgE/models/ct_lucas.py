@@ -26,15 +26,21 @@ def scalar_lucas(mu: float = DEFAULT_MU, sigma: float = DEFAULT_SIGMA):
     Returns:
         A tuple (drift, diffusion, generator, terminal).
     """
-    drift = lambda x: mu * x
-    diffusion  = lambda x: sigma * x  # Note: for dX = mu*X*dt + sigma*X*dW, diffusion is sigma*X
+    def drift(x):
+        return mu * x
+
+    def diffusion(x):
+        return sigma * x  # Note: for dX = mu*X*dt + sigma*X*dW, diffusion is sigma*X
                                       # If it's dX = mu(X)dt + sigma(X)dW, then this is sigma(X)
                                       # Assuming the latter for typical BSDE solver libraries where
                                       # the SDE is dX_t = b(X_t)dt + s(X_t)dW_t,
                                       # then b(x) = mu*x and s(x) = sigma*x.
 
     # Placeholder generator and terminal functions
-    generator = lambda t, x, y, z: jnp.zeros_like(y) # Generator f(t, x, y, z)
-    terminal  = lambda x: jnp.zeros_like(x)       # Terminal condition g(x)
+    def generator(t, x, y, z):
+        return jnp.zeros_like(y)  # Generator f(t, x, y, z)
+
+    def terminal(x):
+        return jnp.zeros_like(x)  # Terminal condition g(x)
 
     return drift, diffusion, generator, terminal
