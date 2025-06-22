@@ -19,9 +19,27 @@ def poisson_1d_residual(
     net: Callable[[jax.Array], jax.Array],
     x: jax.Array,
     f: Callable[[jax.Array], jax.Array] | None = None,
+    dirichlet_bc: Callable[[jax.Array], jax.Array] | None = None,
+    neumann_bc: Callable[[jax.Array], jax.Array] | None = None,
 ) -> jax.Array:
-    """Compute the residual of ``u''(x) = f(x)`` with zero boundary conditions.
+    """Compute the residual of ``u''(x) = f(x)``.
 
+    Optionally evaluate boundary conditions when ``x`` contains boundary
+    locations. The function returns the PDE residual for the interior and, if a
+    boundary condition is supplied, the boundary residual as well.  Dirichlet
+    and Neumann conditions are mutually exclusive.
+
+    Examples
+    --------
+    >>> import jax.numpy as jnp
+    >>> def net(x):
+    ...     return x * (1 - x)
+    >>> x = jnp.array([0.25, 0.5, 0.75])
+    >>> poisson_1d_residual(net, x)
+    ...
+    >>> bc = jnp.array([0.0, 1.0])
+    >>> poisson_1d_residual(net, bc, dirichlet_bc=lambda z: 0.0)
+    
     Parameters
     ----------
     net:
@@ -30,7 +48,23 @@ def poisson_1d_residual(
         Interior points where the residual is evaluated.
     f:
         Right hand side function ``f(x)``. Defaults to zero.
+    dirichlet_bc:
+        Function enforcing ``u(x)=dirichlet_bc(x)`` at the boundary.  Defaults
+        to ``None``.
+    neumann_bc:
+        Function enforcing ``u'(x)=neumann_bc(x)`` at the boundary.  Defaults to
+        ``None``.
     """
+    if dirichlet_bc is not None and neumann_bc is not None:
+        msg = "Only one of `dirichlet_bc` or `neumann_bc` may be provided."
+        raise ValueError(msg)
+
+    if dirichlet_bc is not None:
+        return net(x) - dirichlet_bc(x)
+
+    if neumann_bc is not None:
+        return jax.vmap(jax.grad(net))(x) - neumann_bc(x)
+
     if f is None:
 
         def default_f(x: jax.Array) -> jax.Array:
@@ -78,8 +112,33 @@ def pinn_loss(
     interior_x: jax.Array,
     bc_x: jax.Array,
     f: Callable[[jax.Array], jax.Array] | None = None,
+    dirichlet_bc: Callable[[jax.Array], jax.Array] | None = None,
+    neumann_bc: Callable[[jax.Array], jax.Array] | None = None,
 ) -> jax.Array:
-    """Return the squared residual loss for the Poisson problem."""
+    """Return the squared residual loss for the Poisson problem.
+
+    Either Dirichlet or Neumann boundary conditions can be specified using the
+    ``dirichlet_bc`` or ``neumann_bc`` callables. By default zero Dirichlet
+    conditions are enforced.
+
+    Examples
+    --------
+    >>> bc = jnp.array([0.0, 1.0])
+    >>> pinn_loss(net, interior, bc, dirichlet_bc=jnp.sin)
+    >>> pinn_loss(net, interior, bc, neumann_bc=lambda x: 0.0)
+    """
+
+    if dirichlet_bc is not None and neumann_bc is not None:
+        msg = "Specify at most one boundary condition type"
+        raise ValueError(msg)
+
     res = poisson_1d_residual(net, interior_x, f)
-    bc_res = net(bc_x)
+
+    if dirichlet_bc is not None:
+        bc_res = poisson_1d_residual(net, bc_x, dirichlet_bc=dirichlet_bc)
+    elif neumann_bc is not None:
+        bc_res = poisson_1d_residual(net, bc_x, neumann_bc=neumann_bc)
+    else:
+        bc_res = net(bc_x)
+
     return jnp.mean(res**2) + jnp.mean(bc_res**2)
