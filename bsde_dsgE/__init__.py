@@ -5,7 +5,7 @@ imported here so users can simply ``import bsde_dsgE`` and access the KFAC
 helpers without remembering the submodule layout.
 """
 
-from .core.init import load_solver
+from .core import load_solver
 from .kfac import (
     KFACPINNSolver,
     kfac_update,
