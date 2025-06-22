@@ -16,4 +16,4 @@ dev  = ["pytest", "ruff", "black", "mypy", "pre-commit"]
 examples = ["dvc"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["bsde_dsgE", "bsde_seed"]
+packages = ["bsde_dsgE", "bsde_seed", "kfac_pinn"]
