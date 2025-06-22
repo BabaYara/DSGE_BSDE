@@ -1,13 +1,19 @@
 from pathlib import Path
-import yaml
 
 from scripts.generate_dividend_draws import main as generate
 
 
-def test_dvc_stage():
-    spec = yaml.safe_load(Path("dvc.yaml").read_text())
-    assert "prepare_data" in spec["stages"]
-    assert spec["stages"]["prepare_data"]["outs"] == ["data/dividend_draws.csv"]
+def test_csv_dvc_exists() -> None:
+    dvc_file = Path("data/dividend_draws.csv.dvc")
+    assert dvc_file.exists(), ".dvc file missing"
+
+    text = dvc_file.read_text().splitlines()[0]
+    assert text.strip() == "outs:", ".dvc file format unexpected"
+
+
+def test_readme_dvc_pull() -> None:
+    readme = Path("README.md").read_text()
+    assert "dvc pull data/dividend_draws.csv.dvc" in readme
 
 
 def test_generate_dividend_draws(tmp_path):

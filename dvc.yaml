@@ -1,5 +1,0 @@
-stages:
-  prepare_data:
-    cmd: python scripts/generate_dividend_draws.py
-    outs:
-      - data/dividend_draws.csv
