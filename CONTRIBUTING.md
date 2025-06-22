@@ -1,6 +1,6 @@
 
 6 Style conventions
-PEP 420 namespace package (bsde_dsgE has no __init__.py at top).
+Regular package (`bsde_dsgE` includes an `__init__.py` at the top).
 
 Full type hints (mypy --strict passes).
 

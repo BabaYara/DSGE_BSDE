@@ -39,7 +39,7 @@ Our aim: **from zero to publishable replication** in a weekend.
 
 ```bash
 # ⬇️ user install
-pip install "jax[cpu]"  equinox optax bsde_dsgE            # PyPI stub
+pip install "jax[cpu]"  equinox optax bsde-dsge            # PyPI stub
 
 # ⬇️ developer clone
 git clone https://github.com/your‑org/deep‑bsde‑ct‑dsge.git
@@ -49,6 +49,9 @@ pip install -e ".[dev,docs]"
 pre‑commit install
 pytest -q                     # 30 s smoke‑tests
 ```
+
+The distribution on PyPI is named ``bsde-dsge`` while the Python package is
+imported as ``bsde_dsgE``.
 
 ## 3 KFAC for PINNs
 
