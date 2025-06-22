@@ -19,7 +19,7 @@ docs = [
   "nbsphinx",
   "jupyter",
 ]
-dev  = ["pytest", "ruff", "black", "mypy", "pre-commit"]
+dev  = ["pytest", "ruff", "black", "mypy", "pre-commit", "jupyterlab"]
 examples = ["dvc"]
 
 [project.scripts]
