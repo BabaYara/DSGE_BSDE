@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from typing import Any, Tuple
 
+import equinox as eqx
 import jax
 import jax.numpy as jnp
 
@@ -53,6 +54,7 @@ def _init_state(params: Any) -> Any:
     return jax.tree_util.tree_map(lambda p: jnp.zeros_like(p), params)
 
 
+@eqx.filter_jit  # type: ignore[misc]
 def kfac_update(
     params: Any,
     grads: Any,
@@ -97,13 +99,10 @@ def kfac_update(
     )
 
     # Compute natural gradient step using diagonal Fisher approximation
-    nat_grads = jax.tree_util.tree_map(
-        lambda g, s: g / (s + damping), grads, new_state
-    )
+    nat_grads = jax.tree_util.tree_map(lambda g, s: g / (s + damping), grads, new_state)
 
     new_params = jax.tree_util.tree_map(lambda p, ng: p - lr * ng, params, nat_grads)
     return new_params, new_state
 
 
 __all__ = ["kfac_update"]
-

@@ -4,14 +4,12 @@
 
 from __future__ import annotations
 
-from typing import Any
-
+import equinox as eqx
 import jax
 import jax.numpy as jnp
-import equinox as eqx
 
 
-class ResNet(eqx.Module):
+class ResNet(eqx.Module):  # type: ignore[misc]
     """Simple residual-style network returning ``(y, z)``."""
 
     mlp: eqx.nn.MLP

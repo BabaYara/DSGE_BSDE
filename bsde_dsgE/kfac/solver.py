@@ -32,7 +32,7 @@ import jax.numpy as jnp
 from .optimizer import _init_state, kfac_update
 
 
-class KFACPINNSolver(eqx.Module):
+class KFACPINNSolver(eqx.Module):  # type: ignore[misc]
     """Trainer for PINNs using a KFAC update.
 
     Parameters
@@ -77,7 +77,7 @@ class KFACPINNSolver(eqx.Module):
         params, static = eqx.partition(self.net, eqx.is_array)
         fisher_state = _init_state(params)
 
-        @eqx.filter_jit
+        @eqx.filter_jit  # type: ignore[misc]
         def step(
             params: Any,
             fisher_state: Any,
@@ -85,9 +85,7 @@ class KFACPINNSolver(eqx.Module):
         ) -> Tuple[Any, Any, jnp.ndarray]:
             net = eqx.combine(params, static)
             loss, grads = eqx.filter_value_and_grad(self.loss_fn)(net, x)
-            params, fisher_state = kfac_update(
-                params, grads, fisher_state, self.lr
-            )
+            params, fisher_state = kfac_update(params, grads, fisher_state, self.lr)
             return params, fisher_state, loss
 
         loss_history = []

@@ -65,6 +65,8 @@ imported as ``bsde_dsgE``.
 
 `KFACPINNSolver` wraps a network and loss in a tiny training loop. Each
 iteration calls `kfac_update` to apply a diagonal KFAC natural gradient step.
+`kfac_update` is JIT-compiled with `eqx.filter_jit`, so JAX must be installed
+with a working JIT backend.
 The notebooks in the [`notebooks`](notebooks/) directory provide hands-on
 examples:
 
