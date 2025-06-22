@@ -60,10 +60,13 @@ def poisson_1d_residual(
         raise ValueError(msg)
 
     if dirichlet_bc is not None:
-        return net(x) - dirichlet_bc(x)
+        dir_res: jax.Array = net(x) - dirichlet_bc(x)
+        return dir_res
 
     if neumann_bc is not None:
-        return jax.vmap(jax.grad(net))(x) - neumann_bc(x)
+        grad: jax.Array = jnp.asarray(jax.vmap(jax.grad(net))(x))
+        neu_res: jax.Array = grad - neumann_bc(x)
+        return neu_res
 
     if f is None:
 
@@ -72,8 +75,9 @@ def poisson_1d_residual(
 
         f = default_f
 
-    d2u_dx2 = jnp.asarray(jax.vmap(jax.grad(jax.grad(net)))(x))
-    return d2u_dx2 - f(x)
+    d2u_dx2: jax.Array = jnp.asarray(jax.vmap(jax.grad(jax.grad(net)))(x))
+    final_res: jax.Array = d2u_dx2 - f(x)
+    return final_res
 
 
 def poisson_nd_residual(
@@ -101,10 +105,12 @@ def poisson_nd_residual(
         f = default_f
 
     def laplacian(z: jax.Array) -> jax.Array:
-        return jnp.trace(jax.hessian(net)(z))
+        lap_val: jax.Array = jnp.trace(jax.hessian(net)(z))
+        return lap_val
 
-    res = jax.vmap(laplacian)(x)
-    return res - jax.vmap(f)(x)
+    lap_res: jax.Array = jax.vmap(laplacian)(x)
+    out: jax.Array = lap_res - jax.vmap(f)(x)
+    return out
 
 
 def pinn_loss(
