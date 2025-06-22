@@ -56,4 +56,6 @@ pytest -q                     # 30 s smoke‑tests
 iteration calls `kfac_update` to apply a diagonal K‑FAC natural
 gradient step. See
 [`kfac_pinn_example.ipynb`](notebooks/kfac_pinn_example.ipynb) for a
-minimal demonstration.
+minimal demonstration. A shorter
+[`kfac_pinn_quickstart.ipynb`](notebooks/kfac_pinn_quickstart.ipynb)
+shows the basic training loop on a 1D Poisson problem.
