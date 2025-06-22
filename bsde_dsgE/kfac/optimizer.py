@@ -54,7 +54,7 @@ def _init_state(params: Any) -> Any:
     return jax.tree_util.tree_map(lambda p: jnp.zeros_like(p), params)
 
 
-@eqx.filter_jit  # type: ignore[misc]
+@eqx.filter_jit
 def kfac_update(
     params: Any,
     grads: Any,

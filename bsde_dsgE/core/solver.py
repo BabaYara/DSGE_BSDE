@@ -14,7 +14,7 @@ import jax.numpy as jnp
 __all__ = ["BSDEProblem", "Solver"]
 
 
-class BSDEProblem(eqx.Module):  # type: ignore[misc]
+class BSDEProblem(eqx.Module):
     drift: Callable[[jax.Array], jax.Array]
     diff: Callable[[jax.Array], jax.Array]
     generator: Callable[[jax.Array, jax.Array, jax.Array], jax.Array]
@@ -29,7 +29,7 @@ class BSDEProblem(eqx.Module):  # type: ignore[misc]
         return x + mu * dt + self.diff(x) * dW
 
 
-class Solver(eqx.Module):  # type: ignore[misc]
+class Solver(eqx.Module):
     net: Callable[[jax.Array, jax.Array], tuple[jax.Array, jax.Array]]
     problem: BSDEProblem
     dt: float

@@ -9,7 +9,7 @@ import jax
 import jax.numpy as jnp
 
 
-class ResNet(eqx.Module):  # type: ignore[misc]
+class ResNet(eqx.Module):
     """Simple residual-style network returning ``(y, z)``."""
 
     mlp: eqx.nn.MLP
