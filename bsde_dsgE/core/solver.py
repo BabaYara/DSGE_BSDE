@@ -4,11 +4,12 @@ Core BSDE solver (tamed Euler + full YZ control‑variate)
 """
 
 from __future__ import annotations
+
 from typing import Callable
 
+import equinox as eqx
 import jax
 import jax.numpy as jnp
-import equinox as eqx
 
 __all__ = ["BSDEProblem", "Solver"]
 
@@ -21,7 +22,7 @@ class BSDEProblem(eqx.Module):
     t0: float
     t1: float
 
-    def step(self, x: jax.Array, dt: float, dW: jax.Array) -> jax.Array:
+    def step(self, x: jax.Array, t: float, dt: float, dW: jax.Array) -> jax.Array:
         """One Euler step of the forward SDE (tamed)."""
         mu = self.drift(x)
         mu = mu / (1 + dt * jnp.abs(mu))
@@ -39,18 +40,21 @@ class Solver(eqx.Module):
         dW = jax.random.normal(key, (x0.shape[0], N)) * jnp.sqrt(self.dt)
 
         def scan_fn(
-            carry: tuple[jax.Array, jax.Array], dwi: jax.Array
-        ) -> tuple[tuple[jax.Array, jax.Array], jax.Array]:
-            x, y_lin = carry
-            t = self.problem.t0
+            carry: tuple[float, jax.Array, jax.Array],
+            dwi: jax.Array,
+        ) -> tuple[tuple[float, jax.Array, jax.Array], jax.Array]:
+            t, x, y_lin = carry
             y, z = self.net(jnp.full_like(x, t), x)
             y_cv = y - y_lin
-            x1 = self.problem.step(x, self.dt, dwi)
-            y1 = y - self.problem.generator(x, y, z) * self.dt + z * dwi
+            x1 = self.problem.step(x, t, self.dt, dwi)
             y_lin1 = y_lin - self.problem.terminal(x) * self.dt
-            return (x1, y_lin1), y_cv
+            t1 = t + self.dt
+            return (t1, x1, y_lin1), y_cv
 
-        (_, yT_lin), y_cvs = jax.lax.scan(scan_fn, (x0, jnp.ones_like(x0)), dW.T)
-        loss = jnp.mean(y_cvs ** 2 + 0.01 * yT_lin ** 2)
+        (_, _, yT_lin), y_cvs = jax.lax.scan(
+            scan_fn,
+            (self.problem.t0, x0, jnp.ones_like(x0)),
+            dW.T,
+        )
+        loss = jnp.mean(y_cvs**2 + 0.01 * yT_lin**2)
         return loss
-
