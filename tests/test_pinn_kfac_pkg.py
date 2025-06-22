@@ -2,7 +2,7 @@ import jax
 import jax.numpy as jnp
 import equinox as eqx
 
-from kfac_pinn import PINNSolver
+from bsde_dsgE.kfac import KFACPINNSolver as PINNSolver
 
 
 def dummy_loss(net: eqx.Module, x: jnp.ndarray) -> jnp.ndarray:
