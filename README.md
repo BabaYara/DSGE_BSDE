@@ -57,13 +57,18 @@ imported as ``bsde_dsgE``.
 
 `KFACPINNSolver` wraps a network and loss in a tiny training loop. Each
 iteration calls `kfac_update` to apply a diagonal K‑FAC natural
-gradient step. See
-[`kfac_pinn_example.ipynb`](notebooks/kfac_pinn_example.ipynb) for a
-minimal demonstration. A shorter
-[`kfac_pinn_quickstart.ipynb`](notebooks/kfac_pinn_quickstart.ipynb)
-shows the basic training loop on a 1D Poisson problem.
-[`kfac_toy_example.ipynb`](notebooks/kfac_toy_example.ipynb) is an even
-smaller demonstration: open the notebook and execute the cells to see
-`KFACPINNSolver` minimise a trivial quadratic loss.
-[`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
-illustrates the unified `bsde_dsgE.kfac` module introduced in this release.
+gradient step. The notebooks in the [`notebooks`](notebooks/) directory
+provide step‑by‑step guides:
+
+* [`kfac_demo.ipynb`](notebooks/kfac_demo.ipynb) – minimal usage
+* [`kfac_toy_example.ipynb`](notebooks/kfac_toy_example.ipynb) – quadratic toy
+  problem
+* [`kfac_pinn_quickstart.ipynb`](notebooks/kfac_pinn_quickstart.ipynb) – Poisson
+  example
+* [`kfac_pinn_pkg_quickstart.ipynb`](notebooks/kfac_pinn_pkg_quickstart.ipynb)
+  – using the stand‑alone package
+* [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
+  – integrated module
+
+See the generated documentation in [`docs/`](docs/) for a rendered version of
+these tutorials.
