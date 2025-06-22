@@ -1,7 +1,6 @@
 # KFAC PINN Documentation
 
-This site collects minimal documentation for the `bsde_dsgE.kfac` utilities.
-The tutorial notebooks are rendered directly via ``nbsphinx``.
+This site collects minimal documentation for the `bsde_dsgE.kfac` utilities. The tutorial notebooks are rendered directly via ``nbsphinx``.
 
 .. toctree::
    :maxdepth: 1
@@ -12,5 +11,6 @@ The tutorial notebooks are rendered directly via ``nbsphinx``.
    ../notebooks/kfac_pinn_pkg_quickstart.ipynb
    ../notebooks/kfac_pinn_dirichlet_neumann.ipynb
 
-These notebooks walk through defining a network, setting up
-``KFACPINNSolver`` and running the optimisation loop.
+These notebooks walk through defining a network, setting up ``KFACPINNSolver`` and running the optimisation loop.
+
+The repository includes a small CSV dataset `data/dividend_draws.csv` tracked with `dvc`. Run ``dvc pull`` after cloning to fetch the file.
