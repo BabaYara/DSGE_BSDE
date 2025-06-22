@@ -12,4 +12,6 @@ jobs:
     - run: ruff check .
     - run: mypy bsde_dsgE
     - run: pytest -q
+      env:
+        NOTEBOOK_FAST: '1'
     - run: sphinx-build -n -b html docs docs/_build/html

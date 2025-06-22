@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 
 import jax
@@ -40,6 +41,8 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     gammas = [float(g) for g in args.gammas.split(",")]
+    if os.environ.get("NOTEBOOK_FAST"):
+        gammas = gammas[:1]
     out = {}
 
     for gamma in gammas:

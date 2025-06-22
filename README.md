@@ -101,6 +101,10 @@ examples:
 * `pinn-demo` – command-line Poisson PINN demo
 * `pinn-poisson2d` – 2-D Poisson PINN demo
 
+Set the environment variable ``NOTEBOOK_FAST=1`` to run these examples with
+smaller grids and fewer training steps. Continuous integration uses this
+flag to keep runtimes short.
+
 ```bash
 $ pinn-poisson2d
 final loss ...
