@@ -20,7 +20,6 @@ docs = [
   "jupyter",
 ]
 dev  = ["pytest", "ruff", "black", "mypy", "pre-commit", "jupyterlab"]
-examples = ["dvc"]
 
 [project.scripts]
 pinn-demo = "bsde_dsgE.cli:pinn_demo"
