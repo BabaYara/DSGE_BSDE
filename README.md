@@ -82,6 +82,7 @@ examples:
   example
 * [`kfac_pinn_pkg_quickstart.ipynb`](notebooks/kfac_pinn_pkg_quickstart.ipynb)
   – using the `bsde_dsgE.kfac` package
+* [`kfac_pinn_dirichlet_neumann.ipynb`](notebooks/kfac_pinn_dirichlet_neumann.ipynb) – mixed Dirichlet/Neumann Poisson example
 * [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
   – integrated module
 * [`grid_search.py`](examples/grid_search.py) – sweep risk aversion values
