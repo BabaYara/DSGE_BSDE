@@ -77,7 +77,7 @@ class KFACPINNSolver(eqx.Module):
         params, static = eqx.partition(self.net, eqx.is_array)
         fisher_state = _init_state(params)
 
-        @jax.jit
+        @eqx.filter_jit
         def step(
             params: Any,
             fisher_state: Any,
