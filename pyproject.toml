@@ -29,13 +29,3 @@ pinn-poisson2d = "bsde_dsgE.cli:pinn_poisson2d"
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]
 
-[tool.ruff]
-src = ["bsde_dsgE"]
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "B"]
-
-[tool.mypy]
-python_version = "3.11"
-strict = true
-files = "bsde_dsgE"
