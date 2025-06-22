@@ -44,6 +44,8 @@ Our aim: **from zero to publishable replication** in a weekend.
 * [Equinox](https://github.com/patrick-kidger/equinox)
 * [Optax](https://github.com/deepmind/optax)
 * [SciPy](https://scipy.org)
+* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) – required for the
+  tutorial notebooks
 
 ```bash
 # ⬇️ user install
@@ -60,6 +62,9 @@ pytest -q                     # 30 s smoke-tests
 
 The distribution on PyPI is named ``bsde-dsge`` while the Python package is
 imported as ``bsde_dsgE``.
+
+JupyterLab comes with the ``[dev]`` extras so that the tutorial notebooks run
+out of the box.
 
 ## 3\tKFAC for PINNs
 
