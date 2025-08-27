@@ -77,6 +77,59 @@ python scripts/generate_dividend_draws.py
 
 which writes the CSV to ``data/dividend_draws.csv``.
 
+For the multicountry Table 1 replication, create/edit ``data/probab01_table1.json`` with
+the calibration and target moments transcribed from ``Probab_01.pdf``. Then run:
+
+```bash
+python scripts/check_table1.py --calib data/probab01_table1.json --steps 100 --paths 32
+```
+
+or open the VS Code notebook ``notebooks/multicountry_probab01.ipynb`` and execute the
+cells to see figures and the comparison output.
+
+For a direct Table 1 symmetric-state display using the deep solver idea from Try.md, open
+``notebooks/multicountry_probab01_solver.ipynb``. To compare the solver’s predictions to
+transcribed values via CLI, run:
+
+```bash
+python scripts/compare_table1_solver.py --calib data/probab01_table1.json
+```
+
+See `docs/training_guide.md` for training the solver to improve matches.
+
+Extracting Table 1 from LaTeX
+
+- The repository includes `Tex/Model.tex` with the “Symmetric State” table. You can extract the numeric values directly via:
+
+```bash
+python - << 'PY'
+from bsde_dsgE.utils.tex_extract import extract_symmetric_states
+print(extract_symmetric_states('Tex/Model.tex')[:1])
+PY
+```
+
+The extracted values match `data/probab01_table1.json` under `table1_values.symmetric_states` and are used by `scripts/compare_table1_solver.py`.
+
+Replication checklist
+
+- See `docs/replication_checklist.md` for a concise, actionable list of gating steps (env checks, notebook outputs, CLI checks, and tests). The strict Table 1 gate is controlled by `STRICT_TABLE1=1`.
+
+CI strict mode
+
+- The workflow (`ci/lint_test.yml`) defines an optional `table1-check` job that runs only when the environment variable `STRICT_TABLE1` is set to `1` in the GitHub Actions environment (e.g., repository or organization “Actions variables”). Enable it after you confirm a stable tolerance locally to avoid transient CI failures.
+
+### 2.3	Makefile shortcuts
+
+For convenience, common actions are available via `Makefile` targets:
+
+- `make setup` — install package with dev/docs extras
+- `make test` — run tests with `NOTEBOOK_FAST=1`
+- `make run-notebooks` — execute core notebooks headlessly (FAST mode)
+- `make table1-check` — simulate and compare to Table 1 targets
+- `make strict-table1` — same as above, but enforces STRICT_TABLE1 gating
+
+Note: install an appropriate JAX wheel for your platform (CPU/GPU) before running tests or notebooks.
+
 ## 3\tKFAC for PINNs
 
 `KFACPINNSolver` wraps a network and loss in a tiny training loop. Each
@@ -97,6 +150,8 @@ examples:
 * [`pinn_kfac_quickstart_pkg.ipynb`](notebooks/pinn_kfac_quickstart_pkg.ipynb)
   – integrated module
 * [`grid_search.py`](examples/grid_search.py) – sweep risk aversion values
+* [`primitives_visuals.ipynb`](notebooks/primitives_visuals.ipynb) – visuals/animations for primitives
+* [`multicountry_probab01.ipynb`](notebooks/multicountry_probab01.ipynb) – multicountry model wiring (Table 1 template)
 * `pinn-demo` – command-line Poisson PINN demo
 * `pinn-poisson2d` – 2-D Poisson PINN demo
 

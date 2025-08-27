@@ -21,3 +21,10 @@ def test_sobol_brownian_stats():
 def test_sobol_brownian_batch_must_be_even():
     with pytest.raises(ValueError, match="batch must be even"):
         sobol_brownian(dim=1, steps=2, batch=3, dt=0.1)
+
+
+def test_sobol_brownian_dt_sequence():
+    steps = 5
+    dt_seq = [0.1] * steps
+    out = sobol_brownian(dim=2, steps=steps, batch=8, dt=dt_seq)
+    assert out.shape == (8, steps, 2)
