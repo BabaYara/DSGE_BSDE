@@ -11,16 +11,13 @@
     "delta": 0.05,
     "sigma": 0.023,
     "psi": 5,
-    "rho": 0.03
+    "rho": 0.03,
+    "country_names": ["US", "UK", "DE", "FR", "JP"]
   },
+  "country_names_J": ["US", "UK", "DE", "FR", "JP"],
+  "country_names_dim": ["Home", "Foreign"],
   "table1_targets": {
-    "NOTE": "Replace with actual Table 1 targets from Probab_01.pdf once available.",
-    "examples": {
-      "mean_state": [1.0, 1.0],
-      "std_state": [0.2, 0.2],
-      "cov": [[0.04, 0.01], [0.01, 0.04]],
-      "corr": [[1.0, 0.25], [0.25, 1.0]]
-    }
+    "NOTE": "Targets for Table 1 are the symmetric-state q and sigma_q blocks below (from the paper). Path-moment targets are not used; CLI prints computed stats when absent."
   },
   "Sigma": [[0.3, 0.0], [0.0, 0.3]],
   "table1_values": {

@@ -24,6 +24,14 @@ Key references (to fill with DOIs/links)
 - Quasi‑Monte Carlo for diffusion simulation: Sobol sequences, Owen scrambling, Brownian bridges; variance reduction in path‑dependent options.
 - SIREN networks and spectral bias mitigation for smooth signal approximation; relevance for q(Ω) and σ_q(Ω) mappings.
 
+Planned citations (to fill):
+
+- Han, Jentzen, E. (2018) — Deep learning-based numerical methods for high-dimensional BSDEs.
+- Beck et al. — Solving PDEs with deep BSDE methods; error analysis and convergence.
+- Ma, Yong — Forward-backward SDE methods (four-step scheme); link to semilinear PDEs.
+- Owen — Scrambled net variance bounds; practical implications for Sobol in SDEs.
+- Sitzmann et al. (SIREN) — Sinusoidal representation networks and initialization.
+
 Implementation notes (to summarise when sources are linked)
 
 - Symmetric‑state analytic: q = (a·ψ + 1)/(ρ·ψ + 1) enables quick sanity checks for `q` at ζ = 1/J (cf. research_notes.md).
@@ -31,6 +39,18 @@ Implementation notes (to summarise when sources are linked)
 - Fast/slow paths: use NOTEBOOK_FAST for figures; full checks require larger paths/steps for stable moment estimates.
 - Rolling correlations: windowed correlation heatmaps surface time‑varying co‑movement across countries; use as a diagnostic when matching covariance blocks.
 - Error bars: mean ± 2SE plots track sample uncertainty by dimension; treat as descriptive diagnostics (serial correlation ignored).
+ - QQ plots: check increment distributional assumptions (Normal(0, dt)); large deviations indicate bugs in Brownian generation or scaling.
+- Lagged autocorrelation: near-zero acf at lag 1 for increments; deviations point to stateful RNG misuse or missing key-splitting.
+
+Context7 notes (docs consulted)
+
+- Equinox (ID: /patrick-kidger/equinox): filter_jit and filter_value_and_grad patterns for JIT‑compiled losses and parameter filtering; MLP usage and partition/combine idioms. Our nets/solvers use these in training/eval helpers.
+- JAX (ID: /jax-ml/jax): PRNG best practices — always split keys; vectorise random draws; no sequential equivalence; avoid key reuse; batch keys with `random.split` and `vmap`. Diagnostics (QQ/ACF) included to surface RNG misuse.
+
+Visual standards (Aug 2025)
+
+- Matplotlib (ID: /matplotlib/matplotlib): use accessible color cycles (petroff10/8/6) via `plt.style.use`, set major/minor grid rcParams distinctly, and prefer `animation.html='jshtml'` for inline animations with ARIA‑labeled controls. Our notebooks call `apply_notebook_style()` to configure these.
+- Accessibility: color‑blind safe palettes and clear contrast; avoid strobing animations and keep autoplay off; ensure readable fonts and adequate figure DPI.
 
 Action Items
 

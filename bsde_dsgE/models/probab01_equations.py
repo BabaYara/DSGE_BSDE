@@ -5,9 +5,12 @@ This module exposes a `Config` and `compute_dynamics` utility that mirror the
 implementation idea in Try.md. These functions are imported by the training
 script and can be unit-tested for shape consistency.
 
-Note: Equation numbers and exact functional forms should be transcribed from
-Probab_01.pdf and cross-referenced here (TODO). The current code reflects the
-sketch in Try.md and is meant as a structurally faithful placeholder.
+Equations map to Tex/Model.tex:
+- Eq. (19): symmetric-state price q = (a·ψ+1)/(ρ·ψ+1) (see q_symmetric_analytic).
+- Eq. (20): BSDE driver h and Z = q · σ^q.
+- Eq. (21): η drift/vol with Ito correction ((1/η)−1)^2·η·∑(σ^{qK})².
+- Eq. (22): ζ drift/vol with cross-vol term −∑_l σ^H_l(σ^{qK}_{i,l}−σ^H_l).
+These forms are aligned with Try.md and Model.tex.
 """
 
 from __future__ import annotations

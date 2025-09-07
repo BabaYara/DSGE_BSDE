@@ -160,3 +160,68 @@ __all__ = [
     "SimResult",
 ]
 
+
+def qq_points(samples: np.ndarray, *, dist: str = "normal") -> Tuple[np.ndarray, np.ndarray]:
+    """Return QQ-plot points (theoretical vs empirical) for 1D samples.
+
+    Parameters
+    - samples: 1D array-like of draws
+    - dist: reference distribution name (currently supports "normal")
+
+    Returns
+    - (q_theory, q_emp): sorted theoretical and empirical quantiles
+
+    Notes
+    - Implemented with NumPy only to keep tests light; callers can plot using
+      matplotlib in notebooks.
+    """
+    x = np.asarray(samples).ravel()
+    n = x.size
+    if n == 0:
+        return np.empty((0,)), np.empty((0,))
+    probs = (np.arange(1, n + 1) - 0.5) / n
+    x_sorted = np.sort(x)
+    if dist == "normal":
+        # Approximate inverse CDF via scipy is not available; use numpy.polyfit
+        # on standard normal quantiles by approximating with erfinv relation.
+        # q = sqrt(2) * erfinv(2p-1). Implement a simple erfinv approximation.
+        # Fallback: use a clipped linearisation around tails.
+        p = np.clip(probs, 1e-6, 1 - 1e-6)
+        # Winitzki approximation of erfinv
+        a = 0.147  # constant in approximation
+        s = 2 * p - 1
+        ln = np.log(1 - s * s)
+        term = (2 / (np.pi * a) + ln / 2.0)
+        q = np.sign(s) * np.sqrt(np.sqrt(term * term - ln / a) - term)
+        q_theory = np.sqrt(2.0) * q
+    else:
+        raise ValueError(f"unsupported dist: {dist}")
+    return q_theory, x_sorted
+
+
+def lag_autocorr(xs: np.ndarray, lag: int = 1) -> np.ndarray:
+    """Compute per-dimension lag-`lag` autocorrelation across time.
+
+    Parameters
+    - xs: array shaped (T, P, D) of states or increments
+    - lag: positive integer lag
+
+    Returns
+    - ac: array shaped (D,) with autocorrelations at the given lag
+    """
+    arr = np.asarray(xs)
+    assert arr.ndim == 3, "xs must be (T,P,D)"
+    T, P, D = arr.shape
+    assert 1 <= lag < T, "invalid lag"
+    x0 = arr[:-lag].reshape(-1, D)
+    x1 = arr[lag:].reshape(-1, D)
+    x0c = x0 - x0.mean(axis=0)
+    x1c = x1 - x1.mean(axis=0)
+    num = (x0c * x1c).mean(axis=0)
+    den = x0c.std(axis=0, ddof=1) * x1c.std(axis=0, ddof=1)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ac = np.where(den > 0, num / den, 0.0)
+    return ac
+
+
+__all__ += ["qq_points", "lag_autocorr"]

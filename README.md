@@ -328,3 +328,8 @@ If you plan to publish results based on this repository, we encourage you to cre
 ## 17\tExtended support
 
 We maintain a small set of community resources beyond the documentation. The `docs/faq.md` file answers frequent questions about JAX installation, while the issue tracker is monitored for bug reports and feature requests. If you encounter difficulties adapting the code to a custom PDE or integrating with other libraries, please open an issue with a minimal reproducer. We cannot promise immediate replies, but we do our best to point you in the right direction or review pull requests that fix a well-defined problem.
+Alternatively, load symmetric-state values directly from LaTeX instead of JSON:
+
+```bash
+python scripts/compare_table1_solver.py --calib data/probab01_table1.json --from-tex
+```

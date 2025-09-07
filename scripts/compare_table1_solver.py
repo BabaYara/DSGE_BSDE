@@ -21,6 +21,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--calib", type=Path, default=Path("data/probab01_table1.json"))
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--from-tex", action="store_true", help="Parse symmetric-state values from Tex/Model.tex instead of JSON")
     return p.parse_args()
 
 
@@ -31,13 +32,24 @@ def main() -> None:
     J = int(data.get("probab01_params", {}).get("J", 5))
     cfg = NetCfg(J=J)
     net = MacroFinanceNet(cfg, jax.random.PRNGKey(args.seed))
-    etas = tuple(st.get("eta", 0.5) for st in data.get("table1_values", {}).get("symmetric_states", []))
+    # Load symmetric states from JSON or TeX
+    if args.from_tex:
+        try:
+            from bsde_dsgE.utils.tex_extract import extract_symmetric_states
+            sym_states = extract_symmetric_states("Tex/Model.tex")
+        except Exception as e:
+            print({"error": f"Failed to extract from TeX: {e}"})
+            sym_states = []
+    else:
+        sym_states = data.get("table1_values", {}).get("symmetric_states", [])
+
+    etas = tuple(st.get("eta", 0.5) for st in sym_states)
     if not etas:
         etas = (0.3, 0.4, 0.5, 0.6, 0.7)
     q_pred, sigma_pred, r_pred = evaluate_symmetric(cfg, net, etas)
     q_pred = np.array(q_pred)
     # Compare to target q if present
-    sym = data.get("table1_values", {}).get("symmetric_states", [])
+    sym = sym_states
     if not sym:
         print("No 'table1_values' found; print q predictions only.")
         print(q_pred)

@@ -26,6 +26,7 @@ Notebook outputs
   - Sobol vs Gaussian increments/paths; distribution animation.
   - Variance growth ~ t; antithetic pairing (ρ ≈ −1) and example path pair.
   - ResNetND feature maps over 2D grid.
+  - QQ plots of increments (Sobol vs Gaussian) and lag‑1 autocorrelation bars.
 - `notebooks/multicountry_probab01_solver.ipynb` displays Table‑1 style `(q, σ_q)` blocks at symmetric states; σ_q sign pattern ok.
 
 CLI checks

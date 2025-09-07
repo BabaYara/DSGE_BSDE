@@ -21,31 +21,30 @@ Model summary (current mapping)
   - ζ drift: b_ζ^i = ζ_i[ μ^{qK}_i − μ_H + Σ_l σ^H_l (σ^{qK}_{i,l} − σ^H_l) ], where μ^{qK}_i = −(aψ+1)/(ψ·q_i) + 1/ψ + (1/η_i)·Σ_l (σ^{qK}_{i,l})² + r and μ_H = ζ·μ^{qK}; vol: ζ_i·(σ^{qK}_i − σ^H).
 - Terminal: use paper-specific condition; current notebooks use zero as a placeholder for path-sim scaffolds.
 
-Table 1 – parameters (transcribed placeholders)
+Table 1 – parameters (transcribed)
 
 | Parameter | Symbol | Value | Units | Source (pdf page/eq) | Notes |
 |-----------|--------|-------|-------|-----------------------|-------|
-| Countries | dim    |       |       |                       |       |
-| Discount  | ρ      |       |       |                       |       |
-| Risk av.  | γ      |       |       |                       |       |
-| Mean-rev. | κ      |       |       |                       |       |
-| Long-run  | θ      |       |       |                       |       |
-| Volatility| σ or Σ |       |       |                       | diag vs full |
+| Countries | J      | 5     |       | Table 1 (Symmetric)   | used by MacroFinanceNet |
+| a, ψ, ρ   | a, ψ, ρ| 0.1, 5, 0.03 | | Eq. (19)              | q analytic sanity check |
+| δ, σ      | δ, σ   | 0.05, 0.023 | | Eqs. (20)–(22)       | drift/driver coefficients |
 
-Table 1 – targets (transcribed placeholders)
+See `data/probab01_table1.json:probab01_params`.
 
-| Statistic        | Symbol | Dimension | Value(s)                    | Tolerance | Source |
-|------------------|--------|-----------|-----------------------------|-----------|--------|
-| Mean of states   | E[X]   | D         | [v1, v2, …]                | 1e-2      |        |
-| Std of states    | SD[X]  | D         | [s1, s2, …]                | 1e-2      |        |
-| Covariance       | Cov    | D×D       | [[..], …]                  | 5e-2      |        |
-| Correlations     | Corr   | D×D       | [[..], …]                  | 5e-2      |        |
-| Other moments…   | …      | …         | …                           | …         | …      |
+Table 1 – targets (symmetric states)
+
+| Block            | Symbol     | Dimension | Value(s)                               | Source |
+|------------------|------------|-----------|----------------------------------------|--------|
+| Asset prices     | q_i        | 5         | See `table1_values.symmetric_states`   | Table 1 |
+| Price volatility | σ^{q}_{i,j}| 5×5       | See `table1_values.symmetric_states`   | Table 1 |
+
+Note: path‑moment targets (mean/std/cov/corr) are not used for Table 1; CLI prints simulated stats when present but are optional.
 
 JSON calibration mapping
 
 - After filling the tables above, create/edit `data/probab01_table1.json` with keys:
   - `dim`, `rho`, `gamma`, `kappa`, `theta`, and either `sigma` (scalar or list) or full `Sigma` matrix.
+  - Optional names: `country_names_dim` (length=`dim`) for dim‑level plots; `country_names_J` (length=J) for Table‑1 (σ_q) heatmaps and symmetric‑state displays.
   - `table1_targets` with a nested `examples` dict, e.g.:
 
 ```json
@@ -56,14 +55,7 @@ JSON calibration mapping
   "kappa": 0.2,
   "theta": 1.0,
   "sigma": [0.3, 0.25],
-  "table1_targets": {
-    "examples": {
-      "mean_state": [1.0, 1.0],
-      "std_state": [0.2, 0.2],
-      "cov": [[0.04, 0.01],[0.01,0.04]],
-      "corr": [[1.0, 0.25],[0.25,1.0]]
-    }
-  }
+  "table1_values": {"symmetric_states": [ {"eta": 0.3, "zeta": 0.2, "q": [...], "sigma_q": [[...],...]} , ... ]}
 }
 ```
 

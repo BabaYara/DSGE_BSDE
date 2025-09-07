@@ -99,8 +99,9 @@ What’s new
 - Tests expanded: added script smoke test for `scripts/check_table1.py` (skips if JAX missing), reinforced sign‑pattern checks against transcribed Table 1 blocks. Added notebook content tag tests to ensure required figures/sections (Mean±2SE, rolling correlations, antithetic pairing, feature maps) remain present.
 - Tests expanded: added script smoke test for `scripts/check_table1.py` (skips if JAX missing), reinforced sign‑pattern checks against transcribed Table 1 blocks. Added notebook content tag tests to ensure required figures/sections (Mean±2SE, rolling correlations, antithetic pairing, feature maps) remain present. Added utils tests for rolling correlations, mean±2SE, path simulation, and impulse responses.
 - Rubric hardened: explicit “Table 1 gating” with `STRICT_TABLE1=1` and `TABLE1_Q_TOL`; notebook cells print seeds, device, and calibration in the first section. Replication checklist codified in docs/replication_checklist.md and referenced from README.
-  - CLI gating extended: `scripts/compare_table1_solver.py` now honors `STRICT_TABLE1=1` with `TABLE1_Q_TOL` to bound symmetric‑state q errors.
+ - CLI gating extended: `scripts/compare_table1_solver.py` now honors `STRICT_TABLE1=1` with `TABLE1_Q_TOL` to bound symmetric‑state q errors.
   - Moments CLI improved: `scripts/check_table1.py` prints seed/device/FAST config, adapts defaults under `NOTEBOOK_FAST`, and supports `--sobol` QMC with antithetic pairing.
+  - Added `--from-tex` to `scripts/compare_table1_solver.py` to compare predicted q against values parsed directly from `Tex/Model.tex` (Symmetric State table) without relying on JSON.
 
 Library additions
 
@@ -121,6 +122,37 @@ Notes on this pass
 - Environment in this harness lacks JAX/Jupyter/pytest; tests and notebook execution are validated via tags and metadata. Full runs are expected locally with proper deps per README and scripts/env_check.py.
 - Table 1 numeric matching remains gated until final targets are confirmed; CLI and notebooks print comparison summaries. The MacroFinanceNet enforces σ_q sign pattern by construction; strict numeric checks should be enabled post‑training.
 
+---
+
+Iteration 3 (current)
+
+What’s new
+
+- Primitives: added QQ plots of increments (Sobol vs Gaussian) and a lag‑1 autocorrelation check; antithetic pairing retained with clearer captions. See `bsde_dsgE/utils/figures.py::qq_points` and `::lag_autocorr`.
+- Multicountry notebook: explicit “Equations (19)–(22) linkage” note connecting `Tex/Model.tex` to `bsde_dsgE/models/probab01_equations.py`; referenced `scripts/compare_table1_solver.py --from-tex` for direct LaTeX comparison.
+- Online research notes expanded with planned citations and diagnostic tips (QQ/ACF) for RNG correctness.
+
+Tests
+
+- Added `tests/test_utils_figures_extra.py` covering `qq_points` shape/monotonicity and `lag_autocorr` behaviour on white noise.
+- Notebook content gates include sections for Mean ± 2SE, rolling correlations, antithetic pairing, feature maps, QQ plot, and lagged autocorrelation.
+- CLI smoke for `scripts/compare_table1_solver.py` added; tolerance gate via `STRICT_TABLE1=1` + `TABLE1_Q_TOL` retained.
+
+Rubric/gating
+
+- Replication checklist updated to include QQ and lag‑1 autocorr diagnostics under primitives. Strict Table 1 gating unchanged (enable via `STRICT_TABLE1=1`).
+
+Context7 doc lookups
+
+- Equinox: reaffirmed use of `eqx.filter_jit`/`filter_value_and_grad` patterns for JIT‑compiled training/eval (docs: /patrick-kidger/equinox). Our nets/solvers follow these idioms.
+- JAX randomness: reinforced best practices (never reuse keys; split for batches; no sequential equivalence; prefer vectorised draws) drawn from JAX docs (/jax-ml/jax). Incorporated into notes and RNG‑related utilities.
+
+Next steps
+
+- Fill paper‑specific terminal condition, quantify its impact on Table 1 matching.
+- Finalize Table 1 targets (replace placeholders) and enable strict tolerances in CI.
+- Train MacroFinanceNet end‑to‑end and validate against `table1_values` and moment targets.
+
 
 Run instructions (local)
 
@@ -133,3 +165,27 @@ Next steps
 - Fill paper‐specific terminal condition and quantify its impact on Table 1 matching.
 - Transcribe final Table 1 targets (replace placeholders) and enable strict tolerances in CI.
 - Train `MacroFinanceNet` (Try.md) end‑to‑end and validate against `table1_values` and moment targets.
+
+---
+
+Iteration 3 (current)
+
+What’s new
+
+- Primitives notebook enriched: added QQ plots of increments (Sobol vs Gaussian) and a lag‑1 autocorrelation check; both surface RNG/distribution issues quickly. Antithetic pairing and variance‑growth sections retained with clearer captions.
+- Figures utils extended: added `qq_points(samples)` and `lag_autocorr(xs, lag)` in `bsde_dsgE/utils/figures.py` to support the new visuals without heavy deps.
+- Multicountry notebook clarified: explicit “Equations (19)–(22) linkage” note tying code to `Tex/Model.tex` and `probab01_equations.py` and pointing to the `--from-tex` CLI.
+- Online research notes expanded: added planned citations list and diagnostic tips (QQ/ACF) for RNG correctness.
+
+Tests
+
+- Added `tests/test_utils_figures_extra.py` covering `qq_points` shape/monotonicity and `lag_autocorr` behaviour on white noise.
+- Notebook content remains gated by tags/strings: sections for Mean ± 2SE, rolling correlations, antithetic pairing, feature maps, QQ plot, and lagged autocorrelation now present.
+
+Rubric/gating
+
+- Replication checklist updated to include QQ and lag‑1 autocorr diagnostics under primitives. Strict Table 1 gating unchanged (enable via `STRICT_TABLE1=1`).
+
+Notes
+
+- Environment here cannot execute notebooks/tests; local runs via `make run-notebooks` and `pytest -q` remain the verification path. Equinox/JAX docs consulted via MCP Context7 for `eqx.filter_jit` and JAX randomness best‑practices (key splitting, lack of sequential equivalence).

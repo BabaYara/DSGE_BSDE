@@ -28,4 +28,5 @@ def test_primitives_notebook_has_key_demos():
     # Antithetic pairing demo and feature maps should be present
     assert _has_text(nb, "Antithetic"), "antithetic pairing demo missing"
     assert _has_text(nb, "Feature Maps"), "ResNetND feature maps section missing"
-
+    assert _has_text(nb, "QQ Plot"), "QQ plot section missing"
+    assert _has_text(nb, "Autocorrelation"), "lagged autocorrelation section missing"
