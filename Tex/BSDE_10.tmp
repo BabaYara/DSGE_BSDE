@@ -13,8 +13,6 @@
 \pgfplotsset{compat=1.18}
 
 % Formatting
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage{microtype}
 % Allow a bit more stretch to avoid overfull boxes
 \emergencystretch=2em
@@ -24,14 +22,11 @@
 \usepackage{tabularx}
 \usepackage{siunitx}
 
-% Colors (load explicitly to ensure \definecolor is available on all setups)
-\usepackage{xcolor}
-
 % Code
 \usepackage{listings}
 
 % Acronyms: lightweight fallback to avoid package complexity
-\newcommand{\ac}[1]{{\mdseries\textsc{#1}}}
+\newcommand{\ac}[1]{\textsc{#1}}
 \newcommand{\printacronyms}{}
 \providecommand{\acswitchoff}{}
 
@@ -71,22 +66,8 @@ title=\sffamily\bfseries Connections to the Literature,
 \newtcbtheorem[number within=section]{corollary}{Corollary}{mathstyle}{cor}
 
 % Hyperref then Cleveref (order required)
-% Note: disable PDF bookmarks to avoid stale .out parsing errors across runs
-\usepackage[colorlinks=true,linkcolor=darkblue,citecolor=darkgreen,urlcolor=darkred,bookmarks=false]{hyperref}
+\usepackage[colorlinks=true,linkcolor=darkblue,citecolor=darkgreen,urlcolor=darkred]{hyperref}
 \usepackage[nameinlink,capitalise,noabbrev]{cleveref}
-% Cleveref names for tcolorbox theorems
-\crefname{tcb@cnt@assumption}{Assumption}{Assumptions}
-\Crefname{tcb@cnt@assumption}{Assumption}{Assumptions}
-\crefname{tcb@cnt@definition}{Definition}{Definitions}
-\Crefname{tcb@cnt@definition}{Definition}{Definitions}
-\crefname{tcb@cnt@lemma}{Lemma}{Lemmas}
-\Crefname{tcb@cnt@lemma}{Lemma}{Lemmas}
-\crefname{tcb@cnt@proposition}{Proposition}{Propositions}
-\Crefname{tcb@cnt@proposition}{Proposition}{Propositions}
-\crefname{tcb@cnt@theorem}{Theorem}{Theorems}
-\Crefname{tcb@cnt@theorem}{Theorem}{Theorems}
-\crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
-\Crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
 
 % Convenience macros
 \DeclareMathOperator{\E}{\mathbb{E}}
@@ -152,6 +133,7 @@ $$
 
 \end{itemize}
 
+% \end{tcolorbox} % removed: tcolorbox already closed above
 
 \textbf{Isoelastic simplification.} For $P(Y)=Y^{-\eta}$, we have
 \[
@@ -186,7 +168,7 @@ and therefore
 %========================
 \section{Notation and Acronyms}
 
-\begin{table}[ht]
+\begin{table}[!ht]
 \centering
 \small
 \begin{tabular}{@{} l l p{0.65\textwidth}}
@@ -226,6 +208,8 @@ $b(\xi,x,m)$ & vector & Drift at $\xi$: $(i^*(\xi,x,m)-\delta\kappa)e_k+\mu_z(\z
 \end{tabular}
 \caption{Notation used throughout.}
 \end{table}
+
+% (duplicate acronym declarations removed; already defined in preamble)
 
 \medskip
 \noindent\textbf{Acronyms used in text:} \ac{HJB}, \ac{FP}, \ac{ME}, \ac{MFG}, \ac{SDF}, \ac{KKT}, \ac{KS}, \ac{RCE}, \ac{TFP}, \ac{CES}, \ac{W2}, \ac{FVM}, \ac{SL}.
@@ -386,7 +370,7 @@ Then $\mathcal{H}$ is convex in $p=V_k$. The optimizer $i^*(k,z,x,m;p)$ is singl
 \end{proposition}
 
 \begin{tcolorbox}[didacticstyle]
-\sloppy
+\textbf{Intuition vs.\ math.}
 \begin{tabularx}{\textwidth}{@{}p{0.45\textwidth}X@{}}
 \textbf{Intuition} & The firm compares marginal $V_k$ to the frictionless unit price of investment. If $V_k>1$, invest, with slope controlled by $\phi_+$; if $V_k<1$, disinvest, with slope dampened by $\phi_-$ (costlier). The kink at $V_k=1$ generates inaction bands.\\
 \textbf{Mathematics} & The Hamiltonian is a convex conjugate of $h$ (after shifting by $p-1$). KKT conditions produce a piecewise-affine policy with a change in slope at $p=1$. Global well-posedness follows from coercivity of $h$ in $i$ and measurability in $k$.
@@ -454,10 +438,10 @@ r(x),U(k,z,x,m)=\ &\max\_{i}\big{\pi(k,i,z,x,m)+U\_k(i-\delta k)+\Lz U+\Lx U\big
 +\tfrac12\sigma\_z^2,\partial\_{\zeta\zeta}^2\dmU\Big], m(\diff \xi)\\
 &\ +\underbrace{\int \delta\_m \pi(\xi;,k,z,x,m), m(\diff \xi)}\_{\text{direct price externality}}.
 \end{aligned}}
-\tag{ME}\label{eq:ME}
+\tag{ME}\label{eq\:ME}
 \end{equation}
 
-\begin{proposition}[Price-externality simplification]\label{prop:externality}
+\begin{proposition}\[Price-externality simplification]\label{prop\:externality}
 Since $\pi$ depends on $m$ only through $Y$,
 
 $$
@@ -471,375 +455,19 @@ $$
 = e^{x+z}k^\alpha\,Y(m,x)\,P'(Y(m,x)).
 $$
 
-If $P(Y)=Y^{-\eta}$, then by \eqref{eq:isoelastic} the term equals $-\eta\,P(Y)\,e^{x+z}k^\alpha$.
+If $P(Y)=Y^{-\eta}$, then by \eqref{eq\:isoelastic} the term equals $-\eta\,P(Y)\,e^{x+z}k^\alpha$.
 \end{proposition}
 
 \begin{proof}\[Sketch]
-Apply \Cref{lem:chain} with $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$. The derivative of $m\mapsto P(Y(m,x))$ is $P'(Y)\varphi(\xi)$. Multiplying by the firm-specific factor $e^{x+z}k^\alpha$ and integrating over $\xi$ gives the stated expression.
+Apply \Cref{lem\:chain} with $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$. The derivative of $m\mapsto P(Y(m,x))$ is $P'(Y)\varphi(\xi)$. Multiplying by the firm-specific factor $e^{x+z}k^\alpha$ and integrating over $\xi$ gives the stated expression.
 \end{proof}
 
-\begin{theorem}[Equivalence (sketch)]\label{thm:equivalence}
-Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity hypotheses (Lasry--Lions), stationary solutions of the coupled \ac{HJB}--\ac{FP} fixed point coincide with stationary solutions of \eqref{eq:ME} conditional on $x$.
+\begin{theorem}\[Equivalence (sketch)]\label{thm\:equivalence}
+Under \Cref{ass\:primitives,ass\:regularity} and standard monotonicity/regularity hypotheses (Lasry--Lions), stationary solutions of the coupled \ac{HJB}--\ac{FP} fixed point coincide with stationary solutions of \eqref{eq\:ME} conditional on $x$.
 \end{theorem}
 
-\begin{tcolorbox}[literaturestyle]
-\textbf{Equivalence and uniqueness.} The Lasry--Lions monotonicity condition (here satisfied by the strictly decreasing inverse demand) ensures uniqueness of the mean-field equilibrium and therefore identification between $(V,m)$ solving \ac{HJB}--\ac{FP} and $U$ solving \ac{ME}. See Lasry \& Lions (2007) for the PDE case and Cardaliaguet--Delarue--Lasry--Lions (2019) for master equations and convergence of finite-$N$ games.
+\begin{tcolorbox}\[literaturestyle]
+\textbf{Equivalence and uniqueness.} The Lasry--Lions monotonicity condition (here satisfied by the strictly decreasing inverse demand) ensures uniqueness of the mean-field equilibrium and therefore identification between $(V,m)$ solving \ac{HJB}--\ac{FP} and $U$ solving \ac{ME}. See Lasry & Lions (2007) for the PDE case and Cardaliaguet--Delarue--Lasry--Lions (2019) for master equations and convergence of finite-$N$ games.
 \end{tcolorbox}
 \end{comment}
 
-\begin{tcolorbox}[didacticstyle]
-	extbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. Appendix C summarizes the additional terms that would arise if $m$ were itself driven by common noise (e.g., through $x_t$).
-\end{tcolorbox}
-
-%========================
-% Boundary & Regularity
-%========================
-\section{Boundary and Regularity Conditions}
-
-\paragraph{Boundary at $k=0$.} Reflecting: the probability flux vanishes and feasible controls satisfy $i^*\ge 0$ at the boundary. A sufficient condition enforcing no instantaneous arbitrage is $U_k(0,\cdot)\le 1$ (marginal value of installed capital no higher than the unit purchase price).
-
-\paragraph{Growth.} From the coercivity of $h$ in $i$ and the linear drift in $k$, one obtains $U(k,z,x,m)=O(k)$ as $k\to\infty$. This ensures finiteness of the HJB Hamiltonian and stabilizes numerical approximations.
-
-\paragraph{Integrability.} Admissible distributions $m$ integrate $k^\alpha$ and $1/k$ where these appear (e.g., $\E_m[k^\alpha]$ in $Y$ and $i^2/k$ in adjustment costs). In practice one imposes a numerically compact domain in $k$ with conservative outflow at the upper boundary.
-
-\begin{tcolorbox}[didacticstyle]
-\textbf{Economic translation.} Reflecting $k=0$ prevents negative capital; growth bounds rule out explosive investment; integrability ensures dividends and costs are well-defined across firms. These are the minimal conditions that keep the economics clean and the PDEs well-posed.
-\end{tcolorbox}
-
-%========================
-% Computation
-%========================
-\section{Computation: Two KS-Free Routes}
-
-\subsection{Route A: \ac{HJB}--\ac{FP} Fixed Point}\label{sec:routeA}
-
-\paragraph{Algorithm (stationary, conditional on $x$).}
-\begin{enumerate}[leftmargin=1.5em,label=\textbf{A.\arabic*}]
-\item \textbf{Outer loop over $x$.} Either fix $x$ on a grid of business-cycle states or integrate final objects against the invariant law of $x$ (solved from $\Lx^\ast$).
-\item \textbf{Initialize $m^{(0)}$.} Choose a feasible stationary guess (e.g., log-normal in $k$ with support bounded away from $0$ and invariant $z$-marginal).
-\item \textbf{HJB step.} Given $m^{(n)}$, compute $Y^{(n)}$ and $P(Y^{(n)})$. Solve \Cref{eq:HJB} for $V^{(n)}$ using \ac{SL} or policy iteration. Recover $i^{*,(n)}$ from \Cref{prop:policy}.
-\item \textbf{FP step.} Given $i^{*,(n)}$, solve stationary \Cref{eq:FP} for $m^{(n+1)}$ using a conservative \ac{FVM} with upwind flux in $k$ and standard diffusion stencil in $z$.
-\item \textbf{Update.} Set $m^{(n+1)}\leftarrow (1-\theta)m^{(n)}+\theta\,\widehat m^{(n+1)}$ with damping $\theta\in(0,1]$. Iterate until residuals (below) fall below tolerance.
-\end{enumerate}
-
-\paragraph{Discretization details.}
-\begin{itemize}[leftmargin=1.25em]
-\item \emph{Grid in $k$.} Log grid $k_j=k_{\min}\exp(j\Delta)$ improves resolution near $0$. Reflecting boundary at $k_{\min}$ enforces $i^*\!\ge 0$.
-\item \emph{Upwinding.} Flux $F_{j+1/2}=\max\{u_{j+1/2},0\}m_j+\min\{u_{j+1/2},0\}m_{j+1}$ with velocity $u=i^*-\delta k$.
-\item \emph{Diffusion in $z$.} Centered second differences with Neumann/absorbing at truncation $\pm z_{\max}$.
-\item \emph{HJB solver.} Policy iteration: guess $i$, solve linear system for $V$; update $i$ by \Cref{prop:policy}; repeat. Alternatively, \ac{SL} schemes avoid CFL limits.
-\end{itemize}
-
-\paragraph{Diagnostics.} In practice, $\log$-residuals drop nearly linearly until policy stabilizes; distributional stability is checked by mass-conservation and small Wasserstein drift between iterations.
-
-\subsection{Route B: Direct Master-PDE Collocation}\label{sec:routeB}
-
-\subsubsection*{Representation of functions of measures}
-\begin{sloppypar}
-We parameterize $U_\omega(k,z,x,\cdot)$ and $\dmU_\psi(\xi;k,z,x,\cdot)$. A convenient architecture is a DeepSets form for empirical $m=\tfrac1N\sum_{n}\delta_{\xi^n}$:
-
-$$
-\Phi_\psi(m)\approx \frac{1}{N}\sum_{n=1}^N \phi_\psi(\xi^n),\qquad
-\dmU_\psi(\xi;\,k,z,x,m)\approx g_\psi\big(\xi,\,k,z,x,\, \Phi_\psi(m)\big).
-$$
-
-Symmetry in the atoms of $m$ is built-in; universal approximation on permutation-invariant functions implies we can capture the needed dependence.
-\end{sloppypar}
-
-\paragraph{Residual construction.}
-At each collocation tuple $(k,z,x;\{\xi^n\}_{n=1}^N)$, compute
-
-$$
-\widehat Y=\frac{1}{N}\sum_{n=1}^N e^{x+\zeta^n}(\kappa^n)^\alpha,\qquad
-\text{and}\qquad
-\widehat{\mathcal{R}}_{\mathrm{ME}}\ \text{as in the loss template}.
-$$
-
-Add soft KKT penalties on $(U_\omega)_k$ relative to the kink at $1$, and boundary penalties at $k\approx 0$. Minimize the empirical mean of $\widehat{\mathcal{R}}_{\mathrm{ME}}^2$ plus penalties via stochastic gradient methods. Validate by checking the Route-A residuals at the converged $(U_\omega,\dmU_\psi)$.
-
-\begin{tcolorbox}[mathstyle]
-\textbf{On identifiability.} Because $\dmU$ appears only through $\partial_\kappa\dmU, \partial_\zeta\dmU, \partial_{\zeta\zeta}^2\dmU$, adding constants or functions orthogonal to these derivatives leaves the stationary master equation invariant. Anchoring conditions (e.g., $\int \dmU\,\diff m=0$) fix the gauge.
-\end{tcolorbox}
-
-%========================
-% % Verification & Diagnostics
-% %========================
-\section{Verification and Diagnostics}\label{sec:verification}
-
-\paragraph{Residual norms.}
-For collocation tuples $(k,z,x,m)$:
-\begin{align*}
-\mathcal{R}_{\mathrm{HJB}} &\equiv r(x)\, V - \max_{i}\{\pi + V_k\,(i-\delta k) + \Lz V + \Lx V\},\\
-\mathcal{R}_{\mathrm{FP}}  &\equiv -\partial_k\big[(i^*-\delta k),m\big] + \Lzadj m,\\
-\mathcal{R}_{\mathrm{ME}}  &\equiv r(x)\,U - \Big(\max_{i}\{\pi + U_k\,(i-\delta k) + \Lz U + \Lx U\}
-  + \int\cdots\dxi
-  + e^{x+z}k^\alpha\, Y\, P'(Y)\Big).
-\end{align*}
-  Typical norms: $L^2$ over collocation points or weighted Sobolev norms. KKT and boundary penalties are added for feasibility; in Route A, measure $\mathrm{W}_2$ drifts between iterations provide a sharp distributional diagnostic.
-
-\paragraph{Stopping rules.}
-Stop when $\|\mathcal{R}_{\mathrm{ME}}\|<\varepsilon_{\mathrm{ME}}$, $\|\mathcal{R}_{\mathrm{HJB}}\|<\varepsilon_{\mathrm{HJB}}$, $\|\mathcal{R}_{\mathrm{FP}}\|<\varepsilon_{\mathrm{FP}}$, and policy/distribution drifts fall below thresholds, e.g., $\sup|i^{*,(n+1)}-i^{*,(n)}|<10^{-5}$ and $\mathrm{W}_2(m^{(n+1)},m^{(n)})<10^{-4}$.
-
-\begin{table}[ht]
-\centering
-\small
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Residual & Tight & Medium & Coarse \\
-\midrule
-$\varepsilon_{\mathrm{ME}}$ & $10^{-5}$ & $10^{-4}$ & $10^{-3}$ \\
-$\varepsilon_{\mathrm{HJB}}$ & $10^{-7}$ & $10^{-6}$ & $10^{-5}$ \\
-$\varepsilon_{\mathrm{FP}}$  & $10^{-7}$ & $10^{-6}$ & $10^{-5}$ \\
-\bottomrule
-\end{tabular}
-\caption{Suggested tolerances (dimensionless; scale to data).}
-\end{table}
-
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-width=0.8\textwidth,height=0.35\textwidth,
-xlabel={Iteration},ylabel={Log residual},
-ymin=-10,ymax=1, grid=both, legend pos=south west]
-\addplot coordinates {(0,0) (5,-0.8) (10,-1.6) (15,-2.5) (20,-3.4) (25,-4.2) (30,-5.0) (35,-5.6) (40,-6.2) (45,-6.7) (50,-7.1)};
-\addlegendentry{$\|\mathcal{R}_{\mathrm{ME}}\|$}
-\end{axis}
-\end{tikzpicture}
-\caption{Placeholder: typical convergence of the master-equation residual.}
-\end{figure}
-
-\paragraph{Sanity checks.}
-\begin{itemize}[leftmargin=1.25em]
-\item \emph{No-price-limit case.} If $P$ is flat, the price externality vanishes. Route A and B should collapse to the same frictional-control model without cross effects.
-\item \emph{Symmetric costs.} Setting $\phi_-=\phi_+$ removes the kink; $i^*$ is linear in $V_k-1$ everywhere. FP becomes smoother; residuals drop faster.
-\item \emph{Elasticity sweep.} Under isoelastic demand, $\eta$ scales the externality linearly; recovered investment schedules should contract monotonically in $\eta$.
-\end{itemize}
-
-%========================
-% % Economics
-% %========================
-\section{Economics: Aggregation, Irreversibility, Comparative Statics}
-
-\paragraph{Aggregation.}
-Aggregation enters \emph{only} via the term $e^{x+z}k^\alpha\,Y P'(Y)$ in the stationary master equation (ME). Under isoelastic demand, this is $-\eta P(Y)\,e^{x+z}k^\alpha$, which acts as a proportional reduction in marginal revenue. The mean-field externality is thus \emph{complete} and \emph{transparent}.
-
-\paragraph{Irreversibility.}
-The asymmetry $\phi_->\phi_+$ creates a kink in the Hamiltonian and investment bands: for $V_k$ just below $1$ the disinvestment response is muted relative to the investment response for $V_k$ just above $1$. At the distributional level, this slows the left-tail motion in $k$, thickening the mass near low capital.
-
-\paragraph{Comparative statics.}
-\begin{itemize}[leftmargin=1.25em]
-\item Larger $\eta$ (steeper demand) amplifies the negative externality, reducing investment and shifting mass in $m$ toward lower $k$.
-\item Bigger $\phi_- - \phi_+$ widens irreversibility bands and slows capital reallocation, increasing dispersion in $k$ conditional on $z$.
-\item Higher $\sigma_z$ spreads the cross-section in $z$, raising $Y$ volatility and, through $P'(Y)$, modulating the externality term over the business cycle.
-\item Higher $\sigma_x$ (through $\Lx$) deepens precautionary effects via $r(x)$ and the HJB drift terms, with ambiguous effects on average investment depending on curvature.
-\item A countercyclical $r(x)$ strengthens the value premium mechanism à la costly reversibility by raising discount rates in recessions precisely when $P'(Y)$ is most negative.
-\end{itemize}
-
-%========================
-% Appendix A
-%========================
-\appendix
-\section{Appendix A: Full Derivations and Pairings}\label{app:derivations}
-
-\subsection{Envelope/KKT and policy recovery}
-From \eqref{eq:HJB}, define $p=V_k$. The Hamiltonian
-$\mathcal{H}(k,z,x,m,p)=\max_i\{\pi+p(i-\delta k)\}$
-is the convex conjugate of $h$ shifted by $p-1$. The envelope condition $V_k=\partial_p \mathcal{H}$ combined with the FOC for $i$ produces the piecewise-affine policy in \Cref{prop:policy}. The kink at $p=1$ corresponds to $i=0$. KKT adds the complementary slackness $\lambda\cdot(i+\kbar(k))=0$ when a lower bound is present.
-
-\subsection{Adjoint pairing for FP}
-Let $\varphi$ be a smooth test function. Then
-
-$$
-\frac{\diff}{\diff t}\int \varphi\,\diff m_t
-= \int \varphi_k (i^*-\delta k)\,\diff m_t + \int \Lz \varphi\,\diff m_t
-= \int \varphi\,\diff\Big(-\partial_k[(i^*-\delta k)m_t]+\Lzadj m_t\Big).
-$$
-
-Stationarity imposes \eqref{eq:FP} with $\partial_t m=0$. Reflecting at $k=0$ eliminates the boundary integral.
-
-\subsection{Deriving the master equation}
-Consider a flow $t\mapsto (K_t,Z_t)$ for the tagged firm following control $i_t$ and a flow of measures $t\mapsto m_t$ solving \eqref{eq:FP} under the feedback $i^*(\cdot,m_t)$. By functional Itô's lemma for $U(K_t,Z_t,x,m_t)$,
-\begin{align*}
-\diff U &= U_k\,\diff K_t + U_z\,\diff Z_t + \tfrac12 U_{zz}\,\sigma_z^2\,\diff t \\
-        &\quad + \big(\partial_t U\big|_{m}\big)\,\diff t, \\
-\partial_t U\big|_{m} &= \int \Big[ (i^*(\xi,x,m)-\delta\kappa)\,\partial_{\kappa}\,\dmU
-  +\mu_z(\zeta)\,\partial_{\zeta}\,\dmU
-  +\tfrac12\sigma_z^2\,\partial_{\zeta\zeta}^2\,\dmU\Big] \, m(\diff \xi) \\
-  &\quad + \int \delta_m \pi(\xi; k,z,x,m) \, m(\diff \xi).
-\end{align*}
-  where the last line uses the chain rule in \Cref{lem:chain}. Taking expectations under the pricing measure with short rate $r(x)$ and imposing stationarity produces the stationary master equation (ME).
-
-\subsection{Externality term in detail}
-Write $\pi(k,i,z,x,m)=\Psi(Y(m,x))\,\chi(k,z,x)-i-h(i,k)-f$ with $\Psi=P$ and $\chi=e^{x+z}k^\alpha$. Then
-
-$$
-\Dm\pi(m)(\xi)=\Psi'(Y)\,\chi(k,z,x)\,\chi(\kappa,\zeta,x),
-$$
-
-and integration w\.r.t.\ $m$ yields $\chi(k,z,x)\,\Psi'(Y)\,Y(m,x)$.
-
-%========================
-% Appendix B
-%========================
-\section{Appendix B: Residual-Loss Template (for implementation)}\label{app:loss}
-
-For a collocation tuple $(k,z,x)$, an empirical measure $m=\tfrac1N\sum_{n=1}^N \delta_{\xi^n}$, and parameterized $U_\omega,\dmU_\psi$, define
-\begin{align*}
-\widehat{Y} &\equiv \frac{1}{N}\sum\_{n=1}^N e^{x+\zeta^n}(\kappa^n)^\alpha,\\
-\widehat{\mathcal{R}}_{\mathrm{ME}} &\equiv r(x)\,U_\omega\\
-  &\quad - \max_{i}\Big\{ \pi + (U_{\omega})_k\,(i-\delta k) + \Lz U_{\omega} + \Lx U_{\omega} \Big\} \\
-  &\quad - \frac{1}{N}\sum_{n=1}^N \Big[ (i^*(\xi^n,x,m)-\delta\kappa^n)\,\partial_{\kappa}\dmU_{\psi}(\xi^n)
-    + \mu_z(\zeta^n)\,\partial_{\zeta}\dmU_{\psi}(\xi^n)
-    + \tfrac12 \sigma_z^2\,\partial^2_{\zeta\zeta}\dmU_{\psi}(\xi^n) \Big] \\
-  &\quad - e^{x+z}k^{\alpha}\,\widehat{Y}\,P'(\widehat{Y}).
-  \end{align*}
-  Add soft KKT penalties (one-sided around $(U_\omega)_k=1$) and boundary regularizers (reflecting $k=0$, growth at $k_{\max}$). Minimize
-
-$$
-\mathcal{L}=\E\big[\widehat{\mathcal{R}}_{\mathrm{ME}}^2\big]+\lambda_{\mathrm{KKT}}\mathcal{P}_{\mathrm{KKT}}
-+\lambda_{\mathrm{bdry}}\mathcal{P}_{\mathrm{bdry}}.
-$$
-
-Anchoring $\int \dmU\,\diff m=0$ removes the gauge freedom in $\dmU$.
-
-%========================
-% Appendix C
-%========================
-\section{Appendix C: Common-Noise Master Equation (Reference Note)}\label{app:common-noise}
-
-When the population law $m_t$ itself diffuses under common noise (say through an exogenous $x_t$ or an aggregate Brownian component shared by firms), the functional Itô calculus on $\mathcal P_2$ introduces a second-order term in the measure variable. In a stylized form (see Carmona \& Delarue, and Cardaliaguet--Delarue--Lasry--Lions), the stationary master equation would add a term of the form
-
-$$
-\frac{1}{2}\,\Sigma_{\mathrm{com}}:\!\int\!\!\int
-\partial_{\xi}\partial_{\xi'} \big(\Dm U(\xi)\big)\,\big(\Dm U(\xi')\big)
-\, m(\diff \xi)\, m(\diff \xi')
-$$
-
-or, in classical PDE notation,
-$\tfrac12 \mathrm{Tr}\big[\Gamma\,\partial_{\xi\xi}^2 \dmU\big]$
-integrated against $m$, where $\Gamma$ is the covariance of the common noise. Because this paper conditions on $x$, these terms are absent in the stationary master equation.
-
-%========================
-% Appendix D
-%========================
-\section{Appendix D: Tiny Pseudocode (Plain \texorpdfstring{\texttt{listings}}{listings})}\label{app:code}
-
-\lstset{
-basicstyle=\ttfamily\small,
-columns=fullflexible,
-showstringspaces=false,
-frame=single,
-framerule=0.4pt,
-breaklines=true,
-tabsize=2,
-captionpos=b
-}
-
-\begin{lstlisting}[language=Python,caption={Pseudo-JAX for (ME) residual with empirical measure}]
-
-# Inputs:
-
-# params\_omega: parameters for U(k,z,x; m)
-
-# params\_psi:   parameters for delta\_m U(xi; k,z,x; m)
-
-# batch:        list of tuples (k,z,x, {xi\_n=(kappa\_n,zeta\_n)}\_{n=1}^N )
-
-# primitives:   alpha, delta, mu\_z(z), sigma\_z, mu\_x(x), sigma\_x, r(x),
-
-# demand P(Y) and Pprime(Y), fixed cost f
-
-# penalties:    lambdas for KKT and boundary regularizers
-
-def policy\_from\_grad(p, k, phi\_plus, phi\_minus):
-\# p = U\_k (value gradient)
-if p >= 1.0:
-return (k/phi\_plus)*(p - 1.0)
-else:
-return (k/phi\_minus)*(p - 1.0)
-
-def reflecting\_penalty(k, i\_star):
-\# discourage negative control at k=0 and large negative flux
-pen0 = max(0.0, -i\_star) if k<=1e-10 else 0.0
-return pen0\*\*2
-
-def h\_cost(i, k, phi\_plus, phi\_minus):
-if i >= 0.0:
-return 0.5*phi\_plus*(i*i)/max(k,1e-12)
-else:
-return 0.5*phi\_minus\*(i\*i)/max(k,1e-12)
-
-def HJB\_operator(k,z,x,Yhat,Uk,Uz,Uzz,Ux,Uxx,i):
-q  = exp(x+z)*(k\*\*alpha)
-pi = P(Yhat)*q - i - h\_cost(i,k,phi\_plus,phi\_minus) - f
-return pi + Uk*(i - delta*k) + mu\_z(z)*Uz + 0.5*sigma\_z**2\*Uzz&#x20;
-\+ mu\_x(x)*Ux + 0.5*sigma\_x**2\*Uxx
-
-def ME\_residual\_for\_tuple(params\_omega, params\_psi, tup):
-k,z,x,xi\_list = tup.k, tup.z, tup.x, tup.xi\_list
-\# empirical measure moments
-Y\_hat = mean(\[exp(x+xi.zeta)*(xi.kappa\*\*alpha) for xi in xi\_list])
-\# U and its partials at (k,z,x)
-U, Uk, Uz, Uzz, Ux, Uxx = U\_and\_grads(params\_omega, k,z,x, xi\_list)
-\# best response i*
-i\_star = policy\_from\_grad(Uk, k, phi\_plus, phi\_minus)
-\# HJB maximand at i\*
-H\_val  = HJB\_operator(k,z,x,Y\_hat,Uk,Uz,Uzz,Ux,Uxx,i\_star)
-\# Population terms (measure derivative)
-integ = 0.0
-for xi in xi\_list:
-dU = delta\_mU\_and\_partials(params\_psi, xi, k,z,x, xi\_list)
-\# dU returns dict with fields dkappa, dzeta, dzeta2, p\_k (proxy gradient)
-i\_star\_xi = policy\_from\_grad(dU\['p\_k'], xi.kappa, phi\_plus, phi\_minus)
-integ += (i\_star\_xi - delta*xi.kappa)* dU\['dkappa']&#x20;
-\+ mu\_z(xi.zeta)\* dU\['dzeta']&#x20;
-\+ 0.5*sigma\_z\*\*2 \* dU\['dzeta2']
-integ = integ / len(xi\_list)
-\# direct price externality
-ext  = exp(x+z)*(k\*\*alpha)\* Y\_hat \* Pprime(Y\_hat)
-\# assemble residual
-res  = r(x)\*U - max(H\_val, HJB\_operator(k,z,x,Y\_hat,Uk,Uz,Uzz,Ux,Uxx,0.0))&#x20;
-\- integ - ext
-\# penalties
-pen  = reflecting\_penalty(k, i\_star)
-return res, pen
-
-def loss(params\_omega, params\_psi, batch):
-sse = 0.0
-pen = 0.0
-for tup in batch:
-res, p = ME\_residual\_for\_tuple(params\_omega, params\_psi, tup)
-sse += res\*\*2
-pen += p
-return sse/len(batch) + lambda\_bdry\*pen
-\end{lstlisting}
-
-%========================
-% Bibliography (manual)
-%========================
-\begin{thebibliography}{99}\small
-
-\bibitem{carmona_delarue_2018_mfg} Carmona, R. and F. Delarue (2018).
-\emph{Probabilistic Theory of Mean Field Games with Applications.}
-Springer.
-
-\bibitem{cardaliaguet_delarue_lasry_lions_2019} Cardaliaguet, P., F. Delarue, J.-M. Lasry, and P.-L. Lions (2019).
-\emph{The Master Equation and the Convergence Problem in Mean Field Games.}
-Princeton University Press.
-
-\bibitem{lasry_lions_2007} Lasry, J.-M. and P.-L. Lions (2007).
-Mean field games.
-\emph{Japanese Journal of Mathematics} 2(1): 229--260.
-
-\bibitem{mou_zhang_cn_master} Mou, C.-H. and J. Zhang (various years).
-Second-order master equations with common noise and displacement monotonicity.
-(Working papers / journal articles; see also related notes by Gangbo--Mészáros--Mou--Zhang.)
-
-\bibitem{zhang_2005_value_premium} Zhang, L. (2005).
-The value premium.
-\emph{Journal of Finance} 60(1): 67--103.
-
-\end{thebibliography}
-
-\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  7 SEP 2025 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  7 SEP 2025 13:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -499,7 +499,43 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
 \MT@toks=\toks54
 \MT@tempbox=\box81
@@ -675,13 +711,14 @@ Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 4066.
+Package hyperref Info: Option `bookmarks' set `false' on input line 4066.
 Package hyperref Info: Hyper figures OFF on input line 4195.
 Package hyperref Info: Link nesting OFF on input line 4200.
 Package hyperref Info: Hyper index ON on input line 4203.
 Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
+Package hyperref Info: Bookmarks OFF on input line 4468.
 \c@Hy@tempcnt=\count376
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
@@ -743,32 +780,35 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 Package cleveref Info: no abbreviation of names on input line 7852.
 )
 ==> First Aid for cleveref.sty applied!
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 99.
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 120.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 120.
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count383
-)
-No file BSDE_10.aux.
+) (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.aux)
 \openout1 = `BSDE_10.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -830,13 +870,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \microtypecontext on input line 99.
-Package microtype Info: Applying patch `item' on input line 99.
-Package microtype Info: Applying patch `toc' on input line 99.
-Package microtype Info: Applying patch `eqnum' on input line 99.
-Package microtype Info: Applying patch `footnote' on input line 99.
-Package microtype Info: Applying patch `verbatim' on input line 99.
-LaTeX Info: Redefining \microtypesetup on input line 99.
+LaTeX Info: Redefining \microtypecontext on input line 120.
+Package microtype Info: Applying patch `item' on input line 120.
+Package microtype Info: Applying patch `toc' on input line 120.
+Package microtype Info: Applying patch `eqnum' on input line 120.
+Package microtype Info: Applying patch `footnote' on input line 120.
+Package microtype Info: Applying patch `verbatim' on input line 120.
+LaTeX Info: Redefining \microtypesetup on input line 120.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -852,301 +892,193 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 99.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 120.
 \c@lstlisting=\count390
-Package hyperref Info: Link coloring ON on input line 99.
-\@outlinefile=\write4
-\openout4 = `BSDE_10.out'.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 101.
+Package hyperref Info: Link coloring ON on input line 120.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 122.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 122.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 122.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 122.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 122.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 122.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 122.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 122.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 101.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 122.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-No file BSDE_10.toc.
-\tf@toc=\write5
-\openout5 = `BSDE_10.toc'.
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 127.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 127.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 127.
+ (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
 
 
 [1
 
-{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 38.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 38.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
+\tf@toc=\write4
+\openout4 = `BSDE_10.toc'.
 
-[2]
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 139.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 145.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[2{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [3]
 
 [4]
-
-LaTeX Warning: Reference `lem:chain' on page 5 undefined on input line 304.
-
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 292.
 
 
 [5]
-Overfull \hbox (103.75404pt too wide) in paragraph at lines 371--376
-[]\OT1/cmr/bx/n/10.95 (-20) Intuition vs. math. [] 
- []
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 355.
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.384 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.384 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.384 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.384 \begin{equation}
-                      
 
 [6]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.410 \begin{equation}
-                      \label{eq:isoelastic}
+l.402 \begin{equation}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.410 \begin{equation}
-                      \label{eq:isoelastic}
+l.402 \begin{equation}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.410 \begin{equation}
-                      \label{eq:isoelastic}
+l.402 \begin{equation}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.410 \begin{equation}
-                      \label{eq:isoelastic}
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 421.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 421.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Display math should end with $$.
-<to be read again> 
-                   x
-l.473 ...emark.} Because we work conditional on $x
-                                                  $, the measure $m$ does \e...
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 473.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-LaTeX Warning: Reference `\endcsname ' on page 7 undefined on input line 473.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Argument of \@firstoffive has an extra }.
-<inserted text> 
-                \par 
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Paragraph ended before \@firstoffive was complete.
-<to be read again> 
-                   \par 
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Please use \mathaccent for accents in math mode.
-\MT@orig@add@accent ...gnorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Missing { inserted.
-<to be read again> 
-                   \tex_let:D 
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Missing \endcsname inserted.
-<to be read again> 
-                   \egroup 
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-LaTeX Warning: Reference `\endcsname ' on page 7 undefined on input line 473.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Extra \fi.
-\MT@orig@add@accent ...or \accent@spacefactor \fi 
-                                                  
-l.473 ...order measure derivatives. Appendix\~\ref
-                                                  {app:common-noise} summari...
-I'm ignoring this; it doesn't match any \if.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Missing } inserted.
-<inserted text> 
-                }
-l.473 ...he additional terms that would arise if $
-                                                  m$ were itself driven by c...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:473: Missing $ inserted.
-<inserted text> 
-                $
-l.473 ...driven by common noise (e.g., through $x_
-                                                  t$).
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
-\OT1/cmr/m/n/10.95 (+20) x$\OML/cmm/m/it/10.95 ; themeasure$\OT1/cmr/m/n/10.95 (+20) m$\OML/cmm/m/it/10.95 does[]diffuse \OT1/cmr/m/n/10.95 (+20) : \OML/cmm/m/it/10.95 themasterequationomitssecond \OMS/cmsy/m/n/10.95 ^^@
- []
-
-
-Overfull \hbox (342.18755pt too wide) in paragraph at lines 473--474
-\OML/cmm/m/it/10.95 ordermeasurederivatives:Appendix[]$\OT1/cmr/m/n/10.95 (-20) m$\OML/cmm/m/it/10.95 wereitselfdrivenbycommonnoise\OT1/cmr/m/n/10.95 (-20) (\OML/cmm/m/it/10.95 e:g:; through$\OT1/cmr/m/n/10.95 (-20) x$[]$). 
- []
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:474: Extra }, or forgotten \endgroup.
-\endtcb@savebox ...efalse \color@endgroup \egroup 
-                                                  \expandafter \@iiiparbox \...
-l.474 \end{tcolorbox}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:474: LaTeX Error: \begin{tcb@savebox} on input line 472 ended by \end{tcolorbox}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.474 \end{tcolorbox}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:474: Missing } inserted.
-<inserted text> 
-                }
-l.474 \end{tcolorbox}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
+l.402 \begin{equation}
+                      
 
 [7]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.428 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.428 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.428 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.428 \begin{equation}
+                      \label{eq:isoelastic}
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_10.tex:830: LaTeX Error: \begin{tcolorbox} on input line 472 ended by \end{document}.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.830 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[8]
 
-(c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.aux)
+[9]
+
+[10]
+
+[11]
+
+[12]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 726.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 739.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 755.
+
+
+[13]
+
+[14]
+
+[15] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `BSDE_10.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `BSDE_10.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  5C965FEF1479A086818F5081527305CD;2578.
- )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 472 (\begingroup)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 45462 strings out of 468134
- 1083889 string characters out of 5430256
- 1614586 words of memory out of 5000000
- 73210 multiletter control sequences out of 15000+600000
- 654937 words of font info for 212 fonts, out of 8000000 for 9000
+ 47283 strings out of 468134
+ 1119455 string characters out of 5430256
+ 2198391 words of memory out of 5000000
+ 74718 multiletter control sequences out of 15000+600000
+ 773502 words of font info for 304 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,15n,121p,1065b,1490s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.pdf (7 pages, 350631 bytes).
+ 116i,19n,121p,1065b,2855s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_10.pdf (15 pages, 583571 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 57357 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 467 PDF objects out of 1000 (max. 8388607)
+ 178 named destinations out of 1000 (max. 500000)
+ 85517 words of extra memory for PDF output out of 89155 (max. 10000000)
 
