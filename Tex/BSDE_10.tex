@@ -9,6 +9,7 @@
 \usepackage[skins,breakable,theorems]{tcolorbox}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{positioning,calc}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -29,6 +30,10 @@
 
 % Code
 \usepackage{listings}
+% PythonTeX for executable SymPy checks in Appendix E
+\usepackage{pythontex}
+% Ensure PythonTeX outputs go to the LaTeX output dir (latexmk out_dir)
+\setpythontexoutputdir{.}
 
 % Acronyms: lightweight fallback to avoid package complexity
 \newcommand{\ac}[1]{{\mdseries\textsc{#1}}}
@@ -181,6 +186,39 @@ and therefore
 \textbf{Diagnostics.} Euler residuals for HJB, mass-balance for FP, and full ME residual. Use monotone stencils in $k$ (upwinding) and conservative fluxes at $k=0$.
 \end{tcolorbox}
 
+% Schematic: investment policy i*(p) with asymmetric costs
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.6\textwidth,
+  height=0.35\textwidth,
+  xlabel={$p=V_k$}, ylabel={$i^*(p)$},
+  xmin=0, xmax=2.2, ymin=-0.6, ymax=0.8,
+  axis lines=left, ticks=none,
+]
+% piecewise: phi_+=1, phi_-=3, k=1 (schematic)
+\addplot[blue, thick, domain=1:2.2, samples=200] {(x-1)/1.0};
+\addplot[blue, thick, domain=0:1, samples=200] {(x-1)/3.0};
+% kink at p=1
+\addplot[dashed, gray] coordinates {(1,-0.6) (1,0.8)};
+\node[anchor=south east, blue] at (axis cs:1.95,0.95) {\small slope $=1/\phi_+$};
+\node[anchor=north west, blue] at (axis cs:0.1,-0.45) {\small slope $=1/\phi_-$};
+\node[anchor=north east, gray!70!black] at (axis cs:1,-0.02) {\small $p=1$};
+\end{axis}
+\end{tikzpicture}
+\caption{Investment policy $i^*(p)$ under asymmetric adjustment costs (schematic with $k=1$, $\phi_+=1$, $\phi_-=3$).}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap — HJB.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item Policy is piecewise linear in $p=V_k$ with a kink at $1$.
+  \item Hamiltonian is convex in $p$; envelope gives $\partial\_p\mathcal H=i^*$.
+  \item Reflecting boundary enforces $i^*(0,\cdot)\ge0$ and $U_k(0,\cdot)\le1$.
+\end{itemize}
+\end{tcolorbox}
+
 %========================
 % Notation & Acronyms
 %========================
@@ -282,8 +320,70 @@ $$
 \textbf{Economic reading.} The convex asymmetry $\phi_->\phi_+$ produces \emph{investment bands}: small changes in the shadow value $V_k$ around the frictionless cutoff $1$ generate very different investment responses on the two sides of the kink. Aggregation operates through $Y$ only, and the inverse-demand slope $P'(Y)$ is the sole channel through which the cross-section affects an individual firm's HJB. The reflecting boundary at $k=0$ formalizes limited liability and the irreversibility of capital.
 \end{tcolorbox}
 
+% Schematic: transport velocity u(k)=i^*(k)-\delta k (illustrative)
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.6\textwidth,
+  height=0.35\textwidth,
+  xlabel={$k$}, ylabel={$u(k)$},
+  xmin=0, xmax=3, ymin=-0.2, ymax=0.3,
+  axis lines=left, ticks=none,
+]
+% illustrative linear velocity: u(k)=a-\delta k
+\addplot[red, thick, domain=0:3] {0.25 - 0.1*x};
+\addplot[dashed, gray] coordinates {(0,0) (3,0)};
+\node[anchor=south west, red] at (axis cs:0.2,0.18) {\small rightward flow ($u>0$)};
+\node[anchor=north east, red] at (axis cs:2.8,-0.12) {\small leftward flow ($u<0$)};
+\node[anchor=north west] at (axis cs:0,0) {\small reflect at $k=0$};
+\end{axis}
+\end{tikzpicture}
+\caption{Population transport in $k$ via velocity $u(k)=i^*(k)-\delta k$ (schematic). Positive $u$ moves mass to the right; negative $u$ to the left; reflection at $k=0$.}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap — FP.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item Drift-only transport in $k$; diffusion only in $z$.
+  \item Reflecting boundary yields zero probability flux at $k=0$.
+  \item Monotone upwinding preserves positivity and mass.
+\end{itemize}
+\end{tcolorbox}
+
 \begin{tcolorbox}[literaturestyle]
 \textbf{Where this sits.} Zhang (2005) emphasizes how costly reversibility shapes asset prices. The present mean-field formulation adds an equilibrium price mapping and a master PDE that makes the cross-sectional feedback explicit and computational. For master equations and Lions derivatives, see Lasry \& Lions (2007), Cardaliaguet--Delarue--Lasry--Lions (2019), and Carmona \& Delarue (2018).
+\end{tcolorbox}
+
+% Schematic: isoelastic inverse demand
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.55\textwidth,
+  height=0.35\textwidth,
+  xlabel={$Y$}, ylabel={$P(Y)$},
+  xmin=0.3, xmax=3, ymin=0, ymax=2.2,
+  axis lines=left, ticks=none,
+]
+\addplot[blue, thick, domain=0.35:3, samples=200] {1/x};
+% tangent at Y=1 for eta=1
+\addplot[gray, dashed, domain=0.3:3] {2 - x};
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(1,1)};
+\node[anchor=south east, blue] at (axis cs:0.5,1.9) {\small $P(Y)=Y^{-\eta}$ (schematic)};
+\node[anchor=north west, gray!70!black] at (axis cs:1.7,0.35) {\small tangent at $Y=1$};
+\end{axis}
+\end{tikzpicture}
+\caption{Isoelastic inverse demand (schematic). At $Y=1$, $Y P'(Y)=-\eta P(Y)$ so the price externality scales with own output.}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap — Market.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item $P'(Y)<0$ ensures a stabilizing price feedback (monotonicity).
+  \item Isoelasticity reduces the externality to $-\eta P(Y)\,e^{x+z}k^\alpha$.
+  \item Continuity in $m$ via $Y(m,x)$ supports existence/uniqueness.
+\end{itemize}
 \end{tcolorbox}
 
 %========================
@@ -393,6 +493,25 @@ Then $\mathcal{H}$ is convex in $p=V_k$. The optimizer $i^*(k,z,x,m;p)$ is singl
 \end{tabularx}
 \end{tcolorbox}
 
+% Extra intuition and rigor for HJB/policy mapping
+\begin{tcolorbox}[didacticstyle]
+\textbf{Economic intuition (expanded).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Investment bands and asymmetry.} The kink at $V_k=1$ creates inaction around the frictionless cutoff; convex asymmetry ($\phi_->\phi_+$) makes disinvestment less responsive than investment. Firms with $V_k$ persistently below one slowly shrink; those above one scale up more elastically.
+  \item \emph{Cyclicality.} Through $P(Y)$ and $x$, booms raise $V_k$ via revenues $P(Y)\,q$ and drift terms; more firms cross $V_k>1$ and invest. In downturns, $V_k$ drifts down but disinvestment is muted by higher $\phi_-$. This generates time-variation in the cross-sectional distribution and aggregate $Y$.
+  \item \emph{Decomposition.} $V_k$ aggregates (i) private technology and adjustment costs via the Hamiltonian, and (ii) the \emph{general-equilibrium wedge} from inverse-demand slope, handled transparently in the ME via the externality term.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Mathematical rigor (expanded).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Convexity and envelope.} For fixed $(k,z,x,m)$, $i\mapsto -i-h(i,k)+p\,i$ is strictly concave; the Hamiltonian $\mathcal H(k,\cdot)$ is convex in $p$. By the envelope theorem, $\partial\_p\mathcal H=i^*(p)$ a.e., consistent with Appendix~\ref{app:verification}.
+  \item \emph{Well-posed feedback.} Coercivity of $h$ in $i$ and piecewise $C^1$ structure yield a single-valued, globally Lipschitz feedback $p\mapsto i^*(p)$ on compact $k$-sets. KKT handles bounds like $i\ge-\kbar(k)$.
+  \item \emph{Boundary conditions.} Reflecting at $k=0$ imposes $i^*(0,\cdot)\ge0$ and zero flux in FP (see \S\ref{eq:FP}); in HJB, subgradient conditions imply $U_k(0,\cdot)\le1$.
+\end{itemize}
+\end{tcolorbox}
+
 %========================
 % FP Equation
 %========================
@@ -414,6 +533,24 @@ and feasibility requires $i^*(0,\cdot)\ge 0$. Integrability of $k^\alpha$ and $1
 \textbf{Degenerate transport in $k$.} The $k$-direction is purely hyperbolic. Schemes must be \emph{upwind} in $k$ and \emph{conservative} to maintain $\int m=1$. A monotone \ac{FVM} with Godunov fluxes provides stability and positivity. The lack of diffusion in $k$ also means that corners in policy (from irreversibility) do not smooth out via second-order terms; numerical filters should not smear the kink.
 \end{tcolorbox}
 
+\begin{tcolorbox}[didacticstyle]
+\textbf{Economic intuition (FP, expanded).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Mass flows.} Positive $(i^*-\delta k)$ transports mass toward higher $k$; negative net investment transports it toward $k=0$. The reflecting boundary prevents exit via $k<0$.
+  \item \emph{Cross-sectional dynamics.} Asymmetry in $i^*$ induces skewness: expansions push right tails faster than contractions pull left tails, creating persistent heterogeneity in $k$.
+  \item \emph{Business-cycle amplification.} When $P(Y)$ is high (tight demand), more mass sees $V_k>1$, raising $Y$ further; the FP captures this propagation via the policy-dependent drift.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Mathematical rigor (FP, expanded).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Weak formulation.} For test $\varphi\in C^1\_c$, $\frac{\mathrm d}{\mathrm dt}\int \varphi\,m=\int \big[(i^*-\delta k)\,\partial\_k\varphi + \Lz\varphi\big] m$. No-flux at $k=0$ ensures boundary terms vanish.
+  \item \emph{Stationarity.} A stationary $m$ solves $\int \big[(i^*-\delta k)\,\partial\_k\varphi + \Lz\varphi\big] m=0$ for all $\varphi$, equivalent to \eqref{eq:FP} in distributional sense.
+  \item \emph{Numerics.} Monotone upwinding yields discrete maximum principles and preserves non-negativity/normalization of $m$.
+\end{itemize}
+\end{tcolorbox}
+
 %========================
 % Market Clearing
 %========================
@@ -431,6 +568,15 @@ Y\,P'(Y) = -\eta\, P(Y).
 
 \begin{tcolorbox}[didacticstyle]
 \textbf{Economic content.} The aggregation wedge in firm incentives is a simple \emph{marginal-revenue} term: the effect of another unit of firm $k$'s output on the price times firm $k$'s own output. Under isoelastic demand this becomes a proportional tax on revenue with rate $\eta$, varying over the business cycle through $P(Y)$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Mathematical rigor (market mapping).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Monotonicity.} $P'(Y)<0$ yields the Lasry--Lions monotonicity condition for couplings depending on $m$ only through $Y(m,x)$, supporting uniqueness of equilibrium in the mean-field game.
+  \item \emph{Comparative statics.} Isoelasticity implies $Y\,P'(Y)=-\eta P(Y)$; hence the externality in ME scales linearly with each firm's own output. This homogeneity simplifies existence proofs and discretizations.
+  \item \emph{Continuity.} Lipschitz $P$ on compacts and integrability of $k^\alpha$ under $m$ ensure well-defined $Y(m,x)$ and continuous dependence of prices on $m$.
+\end{itemize}
 \end{tcolorbox}
 
 % %========================
@@ -489,6 +635,43 @@ Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity 
 
 \begin{tcolorbox}[didacticstyle]
 	extbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. Appendix C summarizes the additional terms that would arise if $m$ were itself driven by common noise (e.g., through $x_t$).
+\end{tcolorbox}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Mathematical rigor (functional derivative bookkeeping).}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Lions derivative.} For functionals $F: \mathcal P\_2\to\R$ depending on $m$ via $Y(m,x)$, $\Dm F(m)(\xi)=F'(Y)\,\partial Y/\partial m(\xi)$ with $\partial Y/\partial m(\xi)=e^{x+\zeta}\kappa^{\alpha}$. Integrating against $m$ recovers the price externality in \eqref{eq:isoelastic}.
+  \item \emph{ME structure.} The stationary ME collects: own-firm HJB, population transport via $\dmU$, and the explicit price externality $e^{x+z}k^\alpha Y P'(Y)$. Conditioning on $x$ removes measure-diffusion terms.
+  \item \emph{Equivalence.} Under monotonicity and regularity (Lasry--Lions), the stationary HJB--FP fixed point and the ME solution coincide; see Appendix references.
+\end{itemize}
+\end{tcolorbox}
+
+% Schematic: ME term composition
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+  node distance=18mm,
+  box/.style={rectangle, draw=darkgreen, rounded corners, thick, inner sep=6pt, align=center}
+]
+\node[box] (hjb) {Own-firm HJB\\$\max\_i\{\cdots\}$};
+\node[box, right=of hjb] (pop) {Population transport\\via $\delta\_m U$};
+\node[box, below=of pop] (price) {Price externality\\$e^{x+z}k^{\alpha} Y P'(Y)$};
+\node[box, below=of hjb] (me) {ME residual};
+\draw[->, thick] (hjb) -- (me);
+\draw[->, thick] (pop) -- (me);
+\draw[->, thick] (price) -- (me);
+\node[anchor=north] at ($(hjb.south)!0.5!(pop.south)$) {\small conditioned on $x$ (no measure diffusion)};
+\end{tikzpicture}
+\caption{Schematic composition of the stationary master equation: own-firm HJB contributions, population transport via the Lions derivative, and the explicit price externality.}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap — Master Equation.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item ME residual combines HJB at $(k,z,x)$, transport over $m$, and the price externality.
+  \item Conditioning on $x$ removes second-order terms in the measure.
+  \item Under monotonicity, ME and HJB--FP fixed point are equivalent.
+\end{itemize}
 \end{tcolorbox}
 
 %========================
@@ -814,6 +997,74 @@ sse += res\*\*2
 pen += p
 return sse/len(batch) + lambda\_bdry\*pen
 \end{lstlisting}
+
+%========================
+% Appendix E
+%========================
+\section{Appendix E: Symbolic Verification (PythonTeX + SymPy)}\label{app:verification}
+
+\noindent This appendix runs minimal SymPy checks to verify key derivations used in the text. Compilation is configured (via \texttt{latexmkrc}) to execute these checks on every build; any failure triggers a build error. We assume smoothness and reflecting/no-flux boundary conditions where noted.
+
+\begin{pyconsole}
+import sympy as sp
+
+# 1) Isoelastic simplification:  Y P'(Y) = -eta P(Y)
+Y, eta = sp.symbols('Y eta', positive=True)
+P = Y**(-eta)
+check1 = sp.simplify(Y*sp.diff(P, Y) + eta*P)
+assert check1 == 0
+print("Isoelastic: Y*P'(Y) = -eta*P(Y)  [OK]")
+
+# 2) Externality directional derivative:  d/d epsilon P(Y+epsilon*chi_eps)*chi0 |_{epsilon=0}
+#     equals P'(Y) * chi0 * chi_eps
+chi0, chieps, eps = sp.symbols('chi0 chieps eps', real=True)
+Psi = lambda y: y**(-eta)
+dpi = sp.diff(Psi(Y + eps*chieps)*chi0, eps).subs(eps, 0)
+target = sp.diff(Psi(Y), Y) * chi0 * chieps
+assert sp.simplify(dpi - target) == 0
+print('Externality directional derivative  [OK]')
+
+# 3) Externality, isoelastic reduction after integrating over m:  chi0 * Y * P'(Y) = -eta * P(Y) * chi0
+lhs = chi0 * Y * sp.diff(Psi(Y), Y)
+rhs = -eta * Psi(Y) * chi0
+assert sp.simplify(lhs - rhs) == 0
+print('Externality isoelastic reduction   [OK]')
+
+# 4) KKT/FOC solution for i* with asymmetric quadratic costs
+#    h = 0.5*phi_plus*i^2/k for i>=0;   0.5*phi_minus*i^2/k for i<0
+i, k, p, phi_plus, phi_minus = sp.symbols('i k p phi_plus phi_minus', positive=True)
+h_plus  = 0.5*phi_plus*i**2/k
+FOC_plus  = sp.Eq(sp.diff(-i - h_plus + p*i, i), 0)
+sol_plus  = sp.solve(FOC_plus, i)[0]
+h_minus = 0.5*phi_minus*i**2/k
+FOC_minus = sp.Eq(sp.diff(-i - h_minus + p*i, i), 0)
+sol_minus = sp.solve(FOC_minus, i)[0]
+assert sp.simplify(sol_plus  - k*(p-1)/phi_plus)  == 0
+assert sp.simplify(sol_minus - k*(p-1)/phi_minus) == 0
+print('KKT/FOC piecewise i* formulas     [OK]')
+
+# 5) FP adjoint pairing identity (algebraic, boundary terms omitted):
+#    phi_k * (a*m) = d_k(phi*a*m) - phi * d_k(a*m)
+kk = sp.symbols('kk', real=True)
+phi = sp.Function('phi')(kk)
+a   = sp.Function('a')(kk)
+mm  = sp.Function('m')(kk)
+expr = sp.diff(phi, kk)*(a*mm) - (sp.diff(phi*(a*mm), kk) - phi*sp.diff(a*mm, kk))
+assert sp.simplify(expr) == 0
+print('Adjoint pairing identity (no-flux) [OK]')
+
+# 6) Envelope property for Hamiltonian in p: d/dp max_i { -i - h(i,k) + p i } = i*(p)
+#    Check separately on each branch (ignoring terms not depending on i, e.g., -delta*k*p)
+H_plus  = (-i - h_plus + p*i).subs(i, sol_plus)
+H_minus = (-i - h_minus + p*i).subs(i, sol_minus)
+dHp_dp  = sp.simplify(sp.diff(H_plus, p))
+dHm_dp  = sp.simplify(sp.diff(H_minus, p))
+assert sp.simplify(dHp_dp - sol_plus) == 0
+assert sp.simplify(dHm_dp - sol_minus) == 0
+print('Envelope: dH/dp equals i*(p)       [OK]')
+
+print('\nAll SymPy verification checks passed.')
+\end{pyconsole}
 
 %========================
 % Bibliography (manual)

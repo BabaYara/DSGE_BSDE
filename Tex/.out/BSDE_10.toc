@@ -1,38 +1,39 @@
 \contentsline {section}{Executive Summary / Cheat-Sheet}{2}{section*.2}%
-\contentsline {section}{\numberline {1}Notation and Acronyms}{3}{section.1}%
-\contentsline {section}{\numberline {2}Primitives and Assumptions}{3}{section.2}%
-\contentsline {section}{\numberline {3}Mathematical Setup: State Space, Measures, and Differentiation on $\mathcal P$}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}State space and probability metrics}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Generators, domains, and adjoints}{6}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Firm Problem and the Stationary HJB}{6}{section.4}%
-\contentsline {section}{\numberline {5}Kolmogorov--Forward (FP) Equation}{7}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Boundary and integrability}{7}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Market Clearing and Price Mapping}{8}{section.6}%
-\contentsline {section}{\numberline {7}Master Equation (Stationary, Conditional on x)}{8}{section.7}%
-\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{8}{section.8}%
-\contentsline {paragraph}{Boundary at $k=0$.}{8}{section*.5}%
-\contentsline {paragraph}{Growth.}{8}{section*.6}%
-\contentsline {paragraph}{Integrability.}{8}{section*.7}%
-\contentsline {section}{\numberline {9}Computation: Two KS-Free Routes}{9}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Route A: {\mdseries \textsc {HJB}}--{\mdseries \textsc {FP}} Fixed Point}{9}{subsection.9.1}%
-\contentsline {paragraph}{Algorithm (stationary, conditional on $x$).}{9}{section*.8}%
-\contentsline {paragraph}{Discretization details.}{9}{section*.9}%
-\contentsline {paragraph}{Diagnostics.}{9}{section*.10}%
-\contentsline {subsection}{\numberline {9.2}Route B: Direct Master-PDE Collocation}{9}{subsection.9.2}%
-\contentsline {paragraph}{Residual construction.}{10}{section*.12}%
-\contentsline {section}{\numberline {10}Verification and Diagnostics}{10}{section.10}%
-\contentsline {paragraph}{Residual norms.}{10}{section*.13}%
-\contentsline {paragraph}{Stopping rules.}{10}{section*.14}%
-\contentsline {paragraph}{Sanity checks.}{10}{section*.15}%
-\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{11}{section.11}%
-\contentsline {paragraph}{Aggregation.}{11}{section*.16}%
-\contentsline {paragraph}{Irreversibility.}{11}{section*.17}%
-\contentsline {paragraph}{Comparative statics.}{11}{section*.18}%
-\contentsline {section}{\numberline {A}Appendix A: Full Derivations and Pairings}{11}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{11}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{12}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Deriving the master equation}{12}{subsection.A.3}%
-\contentsline {subsection}{\numberline {A.4}Externality term in detail}{12}{subsection.A.4}%
-\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{12}{appendix.B}%
-\contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{13}{appendix.C}%
-\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{13}{appendix.D}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.1}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{5}{section.2}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Space, Measures, and Differentiation on $\mathcal P$}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}State space and probability metrics}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Generators, domains, and adjoints}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Firm Problem and the Stationary HJB}{8}{section.4}%
+\contentsline {section}{\numberline {5}Kolmogorov--Forward (FP) Equation}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Boundary and integrability}{10}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Market Clearing and Price Mapping}{10}{section.6}%
+\contentsline {section}{\numberline {7}Master Equation (Stationary, Conditional on x)}{11}{section.7}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{12}{section.8}%
+\contentsline {paragraph}{Boundary at $k=0$.}{12}{section*.5}%
+\contentsline {paragraph}{Growth.}{12}{section*.6}%
+\contentsline {paragraph}{Integrability.}{12}{section*.7}%
+\contentsline {section}{\numberline {9}Computation: Two KS-Free Routes}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Route A: {\mdseries \textsc {HJB}}--{\mdseries \textsc {FP}} Fixed Point}{13}{subsection.9.1}%
+\contentsline {paragraph}{Algorithm (stationary, conditional on $x$).}{13}{section*.8}%
+\contentsline {paragraph}{Discretization details.}{13}{section*.9}%
+\contentsline {paragraph}{Diagnostics.}{13}{section*.10}%
+\contentsline {subsection}{\numberline {9.2}Route B: Direct Master-PDE Collocation}{13}{subsection.9.2}%
+\contentsline {paragraph}{Residual construction.}{14}{section*.12}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{14}{section.10}%
+\contentsline {paragraph}{Residual norms.}{14}{section*.13}%
+\contentsline {paragraph}{Stopping rules.}{14}{section*.14}%
+\contentsline {paragraph}{Sanity checks.}{14}{section*.15}%
+\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{15}{section.11}%
+\contentsline {paragraph}{Aggregation.}{15}{section*.16}%
+\contentsline {paragraph}{Irreversibility.}{15}{section*.17}%
+\contentsline {paragraph}{Comparative statics.}{15}{section*.18}%
+\contentsline {section}{\numberline {A}Appendix A: Full Derivations and Pairings}{15}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{15}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{16}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Deriving the master equation}{16}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Externality term in detail}{16}{subsection.A.4}%
+\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{16}{appendix.B}%
+\contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{17}{appendix.C}%
+\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{17}{appendix.D}%
+\contentsline {section}{\numberline {E}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{18}{appendix.E}%

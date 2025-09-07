@@ -1,0 +1,19 @@
+$pdf_mode = 1;
+
+# Use pdflatex with shell-escape so PythonTeX can run
+$pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 -shell-escape %O %S';
+
+# Put all build products into .out for a clean tree
+$out_dir = '.out';
+$aux_dir = '.out';
+
+# PythonTeX integration: run pythontex automatically whenever .pytxcode changes
+add_cus_dep('pytxcode','pytxmcr',0,'pythontex');
+sub pythontex {
+  # latexmk passes the source file (typically in $out_dir) as the first arg
+  my ($src) = @_;
+  return system("pythontex \"$src\"");
+}
+
+# Clean up PythonTeX artifacts on latexmk -c
+$clean_ext .= ' pytxcode pytxpy pythontex-files-*';
