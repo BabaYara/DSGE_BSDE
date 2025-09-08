@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  8 SEP 2025 09:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  8 SEP 2025 12:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -898,8 +898,8 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 Package cleveref Info: no abbreviation of names on input line 7852.
 )
 ==> First Aid for cleveref.sty applied!
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 151.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 151.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 152.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 152.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -908,24 +908,24 @@ File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 ) (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux)
 \openout1 = `BSDE_11.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -988,13 +988,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \microtypecontext on input line 151.
-Package microtype Info: Applying patch `item' on input line 151.
-Package microtype Info: Applying patch `toc' on input line 151.
-Package microtype Info: Applying patch `eqnum' on input line 151.
-Package microtype Info: Applying patch `footnote' on input line 151.
-Package microtype Info: Applying patch `verbatim' on input line 151.
-LaTeX Info: Redefining \microtypesetup on input line 151.
+LaTeX Info: Redefining \microtypecontext on input line 152.
+Package microtype Info: Applying patch `item' on input line 152.
+Package microtype Info: Applying patch `toc' on input line 152.
+Package microtype Info: Applying patch `eqnum' on input line 152.
+Package microtype Info: Applying patch `footnote' on input line 152.
+Package microtype Info: Applying patch `verbatim' on input line 152.
+LaTeX Info: Redefining \microtypesetup on input line 152.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1010,45 +1010,45 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 151.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 152.
 \c@lstlisting=\count428
 Package newfloat Info: `float' package detected.
  (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.pytxmcr)
 
 Package PythonTeX Warning: A "listing" environment already exists 
 (PythonTeX)                PythonTeX will not create one 
-(PythonTeX)                Use \setpythontexlistingenv to create a custom listing environment on input line 151.
+(PythonTeX)                Use \setpythontexlistingenv to create a custom listing environment on input line 152.
 
-Package hyperref Info: Link coloring ON on input line 151.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 153.
+Package hyperref Info: Link coloring ON on input line 152.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 154.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 153.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 154.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 153.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 154.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 153.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 154.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 153.
+(Font)              <12> on input line 154.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 153.
+(Font)              <8> on input line 154.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 153.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 153.
+(Font)              <6> on input line 154.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 154.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 153.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 154.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
@@ -1058,17 +1058,17 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 158.
+(Font)              <10> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 158.
+(Font)              <7> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 158.
+(Font)              <5> on input line 159.
 
 No file BSDE_11.toc.
 \tf@toc=\write6
 \openout6 = `BSDE_11.toc'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 170.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 171.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1077,8 +1077,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 171.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 176.
+(Font)              <10.95> on input line 172.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 177.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1088,6 +1088,10 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 {C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [2{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (2.27962pt too wide) in paragraph at lines 257--301
+ [][] 
+ []
+
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1097,1467 +1101,41 @@ Package microtype Info: Character `029' is missing
 
 [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 427.
+(Font)              <14.4> on input line 428.
+
+
+LaTeX Warning: Citation `carmona_delarue_2018_mfg' on page 5 undefined on input line 440.
+
 
 
 [5]
 
-LaTeX Warning: Reference `lem:chain' on page 6 undefined on input line 457.
+LaTeX Warning: Citation `carmona_delarue_2018_mfg' on page 6 undefined on input line 479.
 
-
-LaTeX Warning: Reference `sec:ez' on page 1 undefined on input line 484.
-
-
-Overfull \hbox (52.4328pt too wide) detected at line 489
-[][][][][]
- []
-
-
-LaTeX Warning: Reference `ez' on page 1 undefined on input line 490.
-
-
-LaTeX Warning: Reference `sdf-ez' on page 1 undefined on input line 490.
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 500.
-
-
-[6
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.517 \end{proposition}
-                       ]
-
-[7]
-
-LaTeX Warning: Reference `app:verification' on page 8 undefined on input line 555.
-
-
-LaTeX Warning: Reference `eq:FP' on page 8 undefined on input line 557.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.567 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.567 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.567 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.567 \begin{equation}
-                      
-
-[8]
-
-LaTeX Warning: Reference `eq:FP' on page 9 undefined on input line 595.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      \label{eq:isoelastic}
-
-[9]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.688 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.688 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.688 \begin{equation}
-                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.688 \begin{equation}
-                      
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Argument of \GTS@CdrTwo has an extra }.
+)
+Runaway argument?
+! File ended while scanning use of \FancyVerbGetLine.
 <inserted text> 
                 \par 
-l.707 ...y simplification]\label{prop:externality}
+<*> ...Pricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex
                                                   
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
 
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Paragraph ended before \GTS@CdrTwo was complete.
-<to be read again> 
-                   \par 
-l.707 ...y simplification]\label{prop:externality}
+! Emergency stop.
+<*> ...Pricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex
                                                   
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+*** (job aborted, no legal \end found)
 
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Paragraph ended before \GTS@TestRightLabel was complete.
-<to be read again> 
-                   \par 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Undefined control sequence.
-\GTS@RemoveRight ...lobalString \label {}\GTS@Nil 
-                                                  \@nil \GTS@RemoveRightSpace 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Undefined control sequence.
-\GTS@RemoveRight ...tring \label {}\GTS@Nil \@nil 
-                                                  \GTS@RemoveRightSpace 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Paragraph ended before \GTS@TestRightSpace was complete.
-<to be read again> 
-                   \par 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Undefined control sequence.
-\GTS@RemoveRightSpace ...TS@GlobalString \GTS@Nil 
-                                                   \GTS@Nil \@nil 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Undefined control sequence.
-\GTS@RemoveRightSpace ...tring \GTS@Nil  \GTS@Nil 
-                                                  \@nil 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Undefined control sequence.
-\GTS@RemoveRightSpace ...\GTS@Nil  \GTS@Nil \@nil 
-                                                  
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:707: Package pgfkeys Error: I do not know the key '/tcb/Price-externality simplification' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.707 ...y simplification]\label{prop:externality}
-                                                  
-
-LaTeX Warning: Reference `lem:chain' on page 1 undefined on input line 721.
-
-
-
-[10]
-
-LaTeX Warning: Reference `eq:isoelastic' on page 11 undefined on input line 739.
-
-
-
-[11]
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/12'.
-(microtype)             Ignoring protrusion settings for this character.
-
-
-LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 799.
-
-
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 799.
-
-
-LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 800.
-
-
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 809.
-
-
-
-[12]
-
-[13]
-
-LaTeX Warning: Reference `eq:HJB' on page 14 undefined on input line 925.
-
-
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 927.
-
-
-
-[14]
-
-LaTeX Warning: Reference `eq:FP' on page 15 undefined on input line 938.
-
-
-LaTeX Warning: Reference `eq:FP' on page 15 undefined on input line 942.
-
-
-LaTeX Warning: Reference `lem:chain' on page 1 undefined on input line 951.
-
-
-
-[15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1006.
- (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1006.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1019.
-
-
-[16]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1035.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 1074.
- (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TS1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-Package microtype Info: Character `texttrademark ' is missing
-(microtype)             in font `TS1/lmtt/m/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-
-
-[17]
-\c@pytx@pycon@default@default@line=\count429
-
-
-Package PythonTeX Warning: Non-existent console content on input line 1164.
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
-File: lstlang2.sty 2024/09/23 1.10c listings language file
-) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
-File: lstlang3.sty 2024/09/23 1.10c listings language file
-)
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1174: Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1174 ...astic identity and algebraic reduction}]
-                                                  
-The following languages weren't loadable:
-    ,lean$
-This may cause errors in the sequel.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1174: Package Listings Error: language lean undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1174 ...astic identity and algebraic reduction}]
-                                                  
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1180: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1180 variable {Œ∑ 
-                    Y : ‚Ñù}
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1180: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1180 variable {Œ∑ Y : ‚Ñù}
-                            
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1182: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1182 -- P(Y) = Y ^ (-Œ∑)
-                          , defined for Y > 0 via rpow
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1183: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1183 def P (Y : ‚Ñù)
-                       (Œ∑ : ‚Ñù) : ‚Ñù := Y ^ (-Œ∑)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1183: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1183 def P (Y : ‚Ñù) (Œ∑ 
-                           : ‚Ñù) : ‚Ñù := Y ^ (-Œ∑)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1183: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1183 def P (Y : ‚Ñù) (Œ∑ : ‚Ñù)
-                                  : ‚Ñù := Y ^ (-Œ∑)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1183: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1183 def P (Y : ‚Ñù) (Œ∑ : ‚Ñù) : ‚Ñù 
-                                        := Y ^ (-Œ∑)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1183: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1183 ... (Y : ‚Ñù) (Œ∑ : ‚Ñù) : ‚Ñù := Y ^ (-Œ∑)
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1185: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1185 ...ebraic reduction: for Y > 0, Y * Y^(-Œ∑ 
-                                                  - 1) = Y^(-Œ∑)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1185: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1185 ...on: for Y > 0, Y * Y^(-Œ∑ - 1) = Y^(-Œ∑)
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1187: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1187     Y * Y ^ (-Œ∑ 
-                        - 1) = Y ^ (-Œ∑) := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1187: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1187     Y * Y ^ (-Œ∑ - 1) = Y ^ (-Œ∑)
-                                         := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1189: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1189   have h1 : Y = Y ^ (1 : ‚Ñù)
-                                     := by simpa using (rpow_one Y)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1191: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1191     Y * Y ^ (-Œ∑ 
-                        - 1)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1192: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1192         = Y ^ (1 : ‚Ñù)
-                               * Y ^ (-Œ∑ - 1) := by simpa [h1]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1192: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1192         = Y ^ (1 : ‚Ñù) * Y ^ (-Œ∑ 
-                                          - 1) := by simpa [h1]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1193: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1193     _   = Y ^ ((1 : ‚Ñù)
-                                + (-Œ∑ - 1)) := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1193: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1193     _   = Y ^ ((1 : ‚Ñù) + (-Œ∑ 
-                                       - 1)) := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1194: LaTeX Error: Invalid UTF-8 byte sequence (‚\lst@ECÑ\lst@ECù).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1194 ...using (rpow_mul_rpow_of_pos hY (1 : ‚Ñù)
-                                                   (-Œ∑ - 1))
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1194: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1194 ...(rpow_mul_rpow_of_pos hY (1 : ‚Ñù) (-Œ∑ 
-                                                  - 1))
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1195: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1195     _   = Y ^ (-Œ∑)
-                           := by ring
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1197: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1197 ...r Y > 0,  (Y) * (deriv (fun y => P y Œ∑)
-                                                   Y) = -Œ∑ * P Y Œ∑
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1197: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1197 ...(Y) * (deriv (fun y => P y Œ∑) Y) = -Œ∑ 
-                                                  * P Y Œ∑
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1197: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1197 ...eriv (fun y => P y Œ∑) Y) = -Œ∑ * P Y Œ∑
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1199: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1199     Y * (deriv (fun y => P y Œ∑)
-                                        Y) = -Œ∑ * P Y Œ∑ := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1199: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1199     Y * (deriv (fun y => P y Œ∑) Y) = -Œ∑ 
-                                                 * P Y Œ∑ := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1199: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1199 ...riv (fun y => P y Œ∑) Y) = -Œ∑ * P Y Œ∑ 
-                                                  := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1201: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1201   have hderiv : deriv (fun y => y ^ (-Œ∑)
-                                                ) Y = (-Œ∑) * Y ^ (-Œ∑ - 1) ...
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1201: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1201 ...v : deriv (fun y => y ^ (-Œ∑)) Y = (-Œ∑)
-                                                   * Y ^ (-Œ∑ - 1) := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1201: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1201 ...un y => y ^ (-Œ∑)) Y = (-Œ∑) * Y ^ (-Œ∑ 
-                                                  - 1) := by
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-
-[18]
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1202: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1202 ... using (deriv_rpow_const (x:=Y) (a:=-Œ∑)
-                                                   hY.ne')
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1205: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1205     Y * (deriv (fun y => P y Œ∑)
-                                        Y)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1206: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1206         = Y * ((-Œ∑)
-                            * Y ^ (-Œ∑ - 1)) := by simpa [P, hderiv]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1206: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1206         = Y * ((-Œ∑) * Y ^ (-Œ∑ 
-                                       - 1)) := by simpa [P, hderiv]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1207: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1207     _   = -Œ∑ 
-                     * (Y * Y ^ (-Œ∑ - 1)) := by ring
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1207: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1207     _   = -Œ∑ * (Y * Y ^ (-Œ∑ 
-                                     - 1)) := by ring
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1208: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1208     _   = -Œ∑ 
-                     * Y ^ (-Œ∑) := by simpa using rpow_mul_cancel (Œ∑:=Œ∑) ...
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1208: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1208     _   = -Œ∑ * Y ^ (-Œ∑)
-                                 := by simpa using rpow_mul_cancel (Œ∑:=Œ∑) ...
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1208: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1208 ...) := by simpa using rpow_mul_cancel (Œ∑:
-                                                  =Œ∑) (Y:=Y) hY
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1208: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1208 ... by simpa using rpow_mul_cancel (Œ∑:=Œ∑)
-                                                   (Y:=Y) hY
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1209: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1209     _   = -Œ∑ 
-                     * P Y Œ∑ := by rfl
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1209: LaTeX Error: Invalid UTF-8 byte sequence (Œ\lst@EC∑).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1209     _   = -Œ∑ * P Y Œ∑ 
-                              := by rfl
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-LaTeX Warning: Reference `app:verification' on page 1 undefined on input line 1213.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Argument of \GTS@CdrTwo has an extra }.
-<inserted text> 
-                \par 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Paragraph ended before \GTS@CdrTwo was complete.
-<to be read again> 
-                   \par 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Paragraph ended before \GTS@TestRightLabel was complete.
-<to be read again> 
-                   \par 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Undefined control sequence.
-\GTS@RemoveRight ...lobalString \label {}\GTS@Nil 
-                                                  \@nil \GTS@RemoveRightSpace 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Undefined control sequence.
-\GTS@RemoveRight ...tring \label {}\GTS@Nil \@nil 
-                                                  \GTS@RemoveRightSpace 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Paragraph ended before \GTS@TestRightSpace was complete.
-<to be read again> 
-                   \par 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Undefined control sequence.
-\GTS@RemoveRightSpace ...TS@GlobalString \GTS@Nil 
-                                                   \GTS@Nil \@nil 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Undefined control sequence.
-\GTS@RemoveRightSpace ...tring \GTS@Nil  \GTS@Nil 
-                                                  \@nil 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Undefined control sequence.
-\GTS@RemoveRightSpace ...\GTS@Nil  \GTS@Nil \@nil 
-                                                  
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1224: Package pgfkeys Error: I do not know the key '/tcb/Continuous-time Epstein--Zin aggregator' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-(That was another \errmessage.)
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@definition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1224 ...-time Epstein--Zin aggregator]\label{ez}
-                                                  
-
-LaTeX Warning: Citation `Sauzet2023' on page 19 undefined on input line 1232.
-
-
-LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 1233.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1236 \begin{equation}
-                       \label{eq:ez-agg}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1236 \begin{equation}
-                       \label{eq:ez-agg}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1236 \begin{equation}
-                       \label{eq:ez-agg}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1236 \begin{equation}
-                       \label{eq:ez-agg}
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Argument of \GTS@CdrTwo has an extra }.
-<inserted text> 
-                \par 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Paragraph ended before \GTS@CdrTwo was complete.
-<to be read again> 
-                   \par 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Paragraph ended before \GTS@TestRightLabel was complete.
-<to be read again> 
-                   \par 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Undefined control sequence.
-\GTS@RemoveRight ...lobalString \label {}\GTS@Nil 
-                                                  \@nil \GTS@RemoveRightSpace 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Undefined control sequence.
-\GTS@RemoveRight ...tring \label {}\GTS@Nil \@nil 
-                                                  \GTS@RemoveRightSpace 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Runaway argument?
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Paragraph ended before \GTS@TestRightSpace was complete.
-<to be read again> 
-                   \par 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Undefined control sequence.
-\GTS@RemoveRightSpace ...TS@GlobalString \GTS@Nil 
-                                                   \GTS@Nil \@nil 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Undefined control sequence.
-\GTS@RemoveRightSpace ...tring \GTS@Nil  \GTS@Nil 
-                                                  \@nil 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Undefined control sequence.
-\GTS@RemoveRightSpace ...\GTS@Nil  \GTS@Nil \@nil 
-                                                  
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1242: Package pgfkeys Error: I do not know the key '/tcb/Pricing kernel exposure under EZ' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-(That was another \errmessage.)
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1242 ... kernel exposure under EZ]\label{sdf-ez}
-                                                  
-
-LaTeX Warning: Reference `ez' on page 1 undefined on input line 1245.
-
-
-LaTeX Warning: Reference `eq:ez-agg' on page 19 undefined on input line 1256.
-
-
-Overfull \hbox (2.95016pt too wide) in paragraph at lines 1258--1258
-[]\T1/lmtt/m/n/10.95 bsde_dsgE/models/epstein_zin.py: EZParams, ez_generator, sdf_exposure_from_ez 
- []
-
-
-
-[19]
-
-LaTeX Warning: Reference `ez' on page 1 undefined on input line 1300.
-
-
-
-[20]
-
-[21] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux
-Runaway argument?
-{{7.1}{10}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:45: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.45 ...abel{prop:prop:externality}{{7.1}{10}{\par
-                                                   }{tcb@cnt@proposition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:45: Extra }, or forgotten \endgroup.
-l.45 ...el{prop:prop:externality}{{7.1}{10}{\par }
-                                                  {tcb@cnt@proposition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:45: Extra }, or forgotten \endgroup.
-l.45 ...{7.1}{10}{\par }{tcb@cnt@proposition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{{7.1}{10}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:47: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.47 \newlabel{}{{7.1}{10}{\par
-                                }{tcb@cnt@proposition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:47: Extra }, or forgotten \endgroup.
-l.47 \newlabel{}{{7.1}{10}{\par }
-                                 {tcb@cnt@proposition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:47: Extra }, or forgotten \endgroup.
-l.47 ...{7.1}{10}{\par }{tcb@cnt@proposition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{{G.1}{19}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:106: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.106 \newlabel{def:ez}{{G.1}{19}{\par
-                                       }{tcb@cnt@definition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:106: Extra }, or forgotten \endgroup.
-l.106 \newlabel{def:ez}{{G.1}{19}{\par }
-                                        {tcb@cnt@definition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:106: Extra }, or forgotten \endgroup.
-l.106 ...{G.1}{19}{\par }{tcb@cnt@definition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{{G}{19}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:108: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.108 \newlabel{}{{G}{19}{\par
-                               }{tcb@cnt@definition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:108: Extra }, or forgotten \endgroup.
-l.108 \newlabel{}{{G}{19}{\par }
-                                {tcb@cnt@definition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:108: Extra }, or forgotten \endgroup.
-l.108 ...}{{G}{19}{\par }{tcb@cnt@definition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{{G.1}{19}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:114: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.114 \newlabel{prop:sdf-ez}{{G.1}{19}{\par
-                                            }{tcb@cnt@proposition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:114: Extra }, or forgotten \endgroup.
-l.114 \newlabel{prop:sdf-ez}{{G.1}{19}{\par }
-                                             {tcb@cnt@proposition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:114: Extra }, or forgotten \endgroup.
-l.114 ...G.1}{19}{\par }{tcb@cnt@proposition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{{G}{19}{
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:116: Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.116 \newlabel{}{{G}{19}{\par
-                               }{tcb@cnt@proposition.1}{}}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:116: Extra }, or forgotten \endgroup.
-l.116 \newlabel{}{{G}{19}{\par }
-                                {tcb@cnt@proposition.1}{}}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux:116: Extra }, or forgotten \endgroup.
-l.116 ...{{G}{19}{\par }{tcb@cnt@proposition.1}{}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-)
- ***********
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-20>
- ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 53039 strings out of 468134
- 1270521 string characters out of 5430256
- 2600595 words of memory out of 5000000
- 80301 multiletter control sequences out of 15000+600000
- 775027 words of font info for 319 fonts, out of 8000000 for 9000
+ 52821 strings out of 468134
+ 1282027 string characters out of 5430256
+ 1929302 words of memory out of 5000000
+ 80467 multiletter control sequences out of 15000+600000
+ 734617 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,21n,121p,1065b,2949s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.pdf (21 pages, 630372 bytes).
-PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
- 85517 words of extra memory for PDF output out of 89155 (max. 10000000)
-
+ 116i,14n,121p,1065b,2092s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

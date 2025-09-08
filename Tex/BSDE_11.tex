@@ -128,7 +128,8 @@ title=\sffamily\bfseries Connections to the Literature,
 \newcommand{\Lz}{L\_z}
 \newcommand{\Lx}{L\_x}
 \newcommand{\Lzadj}{L\_z^{\!*}}
-\newcommand{\dmU}{\delta\_m U}
+% Measure derivatives: \dmU is the Lions derivative D_m U (vector-valued)
+\newcommand{\dmU}{D\_m U}
 \newcommand{\Dm}{D\_m}
 \newcommand{\ip}[2]{\langle #1,#2\rangle}
 \newcommand{\YY}{Y(m,x)}
@@ -424,49 +425,186 @@ $$
 %========================
 % Mathematical setup
 %========================
-\section{Mathematical Setup: State Space, Measures, and Differentiation on \texorpdfstring{$\mathcal P$}{P}}
+\section{Mathematical Setup: State Space, Measures, and Differentiation on \texorpdfstring{$\mathcal P$}{P}}\label{sec:math-setup}
 
-\subsection{State space and probability metrics}
+\subsection{State space and probability metrics}\label{sec:state-metrics}
 We consider the state space $S\equiv \R_+\times\R$ with generic element $s=(k,z)$. The population law $m$ is a Borel probability measure on $S$. For well-posedness of the measure terms in the master equation (ME), we tacitly restrict to the $W_2$-finite set
 
 $$
 \mathcal P_2(S)\equiv\Big\{ m\in\mathcal P(S): \int (\kappa^2 + \zeta^2)\, m(\diff\kappa,\diff\zeta) < \infty\Big\}.
 $$
 
-The quadratic Wasserstein distance $\mathrm{W}_2$ metrizes weak convergence plus convergence of second moments. It is natural for diffusions and for the functional Itô calculus on $\mathcal P_2$.
+The quadratic Wasserstein distance $\mathrm{W}_2$ metrizes weak convergence plus convergence of second moments. It provides the natural geometry for diffusions and the functional Itô calculus on $\mathcal P_2$.
+
+\begin{tcolorbox}[literaturestyle]
+\textbf{Foundations.} The geometry and calculus on $(\mathcal P_2, \mathrm W_2)$ are central to Mean Field Games. See \cite{carmona_delarue_2018_mfg}, Vol.~I, Chapter~5.
+\end{tcolorbox}
+
+\subsection{Differentiation on \texorpdfstring{$\mathcal P_2$}{P2}: Lions vs Flat Derivatives}
+
+We require two complementary notions of differentiation for functionals $F:\mathcal P_2(S)\to\R$. They play distinct roles in the master equation and must not be conflated.
+
+\begin{lemma}{Directional perturbations for linear functionals (Flat)}{directional}
+Let $\Phi(m)=\int \varphi(\xi)\,m(\diff \xi)$ with $\varphi\in L^2(m)$ for all $m\in\mathcal P_2(S)$. For a mixture path $m_\varepsilon=(1-\varepsilon)m+\varepsilon\,\nu$ with $\nu\in\mathcal P_2(S)$,
+\[
+\frac{\mathrm d}{\mathrm d\varepsilon}\,\Phi(m_\varepsilon)\Big|_{\varepsilon=0}
+= \int \varphi(\xi)\,\big(\nu-m\big)(\diff\xi).
+\]
+In particular, a representative \emph{Flat (first-variation) derivative} is $\tfrac{\delta \Phi}{\delta m}(m)(\xi)=\varphi(\xi)$ (defined $m$-a.e.).
+\end{lemma}
+
+\begin{proof}
+Linearity of the integral gives $\Phi(m_\varepsilon)=(1-\varepsilon)\int\varphi\,\diff m+\varepsilon\int\varphi\,\diff\nu$. Differentiating at $\varepsilon=0$ yields $\int\varphi\,\diff\nu-\int\varphi\,\diff m$. Identifying the directional derivative along signed perturbations with density $\nu-m$ shows that a valid representative of the Flat derivative is $\delta\Phi/\delta m=\varphi$ (measurable $m$-version), since $\int \tfrac{\delta\Phi}{\delta m}(m)(\xi)\, (\nu-m)(\diff\xi)=\int\varphi\,\diff\nu-\int\varphi\,\diff m$.
+\end{proof}
 
 \begin{definition}{Lions derivative}{lions}
-Let $F:\mathcal P_2(S)\to\R$. The \emph{Lions derivative} $\Dm F(m):S\to\R^{d_s}$ (here $d_s=2$) is defined by lifting: pick a probability space $(\Omega,\mathcal F,\mathbb P)$ and a square-integrable random variable $X:\Omega\to S$ with law $m$. If there exists a Fréchet-derivative $D\tilde F(X)$ of the lifted map $\tilde F: L^2(\Omega;S)\to\R$, then $\Dm F(m)(\xi)$ is any measurable version that satisfies
+Let $F:\mathcal P_2(S)\to\R$. Define the lift $\tilde F: L^2(\Omega;S)\to\R$ by $\tilde F(X)=F(\mathrm{Law}(X))$. If $\tilde F$ is Fréchet differentiable at $X$, there exists a unique gradient $\nabla_X\tilde F(X)\in L^2(\Omega;S)$ such that
 
 $$
-D\tilde F(X)\cdot H = \E\big[\ip{ \Dm F(m)(X)}{H}\big]\quad\text{for all }H\in L^2(\Omega;S).
+D\tilde F(X)\cdot H = \E\big[\ip{ \nabla_X\tilde F(X)}{H}\big]\quad\text{for all }H\in L^2(\Omega;S).
 $$
+The \emph{Lions derivative} $\Dm F(m):S\to\R^{d_s}$ (here $d_s=2$) is the measurable representative satisfying $\nabla_X\tilde F(X)=\Dm F(m)(X)$ when $\mathrm{Law}(X)=m$.
 
 When we write $\dmU(\xi;k,z,x,m)$, we identify the derivative of $m\mapsto U(k,z,x,m)$ at point $\xi\in S$.
 \end{definition}
 
-\begin{lemma}{Chain rule for composite functionals}{chain}
-Let $F(m)=G(\Phi(m))$ with $G:\R\to\R$ differentiable and $\Phi(m)=\int \varphi(\xi)\,m(\diff\xi)$ for some integrable $\varphi:S\to\R$. Then $\Dm F(m)(\xi)=G'(\Phi(m))\,\varphi(\xi)$.
+\begin{lemma}{Chain rule for Lions derivative}{chain_lions}
+Let $\Phi(m)=\int \varphi(\xi)\,m(\diff\xi)$, where $\varphi:S\to\R$ is $C^1$ with bounded derivatives, and let $G:\R\to\R$ be $C^1$. Then for $F(m)=G(\Phi(m))$,
+\[
+\Dm F(m)(\xi)=G'(\Phi(m))\,\nabla\varphi(\xi).
+\]
 \end{lemma}
 
 \begin{proof}
-The lift of $\Phi$ is $\tilde\Phi(X)=\E[\varphi(X)]$. The Gâteaux derivative is $\delta \tilde\Phi(X)\cdot H=\E[\varphi'(X)\cdot H]$ when $\varphi$ is differentiable or, for integral functionals, $\varphi$ itself plays the role of a density; composing with $G$ gives the stated direction derivative.
+The lift is $\tilde F(X)=G(\E[\varphi(X)])$. Since $\varphi$ is $C^1$ with bounded derivatives, $\tilde \Phi(X)=\E[\varphi(X)]$ is Fréchet differentiable with $D\tilde\Phi(X)\cdot H=\E[\ip{\nabla\varphi(X)}{H}]$ and gradient $\nabla_X\tilde\Phi(X)=\nabla\varphi(X)$. The Banach-space chain rule yields $\nabla_X\tilde F(X)=G'(\E[\varphi(X)])\,\nabla\varphi(X)$. Identifying the Lions derivative gives the result; see \cite[Prop.~5.45]{carmona_delarue_2018_mfg}.
 \end{proof}
 
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.FDeriv
+import Mathlib.Analysis.Calculus.ChainRule
+
+-- Chain rule for Fréchet derivatives in Banach spaces.
+variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [NormedAddCommGroup F] [NormedSpace ℝ F]
+  [NormedAddCommGroup G] [NormedSpace ℝ G]
+
+theorem chain_rule_composition (Φ : E → F) (H : F → G) (X : E)
+  (hΦ : DifferentiableAt ℝ Φ X) (hH : DifferentiableAt ℝ H (Φ X)) :
+  fderiv ℝ (H ∘ Φ) X = (fderiv ℝ H (Φ X)).comp (fderiv ℝ Φ X) := by
+  exact fderiv.comp X hH hΦ
+\end{leanproof}
+
+\begin{definition}{Flat derivative (First Variation)}{flat_deriv}
+Let $F:\mathcal P_2(S)\to\R$. A \emph{Flat derivative} (first variation) of $F$ at $m$ is a function $\tfrac{\delta F}{\delta m}(m):S\to\R$ such that for every $\nu\in\mathcal P_2(S)$,
+\[
+\lim_{\epsilon\to 0^+} \frac{F\big((1-\epsilon)m+\epsilon\nu\big)-F(m)}{\epsilon}
+= \int_S \frac{\delta F}{\delta m}(m)(\xi)\, (\nu-m)(\diff\xi).
+\]
+\end{definition}
+
+\begin{lemma}{Chain rule for Flat derivative}{chain_flat}
+Let $F(m)=G(\Phi(m))$ with $G:\R\to\R$ differentiable and $\Phi(m)=\int \varphi(\xi)\,m(\diff\xi)$ for integrable $\varphi:S\to\R$. Then
+\[
+\frac{\delta F}{\delta m}(m)(\xi)=G'(\Phi(m))\,\varphi(\xi).
+\]
+\end{lemma}
+
+\begin{proof}
+Set $m_\epsilon=(1-\epsilon)m+\epsilon\nu$. Then $\Phi(m_\epsilon)=(1-\epsilon)\Phi(m)+\epsilon\Phi(\nu)$. Differentiate $F(m_\epsilon)=G(\Phi(m_\epsilon))$ at $\epsilon=0$ to obtain $G'(\Phi(m))\, (\Phi(\nu)-\Phi(m))=G'(\Phi(m))\int \varphi\, (\nu-m)$, which identifies the first variation as stated.
+\end{proof}
+
+\begin{sympycheck}
+import sympy as sp
+# Gâteaux derivative used in Lemma (Flat chain rule).
+G = sp.Function('G')
+Phi_m, Phi_nu, eps = sp.symbols('Phi_m Phi_nu eps', real=True)
+Phi_m_eps = (1-eps)*Phi_m + eps*Phi_nu
+F_m_eps = G(Phi_m_eps)
+Gateaux_deriv = sp.diff(F_m_eps, eps).subs(eps, 0)
+expected = sp.diff(G(Phi_m), Phi_m) * (Phi_nu - Phi_m)
+assert sp.simplify(Gateaux_deriv - expected) == 0
+\end{sympycheck}
+
 \begin{tcolorbox}[mathstyle]
-\textbf{Application to the price externality.} With $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ and $G=P$, Lemma~\ref{lem:chain} yields
-$\Dm\big(P(\Phi(m))\big)(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha$.
-Multiplying by the \emph{this-firm} factor $e^{x+z}k^\alpha$ produces the integrand of the last line in the ME.
+\textbf{CRITICAL DISTINCTION: Lions vs Flat.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Lions derivative} $\Dm F(m)(\xi)\in\R^{d_s}$ is a vector field and, for $F=G\circ\Phi$, involves $\nabla\varphi(\xi)$ (\Cref{lem:chain_lions}).
+  \item \emph{Flat derivative} $\tfrac{\delta F}{\delta m}(m)(\xi)\in\R$ is scalar and, for $F=G\circ\Phi$, involves $\varphi(\xi)$ (\Cref{lem:chain_flat}).
+\end{itemize}
+These notions appear in different places in the Master Equation: transport terms use the Lions derivative of $U$, while the direct price externality uses the Flat derivative of the profit functional. Section~\ref{sec:master-equation} should be read with this distinction in mind.
 \end{tcolorbox}
 
-\subsection{Generators, domains, and adjoints}
-The generator $\Lz$ acts on $C_b^2(\R)$ functions of $z$. The adjoint $\Lzadj$ acts on densities $m(k,z)$ (when they exist) as
+\begin{tcolorbox}[mathstyle]
+\textbf{Application to the price externality (revisited).} Let $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ and $G=P$.
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+  \item \emph{Flat derivative:} by \Cref{lem:chain_flat}, $\tfrac{\delta}{\delta m}\big(P(\Phi(m))\big)(\xi)=P'(Y)\,\varphi(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha$. This scalar derivative feeds the direct price-externality term in \Cref{prop:externality}.
+  \item \emph{Lions derivative:} by \Cref{lem:chain_lions}, $\Dm\big(P(\Phi(m))\big)(\xi)=P'(Y)\,\nabla\varphi(\xi)=P'(Y)\,\big(\alpha e^{x+\zeta}\kappa^{\alpha-1},\ e^{x+\zeta}\kappa^\alpha\big)^{\!\top}$, relevant only if $P(\cdot)$ enters transport terms.
+\end{itemize}
+Multiplying the Flat-derivative expression by the \emph{this-firm} factor $e^{x+z}k^\alpha$ gives precisely the integrand used in the ME’s price-externality term.
+\end{tcolorbox}
 
-$$
-\Lzadj m = -\partial_z(\mu_z m) + \tfrac12 \sigma_z^2 \partial_{zz} m .
-$$
+\subsection{Generators, domains, and adjoints}\label{sec:generators}
 
-The transport in $k$ is first-order; the adjoint contributes $-\partial_k\big[(i^*-\delta k)m\big]$. No diffusion in $k$ implies a degenerate (hyperbolic) structure in that dimension; numerical schemes must upwind in $k$.
+\begin{definition}{Classical generators and domains}{gens}
+For twice continuously differentiable $u$, the one-dimensional second-order generators in the idiosyncratic and aggregate directions act as
+\[
+\Lz u(z)=\mu_z(z)\,u_z(z)+\tfrac12\,\sigma_z^2\,u_{zz}(z),\qquad
+\Lx u(x)=\mu_x(x)\,u_x(x)+\tfrac12\,\sigma_x^2\,u_{xx}(x).
+\]
+A convenient classical domain is $\mathcal D(\Lz)=C_b^2(\R)$ (or $C_c^2(\R)$ for compact-support arguments); analogously for $\Lx$. Under the local-Lipschitz and linear-growth assumptions on $(\mu,\sigma)$, these generators are closable and generate Feller semigroups on the space of bounded continuous functions.
+\end{definition}
+
+\begin{definition}{Adjoints on densities}{adjointraw}
+When a density $m(k,z)$ (or $m(x)$) exists, the formal $L^2$-adjoints acting on densities are
+\[
+\Lzadj m = -\partial_z\big(\mu_z\, m\big) + \tfrac12\, \sigma_z^2\, \partial_{zz} m,\qquad
+\Lx^{\!*} m = -\partial_x\big(\mu_x\, m\big) + \tfrac12\, \sigma_x^2\, \partial_{xx} m.
+\]
+\end{definition}
+
+\begin{lemma}{Adjoint pairing in $z$ and $x$}{adjoint-pairing-zx}
+Let $\varphi\in C_c^2(\R)$ and let $m$ be integrable. Then
+\[
+\int_{\R} (\Lz \varphi)(z)\, m(z)\,\mathrm dz = \int_{\R} \varphi(z)\, (\Lzadj m)(z)\,\mathrm dz,
+\qquad
+\int_{\R} (\Lx \varphi)(x)\, m(x)\,\mathrm dx = \int_{\R} \varphi(x)\, (\Lx^{\!*} m)(x)\,\mathrm dx.
+\]
+\end{lemma}
+
+\begin{proof}
+Integrate by parts twice, using compact support (or sufficient decay) to kill boundary terms. The drift term yields $\int \mu\,\varphi'\,m = -\int \varphi\,\partial(\mu m)$; the diffusion term yields $\tfrac12\sigma^2\int \varphi'' m = \tfrac12\sigma^2\int \varphi\, m''$.
+\end{proof}
+
+\begin{definition}{Transport in $k$ and its adjoint}{transport-k}
+Let the transport velocity be $u(k,z,x,m)\equiv i^*(k,z,x,m)-\delta k$. Acting on smooth test functions $\phi=\phi(k)$,
+\[
+\mathcal T_k\phi \equiv u\,\partial_k\phi,\qquad
+\mathcal T_k^{\!*} m \equiv -\partial_k\big(u\,m\big),
+\]
+so that $\int (\mathcal T_k\phi)\,m = \int \phi\,(\mathcal T_k^{\!*} m)$ whenever boundary fluxes vanish.
+\end{definition}
+
+\begin{lemma}{Adjoint pairing in $k$ with reflecting boundary}{adjoint-pairing-k}
+If the boundary at $k=0$ is reflecting, the probability flux vanishes: $(u m)|_{k=0}=0$. On any compact truncation $[0,K]$ with conservative outflow at $K$, the adjoint pairing
+\[
+\int_0^K (u\,\partial_k\phi)\,m\,\mathrm dk = \int_0^K \phi\,\big(-\partial_k(u m)\big)\,\mathrm dk
+\]
+holds for all $\phi\in C^1([0,K])$.
+\end{lemma}
+
+\begin{sympycheck}
+import sympy as sp
+# Algebraic adjoint identity in 1D: (phi_k)*(a*m) = d_k(phi*a*m) - phi*d_k(a*m)
+k = sp.symbols('k', real=True)
+phi = sp.Function('phi')(k)
+a   = sp.Function('a')(k)
+m   = sp.Function('m')(k)
+lhs = sp.diff(phi, k) * (a*m)
+rhs = sp.diff(phi*(a*m), k) - phi*sp.diff(a*m, k)
+assert sp.simplify(lhs - rhs) == 0
+\end{sympycheck}
+
+No diffusion in $k$ implies a degenerate (hyperbolic) structure in that dimension; numerical schemes must upwind in $k$ and enforce boundary fluxes consistently.
 
 %========================
 % Firm Problem & HJB
@@ -634,16 +772,17 @@ The stationary master equation (ME) characterizes the equilibrium value function
 
 \subsection{The Master Equation Formulation}\label{sec:me-formulation}
 
-Define the master value $U(k,z,x,m)$ and the Lions derivative $\dmU(\xi;k,z,x,m)$ at $\xi=(\kappa,\zeta)$. The drift at $\xi$ is
+Define the master value $U(k,z,x,m)$ and the Lions derivative $\dmU(\xi;k,z,x,m)\in\R^2$ at $\xi=(\kappa,\zeta)$, with components $\dmU\_\kappa$ and $\dmU\_\zeta$. The drift at $\xi$ is
 \[
 b(\xi,x,m)=(i^*(\xi,x,m)-\delta\kappa)\,e_k+\mu_z(\zeta)\,e_z,
 \]
 and diffusion is only in $z$ with variance $\sigma_z^2$. We define the transport operator $\mathcal{T}$ acting on the Lions derivative $\dmU$ (as a function of $\xi$):
 \[
-\mathcal{T}[\dmU](\xi) \equiv (i^*(\xi,x,m)-\delta\kappa)\,\partial\_\kappa\dmU
-\; +\; \mu\_z(\zeta)\,\partial\_\zeta\dmU
-\; +\; \tfrac12\sigma\_z^2\,\partial^2\_{\zeta\zeta}\dmU.
+\mathcal{T}[\dmU](\xi) \equiv (i^*(\xi,x,m)-\delta\kappa)\,\partial\_\kappa\big(\dmU\_\kappa\big)
+\; +\; \mu\_z(\zeta)\,\partial\_\zeta\big(\dmU\_\zeta\big)
+\; +\; \tfrac12\sigma\_z^2\,\partial^2\_{\zeta\zeta}\big(\dmU\_\zeta\big).
 \]
+This is the componentwise action of the $(k,z)$ generator on the vector field $\Dm U$; with diffusion only in $z$, the second-order term applies to the $\zeta$-component.
 
 The stationary master equation characterizes the equilibrium $(U,m)$.
 
@@ -658,7 +797,7 @@ r(x)\,U(k,z,x,m) &= \underbrace{\max\_{i\in\R}\big\{\pi(k,i,z,x,m) + U_k\,(i-\de
 \end{equation}
 \end{theorem}
 
-\subsection{The Price Externality: Derivation and Simplification}
+\subsection{The Price Externality: Derivation and Simplification}\label{sec:me-externality}
 
 \begin{proposition}[Price-externality simplification]\label{prop:externality}
 The profit depends on $m$ only through aggregate output $Y(m,x)$. Then
@@ -676,18 +815,18 @@ Under isoelastic demand $P(Y)=Y^{-\eta}$, this becomes $-\eta\,P(Y)\,e^{x+z}k^\a
 \begin{proof}
 Let $R(k,z,x,m)=P(Y(m,x))\,e^{x+z}k^\alpha$ be the revenue component of $\pi$. Other components of $\pi$ (costs $i, h(i,k), f$) do not depend on $m$, so $\delta_m \pi = \delta_m R$.
 
-We apply the chain rule (\Cref{lem:chain}). Let $G(Y)=P(Y)$ and $\Phi(m)=Y(m,x)=\int \varphi(\xi)\,m(\diff\xi)$, where $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ is the output of the marginal firm $\xi$.
-The Lions derivative of the linear functional $\Phi(m)$ is the integrand:
+We apply the Flat chain rule (\Cref{lem:chain_flat}). Let $G(Y)=P(Y)$ and $\Phi(m)=Y(m,x)=\int \varphi(\xi)\,m(\diff\xi)$, where $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ is the output of the marginal firm $\xi$.
+The Flat derivative of the linear functional $\Phi(m)$ is the integrand:
 \[
-\Dm\Phi(m)(\xi) = \varphi(\xi) = e^{x+\zeta}\kappa^\alpha.
+\tfrac{\delta\Phi}{\delta m}(m)(\xi) = \varphi(\xi) = e^{x+\zeta}\kappa^\alpha.
 \]
-By the chain rule for $G\circ\Phi$:
+By the chain rule for $G\circ\Phi$ (Flat derivative):
 \[
-\Dm[G\!\circ\!\Phi](m)(\xi)=G'(Y)\,\varphi(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha.
+\frac{\delta}{\delta m}[G\!\circ\!\Phi](m)(\xi)=G'(Y)\,\varphi(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha.
 \]
-The revenue $R$ is $e^{x+z}k^\alpha \cdot (G\circ\Phi)(m)$. Thus, its Lions derivative is:
+The revenue $R$ is $e^{x+z}k^\alpha \cdot (G\circ\Phi)(m)$. Thus, its Flat derivative is:
 \[
-\delta\_m R(\xi;\,k,z,x,m) = e^{x+z}k^\alpha \cdot \Dm[G\!\circ\!\Phi](m)(\xi) = e^{x+z}k^\alpha\,P'(Y)\,e^{x+\zeta}\kappa^\alpha.
+\delta\_m R(\xi;\,k,z,x,m) = e^{x+z}k^\alpha \cdot \tfrac{\delta}{\delta m}[G\!\circ\!\Phi](m)(\xi) = e^{x+z}k^\alpha\,P'(Y)\,e^{x+\zeta}\kappa^\alpha.
 \]
 Integrating this expression with respect to $m(\diff\xi)$:
 \[
@@ -715,14 +854,16 @@ assert sp.simplify(Gateaux_deriv - expected) == 0
 \end{sympycheck}
 
 \begin{tcolorbox}[didacticstyle]
-\textbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. Appendix C summarizes the additional terms that would arise if $m$ were itself driven by common noise (e.g., through $x_t$).
+\textbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. See \Cref{app:common-noise} for a summary of the additional terms that arise when $m$ is driven by common noise (e.g., through $x_t$).
 \end{tcolorbox}
 
 \begin{tcolorbox}[mathstyle]
 \textbf{Mathematical rigor (functional derivative bookkeeping).}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
-  \item \emph{Lions derivative.} For functionals $F: \mathcal P\_2\to\R$ depending on $m$ via $Y(m,x)$, $\Dm F(m)(\xi)=F'(Y)\,\partial Y/\partial m(\xi)$ with $\partial Y/\partial m(\xi)=e^{x+\zeta}\kappa^{\alpha}$. Integrating against $m$ recovers the price externality in \eqref{eq:isoelastic}.
-  \item \emph{ME structure.} The stationary ME collects: own-firm HJB, population transport via $\dmU$, and the explicit price externality $\int \delta\_m \pi\,\diff m$ (which simplifies to $e^{x+z}k^\alpha Y P'(Y)$). Conditioning on $x$ removes measure-diffusion terms.
+  \item \emph{Flat vs. Lions.} If $F(m)=G\!\left(\int \varphi\,\diff m\right)$, then
+  $\tfrac{\delta F}{\delta m}(m)(\xi)=G'(\Phi(m))\,\varphi(\xi)$ (scalar first variation),
+  while $\Dm F(m)(\xi)=G'(\Phi(m))\,\nabla\varphi(\xi)$ (vector Lions derivative), cf. \Cref{lem:chain\_flat,lem:chain\_lions}.
+  \item \emph{ME structure.} The stationary ME collects: own-firm HJB, population transport via the \emph{Lions} derivative $\Dm U$ (componentwise generator action; see \S\ref{sec:me-formulation}), and the explicit price externality via the \emph{Flat} derivative $\int \delta\_m \pi\,\diff m$ (which simplifies to $e^{x+z}k^\alpha Y P'(Y)$). Conditioning on $x$ removes second-order terms in the measure.
   \item \emph{Equivalence.} Under monotonicity and regularity (Lasry--Lions), the stationary HJB--FP fixed point and the ME solution coincide; see Appendix references.
 \end{itemize}
 \end{tcolorbox}
@@ -745,7 +886,7 @@ Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity 
   box/.style={rectangle, draw=darkgreen, rounded corners, thick, inner sep=6pt, align=center}
 ]
 \node[box] (hjb) {Own-firm HJB\\$\max\_i\{\cdots\}$};
-\node[box, right=of hjb] (pop) {Population transport\\via $\mathcal{T}[\delta\_m U]$};
+\node[box, right=of hjb] (pop) {Population transport\\via $\mathcal{T}[\Dm U]$};
 \node[box, below=of pop] (price) {Price externality\\$e^{x+z}k^{\alpha} Y P'(Y)$};
 \node[box, below=of hjb] (me) {ME residual};
 \draw[->, thick] (hjb) -- (me);
@@ -938,18 +1079,18 @@ Consider a flow $t\mapsto (K_t,Z_t)$ for the tagged firm following control $i_t$
 \begin{align*}
 \diff U &= U_k\,\diff K_t + U_z\,\diff Z_t + \tfrac12 U_{zz}\,\sigma_z^2\,\diff t \\
         &\quad + \big(\partial_t U\big|_{m}\big)\,\diff t, \\
-\partial_t U\big|_{m} &= \int \Big[ (i^*(\xi,x,m)-\delta\kappa)\,\partial_{\kappa}\,\dmU
-  +\mu_z(\zeta)\,\partial_{\zeta}\,\dmU
-  +\tfrac12\sigma_z^2\,\partial_{\zeta\zeta}^2\,\dmU\Big] \, m(\diff \xi) \\
+\partial_t U\big|_{m} &= \int \Big[ (i^*(\xi,x,m)-\delta\kappa)\,\partial_{\kappa}\big(\Dm U\big)\!\_\kappa
+  +\mu_z(\zeta)\,\partial_{\zeta}\big(\Dm U\big)\!\_\zeta
+  +\tfrac12\sigma_z^2\,\partial_{\zeta\zeta}^2\big(\Dm U\big)\!\_\zeta\Big] \, m(\diff \xi) \\
   &\quad + \int \delta_m \pi(\xi; k,z,x,m) \, m(\diff \xi).
 \end{align*}
-  where the last line uses the chain rule in \Cref{lem:chain}. Taking expectations under the pricing measure with short rate $r(x)$ and imposing stationarity produces the stationary master equation (ME).
+  where the last line uses the Flat chain rule in \Cref{lem:chain_flat}. Taking expectations under the pricing measure with short rate $r(x)$ and imposing stationarity produces the stationary master equation (ME).
 
 \subsection{Externality term in detail}
 Write $\pi(k,i,z,x,m)=\Psi(Y(m,x))\,\chi(k,z,x)-i-h(i,k)-f$ with $\Psi=P$ and $\chi=e^{x+z}k^\alpha$. Then
 
 $$
-\Dm\pi(m)(\xi)=\Psi'(Y)\,\chi(k,z,x)\,\chi(\kappa,\zeta,x),
+\delta\_m\pi(m)(\xi)=\Psi'(Y)\,\chi(k,z,x)\,\chi(\kappa,\zeta,x),
 $$
 
 and integration w\.r.t.\ $m$ yields $\chi(k,z,x)\,\Psi'(Y)\,Y(m,x)$.
