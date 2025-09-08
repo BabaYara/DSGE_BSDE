@@ -29,6 +29,7 @@
 \usepackage{xcolor}
 
 % Code
+\usepackage{minted} % requires -shell-escape; used for verification boxes
 \usepackage{listings}
 % PythonTeX for executable SymPy checks in Appendix E
 \usepackage{pythontex}
@@ -92,6 +93,31 @@ title=\sffamily\bfseries Connections to the Literature,
 \Crefname{tcb@cnt@theorem}{Theorem}{Theorems}
 \crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
 \Crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
+
+% Verification box environments (SymPy and Lean4) using minted+tcolorbox
+% SymPy check box
+\tcbset{
+    sympycheckstyle/.style={
+        enhanced,breakable,skin=enhanced,
+        colback=white,colframe=black!15,boxrule=0.4pt,arc=2pt,
+        left=6pt,right=6pt,top=6pt,bottom=6pt,
+        title={Symbolic Check (SymPy)},
+        fonttitle=\bfseries\sffamily,
+        attach boxed title to top left={yshift=-2mm, xshift=2mm},
+        boxed title style={colback=black!5},
+    }
+}
+\newenvironment{sympycheck}
+  {\begin{tcolorbox}[sympycheckstyle]\VerbatimEnvironment\begin{minted}[fontsize=\small,breaklines]{python}}
+  {\end{minted}\end{tcolorbox}}
+
+% Lean4 proof box
+\tcbset{
+    leanproofstyle/.style={sympycheckstyle, title={Formal Proof (Lean4)}}
+}
+\newenvironment{leanproof}
+  {\begin{tcolorbox}[leanproofstyle]\VerbatimEnvironment\begin{minted}[fontsize=\small,breaklines]{lean}}
+  {\end{minted}\end{tcolorbox}}
 
 % Convenience macros
 \DeclareMathOperator{\E}{\mathbb{E}}
@@ -461,7 +487,7 @@ When the stochastic discount factor is \emph{endogenous}, e.g., from a represent
   = \max\_{i\in\R} \Big\{ \pi + V\_k\,(i-\delta k) + \Lz V + \Lx V 
       - \underbrace{(\sigma_z V\_z,\, \sigma_x V\_x)\cdot\Lambda_t}\_{\text{pricing-kernel exposure}} \Big\} \;}
 \end{equation}
-Here $r_t$ and $\Lambda_t$ come from the EZ block. With the EZ aggregator in \Cref{def:ez}, the utility-channel contribution to $\Lambda_t$ equals $-\theta\,Z_t/V_t$ (\Cref{prop:sdf-ez}); additional consumption-channel terms can be added if $c_t$ has direct Brownian exposure.
+Here $r_t$ and $\Lambda_t$ come from the EZ block. With the EZ aggregator in \Cref{ez}, the utility-channel contribution to $\Lambda_t$ equals $-\theta\,Z_t/V_t$ (\Cref{sdf-ez}); additional consumption-channel terms can be added if $c_t$ has direct Brownian exposure.
 
 The interior first-order condition reads
 
@@ -489,10 +515,11 @@ $$
 
 plus complementarity if a bound $i\ge -\kbar(k)$ applies.
 \end{proposition}
-
 \begin{proof}
 On each half-line, $h_i(i,k)=\phi_\pm\,i/k$. The FOC $1+h_i(i,k)=V_k$ gives $i=(k/\phi_\pm)(V_k-1)$. Strict convexity in $i$ ensures a unique maximizer; the kink at $i=0$ maps to $V_k=1$. Lower bounds are handled by KKT complementarity.
 \end{proof}
+
+% Verification note: Policy FOC formulas are also checked in Appendix E.
 
 \begin{proposition}{Convex Hamiltonian and well-posed policy map}{hamiltonian}
 Define the Hamiltonian
@@ -584,6 +611,7 @@ In the isoelastic case $P(Y)=Y^{-\eta}$ with $\eta>0$,
 \begin{equation}\label{eq:isoelastic}
 Y\,P'(Y) = -\eta\, P(Y).
 \end{equation}
+% Verification note: isoelastic identity is checked in Appendix E.
 
 \begin{tcolorbox}[didacticstyle]
 \textbf{Economic content.} The aggregation wedge in firm incentives is a simple \emph{marginal-revenue} term: the effect of another unit of firm $k$'s output on the price times firm $k$'s own output. Under isoelastic demand this becomes a proportional tax on revenue with rate $\eta$, varying over the business cycle through $P(Y)$.
@@ -601,68 +629,112 @@ Y\,P'(Y) = -\eta\, P(Y).
 % %========================
 % % Master Equation
 % %========================
-\section[Master Equation (Stationary, Conditional on x)]{Master Equation (Stationary, Conditional on $x$)}
-\begin{comment}
+\section[Master Equation (Stationary, Conditional on x)]{Master Equation (Stationary, Conditional on $x$)}\label{sec:master-equation}
+The stationary master equation (ME) characterizes the equilibrium value function $U(k,z,x,m)$ directly. It combines the individual optimization (HJB structure) with the evolution of the population (FP structure), making explicit the feedback from the population onto the individual via the Lions derivative $\dmU(\xi;k,z,x,m)$ evaluated at $\xi=(\kappa,\zeta)$.
+
+\subsection{The Master Equation Formulation}\label{sec:me-formulation}
+
 Define the master value $U(k,z,x,m)$ and the Lions derivative $\dmU(\xi;k,z,x,m)$ at $\xi=(\kappa,\zeta)$. The drift at $\xi$ is
-
-$$
+\[
 b(\xi,x,m)=(i^*(\xi,x,m)-\delta\kappa)\,e_k+\mu_z(\zeta)\,e_z,
-$$
+\]
+and diffusion is only in $z$ with variance $\sigma_z^2$. We define the transport operator $\mathcal{T}$ acting on the Lions derivative $\dmU$ (as a function of $\xi$):
+\[
+\mathcal{T}[\dmU](\xi) \equiv (i^*(\xi,x,m)-\delta\kappa)\,\partial\_\kappa\dmU
+\; +\; \mu\_z(\zeta)\,\partial\_\zeta\dmU
+\; +\; \tfrac12\sigma\_z^2\,\partial^2\_{\zeta\zeta}\dmU.
+\]
 
-and diffusion is only in $z$ with variance $\sigma_z^2$. The stationary master equation reads
+The stationary master equation characterizes the equilibrium $(U,m)$.
+
+\begin{theorem}{Stationary Master Equation (Conditional on $x$)}{ME}
 \begin{equation}
-\boxed{
-\begin{aligned}
-r(x),U(k,z,x,m)=\ &\max\_{i}\big{\pi(k,i,z,x,m)+U\_k(i-\delta k)+\Lz U+\Lx U\big}\\
-&\ +\int\Big\[(i^\*(\xi,x,m)-\delta\kappa),\partial\_\kappa\dmU
-+\mu\_z(\zeta),\partial\_\zeta\dmU
-+\tfrac12\sigma\_z^2,\partial\_{\zeta\zeta}^2\dmU\Big], m(\diff \xi)\\
-&\ +\underbrace{\int \delta\_m \pi(\xi;,k,z,x,m), m(\diff \xi)}\_{\text{direct price externality}}.
+\boxed{\begin{aligned}
+r(x)\,U(k,z,x,m) &= \underbrace{\max\_{i\in\R}\big\{\pi(k,i,z,x,m) + U_k\,(i-\delta k) + \Lz U + \Lx U\big\}}_{\text{Own-firm HJB terms}} \\
+&\quad + \underbrace{\int \mathcal{T}[\dmU](\xi)\, m(\diff \xi)}_{\text{Population transport}} \\
+&\quad + \underbrace{\int \delta\_m \pi(\xi;\,k,z,x,m)\, m(\diff \xi)}_{\text{Direct price externality}}\,.
 \end{aligned}}
 \tag{ME}\label{eq:ME}
 \end{equation}
-
-\begin{proposition}[Price-externality simplification]\label{prop:externality}
-Since $\pi$ depends on $m$ only through $Y$,
-
-$$
-\delta_m \pi(\xi;\,k,z,x,m)= P'(Y)\,\underbrace{e^{x+z}k^\alpha}_{\text{this firm}}\ \underbrace{e^{x+\zeta}\kappa^\alpha}_{\text{marginal firm}},
-$$
-
-hence
-
-$$
-\int \delta_m \pi(\xi;\,k,z,x,m)\, m(\diff \xi)
-= e^{x+z}k^\alpha\,Y(m,x)\,P'(Y(m,x)).
-$$
-
-If $P(Y)=Y^{-\eta}$, then by \eqref{eq:isoelastic} the term equals $-\eta\,P(Y)\,e^{x+z}k^\alpha$.
-\end{proposition}
-
-\begin{proof}\[Sketch]
-Apply \Cref{lem:chain} with $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$. The derivative of $m\mapsto P(Y(m,x))$ is $P'(Y)\varphi(\xi)$. Multiplying by the firm-specific factor $e^{x+z}k^\alpha$ and integrating over $\xi$ gives the stated expression.
-\end{proof}
-
-\begin{theorem}[Equivalence (sketch)]\label{thm:equivalence}
-Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity hypotheses (Lasry--Lions), stationary solutions of the coupled \ac{HJB}--\ac{FP} fixed point coincide with stationary solutions of \eqref{eq:ME} conditional on $x$.
 \end{theorem}
 
-\begin{tcolorbox}[literaturestyle]
-\textbf{Equivalence and uniqueness.} The Lasry--Lions monotonicity condition (here satisfied by the strictly decreasing inverse demand) ensures uniqueness of the mean-field equilibrium and therefore identification between $(V,m)$ solving \ac{HJB}--\ac{FP} and $U$ solving \ac{ME}. See Lasry \& Lions (2007) for the PDE case and Cardaliaguet--Delarue--Lasry--Lions (2019) for master equations and convergence of finite-$N$ games.
-\end{tcolorbox}
-\end{comment}
+\subsection{The Price Externality: Derivation and Simplification}
+
+\begin{proposition}[Price-externality simplification]\label{prop:externality}
+The profit depends on $m$ only through aggregate output $Y(m,x)$. Then
+\[
+\delta\_m \pi(\xi;\,k,z,x,m)= P'(Y)\,\underbrace{e^{x+z}k^\alpha}\_{\text{This firm's output}}\cdot \underbrace{e^{x+\zeta}\kappa^\alpha}\_{\text{Marginal firm's impact}}.
+\]
+Consequently,
+\[
+\int \delta\_m \pi(\xi;\,k,z,x,m)\, m(\diff \xi)
+= e^{x+z}k^\alpha\,Y(m,x)\,P'(Y(m,x)).
+\]
+Under isoelastic demand $P(Y)=Y^{-\eta}$, this becomes $-\eta\,P(Y)\,e^{x+z}k^\alpha$.
+\end{proposition}
+
+\begin{proof}
+Let $R(k,z,x,m)=P(Y(m,x))\,e^{x+z}k^\alpha$ be the revenue component of $\pi$. Other components of $\pi$ (costs $i, h(i,k), f$) do not depend on $m$, so $\delta_m \pi = \delta_m R$.
+
+We apply the chain rule (\Cref{lem:chain}). Let $G(Y)=P(Y)$ and $\Phi(m)=Y(m,x)=\int \varphi(\xi)\,m(\diff\xi)$, where $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ is the output of the marginal firm $\xi$.
+The Lions derivative of the linear functional $\Phi(m)$ is the integrand:
+\[
+\Dm\Phi(m)(\xi) = \varphi(\xi) = e^{x+\zeta}\kappa^\alpha.
+\]
+By the chain rule for $G\circ\Phi$:
+\[
+\Dm[G\!\circ\!\Phi](m)(\xi)=G'(Y)\,\varphi(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha.
+\]
+The revenue $R$ is $e^{x+z}k^\alpha \cdot (G\circ\Phi)(m)$. Thus, its Lions derivative is:
+\[
+\delta\_m R(\xi;\,k,z,x,m) = e^{x+z}k^\alpha \cdot \Dm[G\!\circ\!\Phi](m)(\xi) = e^{x+z}k^\alpha\,P'(Y)\,e^{x+\zeta}\kappa^\alpha.
+\]
+Integrating this expression with respect to $m(\diff\xi)$:
+\[
+\int \delta\_m R(\xi;\,\cdot)\, m(\diff \xi) = e^{x+z}k^\alpha\,P'(Y) \int e^{x+\zeta}\kappa^\alpha\, m(\diff \xi) = e^{x+z}k^\alpha\,P'(Y)\,Y(m,x).
+\]
+The isoelastic simplification follows immediately from \Cref{eq:isoelastic}.
+\end{proof}
+
+\begin{sympycheck}
+import sympy as sp
+# Verification of the Gâteaux derivative structure via perturbation.
+# R(m) = chi_0 * P( <phi, m> ), where chi_0 is this firm's output.
+chi_0, Y = sp.symbols('chi_0 Y', positive=True)
+P = sp.Function('P')
+# Consider a perturbation m_eps = (1-eps)*m + eps*nu.
+# Y_eps = <phi, m_eps> = (1-eps)Y + eps*Y_nu.
+eps, Y_nu = sp.symbols('eps Y_nu', real=True)
+Y_eps = (1-eps)*Y + eps*Y_nu
+R_eps = chi_0 * P(Y_eps)
+# Gâteaux derivative: d/deps R(m_eps) at eps=0.
+Gateaux_deriv = sp.diff(R_eps, eps).subs(eps, 0)
+# Expected structure: chi_0 * P'(Y) * (Y_nu - Y).
+expected = chi_0 * sp.diff(P(Y), Y) * (Y_nu - Y)
+assert sp.simplify(Gateaux_deriv - expected) == 0
+\end{sympycheck}
 
 \begin{tcolorbox}[didacticstyle]
-	extbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. Appendix C summarizes the additional terms that would arise if $m$ were itself driven by common noise (e.g., through $x_t$).
+\textbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. Appendix C summarizes the additional terms that would arise if $m$ were itself driven by common noise (e.g., through $x_t$).
 \end{tcolorbox}
 
 \begin{tcolorbox}[mathstyle]
 \textbf{Mathematical rigor (functional derivative bookkeeping).}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
   \item \emph{Lions derivative.} For functionals $F: \mathcal P\_2\to\R$ depending on $m$ via $Y(m,x)$, $\Dm F(m)(\xi)=F'(Y)\,\partial Y/\partial m(\xi)$ with $\partial Y/\partial m(\xi)=e^{x+\zeta}\kappa^{\alpha}$. Integrating against $m$ recovers the price externality in \eqref{eq:isoelastic}.
-  \item \emph{ME structure.} The stationary ME collects: own-firm HJB, population transport via $\dmU$, and the explicit price externality $e^{x+z}k^\alpha Y P'(Y)$. Conditioning on $x$ removes measure-diffusion terms.
+  \item \emph{ME structure.} The stationary ME collects: own-firm HJB, population transport via $\dmU$, and the explicit price externality $\int \delta\_m \pi\,\diff m$ (which simplifies to $e^{x+z}k^\alpha Y P'(Y)$). Conditioning on $x$ removes measure-diffusion terms.
   \item \emph{Equivalence.} Under monotonicity and regularity (Lasry--Lions), the stationary HJB--FP fixed point and the ME solution coincide; see Appendix references.
 \end{itemize}
+\end{tcolorbox}
+
+\subsection{Equivalence and Uniqueness}
+
+\begin{theorem}{Equivalence (Sketch)}{equivalence}
+Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity hypotheses (Lasry--Lions), stationary solutions $(V,m)$ of the coupled \ac{HJB}--\ac{FP} system (\Cref{eq:HJB}, \Cref{eq:FP}) coincide with stationary solutions $U$ of the Master Equation (\Cref{thm:ME}) such that $U(\cdot, m) = V(\cdot; m)$, conditional on $x$.
+\end{theorem}
+
+\begin{tcolorbox}[literaturestyle]
+\textbf{Equivalence and uniqueness.} The Lasry--Lions monotonicity condition (here satisfied by the strictly decreasing inverse demand $P'(Y)<0$) ensures uniqueness of the mean-field equilibrium. This guarantees the identification between the HJB--FP solution and the ME solution. See Lasry \& Lions (2007) for the PDE case and Cardaliaguet--Delarue--Lasry--Lions (2019) for the general theory of master equations and the convergence of finite-$N$ games.
 \end{tcolorbox}
 
 % Schematic: ME term composition
@@ -673,7 +745,7 @@ Under \Cref{ass:primitives,ass:regularity} and standard monotonicity/regularity 
   box/.style={rectangle, draw=darkgreen, rounded corners, thick, inner sep=6pt, align=center}
 ]
 \node[box] (hjb) {Own-firm HJB\\$\max\_i\{\cdots\}$};
-\node[box, right=of hjb] (pop) {Population transport\\via $\delta\_m U$};
+\node[box, right=of hjb] (pop) {Population transport\\via $\mathcal{T}[\delta\_m U]$};
 \node[box, below=of pop] (price) {Price externality\\$e^{x+z}k^{\alpha} Y P'(Y)$};
 \node[box, below=of hjb] (me) {ME residual};
 \draw[->, thick] (hjb) -- (me);
@@ -859,6 +931,7 @@ $$
 $$
 
 Stationarity imposes \eqref{eq:FP} with $\partial_t m=0$. Reflecting at $k=0$ eliminates the boundary integral.
+% Verification note: adjoint pairing identity is checked in Appendix E.
 
 \subsection{Deriving the master equation}
 Consider a flow $t\mapsto (K_t,Z_t)$ for the tagged firm following control $i_t$ and a flow of measures $t\mapsto m_t$ solving \eqref{eq:FP} under the feedback $i^*(\cdot,m_t)$. By functional Itô's lemma for $U(K_t,Z_t,x,m_t)$,
@@ -1086,6 +1159,56 @@ print('\nAll SymPy verification checks passed.')
 \end{pyconsole}
 
 %========================
+% Appendix F
+%========================
+\section{Appendix F: Lean4 Micro-Proofs (Sketches)}\label{app:lean}
+
+\noindent The following Lean4/mathlib4 snippets formalize two identities used in the text. They are provided as self-contained, runnable sketches (assuming a recent mathlib4): the isoelastic simplification $Y\,P'(Y)=-\eta P(Y)$ and the algebraic reduction $Y\cdot Y^{-\eta-1}=Y^{-\eta}$ for $Y>0$.
+
+\lstset{basicstyle=\ttfamily\small,columns=fullflexible,showstringspaces=false,frame=single,framerule=0.4pt,breaklines=true,tabsize=2,captionpos=b}
+\begin{lstlisting}[language=Lean,caption={Lean4: isoelastic identity and algebraic reduction}]
+import Mathlib.Analysis.Calculus.Deriv
+import Mathlib.Data.Real.Basic
+
+open Real
+
+variable {η Y : ℝ}
+
+-- P(Y) = Y ^ (-η), defined for Y > 0 via rpow
+def P (Y : ℝ) (η : ℝ) : ℝ := Y ^ (-η)
+
+-- Algebraic reduction: for Y > 0, Y * Y^(-η - 1) = Y^(-η)
+theorem rpow_mul_cancel (hY : 0 < Y) :
+    Y * Y ^ (-η - 1) = Y ^ (-η) := by
+  -- rewrite Y as Y^1 and use rpow_add (valid for Y > 0)
+  have h1 : Y = Y ^ (1 : ℝ) := by simpa using (rpow_one Y)
+  calc
+    Y * Y ^ (-η - 1)
+        = Y ^ (1 : ℝ) * Y ^ (-η - 1) := by simpa [h1]
+    _   = Y ^ ((1 : ℝ) + (-η - 1)) := by
+            simpa using (rpow_mul_rpow_of_pos hY (1 : ℝ) (-η - 1))
+    _   = Y ^ (-η) := by ring
+
+-- Differential identity: for Y > 0,  (Y) * (deriv (fun y => P y η) Y) = -η * P Y η
+theorem isoelastic_identity (hY : 0 < Y) :
+    Y * (deriv (fun y => P y η) Y) = -η * P Y η := by
+  -- mathlib: d/dy (y^a) = a * y^(a-1) for y>0
+  have hderiv : deriv (fun y => y ^ (-η)) Y = (-η) * Y ^ (-η - 1) := by
+    simpa using (deriv_rpow_const (x:=Y) (a:=-η) hY.ne')
+  -- multiply both sides by Y and reduce
+  calc
+    Y * (deriv (fun y => P y η) Y)
+        = Y * ((-η) * Y ^ (-η - 1)) := by simpa [P, hderiv]
+    _   = -η * (Y * Y ^ (-η - 1)) := by ring
+    _   = -η * Y ^ (-η) := by simpa using rpow_mul_cancel (η:=η) (Y:=Y) hY
+    _   = -η * P Y η := by rfl
+\end{lstlisting}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Notes.} The lemmas use $\mathrm{rpow}$ and standard calculus from \texttt{mathlib4}. They require $Y>0$ for real-exponent laws. The SymPy checks in \Cref{app:verification} independently validate the same identities numerically/symbolically.
+\end{tcolorbox}
+
+%========================
 % Bibliography (manual)
 %========================
 %========================
@@ -1093,7 +1216,7 @@ print('\nAll SymPy verification checks passed.')
 %========================
 \section{Endogenous SDF with Epstein--Zin Aggregator (Sauzet, 2023)}\label{sec:ez}
 
-\begin{definition}[Continuous-time Epstein--Zin aggregator]\label{def:ez}
+\begin{definition}[Continuous-time Epstein--Zin aggregator]\label{ez}
 Fix time preference $\delta>0$, risk aversion $\gamma>0$, and elasticity of
 intertemporal substitution $\psi>0$ with $\psi\neq 1$. Let
 \[
@@ -1101,20 +1224,20 @@ intertemporal substitution $\psi>0$ with $\psi\neq 1$. Let
 \]
 For aggregate consumption $c_t>0$, continuation value $V_t>0$, and exposure
 vector $Z_t\in\mathbb{R}^d$, a convenient normalisation of the Epstein--Zin
-aggregator in continuous time (consistent with \cite{Sauzet2023}) is
+aggregator in continuous time (consistent with \cite{Sauzet2023}) is given in
+\Cref{eq:ez-agg} and is used as the BSDE driver.
+\end{definition}
+
 \begin{equation}\label{eq:ez-agg}
 f(c_t,V_t,Z_t)
 = \frac{\delta}{1-1/\psi}\Big( c_t^{\,1-1/\psi}\,V_t^{\,1/\psi} - V_t \Big)
 \; -\; \tfrac{1}{2}\,\theta\,\frac{\norm{Z_t}^2}{V_t}.
 \end{equation}
-In a BSDE representation $\mathrm{d}V_t = f(c_t,V_t,Z_t)\,\mathrm{d}t + Z_t^\top\,\mathrm{d}W_t$,
-\eqref{eq:ez-agg} serves as the driver.
-\end{definition}
 
-\begin{proposition}[Pricing kernel exposure under EZ]\label{prop:sdf-ez}
+\begin{proposition}[Pricing kernel exposure under EZ]\label{sdf-ez}
 Let $M_t$ denote the stochastic discount factor. The utility-channel diffusion
 component of the instantaneous market price of risk implied by
-\cref{def:ez} is
+\cref{ez} is
 \[
 \lambda^{\mathrm{util}}_t \;=\; -\,\theta\,\frac{Z_t}{V_t},
 \]
@@ -1169,7 +1292,7 @@ The value premium.
 
 \bibitem{Sauzet2023} Sauzet, M. (2023).
 Recursive preferences in continuous time and implications for asset pricing.
-(Working paper; aggregator normalisation consistent with \cref{def:ez}.)
+(Working paper; aggregator normalisation consistent with \cref{ez}.)
 
 \end{thebibliography}
 

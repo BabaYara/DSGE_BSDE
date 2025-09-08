@@ -9,10 +9,27 @@ $aux_dir = '.out';
 
 # PythonTeX integration: run pythontex automatically whenever .pytxcode changes
 add_cus_dep('pytxcode','pytxmcr',0,'pythontex');
+use File::Basename;
 sub pythontex {
   # latexmk passes the source file (typically in $out_dir) as the first arg
+  # Run pythontex from inside $out_dir so that outputs (*.pytxmcr, *.pytxpyg)
+  # are placed where latexmk expects them. If pythontex doesn't emit a
+  # macros file for this document (e.g., console-only usage), create an
+  # empty one to satisfy the dependency and allow latexmk to proceed.
   my ($src) = @_;
-  return system("pythontex \"$src\"");
+  my $fname = basename($src);          # e.g., BSDE_11.pytxcode
+  my $job   = $fname; $job =~ s/\.pytxcode$//;   # BSDE_11
+  my $cmd = "bash -lc 'cd .out && pythontex \"$fname\"'";
+  my $res = system($cmd);
+  # Fallback: touch macros file(s) if missing
+  my $mcr_uc = ".out/${job}.pytxmcr";              # BSDE_11.pytxmcr
+  my $mcr_lc = ".out/" . lc($job) . ".pytxmcr";  # bsde_11.pytxmcr
+  unless (-e $mcr_uc or -e $mcr_lc) {
+    open(my $fh, '>', $mcr_uc);
+    print $fh "% PythonTeX macro placeholder (no-op)\n";
+    close($fh);
+  }
+  return $res;
 }
 
 # Clean up PythonTeX artifacts on latexmk -c
