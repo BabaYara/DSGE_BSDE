@@ -19,12 +19,13 @@ which provides a reasonable starting point for empirical matching.
 
 from __future__ import annotations
 
-from typing import Callable
+from typing import Callable, Literal
 
 import jax
 import jax.numpy as jnp
 
 from bsde_dsgE.core.solver import BSDEProblem
+from bsde_dsgE.models.epstein_zin import EZParams, ez_generator
 
 
 def _ensure_vector(x: jax.Array) -> jax.Array:
@@ -46,6 +47,9 @@ def multicountry_probab01(
     t0: float = 0.0,
     t1: float = 1.0,
     terminal_fn: Callable[[jax.Array], jax.Array] | None = None,
+    preference: Literal["CRRA", "EZ"] = "CRRA",
+    ez_params: EZParams | None = None,
+    c_fn: Callable[[jax.Array], jax.Array] | None = None,
 ) -> BSDEProblem:
     """Construct a vector-valued BSDEProblem for ``dim`` countries.
 
@@ -92,11 +96,25 @@ def multicountry_probab01(
         # Else, diagonal elementwise diffusion (batch, dim)
         return jnp.broadcast_to(sig, x2.shape)
 
-    def generator(x: jax.Array, y: jax.Array, z: jax.Array) -> jax.Array:
-        # Lucas/CRRA-like: f = rho*y - (gamma/2) * ||z||^2 / y
-        # Shapes: y -> (batch,), z -> (batch, dim)
-        z2 = jnp.sum(z**2, axis=-1)
-        return rho * y - (gamma * z2) / (2.0 * jnp.maximum(y, 1e-6))
+    def _default_c_fn(x: jax.Array) -> jax.Array:
+        # Simple positive aggregator for dividends -> consumption
+        x2 = _ensure_vector(x)
+        return jnp.sum(jnp.exp(x2), axis=-1)
+
+    if preference == "CRRA":
+        def generator(x: jax.Array, y: jax.Array, z: jax.Array) -> jax.Array:
+            # Lucas/CRRA-like: f = rho*y - (gamma/2) * ||z||^2 / y
+            # Shapes: y -> (batch,), z -> (batch, dim)
+            z2 = jnp.sum(z**2, axis=-1)
+            return rho * y - (gamma * z2) / (2.0 * jnp.maximum(y, 1e-6))
+    elif preference == "EZ":
+        assert ez_params is not None, "ez_params must be provided for preference='EZ'"
+        gen_ez = ez_generator(ez_params, c_fn or _default_c_fn)
+
+        def generator(x: jax.Array, y: jax.Array, z: jax.Array) -> jax.Array:
+            return gen_ez(x, y, z)
+    else:
+        raise ValueError(f"unknown preference type: {preference}")
 
     def terminal(x: jax.Array) -> jax.Array:
         if terminal_fn is not None:
