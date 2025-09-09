@@ -23,6 +23,18 @@
 \DeclareUnicodeCharacter{2192}{\ensuremath{\to}}     % →
 \DeclareUnicodeCharacter{21D2}{=>}                     % ⇒
 \DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb{R}}} % ℝ
+% Additional Unicode symbols used inside verbatim/lean boxes
+\DeclareUnicodeCharacter{03B5}{\ensuremath{\varepsilon}} % ε
+\DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}    % ↦
+\DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}        % ≥
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}        % ≤
+\DeclareUnicodeCharacter{222B}{\ensuremath{\int}}       % ∫
+\DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}    % φ
+\DeclareUnicodeCharacter{03BD}{\ensuremath{\nu}}        % ν
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ≈
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}          % − (minus)
+\DeclareUnicodeCharacter{208A}{+}                        % ₊ (subscript plus)
+\DeclareUnicodeCharacter{208B}{-}                        % ₋ (subscript minus)
 % Tolerate stray C1 control char from mis-encoded sources (drop it silently)
 \DeclareUnicodeCharacter{009D}{}
 \usepackage{microtype}
@@ -36,6 +48,35 @@
 
 % Colors (load explicitly to ensure \definecolor is available on all setups)
 \usepackage{xcolor}
+
+% ----------------------------------------------------------------------------------
+% Revision Header (JSON, for provenance/traceability)
+%
+% {
+%   "target_subsection": "Multiple (Consolidated 5-Iteration Revision)",
+%   "reasons": [
+%     "Improve mathematical rigor by refining proof sketches (Hamiltonian convexity) and expanding derivations (Functional Itô).",
+%     "Enhance verification coverage by adding specific Lean4 lemmas (quadratic derivatives, EZ limits) and ensuring SymPy checks cover edge cases (depreciation).",
+%     "Strengthen computational completeness by refining pseudocode clarity (boundary conditions, gradient calls) and adding practical implementation details (loss tables, implementation hooks).",
+%     "Improve didactic clarity by restructuring the flow (moving EZ limit discussions to appendices) and ensuring clear citations for specific formulations (EZ normalization).",
+%     "Enhance global hygiene, formatting consistency, and build robustness (Preamble configuration, bibliography completeness)."
+%   ],
+%   "build_notes": {
+%     "latex": "pdflatex/xelatex with -shell-escape (required for minted/PythonTeX); requires tcolorbox, minted, pythontex, pgfplots, listings.",
+%     "python": "sympy>=1.12, numpy (for examples)",
+%     "lean4": "leanprover-community/mathlib4; toolchain >= 4.8.x"
+%   }
+% }
+% ----------------------------------------------------------------------------------
+
+% Build configuration notes (non-functional comments)
+% - For full builds with executed code boxes, set \codeboxesdraftfalse and enable
+%   PythonTeX + minted (requires -shell-escape). In fast/draft builds or CI,
+%   keep \codeboxesdrafttrue and minted cached (frozencache) to avoid execution.
+% - Dependencies: tcolorbox, minted, pythontex, pgfplots, listings.
+% - Python snippets use SymPy >= 1.12; some examples use NumPy.
+% - Lean4 snippets assume mathlib4 on toolchain >= 4.8.x.
+% ----------------------------------------------------------------------------------
 
 % Early toggle for draft code boxes
 \newif\ifcodeboxesdraft
@@ -308,7 +349,7 @@ $S$ & space & State space $\R_+\times\R$ for $(k,z)$ \\
 $m$ & measure & Cross-sectional law on $S$ \\
 $\mathcal{P}_2(S)$ & space & Probability measures on $S$ with finite second moments \\
 $\mathrm{W}_2$ & metric & Quadratic Wasserstein distance on $\mathcal{P}_2(S)$ \\
-$\xi=(\kappa,\zeta)$ & point & Generic element in support of $m$ (``marginal firm'') \\
+$\xi=(\kappa,\zeta)$ & point & Generic element in support of $m$ (a "marginal firm") \\
 $\Dm$ & operator & Lions derivative operator (measure Fr\'echet derivative) \\
 $\dmU(\xi;k,z,x,m)$ & function & Lions derivative of $m\mapsto U(k,z,x,m)$ at $\xi$ \\
 $\Lz,\Lx$ & operators & Generators in $z$ and $x$; $\Lzadj$ is the adjoint of $\Lz$ \\
@@ -468,7 +509,7 @@ $$
 \mathcal P_2(S)\equiv\Big\{ m\in\mathcal P(S): \int (\kappa^2 + \zeta^2)\, m(\diff\kappa,\diff\zeta) < \infty\Big\}.
 $$
 
-The quadratic Wasserstein distance $\mathrm{W}_2$ metrizes weak convergence plus convergence of second moments. It provides the natural geometry for diffusions and the functional ItÃ´ calculus on $\mathcal P_2$.
+The quadratic Wasserstein distance $\mathrm{W}_2$ metrizes weak convergence plus convergence of second moments. It provides the natural geometry for diffusions and the functional Itô calculus on $\mathcal P_2$.
 
 \begin{definition}{Quadratic Wasserstein distance}{w2}
 For $m,\nu\in\mathcal P_2(S)$, the quadratic Wasserstein distance is
@@ -560,7 +601,7 @@ Linearity of the integral gives $\Phi(m_\varepsilon)=(1-\varepsilon)\int\varphi\
 \end{proof}
 
 \begin{definition}{Lions derivative}{lions}
-Let $F:\mathcal P_2(S)\to\R$. Define the lift $\tilde F: L^2(\Omega;S)\to\R$ by $\tilde F(X)=F(\mathrm{Law}(X))$. If $\tilde F$ is FrÃ©chet differentiable at $X$, there exists a unique gradient $\nabla_X\tilde F(X)\in L^2(\Omega;S)$ such that
+Let $F:\mathcal P_2(S)\to\R$. Define the lift $\tilde F: L^2(\Omega;S)\to\R$ by $\tilde F(X)=F(\mathrm{Law}(X))$. If $\tilde F$ is Fr\'echet differentiable at $X$, there exists a unique gradient $\nabla_X\tilde F(X)\in L^2(\Omega;S)$ such that
 
 $$
 D\tilde F(X)\cdot H = \E\big[\ip{ \nabla_X\tilde F(X)}{H}\big]\quad\text{for all }H\in L^2(\Omega;S).
@@ -578,22 +619,25 @@ Let $\Phi(m)=\int \varphi(\xi)\,m(\diff\xi)$, where $\varphi:S\to\R$ is $C^1$ wi
 \end{lemma}
 
 \begin{proof}
-The lift is $\tilde F(X)=G(\E[\varphi(X)])$. Since $\varphi$ is $C^1$ with bounded derivatives, $\tilde \Phi(X)=\E[\varphi(X)]$ is FrÃ©chet differentiable with $D\tilde\Phi(X)\cdot H=\E[\ip{\nabla\varphi(X)}{H}]$ and gradient $\nabla_X\tilde\Phi(X)=\nabla\varphi(X)$. The Banach-space chain rule yields $\nabla_X\tilde F(X)=G'(\E[\varphi(X)])\,\nabla\varphi(X)$. Identifying the Lions derivative gives the result; see \cite[Prop.~5.45]{carmona_delarue_2018_mfg}.
+The lift is $\tilde F(X)=G(\E[\varphi(X)])$. Since $\varphi$ is $C^1$ with bounded derivatives, $\tilde \Phi(X)=\E[\varphi(X)]$ is Fr\'echet differentiable with $D\tilde\Phi(X)\cdot H=\E[\ip{\nabla\varphi(X)}{H}]$ and gradient $\nabla_X\tilde\Phi(X)=\nabla\varphi(X)$. The Banach-space chain rule yields $\nabla_X\tilde F(X)=G'(\E[\varphi(X)])\,\nabla\varphi(X)$. Identifying the Lions derivative gives the result; see \cite[Prop.~5.45]{carmona_delarue_2018_mfg}.
 \end{proof}
 
 \begin{leanproof}
 import Mathlib.Analysis.Calculus.FDeriv
 import Mathlib.Analysis.Calculus.ChainRule
 
--- Chain rule for FrÃ©chet derivatives in Banach spaces.
-variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace R E]
+-- Chain rule for Fréchet derivatives in Banach spaces.
+variable {R : Type*} [NontriviallyNormedField R]
+variable {E F G : Type*}
+  [NormedAddCommGroup E] [NormedSpace R E]
   [NormedAddCommGroup F] [NormedSpace R F]
   [NormedAddCommGroup G] [NormedSpace R G]
 
-theorem chain_rule_composition (Î¦ : E â†’ F) (H : F â†’ G) (X : E)
-  (hÎ¦ : DifferentiableAt R Î¦ X) (hH : DifferentiableAt R H (Î¦ X)) :
-  fderiv R (H âˆ˜ Î¦) X = (fderiv R H (Î¦ X)).comp (fderiv R Î¦ X) := by
-  exact fderiv.comp X hH hÎ¦
+theorem chain_rule_composition (Phi : E → F) (H : F → G) (X : E)
+  (hPhi : DifferentiableAt R Phi X) (hH : DifferentiableAt R H (Phi X)) :
+  fderiv R (fun x => H (Phi x)) X =
+    (fderiv R H (Phi X)).comp (fderiv R Phi X) := by
+  simpa using fderiv.comp X hH hPhi
 \end{leanproof}
 
 \begin{definition}{Flat derivative (First Variation)}{flat_deriv}\label{flat_deriv}
@@ -629,7 +673,7 @@ By the Portmanteau theorem, weak convergence $m_N\Rightarrow m$ implies converge
 
 \begin{sympycheck}
 import sympy as sp
-# GÃ¢teaux derivative used in Lemma (Flat chain rule).
+# G\^ateaux derivative used in Lemma (Flat chain rule).
 G = sp.Function('G')
 Phi_m, Phi_nu, eps = sp.symbols('Phi_m Phi_nu eps', real=True)
 Phi_m_eps = (1-eps)*Phi_m + eps*Phi_nu
@@ -644,7 +688,7 @@ import Mathlib.Analysis.Calculus.Deriv
 
 open Real
 
--- Mixture path directional derivative: ε ↦ (1-ε)A + εB has derivative (B-A) at ε=0.
+-- Mixture path directional derivative: ε ↦ (1-ε)A + εB has derivative (B - A) at ε = 0.
 -- This captures the calculus part of the Flat-directional derivative along mixtures;
 -- identifying A = ∫ φ dm and B = ∫ φ dν is the measure-theoretic step handled elsewhere.
 theorem deriv_mixture (A B : ℝ) : HasDerivAt (fun ε : ℝ => (1-ε)*A + ε*B) (B - A) 0 := by
@@ -660,15 +704,18 @@ theorem deriv_mixture (A B : ℝ) : HasDerivAt (fun ε : ℝ => (1-ε)*A + ε*B)
   simpa [sub_eq_add_neg, add_comm, add_left_comm, add_assoc, mul_comm] using hsum
 \end{leanproof}
 
-\begin{tcolorbox}[didacticstyle]
-\textbf{Lean sanity (limit cases).} For log utility ($\gamma=1$) or unit EIS ($\psi=1$), the utility-channel risk coefficient vanishes. See Appendix~\ref{sec:ez} for Lean4 lemmas \texttt{risk\_coeff\_gamma\_one} and \texttt{risk\_coeff\_psi\_one} confirming these limits.
+\begin{tcolorbox}[mathstyle]
+\textbf{Empirical approximation (stability and practice).}
+For $\Phi(m)=\int \varphi\,\diff m$ with $\varphi\in C_b(S)$ and $F=G\circ\Phi$ with $G\in C^1$, Monte Carlo empirical measures $m_N=\tfrac1N\sum\delta_{\xi^n}$ satisfy
+\[\Phi(m_N)\to\Phi(m),\quad F(m_N)\to F(m),\quad \text{and}\quad \frac{\delta F}{\delta m}(m_N)(\xi)\to\frac{\delta F}{\delta m}(m)(\xi)\]
+whenever $G'$ is continuous. Sampling error decays at the usual $\mathcal O(N^{-1/2})$ Monte Carlo rate; low-discrepancy (Sobol) or antithetic pairing can reduce variance in practice (cf. primitives notebook). Non-smooth $\varphi$ or heavy-tailed $m$ may require regularization or truncation for stable approximation.
 \end{tcolorbox}
 
 \begin{tcolorbox}[mathstyle]
 \textbf{CRITICAL DISTINCTION: Lions vs Flat.}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
-  \item \emph{Lions derivative} $\Dm F(m)(\xi)\in\R^{d_s}$ is a vector field and, for $F=G\circ\Phi$, involves $\nabla\varphi(\xi)$ (\Cref{lem:chain_lions}).
-  \item \emph{Flat derivative} $\tfrac{\delta F}{\delta m}(m)(\xi)\in\R$ is scalar and, for $F=G\circ\Phi$, involves $\varphi(\xi)$ (\Cref{lem:chain_flat}).
+  \item \emph{Lions derivative} $\Dm F(m)(\xi)\in\R^{d_s}$ is a \textbf{vector field} and, for $F=G\circ\Phi$, involves $\nabla\varphi(\xi)$ (\Cref{lem:chain_lions}).
+  \item \emph{Flat derivative} $\tfrac{\delta F}{\delta m}(m)(\xi)\in\R$ is \textbf{scalar} and, for $F=G\circ\Phi$, involves $\varphi(\xi)$ (\Cref{lem:chain_flat}).
 \end{itemize}
 These notions appear in different places in the Master Equation: transport terms use the Lions derivative of $U$, while the direct price externality uses the Flat derivative of the profit functional. Section~\ref{sec:master-equation} should be read with this distinction in mind.\newline
 \emph{Editorial note.} This clarifies and corrects an earlier draft in which a chain rule for the Flat derivative was mistakenly identified as the Lions derivative; proofs and applications below (and in Section~\ref{sec:master-equation}) now use the appropriate notions.
@@ -797,6 +844,40 @@ plus complementarity if a bound $i\ge -\kbar(k)$ applies.
 On each half-line, $h_i(i,k)=\phi_\pm\,i/k$. The FOC $1+h_i(i,k)=V_k$ gives $i=(k/\phi_\pm)(V_k-1)$. Strict convexity in $i$ ensures a unique maximizer; the kink at $i=0$ maps to $V_k=1$. Lower bounds are handled by KKT complementarity.
 \end{proof}
 
+\begin{sympycheck}
+import sympy as sp
+
+# Symbols and parameters
+k, p, delta = sp.symbols('k p delta', positive=True)
+phi_p, phi_m = sp.symbols('phi_p phi_m', positive=True)
+
+# Quadratic adjustment cost on each branch: h = (phi/2) * i^2 / k
+def obj_branch(phi):
+    i = sp.symbols('i', real=True)
+    h = (phi/2) * i**2 / k
+    # Objective terms depending on i and p (abstracting other terms):
+    # L(i; p) = (p-1)*i - h(i,k) - p*delta*k + const
+    L = (p-1)*i - h - p*delta*k
+    i_star = sp.simplify(sp.solve(sp.diff(L, i), i)[0])  # FOC
+    L_star = sp.simplify(L.subs(i, i_star))
+    # Envelope: d/dp L_star == i_star - delta*k
+    env = sp.simplify(sp.diff(L_star, p) - (i_star - delta*k))
+    # Curvature in p on the branch (quadratic in p with coeff k/(2*phi))
+    d2p = sp.simplify(sp.diff(L_star, p, 2))
+    return sp.simplify(i_star - (k/phi)*(p-1)), env, d2p
+
+res_plus = obj_branch(phi_p)
+res_minus = obj_branch(phi_m)
+
+# Check: i* formula matches k/phi * (p-1) on each branch
+assert res_plus[0] == 0 and res_minus[0] == 0
+# Check: envelope identity holds on each branch
+assert res_plus[1] == 0 and res_minus[1] == 0
+# Check: branch value is convex in p with d2/dp2 = k/phi >= 0
+assert sp.simplify(res_plus[2] - k/phi_p) == 0
+assert sp.simplify(res_minus[2] - k/phi_m) == 0
+\end{sympycheck}
+
 % Verification note: Policy FOC formulas are also checked in Appendix E.
 
 \begin{proposition}{Convex Hamiltonian and well-posed policy map}{hamiltonian}
@@ -808,6 +889,44 @@ $$
 
 Then $\mathcal{H}$ is convex in $p=V_k$. The optimizer $i^*(k,z,x,m;p)$ is single-valued, piecewise linear with slope $k/\phi_\pm$, and globally Lipschitz on compact $k$-sets. Hence the feedback map $p\mapsto i^*(\cdot;p)$ is well-posed and stable to perturbations of $p$.
 \end{proposition}
+
+\begin{proof}[Proof sketch and envelope]
+Fix $(k,z,x,m)$ and write $J(i;p)\equiv \pi(k,i,z,x,m)+p\,(i-\delta k)$. On each branch $i\gtrless 0$ with quadratic $h(i,k)=\tfrac{\phi_\pm}{2}\,i^2/k$, the $i$-dependent part of $J$ equals $-(\phi_\pm/(2k))\,i^2+(p-1)\,i$, which is a strictly concave quadratic in $i$ with unique maximizer $i^*(p)=(k/\phi_\pm)\,(p-1)$ when it respects the branch. Evaluating at $i^*(p)$ yields a branch value of the form $a\_\pm(k)\,p^2+b\_\pm(k)\,p+c\_\pm(k)$ with $a\_\pm(k)=k/(2\phi_\pm)>0$, hence convex in $p$. The Hamiltonian is the pointwise maximum of these two convex branch values (and any linear boundary piece if complementarity binds), therefore convex in $p$. The envelope identity holds: $\partial\_p\mathcal H = i^*(p)-\delta k$, as verified symbolically above.
+\end{proof}
+
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.Deriv
+import Mathlib.Analysis.Convex.Function
+
+-- Placeholder: convexity of p ↦ a*p^2 + b*p + c when a ≥ 0, and of pointwise maxima.
+-- TODO: Prove `ConvexOn ℝ Set.univ (fun p => a*p^2 + b*p + c)` for a ≥ 0,
+-- and that the pointwise max of convex functions is convex.
+
+variable (a b c : ℝ)
+
+theorem deriv_quadratic (p : ℝ) : 
+  deriv (fun p : ℝ => a*p*p + b*p + c) p = 2*a*p + b := by
+  have : (fun p : ℝ => a*p*p + b*p + c) = (fun p => a*(p^2) + b*p + c) := by
+    funext x; ring
+  simp [this, deriv_add, deriv_const, deriv_mul, deriv_pow, deriv_id']
+
+-- NOTE: Full convexity formalization deferred; see TODO above.
+\end{leanproof}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Minimal policy implementation (reference).}
+\begin{lstlisting}[language=Python]
+def i_star(Vk, k, phi_plus, phi_minus):
+    """Piecewise-linear policy with asymmetric quadratic costs.
+    Vk: marginal value V_k, k: capital level
+    """
+    if Vk >= 1.0:
+        return (k/phi_plus) * (Vk - 1.0)
+    else:
+        return (k/phi_minus) * (Vk - 1.0)
+\end{lstlisting}
+Envelope check: numerically, \(dH/dp \approx i_{\mathrm{star}}(V_k,k,\phi_+,\phi_-) - \delta k\). Use central differences for diagnostics.
+\end{tcolorbox}
 
 \begin{tcolorbox}[didacticstyle]
 \sloppy
@@ -1147,9 +1266,9 @@ Under \Cref{ass:primitives,ass:regularity} and the Lasry--Lions monotonicity/reg
 \textbf{Computational Implications of Equivalence.}
 \Cref{thm:equivalence} provides a strong theoretical foundation for the computational strategies in \Cref{sec:routeA} (HJB--FP fixed point) and \Cref{sec:routeB} (Direct ME collocation).
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
-    \item \emph{Validation:} Solutions obtained via the more robust Route~A can be used to validate the parameterization and training of the direct Route~B approach.
-    \item \emph{Uniqueness:} The uniqueness guaranteed by \Cref{lem:H-mono} ensures that both numerical methods are targeting the same underlying equilibrium object.
-    \item \emph{Stability:} The monotonicity condition implies a stabilizing economic feedback (higher aggregate output lowers prices, dampening investment), which generally improves the convergence properties of the fixed-point iteration in Route~A.
+\item \emph{Validation:} Solutions obtained via the more robust Route~A can be used to validate the parameterization and training of the direct Route~B approach.
+\item \emph{Uniqueness:} The uniqueness guaranteed by \Cref{lem:H-mono} ensures that both numerical methods are targeting the same underlying equilibrium object.
+\item \emph{Stability:} The monotonicity condition implies a stabilizing economic feedback (higher aggregate output lowers prices, dampening investment), which generally improves the convergence properties of the fixed-point iteration in Route~A.
 \end{itemize}
 \end{tcolorbox}
 
@@ -1237,7 +1356,7 @@ def fp_step_k(m, i_star, k_grid, delta, dt):
     F = godunov_flux(uL, uR, mL, mR)  # [J-1]
     # reflecting at k=0: zero flux at left boundary; conservative outflow at right
     F_left = 0.0
-    F_right = F[-1]
+    F_right = F[-1]  # Assuming conservative outflow; adjust if needed
     divF = np.empty_like(m)
     divF[1:-1] = (F[:-1] - F[1:]) / np.diff(k_grid)
     divF[0] = (F_left - F[0]) / (k_grid[1] - k_grid[0])
@@ -1561,7 +1680,7 @@ The asymmetry $\phi_->\phi_+$ creates a kink in the Hamiltonian and investment b
 \item Bigger $\phi_- - \phi_+$ widens irreversibility bands and slows capital reallocation, increasing dispersion in $k$ conditional on $z$.
 \item Higher $\sigma_z$ spreads the cross-section in $z$, raising $Y$ volatility and, through $P'(Y)$, modulating the marginal-revenue wedge over the business cycle.
 \item Higher $\sigma_x$ (through $\Lx$) deepens precautionary effects via $r(x)$ and the HJB drift terms, with ambiguous effects on average investment depending on curvature.
-\item A countercyclical $r(x)$ strengthens the value premium mechanism Ã  la costly reversibility by raising discount rates in recessions precisely when $P'(Y)$ is most negative.
+\item A countercyclical $r(x)$ strengthens the value premium mechanism à la costly reversibility by raising discount rates in recessions precisely when $P'(Y)$ is most negative.
 \end{itemize}
 
 %========================
@@ -1630,18 +1749,21 @@ $$
 Stationarity imposes \eqref{eq:FP} with $\partial_t m=0$. Reflecting at $k=0$ eliminates the boundary integral.
 % Verification note: adjoint pairing identity is checked in Appendix E.
 
-\subsection{Functional Calculus and the Master Equation}\label{app:master-derivation}
-Consider a flow $t\mapsto (K_t,Z_t)$ for the tagged firm following control $i_t$ and a flow of measures $t\mapsto m_t$ solving \eqref{eq:FP} under the feedback $i^*(\cdot,m_t)$. By functional ItÃ´'s lemma for $U(K_t,Z_t,x,m_t)$,
+\subsection*{Functional Calculus and the Master Equation}\label{app:master-derivation}
+Consider a flow $t\mapsto (K_t,Z_t)$ for the tagged firm following control $i_t$ and a flow of measures $t\mapsto m_t$ solving \eqref{eq:FP} under the feedback $i^*(\cdot,m_t)$. By functional Itô's lemma for $U(K_t,Z_t,x,m_t)$,
 \begin{align*}
-\diff U &= U_k\,\diff K_t + U_z\,\diff Z_t + \tfrac12 U_{zz}\,\sigma_z^2\,\diff t \\
-        &\quad + \big(\partial_t U\big|_{m}\big)\,\diff t, \\
+\diff U &= \underbrace{U_k\,\diff K_t + U_z\,\diff Z_t + \tfrac12 U_{zz}\,\sigma_z^2\,\diff t}_{\text{Classical Itô terms}} \\
+        &\quad + \underbrace{\big(\partial_t U\big|_{m}\big)\,\diff t}_{\text{Measure flow term}},
+\end{align*}
+where the measure flow term captures the time evolution of $m_t$ via the functional chain rule (\Cref{lem:chain_rule_fp_app}):
+\begin{align*}
 \partial_t U\big|_{m} &= \int \Big[ (i^*(\xi,x,m)-\delta\kappa)\,\partial_{\kappa}\big(\Dm U\big)\!\_\kappa
   +\mu_z(\zeta)\,\partial_{\zeta}\big(\Dm U\big)\!\_\zeta
   +\tfrac12\sigma_z^2\,\partial_{\zeta\zeta}^2\big(\Dm U\big)\!\_\zeta\Big] \, m(\diff \xi).
 \end{align*}
 Taking expectations under the pricing measure with short rate $r(x)$ and imposing stationarity yields the stationary master equation (ME) in \Cref{thm:ME}: the own-firm HJB terms and the population-transport term. The dependence of $\pi$ on $m$ (via $P(Y(m,x))$) is already handled inside the Hamiltonian and does not appear as a separate explicit term.
 
-\subsection{Externality term in detail}
+\subsection*{Externality term in detail}
 Write $\pi(k,i,z,x,m)=\Psi(Y(m,x))\,\chi(k,z,x)-i-h(i,k)-f$ with $\Psi=P$ and $\chi=e^{x+z}k^\alpha$. Then
 
 $$
@@ -1679,7 +1801,7 @@ Anchoring removes the gauge freedom in $\dmU$.
 %========================
 \section{Appendix C: Common-Noise Master Equation (Reference Note)}\label{app:common-noise}
 
-When the population law $m_t$ itself diffuses under common noise (say through an exogenous $x_t$ or an aggregate Brownian component shared by firms), the functional ItÃ´ calculus on $\mathcal P_2$ introduces a second-order term in the measure variable. In a stylized form (see Carmona \& Delarue, and Cardaliaguet--Delarue--Lasry--Lions), the stationary master equation would add a term of the form
+When the population law $m_t$ itself diffuses under common noise (say through an exogenous $x_t$ or an aggregate Brownian component shared by firms), the functional Itô calculus on $\mathcal P_2$ introduces a second-order term in the measure variable. In a stylized form (see Carmona \& Delarue, and Cardaliaguet--Delarue--Lasry--Lions), the stationary master equation would add a term of the form
 
 $$
 \frac{1}{2}\,\Sigma_{\mathrm{com}}:\!\int\!\!\int
@@ -1871,36 +1993,36 @@ import Mathlib.Data.Real.Basic
 
 open Real
 
-variable {Î· Y : R}
+variable {eta Y : R}
 
--- P(Y) = Y ^ (-Î·), defined for Y > 0 via rpow
-def P (Y : R) (Î· : R) : R := Y ^ (-Î·)
+-- P(Y) = Y ^ (-eta), defined for Y > 0 via rpow
+def P (Y : R) (eta : R) : R := Y ^ (-eta)
 
--- Algebraic reduction: for Y > 0, Y * Y^(-Î· - 1) = Y^(-Î·)
+-- Algebraic reduction: for Y > 0, Y * Y^(-eta - 1) = Y^(-eta)
 theorem rpow_mul_cancel (hY : 0 < Y) :
-    Y * Y ^ (-Î· - 1) = Y ^ (-Î·) := by
+    Y * Y ^ (-eta - 1) = Y ^ (-eta) := by
   -- rewrite Y as Y^1 and use rpow_add (valid for Y > 0)
   have h1 : Y = Y ^ (1 : R) := by simpa using (rpow_one Y)
   calc
-    Y * Y ^ (-Î· - 1)
-        = Y ^ (1 : R) * Y ^ (-Î· - 1) := by simpa [h1]
-    _   = Y ^ ((1 : R) + (-Î· - 1)) := by
-            simpa using (rpow_mul_rpow_of_pos hY (1 : R) (-Î· - 1))
-    _   = Y ^ (-Î·) := by ring
+    Y * Y ^ (-eta - 1)
+        = Y ^ (1 : R) * Y ^ (-eta - 1) := by simpa [h1]
+    _   = Y ^ ((1 : R) + (-eta - 1)) := by
+            simpa using (rpow_mul_rpow_of_pos hY (1 : R) (-eta - 1))
+    _   = Y ^ (-eta) := by ring
 
--- Differential identity: for Y > 0,  (Y) * (deriv (fun y => P y Î·) Y) = -Î· * P Y Î·
+-- Differential identity: for Y > 0,  (Y) * (deriv (fun y => P y eta) Y) = -eta * P Y eta
 theorem isoelastic_identity (hY : 0 < Y) :
-    Y * (deriv (fun y => P y Î·) Y) = -Î· * P Y Î· := by
+    Y * (deriv (fun y => P y eta) Y) = -eta * P Y eta := by
   -- mathlib: d/dy (y^a) = a * y^(a-1) for y>0
-  have hderiv : deriv (fun y => y ^ (-Î·)) Y = (-Î·) * Y ^ (-Î· - 1) := by
-    simpa using (deriv_rpow_const (x:=Y) (a:=-Î·) hY.ne')
+  have hderiv : deriv (fun y => y ^ (-eta)) Y = (-eta) * Y ^ (-eta - 1) := by
+    simpa using (deriv_rpow_const (x:=Y) (a:=-eta) hY.ne')
   -- multiply both sides by Y and reduce
   calc
-    Y * (deriv (fun y => P y Î·) Y)
-        = Y * ((-Î·) * Y ^ (-Î· - 1)) := by simpa [P, hderiv]
-    _   = -Î· * (Y * Y ^ (-Î· - 1)) := by ring
-    _   = -Î· * Y ^ (-Î·) := by simpa using rpow_mul_cancel (Î·:=Î·) (Y:=Y) hY
-    _   = -Î· * P Y Î· := by rfl
+    Y * (deriv (fun y => P y eta) Y)
+        = Y * ((-eta) * Y ^ (-eta - 1)) := by simpa [P, hderiv]
+    _   = -eta * (Y * Y ^ (-eta - 1)) := by ring
+    _   = -eta * Y ^ (-eta) := by simpa using rpow_mul_cancel (eta:=eta) (Y:=Y) hY
+    _   = -eta * P Y eta := by rfl
 \end{leanproof}
 
 \begin{tcolorbox}[didacticstyle]
@@ -1913,14 +2035,14 @@ theorem isoelastic_identity (hY : 0 < Y) :
 import Mathlib.Data.Real.Basic
 
 -- Risk coefficient appearing in the EZ market price of risk
-def risk_coeff (Î³ Ïˆ : R) : R := (1 - Î³) * (1 - 1/Ïˆ)
+def risk_coeff (gamma psi : R) : R := (1 - gamma) * (1 - 1/psi)
 
 -- If RRA = 1 (log utility), the utility-channel risk coefficient vanishes
-@[simp] lemma risk_coeff_gamma_one (Ïˆ : R) : risk_coeff 1 Ïˆ = 0 := by
+@[simp] lemma risk_coeff_gamma_one (psi : R) : risk_coeff 1 psi = 0 := by
   simp [risk_coeff]
 
 -- If EIS = 1, the utility-channel risk coefficient vanishes
-@[simp] lemma risk_coeff_psi_one (Î³ : R) : risk_coeff Î³ 1 = 0 := by
+@[simp] lemma risk_coeff_psi_one (gamma : R) : risk_coeff gamma 1 = 0 := by
   simp [risk_coeff]
 \end{leanproof}
 
@@ -2074,7 +2196,7 @@ Deep Sets.
 
 \bibitem{mou_zhang_cn_master} Mou, C.-H. and J. Zhang (various years).
 Second-order master equations with common noise and displacement monotonicity.
-(Working papers / journal articles; see also related notes by Gangbo--MÃ©szÃ¡ros--Mou--Zhang.)
+(Working papers / journal articles; see also related notes by Gangbo--Mészáros--Mou--Zhang.)
 
 \bibitem{zhang_2005_value_premium} Zhang, L. (2005).
 The value premium.
