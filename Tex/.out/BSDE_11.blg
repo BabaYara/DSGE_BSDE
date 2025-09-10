@@ -1,0 +1,22 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is '.out/BSDE_11.blg'
+[205] biber-MSWIN64:342> INFO - === 
+[267] Biber.pm:421> INFO - Reading '.out/BSDE_11.bcf'
+[451] Biber.pm:1002> INFO - Found 6 citekeys in bib section 0
+[477] Biber.pm:4487> INFO - Processing section 0
+[491] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[1024] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1036] bibtex.pm:1519> INFO - Found BibTeX data source 'C:/Users/fababa/AppData/Local/Programs/MiKTeX/bibtex/bib/feupphdteses/references.bib'
+[1064] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1064] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1064] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1064] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[1065] bbl.pm:676> INFO - Writing '.out/BSDE_11.bbl' with encoding 'UTF-8'
+[1065] bbl.pm:779> INFO - Output to .out/BSDE_11.bbl
+[1065] Biber.pm:132> WARN - I didn't find a database entry for 'carmona_delarue_2018_mfg' (section 0)
+[1065] Biber.pm:132> WARN - I didn't find a database entry for 'cardaliaguet_delarue_lasry_lions_2019' (section 0)
+[1065] Biber.pm:132> WARN - I didn't find a database entry for 'zaheer2017deepsets' (section 0)
+[1065] Biber.pm:132> WARN - I didn't find a database entry for 'mou_zhang_cn_master' (section 0)
+[1065] Biber.pm:132> WARN - I didn't find a database entry for 'duffie_epstein_1992' (section 0)
+[1066] Biber.pm:132> WARN - I didn't find a database entry for 'Sauzet2023' (section 0)
+[1066] Biber.pm:134> INFO - WARNINGS: 6
