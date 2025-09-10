@@ -86,7 +86,8 @@
 
 % Bibliography via biblatex + biber
 % Keep hyperref/cleveref earlier; biblatex integrates with them.
-\usepackage[backend=biber,style=authoryear,maxcitenames=2,maxbibnames=99,doi=false,isbn=false,url=false]{biblatex}
+% Bibliography: prefer bibtex backend here to avoid environment-specific biber mismatches
+\usepackage[backend=bibtex,style=authoryear,maxcitenames=2,maxbibnames=99,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{references.bib}
 
 % ----------------------------------------------------------------------------------
