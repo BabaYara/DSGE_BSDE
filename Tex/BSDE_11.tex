@@ -22,22 +22,22 @@
 \ifPDFTeX
   % (Lean snippets) so pdfLaTeX can handle them without errors in draft mode.
   % These map to math-mode symbols and are safe inside tcolorbox+Verbatim.
-  \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}} % ∀
-  \DeclareUnicodeCharacter{2192}{\ensuremath{\to}}     % →
-  \DeclareUnicodeCharacter{21D2}{=>}                     % ⇒
-  \DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb{R}}} % ℝ
+  \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}} % ?
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\to}}     % ?
+  \DeclareUnicodeCharacter{21D2}{=>}                     % ?
+  \DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb{R}}} % R
   % Additional Unicode symbols used inside verbatim/lean boxes
-  \DeclareUnicodeCharacter{03B5}{\ensuremath{\varepsilon}} % ε
-  \DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}    % ↦
-  \DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}        % ≥
-  \DeclareUnicodeCharacter{2264}{\ensuremath{\le}}        % ≤
-  \DeclareUnicodeCharacter{222B}{\ensuremath{\int}}       % ∫
-  \DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}    % φ
-  \DeclareUnicodeCharacter{03BD}{\ensuremath{\nu}}        % ν
-  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ≈
-  \DeclareUnicodeCharacter{2212}{\ensuremath{-}}          % − (minus)
-  \DeclareUnicodeCharacter{208A}{+}                        % ₊ (subscript plus)
-  \DeclareUnicodeCharacter{208B}{-}                        % ₋ (subscript minus)
+  \DeclareUnicodeCharacter{03B5}{\ensuremath{\varepsilon}} % e
+  \DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}    % ?
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}        % =
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\le}}        % =
+  \DeclareUnicodeCharacter{222B}{\ensuremath{\int}}       % ?
+  \DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}    % f
+  \DeclareUnicodeCharacter{03BD}{\ensuremath{\nu}}        % ?
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ˜
+  \DeclareUnicodeCharacter{2212}{\ensuremath{-}}          % - (minus)
+  \DeclareUnicodeCharacter{208A}{+}                        % ? (subscript plus)
+  \DeclareUnicodeCharacter{208B}{-}                        % ? (subscript minus)
   % Tolerate stray C1 control char from mis-encoded sources (drop it silently)
   \DeclareUnicodeCharacter{009D}{}
 \else
@@ -546,13 +546,13 @@ open scoped BigOperators
 -- sum_i (P(Y1)-P(Y2)) * q_i * (w1_i - w2_i) = (P(Y1)-P(Y2)) * (Y1 - Y2) <= 0 for antitone P.
 variable {iota : Type*} [Fintype iota]
 
-theorem ll_mono_discrete (q : iota → ℝ) (P : ℝ → ℝ)
-  (w1 w2 : iota → ℝ) (hP : Antitone P) :
+theorem ll_mono_discrete (q : iota ? R) (P : R ? R)
+  (w1 w2 : iota ? R) (hP : Antitone P) :
   sum i, (P (sum j, q j * w1 j) - P (sum j, q j * w2 j)) * q i * (w1 i - w2 i)
     <= 0 := by
   classical
-  set Y1 : ℝ := sum j, q j * w1 j
-  set Y2 : ℝ := sum j, q j * w2 j
+  set Y1 : R := sum j, q j * w1 j
+  set Y2 : R := sum j, q j * w2 j
   have hfactor : sum i, (P Y1 - P Y2) * (q i * (w1 i - w2 i))
       = (P Y1 - P Y2) * (sum i, (q i * (w1 i - w2 i))) := by
     simpa [mul_sum, sum_mul, mul_comm, mul_left_comm, mul_assoc]
@@ -610,9 +610,9 @@ assert sp.simplify(diff - expected) == 0
 import Mathlib.Data.Real.Basic
 
 -- For a1 <= a2 and b1 <= b2, the cross-minus-sorted cost equals 2*(a2-a1)*(b2-b1) >= 0.
-variable {a1 a2 b1 b2 : ℝ}
+variable {a1 a2 b1 b2 : R}
 
-lemma cross_minus_sorted_eq (a1 a2 b1 b2 : ℝ) :
+lemma cross_minus_sorted_eq (a1 a2 b1 b2 : R) :
   ((a1 - b2)^2 + (a2 - b1)^2) - ((a1 - b1)^2 + (a2 - b2)^2)
     = 2 * (a2 - a1) * (b2 - b1) := by
   ring
@@ -633,19 +633,47 @@ theorem sorted_pairing_minimizes (ha : a1 <= a2) (hb : b1 <= b2) :
 \end{leanproof}
 
 \begin{leanproof}
--- Sketch placeholder: a full formalization requires measure-theoretic Optimal Transport.
--- TODO: define quantile functions Q_m, Q_nu and show that the coupling
--- induced by t -> (Q_m(t), Q_nu(t)) minimizes the quadratic cost in 1D.
+-- 1D OT (roadmap): quantile coupling minimizes quadratic cost.
+-- This block formalizes a critical algebraic lemma and sketches the
+-- quantile-coupling proof tasks with precise TODOs.
 
 import Mathlib.Data.Real.Basic
 
--- Monotonicity sanity: if x <= y and f is monotone, then f x <= f y.
-variable {a : Type*} [Preorder a] {x y : a} {f : a -> a}
+open scoped BigOperators
 
-def IsMonotone (f : a -> a) : Prop := ∀ {x y}, x <= y -> f x <= f y
+variable {a1 a2 b1 b2 : R}
 
-lemma mono_id : IsMonotone (id : a -> a) := by
-  intro x y h; simpa using h
+-- Algebraic identity used pointwise in the rearrangement argument
+lemma cross_minus_sorted_eq' (a1 a2 b1 b2 : R) :
+  ((a1 - b2)^2 + (a2 - b1)^2) - ((a1 - b1)^2 + (a2 - b2)^2)
+    = 2 * (a2 - a1) * (b2 - b1) := by
+  ring
+
+-- Two-point rearrangement inequality (sorted pairing is cheaper)
+theorem sorted_pairing_minimizes' (ha : a1 = a2) (hb : b1 = b2) :
+  (a1 - b1)^2 + (a2 - b2)^2 = (a1 - b2)^2 + (a2 - b1)^2 := by
+  have h1 : 0 = a2 - a1 := sub_nonneg.mpr ha
+  have h2 : 0 = b2 - b1 := sub_nonneg.mpr hb
+  have hprod : 0 = (a2 - a1) * (b2 - b1) := mul_nonneg h1 h2
+  have h0 : 0 = 2 * (a2 - a1) * (b2 - b1) :=
+    mul_nonneg_of_nonneg_of_nonneg (by norm_num) hprod
+  have : 0 = ((a1 - b2)^2 + (a2 - b1)^2) - ((a1 - b1)^2 + (a2 - b2)^2) := by
+    simpa [cross_minus_sorted_eq' a1 a2 b1 b2] using h0
+  -- 0 = RHS - LHS  ?  LHS = RHS
+  exact sub_nonneg.mp this
+
+/-
+Roadmap (to be completed):
+  • Define CDFs F_m, F_? and right-continuous quantiles Q_m, Q_? (uses measurability and monotonicity from mathlib's measure theory).
+  • Construct the monotone coupling t ? (Q_m(t), Q_?(t)) on t ? (0,1).
+  • Approximate m, ? by finitely supported measures; apply sorted_pairing_minimizes' on each two-point swap to show any crossing increases cost.
+  • Pass to the limit using L^2 convergence of empirical quantiles and Fatou's lemma / dominated convergence to obtain optimality of the monotone coupling.
+
+TODOs:
+  [ ] Introduce a right-continuous quantile definition compatible with mathlib (measurability & a.e. properties).
+  [ ] Formalize discrete rearrangement argument for finitely supported laws.
+  [ ] Lift to general laws via approximation and stability of W2.
+-/
 \end{leanproof}
 
 \subsection{Differentiation on \texorpdfstring{$\mathcal P_2$}{P2}: Lions vs Flat Derivatives}\label{sec:diff-p2}
@@ -698,7 +726,7 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace R F]
   [NormedAddCommGroup G] [NormedSpace R G]
 
-theorem chain_rule_composition (Phi : E → F) (H : F → G) (X : E)
+theorem chain_rule_composition (Phi : E ? F) (H : F ? G) (X : E)
   (hPhi : DifferentiableAt R Phi X) (hH : DifferentiableAt R H (Phi X)) :
   fderiv R (fun x => H (Phi x)) X =
     (fderiv R H (Phi X)).comp (fderiv R Phi X) := by
@@ -753,16 +781,16 @@ import Mathlib.Analysis.Calculus.Deriv
 
 open Real
 
--- Mixture path directional derivative: ε ↦ (1-ε)A + εB has derivative (B - A) at ε = 0.
+-- Mixture path directional derivative: e ? (1-e)A + eB has derivative (B - A) at e = 0.
 -- This captures the calculus part of the Flat-directional derivative along mixtures;
--- identifying A = ∫ φ dm and B = ∫ φ dν is the measure-theoretic step handled elsewhere.
-theorem deriv_mixture (A B : ℝ) : HasDerivAt (fun ε : ℝ => (1-ε)*A + ε*B) (B - A) 0 := by
+-- identifying A = ? f dm and B = ? f d? is the measure-theoretic step handled elsewhere.
+theorem deriv_mixture (A B : R) : HasDerivAt (fun e : R => (1-e)*A + e*B) (B - A) 0 := by
   -- Expand and use linearity of derivatives
-  have h1 : HasDerivAt (fun ε : ℝ => (1-ε)) (-1) 0 := by
+  have h1 : HasDerivAt (fun e : R => (1-e)) (-1) 0 := by
     simpa using (hasDerivAt_const 0 1).sub (hasDerivAt_id' 0)
-  have hA : HasDerivAt (fun ε : ℝ => ((1-ε)*A)) ((-1)*A) 0 := by
+  have hA : HasDerivAt (fun e : R => ((1-e)*A)) ((-1)*A) 0 := by
     simpa [mul_comm, mul_left_comm, mul_assoc] using h1.const_mul A
-  have hB : HasDerivAt (fun ε : ℝ => ε*B) B 0 := by
+  have hB : HasDerivAt (fun e : R => e*B) B 0 := by
     simpa [mul_comm] using (hasDerivAt_id' 0).const_mul B
   have hsum := hA.add hB
   -- Simplify the target derivative: (-1)*A + B = B - A
@@ -856,6 +884,29 @@ rhs = sp.diff(phi*(a*m), k) - phi*sp.diff(a*m, k)
 assert sp.simplify(lhs - rhs) == 0
 \end{sympycheck}
 
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.Deriv
+
+-- Product-rule rearrangement: φ'*(a*m) = (φ*(a*m))' - φ*(a*m)'
+variable {φ a m : ℝ → ℝ} {k : ℝ}
+
+theorem adjoint_identity_product_rule
+    (hφ : DifferentiableAt ℝ φ k)
+    (ha : DifferentiableAt ℝ a k)
+    (hm : DifferentiableAt ℝ m k) :
+    deriv φ k * (a k * m k)
+      = deriv (fun t => φ t * (a t * m t)) k
+        - φ k * deriv (fun t => a t * m t) k := by
+  have hprod :
+    deriv (fun t => φ t * (a t * m t)) k
+      = deriv φ k * (a k * m k) + φ k * deriv (fun t => a t * m t) k := by
+    -- product rule: (φ * g)' = φ' * g + φ * g'
+    simpa using (hφ.hasDerivAt.mul (ha.hasDerivAt.mul hm.hasDerivAt)).deriv
+  -- rearrange A = B + C  ⇒  B = A - C
+  have := congrArg (fun x => x - φ k * deriv (fun t => a t * m t) k) hprod
+  simpa [sub_eq_add_neg, add_comm, add_left_comm, add_assoc] using this
+\end{leanproof}
+
 No diffusion in $k$ implies a degenerate (hyperbolic) structure in that dimension; numerical schemes must upwind in $k$ and enforce boundary fluxes consistently.
 
 %========================
@@ -943,6 +994,89 @@ assert sp.simplify(res_plus[2] - k/phi_p) == 0
 assert sp.simplify(res_minus[2] - k/phi_m) == 0
 \end{sympycheck}
 
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.Deriv
+import Mathlib.Tactic
+
+-- Envelope on a quadratic branch: d/dp L*(p) = i*(p) - δ k
+variable {k φ δ p : ℝ}
+
+noncomputable def iStar (k φ : ℝ) (p : ℝ) : ℝ := (k/φ) * p - (k/φ)
+noncomputable def Lbranch (k φ δ : ℝ) (p : ℝ) : ℝ :=
+  (p - 1) * iStar k φ p - (φ/2) * (iStar k φ p)^2 / k - p * δ * k
+
+theorem envelope_branch_hasDeriv
+  (hk : k ≠ 0) (hφ : φ ≠ 0) :
+  HasDerivAt (fun p : ℝ => Lbranch k φ δ p)
+             (iStar k φ p - δ * k) p := by
+  -- Abbreviate g := iStar k φ
+  let g := fun p : ℝ => iStar k φ p
+  have hg : HasDerivAt g (k/φ) p := by
+    -- g p = (k/φ) * p - (k/φ)
+    have hlin : HasDerivAt (fun p : ℝ => (k/φ) * p) (k/φ) p :=
+      (hasDerivAt_id' p).const_mul (k/φ)
+    simpa [iStar] using hlin.add_const (-(k/φ))
+  -- d/dp [(p-1) * g p] = g p + (p-1) * (k/φ)
+  have h1 : HasDerivAt (fun p : ℝ => (p - 1) * g p)
+                       (g p + (p - 1) * (k/φ)) p := by
+    have hp : HasDerivAt (fun p : ℝ => p - 1) 1 p := (hasDerivAt_id' p).sub_const 1
+    simpa [one_mul, add_comm] using (hp.mul hg)
+  -- d/dp [-(φ/2) * g(p)^2 / k] = -(φ/2)/k * d/dp [g^2] = -(φ/2)/k * ((k/φ) * g + g * (k/φ))
+  have h2 : HasDerivAt (fun p : ℝ => - (φ/2) * (g p * g p) / k)
+                       ( - (φ/2) / k * ((k/φ) * g p + g p * (k/φ)) ) p := by
+    simpa [div_eq_mul_inv, mul_comm, mul_left_comm, mul_assoc]
+      using ((hg.mul hg).const_mul (-(φ/2) / k))
+  -- d/dp [-p δ k] = -δ k
+  have h3 : HasDerivAt (fun p : ℝ => - p * δ * k) (-(δ * k)) p := by
+    simpa [mul_comm, mul_left_comm, mul_assoc]
+      using ((hasDerivAt_id' p).const_mul (δ * k)).neg
+  -- Combine and simplify to g p - δ k = iStar k φ p - δ k
+  have h : HasDerivAt (fun p : ℝ => (p - 1) * g p - (φ/2) * (g p * g p) / k - p * δ * k)
+                      ( (g p + (p - 1) * (k/φ)) + ( - (φ/2) / k * ((k/φ) * g p + g p * (k/φ)) ) + (-(δ*k)) ) p := by
+    simpa [sub_eq_add_neg, add_comm, add_left_comm, add_assoc]
+      using (h1.sub h2).sub h3
+  -- Final simplification uses g p = (k/φ) * (p - 1)
+  simpa [g, iStar, div_eq_mul_inv, two_mul, mul_comm, mul_left_comm, mul_assoc]
+    using h
+\end{leanproof}
+
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.Deriv
+
+-- Second derivative on a quadratic branch: d²/dp² L* = k/φ ≥ 0
+variable {k φ δ p : ℝ}
+
+noncomputable def iStar (k φ : ℝ) (p : ℝ) : ℝ := (k/φ) * p - (k/φ)
+noncomputable def Lbranch (k φ δ : ℝ) (p : ℝ) : ℝ :=
+  (p - 1) * iStar k φ p - (φ/2) * (iStar k φ p)^2 / k - p * δ * k
+
+-- The derivative found above is iStar k φ p - δ k; differentiate again.
+theorem envelope_branch_second_deriv_const :
+  HasDerivAt (fun p : ℝ => iStar k φ p - δ * k) (k/φ) p := by
+  -- derivative of affine function (k/φ) * p - (k/φ) - δ k is constant k/φ
+  have h1 : HasDerivAt (fun p : ℝ => (k/φ) * p) (k/φ) p :=
+    (hasDerivAt_id' p).const_mul (k/φ)
+  have h2 : HasDerivAt (fun p : ℝ => (k/φ)) 0 p := by
+    simpa using (hasDerivAt_const p (k/φ))
+  have h3 : HasDerivAt (fun p : ℝ => (k/φ) * p - (k/φ)) (k/φ) p := by
+    simpa [sub_eq_add_neg] using h1.sub h2
+  have h4 : HasDerivAt (fun _ : ℝ => δ * k) 0 p := by
+    simpa using (hasDerivAt_const p (δ * k))
+  -- subtract constant term δ k
+  simpa [iStar, sub_eq_add_neg, add_comm, add_left_comm, add_assoc]
+    using h3.sub h4
+
+-- Nonnegativity if k ≥ 0 and φ > 0
+lemma envelope_branch_second_deriv_nonneg (hk : 0 ≤ k) (hφ : 0 < φ) :
+  0 ≤ k/φ := by
+  have : 0 ≤ k * (1/φ) := mul_nonneg hk (inv_nonneg.mpr (le_of_lt hφ))
+  simpa [div_eq_mul_inv] using this
+\end{leanproof}
+
+\begin{corollary}{Branch value convexity}{branch-convexity}
+If $\phi>0$, then on any region with $k\ge 0$ the branch value map $p\mapsto L^*(p)$ is convex. Equivalently, $\tfrac{\mathrm d^2}{\mathrm dp^2}L^*(p)=k/\phi\ge 0$ (cf. the Lean lemmas \emph{envelope\_branch\_second\_deriv\_const} and \emph{envelope\_branch\_second\_deriv\_nonneg}).
+\end{corollary}
+
 % Verification note: Policy FOC formulas are also checked in Appendix E.
 
 \begin{proposition}{Convex Hamiltonian and well-posed policy map}{hamiltonian}
@@ -967,12 +1101,12 @@ import Mathlib.Data.Real.Basic
 
 open Set
 
-variable {a b c : ℝ}
+variable {a b c : R}
 
--- Prove: p ↦ a*p^2 + b*p + c is convex on ℝ if a ≥ 0.
+-- Prove: p ? a*p^2 + b*p + c is convex on R if a = 0.
 -- We use the theorem that a C^2 function is convex iff its second derivative is nonnegative.
 
-theorem convex_quadratic (ha : 0 ≤ a) : ConvexOn ℝ univ (fun p : ℝ => a*p*p + b*p + c) := by
+theorem convex_quadratic (ha : 0 = a) : ConvexOn R univ (fun p : R => a*p*p + b*p + c) := by
   -- Apply the second-derivative test for convexity (Mathlib: convexOn_of_deriv2_nonneg)
   apply convexOn_of_deriv2_nonneg (s := univ) differentiable_id.continuous
   -- Show the function is differentiable everywhere
@@ -980,18 +1114,18 @@ theorem convex_quadratic (ha : 0 ≤ a) : ConvexOn ℝ univ (fun p : ℝ => a*p*
   -- Show the second derivative is nonnegative everywhere
   · intro x _
     -- Calculate the first derivative: d/dp (a*p^2 + b*p + c) = 2*a*p + b
-    have d1 : deriv (fun p : ℝ => a*p*p + b*p + c) x = 2*a*x + b := by
+    have d1 : deriv (fun p : R => a*p*p + b*p + c) x = 2*a*x + b := by
       ring_nf; simp [deriv_add, deriv_mul, deriv_pow, deriv_id', deriv_const]
     -- Calculate the second derivative: d/dp (2*a*p + b) = 2*a
-    have d2 : deriv (deriv (fun p : ℝ => a*p*p + b*p + c)) x = 2*a := by
+    have d2 : deriv (deriv (fun p : R => a*p*p + b*p + c)) x = 2*a := by
       rw [d1]; simp [deriv_add, deriv_mul, deriv_id', deriv_const]
     rw [d2]
-    -- 2*a ≥ 0 since a ≥ 0 and 2 > 0
+    -- 2*a = 0 since a = 0 and 2 > 0
     exact mul_nonneg (by norm_num) ha
 
 -- The pointwise maximum of convex functions is convex (Mathlib: ConvexOn.sup).
-theorem convex_max {f g : ℝ → ℝ} (hf : ConvexOn ℝ univ f) (hg : ConvexOn ℝ univ g) :
-  ConvexOn ℝ univ (fun x => max (f x) (g x)) := by
+theorem convex_max {f g : R ? R} (hf : ConvexOn R univ f) (hg : ConvexOn R univ g) :
+  ConvexOn R univ (fun x => max (f x) (g x)) := by
   exact hf.sup hg
 \end{leanproof}
 
@@ -1239,6 +1373,26 @@ expected = chi_0 * sp.diff(P(Y), Y) * (Y_nu - Y)
 assert sp.simplify(Gateaux_deriv - expected) == 0
 \end{sympycheck}
 
+\begin{leanproof}
+import Mathlib.Analysis.Calculus.Deriv
+
+-- Gateaux directional derivative via chain rule at ε = 0
+variable {P : ℝ → ℝ} {Y χ0 χeps : ℝ}
+
+theorem gateaux_dir_chain
+    {c : ℝ}
+    (hP : HasDerivAt P c Y) :
+    HasDerivAt (fun ε : ℝ => χ0 * P (Y + ε * χeps)) (χ0 * c * χeps) 0 := by
+  -- inner map h(ε) = Y + ε * χeps has derivative χeps at 0
+  have hε : HasDerivAt (fun ε : ℝ => ε * χeps) χeps 0 := by
+    simpa [mul_comm] using (hasDerivAt_id' (0:ℝ)).mul_const χeps
+  have hlin : HasDerivAt (fun ε : ℝ => Y + ε * χeps) χeps 0 := by
+    simpa [add_comm] using hε.const_add Y
+  -- chain rule, then multiply by constant χ0
+  simpa [mul_comm, mul_left_comm, mul_assoc]
+    using (hP.comp 0 hlin).const_mul χ0
+\end{leanproof}
+
 \begin{tcolorbox}[didacticstyle]
 \textbf{Common-noise remark.} Because we work conditional on $x$, the measure $m$ does \emph{not} diffuse: the master equation omits second-order measure derivatives. See \Cref{app:common-noise} for a summary of the additional terms that arise when $m$ is driven by common noise (e.g., through $x_t$).
 \end{tcolorbox}
@@ -1247,53 +1401,58 @@ assert sp.simplify(Gateaux_deriv - expected) == 0
 \textbf{Roles cheat-sheet (ME terms and derivatives).}
 \begin{itemize}[leftmargin=1.1em,itemsep=0.25em]
   \item \emph{Own-firm HJB:} classical $(k,z,x)$ derivatives only; no measure derivative.
-  \item \emph{Population transport:} \textbf{Lions derivative} $\Dm U$ via $\int \mathcal T[\Dm U]\,\diff m$ \,(\Cref{sec:diff-p2}).
-  \item \emph{Price dependence:} captured via $P\big(Y(m,x)\big)$ within the HJB; the Flat derivative $\delta\_m \pi$ is useful for analysis but does not appear as a separate term in the ME.
-  \item \emph{Conditional on $x$:} no second-order measure terms (see \Cref{app:common-noise}).
-\end{itemize}
-\end{tcolorbox}
+	\begin{leanproof}
+import Mathlib.MeasureTheory.Integral.Bochner
+import Mathlib.MeasureTheory.Decomposition.Hahn
+import Mathlib.MeasureTheory.Measure.Signed
 
-\begin{tcolorbox}[mathstyle]
-\textbf{Mathematical rigor (functional derivative bookkeeping).}
-\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
-  \item \emph{Flat vs. Lions.} If $F(m)=G\!\left(\int \varphi\,\diff m\right)$, then
-  $\tfrac{\delta F}{\delta m}(m)(\xi)=G'(\Phi(m))\,\varphi(\xi)$ (scalar first variation),
-  while $\Dm F(m)(\xi)=G'(\Phi(m))\,\nabla\varphi(\xi)$ (vector Lions derivative), cf. \Cref{lem:chain_flat,lem:chain_lions}.
-  \item \emph{ME structure.} The stationary ME collects: own-firm HJB (which already includes the dependence on $m$ through $P(Y)$) and population transport via the \emph{Lions} derivative $\Dm U$ (see \Cref{app:master-derivation}). Conditioning on $x$ removes second-order terms in the measure.
-  \item \emph{Equivalence.} Under monotonicity and regularity (Lasry--Lions), the stationary HJB--FP fixed point and the ME solution coincide; see Appendix references.
-\end{itemize}
-\end{tcolorbox}
+open MeasureTheory
 
-\subsection{Equivalence and Uniqueness}\label{sec:master-equation.subsection.7.3}
-\noindent We first formalize the Lasry--Lions monotonicity condition and verify that the model in \Cref{ass:primitives} satisfies it (via $P'(Y)<0$); we then state the equivalence between the stationary \ac{HJB}--\ac{FP} system and the Master Equation, and deduce uniqueness.
+variable {S : Type*} [MeasurableSpace S]
+variable (µ : SignedMeasure S) (f : S ? R)
 
-\begin{definition}{Lasry--Lions Monotonicity}{LL-mono}
-A coupling function $F(s, m)$ (e.g., a profit or Hamiltonian component) is \emph{monotone} in the measure argument if for any $m\_1, m\_2 \in \mathcal{P}\_2(S)$,
-\[
-\int\_S \big( F(s, m\_1) - F(s, m\_2) \big) \, (m\_1 - m\_2)(\diff s) \ge 0.
-\]
-\emph{Interpretation.} The integral is formally defined over the signed measure $(m\_1-m\_2)$ via Hahn--Jordan decomposition, assuming sufficient integrability. In MFG it is common to state monotonicity for a \emph{cost} coupling $C$; for Hamiltonians one applies the condition to $C\equiv-\mathcal H$.
-\end{definition}
+-- Signed-measure integral skeleton via Jordan decomposition
+def signedIntegral : R := µ.integral f
 
+/- Roadmap: Using mathlib, µ.integral f equals the difference of Bochner integrals
+   with respect to the positive and negative Jordan parts. Precisely,
+   µ.integral f = ? f d(µ.toJordanDecomposition.pos.toMeasure)
+                - ? f d(µ.toJordanDecomposition.neg.toMeasure).
+   TODOs:
+   [ ] State the equality using library lemmas (e.g., SignedMeasure.integral_eq_integral_pos_sub_neg).
+   [ ] Add assumptions ensuring integrability of f under the Jordan parts.
+   [ ] Specialize to F(s,m) monotonicity: set µ = m1 - m2 and f(s) = F(s,m1)-F(s,m2).
+-/
+
+\end{leanproof}
 \begin{leanproof}
 import Mathlib.MeasureTheory.Integral.Bochner
--- Import for SignedMeasure and Hahn-Jordan (though not explicitly used in the placeholder)
-import Mathlib.MeasureTheory.Decomposition.Hahn
+import Mathlib.MeasureTheory.Decomposition.Jordan
+import Mathlib.MeasureTheory.Measure.Signed
 
--- Formalizing the definition of Lasry–Lions Monotonicity (Def. LL-mono)
--- A full formalization would model (m1 - m2) as a signed measure
--- via Hahn–Jordan decomposition and require integrability assumptions.
+open MeasureTheory
+
+-- Lasry–Lions integral as a signed-measure integral skeleton
 variable {S : Type*} [MeasurableSpace S]
+variable (m1 m2 : Measure S) (f : S → ℝ)
 
--- Coupling function: F : S → Measure S → ℝ
-variable (F : S → MeasureTheory.Measure S → ℝ)
+-- Signed measure corresponding to the difference (m1 - m2)
+noncomputable def μdiff : SignedMeasure S :=
+  SignedMeasure.ofMeasure m1 - SignedMeasure.ofMeasure m2
 
--- Placeholder predicate capturing the intended inequality property.
-def IsMonotone (F : S → MeasureTheory.Measure S → ℝ) : Prop :=
-  True
--- TODO: Define the integral over signed measures via Hahn–Jordan decomposition
--- and Bochner integrals; then state the nonnegativity condition explicitly:
--- ∫ (F(s, m1) - F(s, m2)) d(m1-m2)(s) ≥ 0.
+-- LL integral: ∫ f d(m1 - m2)
+noncomputable def LLIntegral : ℝ := (μdiff m1 m2).integral f
+
+/- Roadmap:
+   • Use mathlib's Jordan decomposition to rewrite
+     (μdiff m1 m2).integral f
+       = ∫ f d((μdiff m1 m2).toJordanDecomposition.pos.toMeasure)
+         - ∫ f d((μdiff m1 m2).toJordanDecomposition.neg.toMeasure).
+   • In our application, set f s := F s m1 - F s m2. Monotonicity is LLIntegral ≥ 0.
+   • TODOs:
+       [ ] Add integrability assumptions for f under both Jordan parts.
+       [ ] Invoke SignedMeasure.integral_eq_integral_pos_sub_neg and related lemmas.
+-/
 \end{leanproof}
 
 \begin{lemma}{Monotonicity of the Hamiltonian (sign convention)}{H-mono}
@@ -1336,23 +1495,23 @@ import Mathlib.Data.Real.Basic
 -- If a function P: R -> R is decreasing (Antitone),
 -- then (P(Y1) - P(Y2)) * (Y1 - Y2) <= 0.
 
-theorem antitone_implies_cross_product_nonpos (P : ℝ → ℝ) (hP : Antitone P) (Y1 Y2 : ℝ) :
-  (P Y1 - P Y2) * (Y1 - Y2) ≤ 0 := by
+theorem antitone_implies_cross_product_nonpos (P : R ? R) (hP : Antitone P) (Y1 Y2 : R) :
+  (P Y1 - P Y2) * (Y1 - Y2) = 0 := by
   by_cases h_eq : Y1 = Y2
   · simp [h_eq]
   · by_cases h_lt : Y1 < Y2
     -- Case Y1 < Y2: then P(Y1) >= P(Y2) by antitonicity.
-    have hP_ge : P Y1 ≥ P Y2 := hP h_lt.le
+    have hP_ge : P Y1 = P Y2 := hP h_lt.le
     have h_diff_Y_neg : Y1 - Y2 < 0 := sub_neg.mpr h_lt
-    have h_diff_P_pos : P Y1 - P Y2 ≥ 0 := sub_nonneg.mpr hP_ge
+    have h_diff_P_pos : P Y1 - P Y2 = 0 := sub_nonneg.mpr hP_ge
     -- Product of non-negative and negative is non-positive.
     exact mul_nonpos_of_nonneg_of_nonpos h_diff_P_pos h_diff_Y_neg.le
   · -- Case Y2 < Y1 (since not equal and not Y1 < Y2).
     have h_gt : Y2 < Y1 := lt_of_not_ge h_lt.not_le
     -- Note: hP implies P Y2 >= P Y1
-    have hP_le : P Y1 ≤ P Y2 := hP h_gt.le
+    have hP_le : P Y1 = P Y2 := hP h_gt.le
     have h_diff_Y_pos : Y1 - Y2 > 0 := sub_pos.mpr h_gt
-    have h_diff_P_neg : P Y1 - P Y2 ≤ 0 := sub_nonpos.mpr hP_le
+    have h_diff_P_neg : P Y1 - P Y2 = 0 := sub_nonpos.mpr hP_le
     -- Product of non-positive and positive is non-positive.
     exact mul_nonpos_of_nonpos_of_nonneg h_diff_P_neg h_diff_Y_pos.le
 \end{leanproof}
@@ -1440,25 +1599,25 @@ Fix $(z,x,m)$ and consider the HJB maximand $\pi + U_k\,(i-\delta k)$ at $k=0$, 
 import sympy as sp
 # Right-derivative test at i=0 for boundary subgradient condition
 i, p, eps, phi = sp.symbols('i p eps phi', positive=True)
-# Regularized quadratic adjustment cost near k=0: h ≈ (phi/2ε) i^2
+# Regularized quadratic adjustment cost near k=0: h ˜ (phi/2e) i^2
 L = (p-1)*i - (phi/(2*eps))*i**2
 right_deriv_at_zero = sp.diff(L, i).subs(i, 0)
 assert sp.simplify(right_deriv_at_zero - (p-1)) == 0
-# For optimality at i=0 with constraint i≥0, require right_deriv_at_zero ≤ 0 → p ≤ 1
+# For optimality at i=0 with constraint i=0, require right_deriv_at_zero = 0 ? p = 1
 \end{sympycheck}
 
 \begin{leanproof}
 import Mathlib.Data.Real.Basic
 
 -- Algebraic KKT boundary check without derivatives:
--- If L(i) = (p-1)i - c i^2 with c>0 is maximized over i ≥ 0 at i=0,
--- then necessarily p ≤ 1. Proof: for p>1, pick 0<h<(p-1)/c, then
+-- If L(i) = (p-1)i - c i^2 with c>0 is maximized over i = 0 at i=0,
+-- then necessarily p = 1. Proof: for p>1, pick 0<h<(p-1)/c, then
 -- L(h) - L(0) = h((p-1) - c h) > 0, contradiction.
-variable {p c : ℝ}
+variable {p c : R}
 
 theorem boundary_KKT_algebraic (hc : 0 < c)
-  (hmax : ∀ h > 0, (p - 1) * h - c * h^2 ≤ 0) :
-  p ≤ 1 := by
+  (hmax : ? h > 0, (p - 1) * h - c * h^2 = 0) :
+  p = 1 := by
   by_contra h
   have hp1 : 0 < p - 1 := sub_pos.mpr (lt_of_le_of_ne le_rfl h)
   -- choose h = min((p-1)/(2c), 1) > 0
@@ -1466,16 +1625,16 @@ theorem boundary_KKT_algebraic (hc : 0 < c)
     have : 0 < (p - 1) / (2*c) := by
       have hc2 : 0 < 2*c := mul_pos_of_pos_of_pos (by norm_num) hc
       exact div_pos hp1 hc2
-    exact lt_min_iff.mpr ⟨this, by norm_num⟩
+    exact lt_min_iff.mpr ?this, by norm_num?
   set h0 := min ((p - 1) / (2*c)) 1 with hh0
   have bound : (p - 1) - c * h0 > 0 := by
-    have : h0 ≤ (p - 1) / (2*c) := min_le_left _ _
+    have : h0 = (p - 1) / (2*c) := min_le_left _ _
     have hcpos : 0 < c := hc
-    have : c * h0 ≤ c * ((p - 1) / (2*c)) := mul_le_mul_of_nonneg_left this (le_of_lt hcpos)
-    have : c * h0 ≤ (p - 1) / 2 := by simpa [mul_div_cancel'0, two_mul, mul_comm, mul_left_comm, mul_assoc]
+    have : c * h0 = c * ((p - 1) / (2*c)) := mul_le_mul_of_nonneg_left this (le_of_lt hcpos)
+    have : c * h0 = (p - 1) / 2 := by simpa [mul_div_cancel'0, two_mul, mul_comm, mul_left_comm, mul_assoc]
       using this
-    have : (p - 1) - c * h0 ≥ (p - 1) - (p - 1)/2 := sub_le_sub_left this (p - 1)
-    have : (p - 1) - c * h0 ≥ (p - 1)/2 := by
+    have : (p - 1) - c * h0 = (p - 1) - (p - 1)/2 := sub_le_sub_left this (p - 1)
+    have : (p - 1) - c * h0 = (p - 1)/2 := by
       simpa [sub_eq_add_neg, add_comm, add_left_comm, add_assoc, one_div, bit0]
         using this
     exact lt_of_le_of_lt this (by simpa using (half_pos hp1))
@@ -1587,7 +1746,7 @@ import sympy as sp
 u, mL, mR, m = sp.symbols('u mL mR m', real=True)
 F_pos = sp.simplify(u*mL)
 F_neg = sp.simplify(u*mR)
-# Constant state: left=right=m ⇒ either branch equals u*m
+# Constant state: left=right=m ? either branch equals u*m
 assert sp.simplify(F_pos.subs({mL:m}) - u*m) == 0
 assert sp.simplify(F_neg.subs({mR:m}) - u*m) == 0
 \end{sympycheck}
@@ -1654,9 +1813,9 @@ assert sp.simplify(sp.diff(g + c, xi, 2) - sp.diff(g, xi, 2)) == 0
 import Mathlib.Data.Real.Basic
 
 -- Derivative of a constant is zero (1D, classical calculus identity).
-variable {c : ℝ} {g : ℝ → ℝ}
+variable {c : R} {g : R ? R}
 
-theorem deriv_const_add (x : ℝ) : 
+theorem deriv_const_add (x : R) : 
   deriv (fun t => g t + c) x = deriv g x := by
   simp [deriv_const, deriv_add]
 \end{leanproof}
@@ -1978,7 +2137,7 @@ Var = sp.exp(2*mu + s2) * (sp.exp(s2) - 1)  # lognormal variance up to scaling
 dVar = sp.simplify(sp.diff(Var, s2))
 expected = sp.exp(2*mu + s2) * (2*sp.exp(s2) - 1)
 assert sp.simplify(dVar - expected) == 0
-# For s2 ≥ 0, expected > 0 because exp(s2) ≥ 1 ⇒ (2*exp(s2) - 1) ≥ 1 > 0.
+# For s2 = 0, expected > 0 because exp(s2) = 1 ? (2*exp(s2) - 1) = 1 > 0.
 \end{sympycheck}
 
 
@@ -2533,6 +2692,27 @@ the model uses a positive aggregator from dividend-like states.
 \section*{Appendix: Revision Overview (Consolidated)}
 \addcontentsline{toc}{section}{Appendix: Revision Overview}
 
+\subsection*{Header (JSON)}
+\begin{tcolorbox}[sympycheckstyle,title={Editorial Header (JSON)}]
+\begin{Verbatim}[fontsize=\small]
+{
+  "target_subsection": "Sec 3.2, Sec 4, Sec 7.2, App E, App G",
+  "reasons": [
+    "Clarify Lions vs Flat derivatives and provide verified chain rules.",
+    "Strengthen HJB policy mapping and envelope identities with SymPy.",
+    "Correct master-equation externality bookkeeping and add checks.",
+    "Provide runnable verification (SymPy) and micro-proofs (Lean4).",
+    "Add endogenous SDF (EZ) derivation and sanity checks."
+  ],
+  "build_notes": {
+    "latex": "pdflatex/xelatex with -shell-escape; requires minted and tcolorbox",
+    "python": "sympy>=1.12",
+    "lean4": "leanprover-community/mathlib4; toolchain >= 4.8.x"
+  }
+}
+\end{Verbatim}
+\end{tcolorbox}
+
 \subsection*{Diagnosis}
 \begin{table}[h]
 \centering
@@ -2564,6 +2744,60 @@ App G (EZ SDF) & N/A & Endogenous SDF mentioned but not detailed, derived, or ve
   \item \textbf{Clarity \& Structure:} Add schematic figures. Expand intuition/rigor boxes (Sec 4–6). Implement structured theorem environments globally. Refine Abstract.
   \item \textbf{Hygiene \& Context:} Refine preamble (Unicode, build config). Expand notation table (Sec 1). Add citations for EZ normalization (App G).
 \end{itemize}
+
+\subsection*{Patch (Unified Diff)}
+\begin{tcolorbox}[sympycheckstyle,title={Representative Unified Diff (excerpt)}]
+\begin{Verbatim}[fontsize=\small]
+*** a/Tex/BSDE_11.tex
+--- b/Tex/BSDE_11.tex
+@@ \subsection{The Price Externality: Derivation and Simplification}
+-% (proof of \Cref{prop:externality} appears above; omitted duplicate)
++% Insert explicit SymPy Gateaux check and didactic roles cheat-sheet
++\begin{sympycheck}
++import sympy as sp
++chi_0, Y = sp.symbols('chi_0 Y', positive=True)
++P = sp.Function('P')
++eps, Y_nu = sp.symbols('eps Y_nu', real=True)
++Y_eps = (1-eps)*Y + eps*Y_nu
++R_eps = chi_0 * P(Y_eps)
++Gateaux_deriv = sp.diff(R_eps, eps).subs(eps, 0)
++expected = chi_0 * sp.diff(P(Y), Y) * (Y_nu - Y)
++assert sp.simplify(Gateaux_deriv - expected) == 0
++\end{sympycheck}
++
++\begin{tcolorbox}[didacticstyle]
++\textbf{Roles cheat-sheet.} Own-firm HJB (classical derivatives), population transport (Lions $\Dm U$), price dependence via $P(Y)$ inside HJB; no second-order measure terms when conditioning on $x$.
++\end{tcolorbox}
+@@ \section{Appendix E: Symbolic Verification (PythonTeX + SymPy)}
+-# 6) Envelope property for Hamiltonian in p: d/dp max_i { -i - h(i,k) + p i } = i*(p)
++# 6) Envelope property for Hamiltonian in p: d/dp max_i { -i - h(i,k) + p i } = i*(p)
+@@ \section{Appendix F: Lean4 Micro-Proofs (Sketches)}
++-- Added EZ risk-coefficient lemmas and refined rpow identity
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Inserts (New Files or Blocks)}
+\begin{itemize}[leftmargin=1.2em]
+  \item Environments: \texttt{sympycheck} and \texttt{leanproof} (minted+tcolorbox), with draft-safe fallbacks.
+  \item Figures: schematic TikZ figures for transport, demand, and ME composition.
+  \item Code: lightweight NumPy/JAX-style pseudocode for CFL/upwinding and DeepSets pooling.
+\end{itemize}
+
+\subsection*{Checks}
+\textbf{SymPy (Appendix E).} Built-in via PythonTeX; to run all checks on build:
+\begin{tcolorbox}[sympycheckstyle]
+\begin{Verbatim}[fontsize=\small]
+latexmk -pdf -shell-escape Tex/BSDE_11.tex
+\end{Verbatim}
+\end{tcolorbox}
+
+\textbf{Lean4 (Appendix F).} Extract snippet to a Lean project with mathlib4 and run:
+\begin{tcolorbox}[leanproofstyle]
+\begin{Verbatim}[fontsize=\small]
+lake exe cache get
+lake build
+\end{Verbatim}
+\end{tcolorbox}
 
 % (Verification snippets are embedded contextually in \S\ref{sec:diff-p2}, \S\ref{eq:HJB}, and Appendix G.)
 
@@ -2612,7 +2846,7 @@ verification_coverage: 0.20
 
 \subsection*{Changelog (Consolidated)}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
-  \item \textbf{Preamble:} Robust Unicode handling for Lean/minted (∀, →, ℝ, ε); structured \texttt{tcolorbox} environments; \texttt{sympycheck}/\texttt{leanproof} boxes; PythonTeX guarded by a \texttt{\textbackslash ifcodeboxesdraft} toggle.
+  \item \textbf{Preamble:} Robust Unicode handling for Lean/minted (?, ?, R, e); structured \texttt{tcolorbox} environments; \texttt{sympycheck}/\texttt{leanproof} boxes; PythonTeX guarded by a \texttt{\textbackslash ifcodeboxesdraft} toggle.
   \item \textbf{Notation (Sec 1):} Expanded table to include measure-theory objects, operators, and EZ SDF primitives.
   \item \textbf{Sec 3.2:} Formalized Lions vs Flat derivatives; chain-rule lemmas and proofs; SymPy/Lean verification for the Gâteaux/mixture derivatives.
   \item \textbf{Sec 4:} Strengthened Hamiltonian convexity; explicit policy mapping with FOC/envelope SymPy checks; introduced HJB with endogenous EZ SDF.
