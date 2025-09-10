@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arias et~al.(2018)Arias, Rubio-Ram{\'\i}rez, and Waggoner]{Arias2018}
+Jonas~E. Arias, Juan~F. Rubio-Ram{\'\i}rez, and Daniel~F. Waggoner.
+\newblock Inference based on structural vector autoregressions identified with
+  sign and zero restrictions: Theory and applications.
+\newblock \emph{Econometrica}, 86\penalty0 (2):\penalty0 685--720, 2018.
+
+\bibitem[Caldara and Herbst(2019)]{Caldara2019}
+Dario Caldara and Edward Herbst.
+\newblock Monetary policy, real activity, and credit spreads: Evidence from
+  bayesian proxy svars.
+\newblock \emph{American Economic Journal: Macroeconomics}, 11\penalty0
+  (1):\penalty0 157--87, 2019.
+
+\bibitem[Cambanis et~al.(1981)Cambanis, Huang, and
+  Simons]{cambanis1981_elliptical}
+Stamatis Cambanis, Steel Huang, and Gordon Simons.
+\newblock On the theory of elliptically contoured distributions.
+\newblock \emph{Journal of Multivariate Analysis}, 11\penalty0 (3):\penalty0
+  368--385, 1981.
+
+\bibitem[Ding(2016)]{Ding2016}
+Peng Ding.
+\newblock On the conditional distribution of the multivariate t distribution.
+\newblock \emph{The American Statistician}, 2016.
+\newblock \doi{10.1080/00031305.2016.1164756}.
+
+\bibitem[Fang et~al.(1990)Fang, Kotz, and Ng]{fang_kotz_ng_1990}
+Kai-Tai Fang, Samuel Kotz, and Kai-Wang Ng.
+\newblock \emph{Symmetric Multivariate and Related Distributions}.
+\newblock Chapman and Hall/CRC, 1990.
+
+\bibitem[Inoue and Kilian(2022)]{InoueKilian2022}
+Atsushi Inoue and Lutz Kilian.
+\newblock Bayesian girfs and parameter uncertainty, 2022.
+\newblock Update with exact journal and DOI in the main bibliography.
+
+\bibitem[Kim(2012)]{Kim2012}
+Hyeongwoo Kim.
+\newblock Generalized impulse response analysis: General or extreme?
+\newblock Auburn University Working Paper, 2012.
+
+\bibitem[Koop et~al.(1996)Koop, Pesaran, and Potter]{KoopPesaranPotter1996}
+Gary Koop, M.~Hashem Pesaran, and Simon~M. Potter.
+\newblock Impulse response analysis in nonlinear multivariate models.
+\newblock \emph{Journal of Econometrics}, 74\penalty0 (1):\penalty0 119--147,
+  1996.
+
+\bibitem[Miranda-Agrippino and Ricco(2021)]{MirandaAgrippino2021}
+Silvia Miranda-Agrippino and Giovanni Ricco.
+\newblock The transmission of monetary policy shocks.
+\newblock \emph{American Economic Journal: Macroeconomics}, 13\penalty0
+  (3):\penalty0 74--107, 2021.
+
+\bibitem[Pesaran and Shin(1998)]{PesaranShin1998}
+M.~Hashem Pesaran and Yongcheol Shin.
+\newblock Generalized impulse response analysis in linear multivariate models.
+\newblock \emph{Economics Letters}, 58\penalty0 (1):\penalty0 17--29, 1998.
+
+\end{thebibliography}

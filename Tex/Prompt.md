@@ -139,3 +139,5 @@ verification\_coverage: 0.10
 ````
 
  
+
+ Implement these updates in BSDE_11.tex if they have not being done already:
