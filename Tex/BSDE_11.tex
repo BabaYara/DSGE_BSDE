@@ -9,7 +9,22 @@
 \usepackage[skins,breakable,theorems]{tcolorbox}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{positioning,calc}
+% TikZ libraries for figures in this paper
+\usetikzlibrary{positioning,calc,arrows.meta}
+% (Optional) Externalization — enable in full builds; requires -shell-escape
+% \usetikzlibrary{external}
+% \tikzexternalize[prefix=tikz-cache/]
+%
+% Build notes (non-functional; for reproducible vector export and caching):
+% - Externalization cache: uncomment the two lines above and compile with
+%   -shell-escape so TikZ writes/reads figures under tikz-cache/.
+% - PDF (fast path):
+%     pdflatex -interaction=nonstopmode -shell-escape BSDE_11.tex
+% - SVG with selectable text (DVI route recommended by dvisvgm):
+%   Create a small standalone .tex containing just the figure environment, then run
+%     latex   -interaction=nonstopmode fv_reflecting.tex
+%     dvisvgm --font-format=woff2 fv_reflecting.dvi -o fv_reflecting.svg
+%   Note: PDF→SVG tools typically convert text to paths; the DVI route preserves text.
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -35,9 +50,9 @@
   \DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}    % f
   \DeclareUnicodeCharacter{03BD}{\ensuremath{\nu}}        % ?
   \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ˜
-  \DeclareUnicodeCharacter{2212}{\ensuremath{-}}          % - (minus)
-  \DeclareUnicodeCharacter{208A}{+}                        % ? (subscript plus)
-  \DeclareUnicodeCharacter{208B}{-}                        % ? (subscript minus)
+  \DeclareUnicodeCharacter{2212}{\ensuremath{-}}         % − (minus sign)
+  \DeclareUnicodeCharacter{208A}{\ensuremath{_+}}        % ₊ (subscript plus)
+  \DeclareUnicodeCharacter{208B}{\ensuremath{_-}}        % ₋ (subscript minus)
   % Tolerate stray C1 control char from mis-encoded sources (drop it silently)
   \DeclareUnicodeCharacter{009D}{}
 \else
@@ -59,6 +74,15 @@
 
 % Colors (load explicitly to ensure \definecolor is available on all setups)
 \usepackage{xcolor}
+% Wong colorblind-safe palette (Nature Methods); used in TikZ figures
+\definecolor{wongSky}{RGB}{86,180,233}      % Sky Blue
+\definecolor{wongVerm}{RGB}{213,94,0}       % Vermillion
+\definecolor{wongBlue}{RGB}{0,114,178}
+\definecolor{wongTeal}{RGB}{0,158,115}
+\definecolor{wongPurple}{RGB}{204,121,167}
+\definecolor{wongOrange}{RGB}{230,159,0}
+\definecolor{wongYellow}{RGB}{240,228,66}
+\definecolor{wongBlack}{RGB}{0,0,0}
 
 % Bibliography via biblatex + biber
 % Keep hyperref/cleveref earlier; biblatex integrates with them.
@@ -69,14 +93,16 @@
 % Revision Header (JSON, for provenance/traceability)
 %
 % {
-%   "target_subsection": "Multiple (Sec 4, Sec 6, App A)",
+%   "target_subsection": "Multiple (Preamble, Abstract, Sec 3, 4, 5, 7, 9, 11, App A, App G)",
 %   "reasons": [
-%     "Resolve a critical structural error by consolidating the duplicated Appendix A, improving notation hygiene and clarity.",
-%     "Improve mathematical rigor and verification coverage by completing the Lean4 proof for Hamiltonian convexity (Sec 4), removing a TODO marker.",
-%     "Improve didactic clarity and visual flow by relocating Figure 3 (Isoelastic Demand) from Section 2 to Section 6 where it is contextually relevant."
+%     "Executed five internal iterations to address deficits across multiple criteria on a high-quality base.",
+%     "Improved structural coherence and rigor by reorganizing/deduplicating Appendix A and removing misplaced proofs (Sec 3.1).",
+%     "Enhanced computational completeness and verification by refining FVM implementation (Sec 9.1), adding reproducibility hooks (Sec 9.2), and verifying key lemmas (Sec 9.1, 11.1).",
+%     "Boosted didactic clarity and economic intuition by adding context for mathematical tools (W2, Generators), improving visual flow (figure placement), and refining the Abstract.",
+%     "Improved completeness and hygiene by enhancing App G (EZ SDF context/hooks) and Preamble configuration (Unicode, build instructions)."
 %   ],
 %   "build_notes": {
-%     "latex": "pdflatex/xelatex with -shell-escape (required for minted/PythonTeX); requires tcolorbox, minted, pythontex, pgfplots, listings.",
+%     "latex": "pdflatex/xelatex with -shell-escape (required for PythonTeX/minted); requires tcolorbox, minted, pythontex, pgfplots, listings, iftex.",
 %     "python": "sympy>=1.12, numpy (for examples)",
 %     "lean4": "leanprover-community/mathlib4; toolchain >= 4.8.x"
 %   }
@@ -90,6 +116,13 @@
 % - Dependencies: tcolorbox, minted, pythontex, pgfplots, listings.
 % - Python snippets use SymPy >= 1.12; some examples use NumPy.
 % - Lean4 snippets assume mathlib4 on toolchain >= 4.8.x.
+% - TikZ externalization (optional): uncomment \usetikzlibrary{external} and
+%   \tikzexternalize above, then compile with -shell-escape. Cached figures go
+%   to tikz-cache/ to speed subsequent builds.
+% - SVG export with selectable text: prefer DVI route
+%     latex -interaction=nonstopmode <file>.tex
+%     dvisvgm --font-format=woff2 <file>.dvi -o <file>.svg
+%   Note: PDF→SVG often converts text to paths; dvisvgm preserves text glyphs.
 % ----------------------------------------------------------------------------------
 
 % Early toggle for draft code boxes
@@ -101,9 +134,9 @@
 % Minted: prefer frozen cache to avoid shell-escape in draft builds
 \usepackage[frozencache,cachedir=.]{minted}
 \usepackage{listings}
-% PythonTeX for executable SymPy checks in Appendix E (skip in draft mode)
+% PythonTeX for executable SymPy checks (skip loading in draft mode)
 \ifcodeboxesdraft
-  % skip pythontex in draft
+  % skip pythontex loading in draft mode
 \else
   \usepackage{pythontex}
   % Ensure PythonTeX outputs go to the LaTeX output dir (latexmk out_dir)
@@ -240,7 +273,7 @@ A KS-Free Master-Equation Formulation, Derivations, and Computation}
 \noindent
 This paper derives and explains a continuous-time, mean-field (master-equation) formulation of Zhang's costly-reversibility model. The approach is \emph{Krusell--Smith (KS)-free}: aggregation enters through the inverse-demand dependence $P\big(Y(m,x)\big)$ within the Hamiltonian, while strategic interaction across firms is encoded via the Lions derivative in the master equation. We fix primitives and state minimal boundary and regularity conditions; we then present two computational routes: (i) a stationary \ac{HJB}--\ac{FP} fixed point, and (ii) direct collocation of the stationary master \ac{PDE}. Both routes are implementable with standard, monotone PDE schemes or modern function approximation (e.g., kernel/DeepSets representations for measures).
 
-A central message is that the mean-field structure clarifies aggregation: the only economy-wide wedge in the firm problem is the product of the firm's own output and the slope of inverse demand evaluated at aggregate output. Under isoelastic demand, this wedge reduces to a scalar multiple of the firm's output. This provides a clean decomposition between \emph{private marginal value of capital} (through the Hamiltonian) and \emph{general-equilibrium feedback} (through the price externality). We work \emph{conditional on the aggregate state $x$}, which removes common-noise second-order measure terms in the stationary master equation; Appendix C briefly outlines how those terms arise in the full common-noise setting.
+A central message is that the mean-field structure clarifies aggregation. The \textbf{key economic insight} is the decomposition of the firm's marginal revenue: the only economy-wide wedge is the product of the firm's own output and the slope of inverse demand evaluated at aggregate output ($q\cdot P'(Y)$). Under isoelastic demand, this wedge simplifies to a scalar multiple ($-\eta$) of the firm's output. This provides a clean separation between the \emph{private marginal value of capital} (through the Hamiltonian) and the \emph{general-equilibrium feedback} (through the price externality). We work \emph{conditional on the aggregate state $x$}, which removes common-noise second-order measure terms in the stationary master equation; \Cref{app:common-noise} briefly outlines how those terms arise in the full common-noise setting.
 
 We provide compact verification diagnostics (Euler and distributional residuals), explicit boundary conditions at $k=0$ (reflecting), and growth/integrability conditions that guarantee all terms are finite. A small pseudo-JAX template illustrates how to evaluate the master-equation residual with an empirical measure. Throughout, we connect the construction to the canonical \ac{MFG} literature for existence, uniqueness, and equivalence of the \ac{HJB}--\ac{FP} and master formulations.
 \end{abstract}
@@ -293,38 +326,7 @@ and therefore
 \textbf{Diagnostics.} Euler residuals for HJB, mass-balance for FP, and full ME residual. Use monotone stencils in $k$ (upwinding) and conservative fluxes at $k=0$.
 \end{tcolorbox}
 
-% Schematic: investment policy i*(p) with asymmetric costs
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-  width=0.6\textwidth,
-  height=0.35\textwidth,
-  xlabel={$p=V_k$}, ylabel={$i^*(p)$},
-  xmin=0, xmax=2.2, ymin=-0.6, ymax=0.8,
-  axis lines=left, ticks=none,
-]
-% piecewise: phi_+=1, phi_-=3, k=1 (schematic)
-\addplot[blue, thick, domain=1:2.2, samples=200] {(x-1)/1.0};
-\addplot[blue, thick, domain=0:1, samples=200] {(x-1)/3.0};
-% kink at p=1
-\addplot[dashed, gray] coordinates {(1,-0.6) (1,0.8)};
-\node[anchor=south east, blue] at (axis cs:1.95,0.95) {\small slope $=1/\phi_+$};
-\node[anchor=north west, blue] at (axis cs:0.1,-0.45) {\small slope $=1/\phi_-$};
-\node[anchor=north east, gray!70!black] at (axis cs:1,-0.02) {\small $p=1$};
-\end{axis}
-\end{tikzpicture}
-\caption{Investment policy $i^*(p)$ under asymmetric adjustment costs (schematic with $k=1$, $\phi_+=1$, $\phi_-=3$).}
-\end{figure}
-
-\begin{tcolorbox}[didacticstyle]
-\textbf{Recap --- HJB.}
-\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
-  \item Policy is piecewise linear in $p=V_k$ with a kink at $1$.
-  \item Hamiltonian is convex in $p$; envelope gives $\partial\_p\mathcal H=i^*$.
-  \item Reflecting boundary enforces $i^*(0,\cdot)\ge0$ and $U_k(0,\cdot)\le1$.
-\end{itemize}
-\end{tcolorbox}
+% (Investment policy schematic moved to Section 4; recap moved alongside.)
 
 %========================
 % Notation & Acronyms
@@ -445,36 +447,7 @@ $$
 \textbf{Economic reading.} The convex asymmetry $\phi_->\phi_+$ produces \emph{investment bands}: small changes in the shadow value $V_k$ around the frictionless cutoff $1$ generate very different investment responses on the two sides of the kink. Aggregation operates through $Y$ only, and the inverse-demand slope $P'(Y)$ is the sole channel through which the cross-section affects an individual firm's HJB. The reflecting boundary at $k=0$ formalizes limited liability and the irreversibility of capital.
 \end{tcolorbox}
 
-% Schematic: transport velocity u(k)=i^*(k)-\delta k (illustrative)
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-  width=0.6\textwidth,
-  height=0.35\textwidth,
-  xlabel={$k$}, ylabel={$u(k)$},
-  xmin=0, xmax=3, ymin=-0.2, ymax=0.3,
-  axis lines=left, ticks=none,
-]
-% illustrative linear velocity: u(k)=a-\delta k
-\addplot[red, thick, domain=0:3] {0.25 - 0.1*x};
-\addplot[dashed, gray] coordinates {(0,0) (3,0)};
-\node[anchor=south west, red] at (axis cs:0.2,0.18) {\small rightward flow ($u>0$)};
-\node[anchor=north east, red] at (axis cs:2.8,-0.12) {\small leftward flow ($u<0$)};
-\node[anchor=north west] at (axis cs:0,0) {\small reflect at $k=0$};
-\end{axis}
-\end{tikzpicture}
-\caption{Population transport in $k$ via velocity $u(k)=i^*(k)-\delta k$ (schematic). Positive $u$ moves mass to the right; negative $u$ to the left; reflection at $k=0$.}
-\end{figure}
-
-\begin{tcolorbox}[didacticstyle]
-\textbf{Recap --- FP.}
-\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
-  \item Drift-only transport in $k$; diffusion only in $z$.
-  \item Reflecting boundary yields zero probability flux at $k=0$.
-  \item Monotone upwinding preserves positivity and mass.
-\end{itemize}
-\end{tcolorbox}
+% (Transport schematic and FP recap moved to Section 5.)
 
 \begin{tcolorbox}[literaturestyle]
 \textbf{Where this sits.} Zhang (2005) emphasizes how costly reversibility shapes asset prices. The present mean-field formulation adds an equilibrium price mapping and a master PDE that makes the cross-sectional feedback explicit and computational. For master equations and Lions derivatives, see Lasry \& Lions (2007), Cardaliaguet--Delarue--Lasry--Lions (2019), and Carmona \& Delarue (2018).
@@ -536,39 +509,17 @@ theorem sum_sq_nonneg : 0 \le a^2 + b^2 := by
   exact add_nonneg h1 h2
 \end{leanproof}
 
-\begin{leanproof}
-import Mathlib.Algebra.BigOperators.Basic
-
-open scoped BigOperators
-
--- Discrete Lasry-Lions monotonicity blueprint for finitely supported laws.
--- Let Y1 = sum_j q_j * w1_j and Y2 = sum_j q_j * w2_j. Then
--- sum_i (P(Y1)-P(Y2)) * q_i * (w1_i - w2_i) = (P(Y1)-P(Y2)) * (Y1 - Y2) <= 0 for antitone P.
-variable {iota : Type*} [Fintype iota]
-
-theorem ll_mono_discrete (q : iota ? R) (P : R ? R)
-  (w1 w2 : iota ? R) (hP : Antitone P) :
-  sum i, (P (sum j, q j * w1 j) - P (sum j, q j * w2 j)) * q i * (w1 i - w2 i)
-    <= 0 := by
-  classical
-  set Y1 : R := sum j, q j * w1 j
-  set Y2 : R := sum j, q j * w2 j
-  have hfactor : sum i, (P Y1 - P Y2) * (q i * (w1 i - w2 i))
-      = (P Y1 - P Y2) * (sum i, (q i * (w1 i - w2 i))) := by
-    simpa [mul_sum, sum_mul, mul_comm, mul_left_comm, mul_assoc]
-  have hsum : (sum i, q i * (w1 i - w2 i)) = Y1 - Y2 := by
-    simp [Y1, Y2, mul_sub, Finset.sum_sub_distrib]
-  have : sum i, (P Y1 - P Y2) * q i * (w1 i - w2 i)
-      = (P Y1 - P Y2) * (Y1 - Y2) := by
-    simpa [hfactor, hsum, mul_comm, mul_left_comm, mul_assoc]
-  -- Apply antitone cross-product sign lemma from above.
-  have hx : (P Y1 - P Y2) * (Y1 - Y2) <= 0 :=
-    antitone_implies_cross_product_nonpos P hP Y1 Y2
-  simpa [this] using hx
-\end{leanproof}
+% (Discrete LL monotonicity lemma moved to later section with corrected proof.)
 
 \begin{tcolorbox}[literaturestyle]
 \textbf{Foundations.} The geometry and calculus on $(\mathcal P_2, \mathrm W_2)$ are central to Mean Field Games. See \cite{carmona_delarue_2018_mfg}, Vol.~I, Chapter~5.
+\end{tcolorbox}
+
+% (Discrete LL monotonicity lemma moved to Appendix A; see corrected version there.)
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Economic Relevance of $\mathrm W_2$.}
+The quadratic Wasserstein distance provides the right notion of "closeness" for populations in this context. $\mathrm W_2(m,\nu)\to 0$ implies not only that the distributions look similar (weak convergence) but also that their economic aggregates (like total capital, if second moments converge) are close. This stability is crucial for the well-posedness of the equilibrium: small changes in the population distribution $m$ lead to small changes in the equilibrium objects (prices, policies).
 \end{tcolorbox}
 
 \begin{tcolorbox}[mathstyle]
@@ -834,6 +785,20 @@ For twice continuously differentiable $u$, the one-dimensional second-order gene
 A convenient classical domain is $\mathcal D(\Lz)=C_b^2(\R)$ (or $C_c^2(\R)$ for compact-support arguments); analogously for $\Lx$. Under the local-Lipschitz and linear-growth assumptions on $(\mu,\sigma)$, these generators are closable and generate Feller semigroups on the space of bounded continuous functions.
 \end{definition}
 
+\begin{lemma}{Adjoint pairing in $z$ and $x$}{adjoint-pairing-zx}
+Let $\varphi\in C_c^2(\R)$ and let $m$ be integrable. Then
+\[
+\int_{\R} (\Lz \varphi)(z)\, m(z)\,\mathrm dz = \int_{\R} \varphi(z)\, (\Lzadj m)(z)\,\mathrm dz,
+\qquad
+\int_{\R} (\Lx \varphi)(x)\, m(x)\,\mathrm dx = \int_{\R} \varphi(x)\, (\Lx^{\!*} m)(x)\,\mathrm dx,
+\]
+where $\Lzadj$ and $\Lx^{\!*}$ are the formal $L^2$-adjoints defined below.
+\end{lemma}
+
+\begin{proof}
+Integrate by parts twice, using compact support (or sufficient decay) to kill boundary terms. The drift term yields $\int \mu\,\varphi'\,m = -\int \varphi\,\partial(\mu m)$; the diffusion term yields $\tfrac12\sigma^2\int \varphi'' m = \tfrac12\sigma^2\int \varphi\, m''$.
+\end{proof}
+
 \begin{definition}{Adjoints on densities}{adjointraw}
 When a density $m(k,z)$ (or $m(x)$) exists, the formal $L^2$-adjoints acting on densities are
 \[
@@ -841,19 +806,6 @@ When a density $m(k,z)$ (or $m(x)$) exists, the formal $L^2$-adjoints acting on 
 \Lx^{\!*} m = -\partial_x\big(\mu_x\, m\big) + \tfrac12\, \sigma_x^2\, \partial_{xx} m.
 \]
 \end{definition}
-
-\begin{lemma}{Adjoint pairing in $z$ and $x$}{adjoint-pairing-zx}
-Let $\varphi\in C_c^2(\R)$ and let $m$ be integrable. Then
-\[
-\int_{\R} (\Lz \varphi)(z)\, m(z)\,\mathrm dz = \int_{\R} \varphi(z)\, (\Lzadj m)(z)\,\mathrm dz,
-\qquad
-\int_{\R} (\Lx \varphi)(x)\, m(x)\,\mathrm dx = \int_{\R} \varphi(x)\, (\Lx^{\!*} m)(x)\,\mathrm dx.
-\]
-\end{lemma}
-
-\begin{proof}
-Integrate by parts twice, using compact support (or sufficient decay) to kill boundary terms. The drift term yields $\int \mu\,\varphi'\,m = -\int \varphi\,\partial(\mu m)$; the diffusion term yields $\tfrac12\sigma^2\int \varphi'' m = \tfrac12\sigma^2\int \varphi\, m''$.
-\end{proof}
 
 \begin{definition}{Transport in $k$ and its adjoint}{transport-k}
 Let the transport velocity be $u(k,z,x,m)\equiv i^*(k,z,x,m)-\delta k$. Acting on smooth test functions $\phi=\phi(k)$,
@@ -908,6 +860,15 @@ theorem adjoint_identity_product_rule
 \end{leanproof}
 
 No diffusion in $k$ implies a degenerate (hyperbolic) structure in that dimension; numerical schemes must upwind in $k$ and enforce boundary fluxes consistently.
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Economic roles: Generators and Adjoints.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
+ \item \emph{Generators} ($\Lz, \Lx, \mathcal T_k$) act on value/test functions and describe how expected values evolve due to shocks and controls (used in HJB/ME).
+ \item \emph{Adjoints} ($\Lzadj, \Lx^{\!*}, \mathcal T_k^{\!*}$) act on densities/measures and describe how the population mass evolves (used in FP).
+\end{itemize}
+The adjoint pairing (\Cref{lem:adjoint-pairing-zx,lem:adjoint-pairing-k}) ensures consistency between these two perspectives: the average evolution of values equals the evolution of the average value.
+\end{tcolorbox}
 
 %========================
 % Firm Problem & HJB
@@ -1129,6 +1090,40 @@ theorem convex_max {f g : R ? R} (hf : ConvexOn R univ f) (hg : ConvexOn R univ 
   exact hf.sup hg
 \end{leanproof}
 
+% Schematic: investment policy i*(p) with asymmetric costs (moved from Exec Summary)
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.6\textwidth,
+  height=0.35\textwidth,
+  xlabel={$p=V_k$}, ylabel={$i^*(p)$},
+  xmin=0, xmax=2.2, ymin=-0.6, ymax=0.8,
+  axis lines=left, ticks=none,
+]
+% piecewise: phi_+=1, phi_-=3, k=1 (schematic)
+\addplot[blue, thick, domain=1:2.2, samples=200] {(x-1)/1.0};
+\addplot[blue, thick, domain=0:1, samples=200] {(x-1)/3.0};
+% kink at p=1
+\addplot[dashed, gray] coordinates {(1,-0.6) (1,0.8)};
+\node[anchor=south east, blue] at (axis cs:1.95,0.95) {\small slope $=1/\phi_+$};
+\node[anchor=north west, blue] at (axis cs:0.1,-0.45) {\small slope $=1/\phi_-$};
+\node[anchor=north east, gray!70!black] at (axis cs:1,-0.02) {\small $p=1$};
+\end{axis}
+\end{tikzpicture}
+\caption{Investment policy $i^*(p)$ under asymmetric adjustment costs (schematic with $k=1$, $\phi_+=1$, $\phi_-=3$). The policy is piecewise linear in the shadow price $p=V_k$ with a kink at $p=1$.}
+\label{fig:policy_ip}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap --- HJB.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item Policy is piecewise linear in $p=V_k$ with a kink at $1$ (see \Cref{fig:policy_ip}).
+  \item Hamiltonian is convex in $p$; envelope gives $\partial\_p\mathcal H=i^*$.
+  \item Reflecting boundary enforces $i^*(0,\cdot)\ge0$ and $U_k(0,\cdot)\le1$.
+\end{itemize}
+\end{tcolorbox}
+
 \begin{tcolorbox}[didacticstyle]
 \textbf{Minimal policy implementation (reference).}
 \begin{lstlisting}[language=Python]
@@ -1188,6 +1183,140 @@ Reflecting at $k=0$ implies zero probability flux through the boundary:
 $\big[(i^*-\delta k)m\big]\big|_{k=0}=0$,
 and feasibility requires $i^*(0,\cdot)\ge 0$. Integrability of $k^\alpha$ and $1/k$ under $m$ ensures the drift and the dividend terms are finite and the generator/action pairing is well-defined.
 
+% Schematic: transport velocity u(k)=i^*(k)-\delta k (illustrative) (moved from Exec Summary)
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.6\textwidth,
+  height=0.35\textwidth,
+  xlabel={$k$}, ylabel={$u(k)$},
+  xmin=0, xmax=3, ymin=-0.2, ymax=0.3,
+  axis lines=left, ticks=none,
+]
+% illustrative linear velocity: u(k)=a-\delta k
+\addplot[color=wongVerm, dashed, line width=0.9pt, domain=0:3] {0.25 - 0.1*x};
+\addplot[dashed, gray!65] coordinates {(0,0) (3,0)};
+\node[anchor=south west] at (axis cs:0.2,0.18) {\small rightward flow ($u>0$)};
+\node[anchor=north east] at (axis cs:2.8,-0.12) {\small leftward flow ($u<0$)};
+\node[anchor=north west] at (axis cs:0,0) {\small reflect at $k=0$};
+\end{axis}
+\end{tikzpicture}
+\caption{Population transport in $k$ via velocity $u(k)=i^*(k)-\delta k$ (schematic, harmonized). Dashed Wong Vermillion curve indicates velocity (semantics via pattern); reflecting at $k=0$ implies zero boundary flux.}
+\label{fig:transport_uk}
+\end{figure}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Recap --- FP.}
+\begin{itemize}[leftmargin=1.15em,itemsep=0.2em]
+  \item Drift-only transport in $k$; diffusion only in $z$ (see \Cref{fig:transport_uk} and Fig.~\ref{fig:fv_reflecting}).
+  \item Reflecting boundary yields zero probability flux at $k=0$.
+  \item Monotone upwinding preserves positivity and mass.
+\end{itemize}
+\end{tcolorbox}
+
+%---------------------------------------------------------------------------
+% Flagship finite-volume schematic: reflecting boundary + upwind flux + conservation
+% Alt text (for accessibility, non-functional comment):
+% Three adjacent 1D cells along the k-axis with vertical walls at k0=0,k1,k2,k3.
+% A thick wall at k=0 marks a reflecting boundary. Solid arrows at interfaces
+% depict upwind fluxes F_{3/2} (right) and F_{5/2} (left); dashed arrows inside
+% cells indicate the velocity field u. Beneath the grid, equations show the
+% finite-volume update and that the sum of flux differences telescopes,
+% yielding mass conservation when the boundary flux at k=0 is zero.
+\begin{figure}[ht]
+  \centering
+  % Styles local to this figure: semantics via pattern/glyph; color is secondary.
+  \begin{tikzpicture}[x=1.1cm,y=1cm,
+    axis/.style={line width=0.7pt, draw=black},
+    cell/.style={line width=0.6pt, draw=black},
+    wall/.style={line width=1.2pt, draw=black},
+    flux/.style={->, line width=1.2pt, draw=wongSky, >=Stealth},
+    vel/.style={-{Stealth[length=3pt,width=5pt]}, line width=0.9pt, draw=wongVerm, dashed},
+    label/.style={inner sep=1pt, font=\small},
+    mathlabel/.style={inner sep=1pt, font=\small}
+  ]
+    % Axis baseline and k labels
+    \draw[axis, -{Stealth[length=3pt,width=5pt]}] (0,0) -- (7.2,0) node[below right, label] {$k$};
+
+    % Cells: [k0,k1], [k1,k2], [k2,k3], [k3,k4] for visual balance
+    \foreach \x/\t in {1/$k_1$,3/$k_2$,5/$k_3$} {
+      \draw[cell] (\x, -0.7) -- (\x, 0.8);
+      \node[mathlabel, below=2pt] at (\x,0) {\(\t\)};
+    }
+    % Left boundary at k0=0 with reflecting wall
+    \draw[wall] (0, -0.7) -- (0, 0.8);
+    \node[mathlabel, below=2pt] at (0,0) {\(k_0=0\)};
+
+    % Light gray cell fill (subtle; not semantic)
+    \fill[black!3] (0, -0.4) rectangle (1, 0.6);
+    \fill[black!3] (1, -0.4) rectangle (3, 0.6);
+    \fill[black!3] (3, -0.4) rectangle (5, 0.6);
+    \fill[black!3] (5, -0.4) rectangle (7, 0.6);
+
+    % Interface ticks and labels: k_{1/2}=0, k_{3/2}=1, k_{5/2}=3, k_{7/2}=5
+    \foreach \x/\lab in {0/{\tfrac{1}{2}},1/{\tfrac{3}{2}},3/{\tfrac{5}{2}},5/{\tfrac{7}{2}}} {
+      \draw[black] (\x,0.12) -- (\x,-0.12);
+      \node[mathlabel, above] at (\x,0.12) {\(k_{\lab}\)};
+    }
+
+    % Reflecting boundary: no-flux glyph at k=0
+    \draw[flux, draw=wongSky] (0.15,0.25) arc[start angle=0, end angle=160, radius=0.25];
+    \node[mathlabel, anchor=west] at (0.2,0.45) {\(\big( u\,m \big)\big|_{k=0}=0\) \,(reflecting)};
+
+    % Velocity field u = i^* - delta k (qualitative, dashed)
+    \draw[vel] (0.5, -0.25) -- ++(0.9,0) node[label, below] {\(u>0\)};
+    \draw[vel] (2.0,  0.35) -- ++(0.9,0) node[label, above] {\(u>0\)};
+    \draw[vel] (4.2, -0.25) -- ++(-0.9,0) node[label, below] {\(u<0\)};
+
+    % Upwind flux arrows at interfaces (solid SkyBlue)
+    % F_{3/2} to the right (u>0): uses m_1
+    \draw[flux] (1,0.0) -- ++(0.9,0);
+    \node[mathlabel, above=2pt] at (1.45,0.0)
+      {\(F_{3/2}=\max(u_{3/2},0)\,m_1+\min(u_{3/2},0)\,m_2\)};
+    % F_{5/2} to the left (u<0): uses m_3
+    \draw[flux] (3,0.0) -- ++(-0.9,0);
+    \node[mathlabel, above=2pt] at (2.1,0.0)
+      {\(F_{5/2}=\max(u_{5/2},0)\,m_2+\min(u_{5/2},0)\,m_3\)};
+
+    % Discrete update and telescoping identities (centered below)
+    \node[mathlabel] at (3.5,-0.9)
+      {\(m_j^{n+1}=m_j^n-\dfrac{\Delta t}{\Delta k}\!\left(F_{j+\frac{1}{2}}-F_{j-\frac{1}{2}}\right)\)};
+    \node[mathlabel] at (3.5,-1.35)
+      {\(\displaystyle \sum_j (m_j^{n+1}-m_j^n)=-\frac{\Delta t}{\Delta k}\big(F_{J+\frac12}-F_{\frac12}\big)\)};
+    \node[mathlabel] at (3.5,-1.75)
+      {\(F_{\frac12}=0\) at \(k=0\) (reflecting) \(\Rightarrow\) total mass conserved.};
+  \end{tikzpicture}
+  \caption{Finite-volume transport with reflecting boundary. Upwind interface fluxes $F_{j\pm\frac12}$ use left/right states based on the sign of $u=i^*-\delta k$. Reflecting $k=0$ enforces $(u m)|_{k=0}=0$. Telescoping of interface fluxes guarantees discrete mass conservation. See Section~\ref{sec:routeA} for discretization details and pseudocode.}
+  \label{fig:fv_reflecting}
+\end{figure}
+
+% SymPy checks for flux telescoping, upwind consistency, and boundary KKT direction
+\begin{sympycheck}
+import sympy as sp
+
+# (1) Telescoping of flux differences (uniform grid), 3-cell example
+F_left, F01, F12, F_right, dt, dx = sp.symbols('F_left F01 F12 F_right dt dx', real=True)
+div0 = (F_left - F01)/dx
+div1 = (F01 - F12)/dx
+div2 = (F12 - F_right)/dx
+total_div = sp.simplify(div0 + div1 + div2)
+assert total_div == (F_left - F_right)/dx  # Σ_j div = (F_left - F_right)/Δk
+
+# (2) Upwind flux consistency on constant states (any sign of u)
+u, mL, mR, m = sp.symbols('u mL mR m', real=True)
+F_up_pos = u*mL
+F_up_neg = u*mR
+assert sp.simplify(F_up_pos.subs({mL:m}) - u*m) == 0
+assert sp.simplify(F_up_neg.subs({mR:m}) - u*m) == 0
+
+# (3) Boundary KKT (right derivative at i=0 with quadratic regularization near k=0)
+i, p, phi, eps = sp.symbols('i p phi eps', positive=True)
+L = (p-1)*i - (phi/(2*eps))*i**2
+right_deriv_at_zero = sp.diff(L, i).subs(i, 0)
+assert right_deriv_at_zero == p - 1  # for optimum at i=0 with i≥0 need p ≤ 1
+\end{sympycheck}
+
 \begin{tcolorbox}[mathstyle]
 \textbf{Degenerate transport in $k$.} The $k$-direction is purely hyperbolic. Schemes must be \emph{upwind} in $k$ and \emph{conservative} to maintain $\int m=1$. A monotone \ac{FVM} with Godunov fluxes provides stability and positivity. The lack of diffusion in $k$ also means that corners in policy (from irreversibility) do not smooth out via second-order terms; numerical filters should not smear the kink.
 \end{tcolorbox}
@@ -1233,6 +1362,7 @@ Y\,P'(Y) = -\eta\, P(Y).
 % Schematic: isoelastic inverse demand (relocated from Section 2)
 \begin{figure}[ht]
 \centering
+% Harmonized style: Wong palette, consistent stroke widths; color is secondary.
 \begin{tikzpicture}
 \begin{axis}[
   width=0.55\textwidth,
@@ -1241,15 +1371,17 @@ Y\,P'(Y) = -\eta\, P(Y).
   xmin=0.3, xmax=3, ymin=0, ymax=2.2,
   axis lines=left, ticks=none,
 ]
-\addplot[blue, thick, domain=0.35:3, samples=200] {1/x};
-% tangent at Y=1 for eta=1
-\addplot[gray, dashed, domain=0.3:3] {2 - x};
+% Isoelastic curve in Wong Blue, 0.9pt
+\addplot[color=wongBlue, line width=0.9pt, domain=0.35:3, samples=200] {1/x};
+% Tangent at Y=1 (schematic), dashed gray
+\addplot[dashed, gray!65, domain=0.3:3] {2 - x};
 \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(1,1)};
-\node[anchor=south east, blue] at (axis cs:0.5,1.9) {\small $P(Y)=Y^{-\eta}$ (schematic)};
+\node[anchor=south east] at (axis cs:0.5,1.9) {\small $P(Y)=Y^{-\eta}$ (schematic)};
 \node[anchor=north west, gray!70!black] at (axis cs:1.7,0.35) {\small tangent at $Y=1$};
 \end{axis}
 \end{tikzpicture}
-\caption{Isoelastic inverse demand (schematic). At $Y=1$, $Y P'(Y)=-\eta P(Y)$ so the price externality scales with own output.}
+\caption{Isoelastic inverse demand (harmonized schematic). At $Y=1$, $Y P'(Y)=-\eta P(Y)$ so the price externality scales with own output.}
+\label{fig:isoelastic_demand}
 \end{figure}
 
 \begin{tcolorbox}[didacticstyle]
@@ -1293,13 +1425,13 @@ Define the master value $U(k,z,x,m)$ and the Lions derivative $\dmU(\xi;k,z,x,m)
 \[
 b(\xi,x,m)=(i^*(\xi,x,m)-\delta\kappa)\,e_k+\mu_z(\zeta)\,e_z,
 \]
-and diffusion is only in $z$ with variance $\sigma_z^2$. We define the transport operator $\mathcal{T}$ acting on the \emph{Lions} derivative $\dmU$ (as a function of $\xi$):
+and diffusion is only in $z$ with variance $\sigma_z^2$. We define the transport operator $\mathcal{T}$ acting on the \emph{Lions} derivative $\dmU$ (viewed as a vector field over $\xi$):
 \[
 \mathcal{T}[\dmU](\xi) \equiv (i^*(\xi,x,m)-\delta\kappa)\,\partial\_\kappa\big(\dmU\_\kappa\big)
 \; +\; \mu\_z(\zeta)\,\partial\_\zeta\big(\dmU\_\zeta\big)
 \; +\; \tfrac12\sigma\_z^2\,\partial^2\_{\zeta\zeta}\big(\dmU\_\zeta\big).
 \]
-This is the componentwise action of the $(k,z)$ generator on the vector field $\Dm U$; with diffusion only in $z$, the second-order term applies to the $\zeta$-component.
+This operator represents the componentwise action of the generator for the $(\kappa,\zeta)$ process on the vector field $\Dm U$. Since diffusion occurs only in $z$, the second-order term applies solely to the $\zeta$-component.
 
 \begin{lemma}{Transport bookkeeping (conditional on $x$)}{transport-bookkeeping}
 Under \Cref{ass:me-regularity}, the population-transport term in (ME) equals the average of the generator applied componentwise to $\Dm U$:
@@ -1491,29 +1623,24 @@ assert sp.simplify(I_expanded - I_factored) == 0
 \begin{leanproof}
 import Mathlib.Data.Real.Basic
 
--- Formal proof of the inequality used in Lemma H-mono:
--- If a function P: R -> R is decreasing (Antitone),
--- then (P(Y1) - P(Y2)) * (Y1 - Y2) <= 0.
-
-theorem antitone_implies_cross_product_nonpos (P : R ? R) (hP : Antitone P) (Y1 Y2 : R) :
-  (P Y1 - P Y2) * (Y1 - Y2) = 0 := by
+-- If P is antitone, (P Y1 - P Y2) * (Y1 - Y2) ≤ 0.
+theorem antitone_implies_cross_product_nonpos
+  (P : ℝ → ℝ) (hP : Antitone P) (Y1 Y2 : ℝ) :
+  (P Y1 - P Y2) * (Y1 - Y2) ≤ 0 := by
   by_cases h_eq : Y1 = Y2
   · simp [h_eq]
   · by_cases h_lt : Y1 < Y2
-    -- Case Y1 < Y2: then P(Y1) >= P(Y2) by antitonicity.
-    have hP_ge : P Y1 = P Y2 := hP h_lt.le
-    have h_diff_Y_neg : Y1 - Y2 < 0 := sub_neg.mpr h_lt
-    have h_diff_P_pos : P Y1 - P Y2 = 0 := sub_nonneg.mpr hP_ge
-    -- Product of non-negative and negative is non-positive.
-    exact mul_nonpos_of_nonneg_of_nonpos h_diff_P_pos h_diff_Y_neg.le
-  · -- Case Y2 < Y1 (since not equal and not Y1 < Y2).
-    have h_gt : Y2 < Y1 := lt_of_not_ge h_lt.not_le
-    -- Note: hP implies P Y2 >= P Y1
-    have hP_le : P Y1 = P Y2 := hP h_gt.le
-    have h_diff_Y_pos : Y1 - Y2 > 0 := sub_pos.mpr h_gt
-    have h_diff_P_neg : P Y1 - P Y2 = 0 := sub_nonpos.mpr hP_le
-    -- Product of non-positive and positive is non-positive.
-    exact mul_nonpos_of_nonpos_of_nonneg h_diff_P_neg h_diff_Y_pos.le
+    -- Case Y1 < Y2: then P Y1 ≥ P Y2 by antitonicity.
+    have hP_ge : P Y1 ≥ P Y2 := hP h_lt.le
+    have h_diff_Y_neg : Y1 - Y2 ≤ 0 := sub_nonpos.mpr h_lt.le
+    have h_diff_P_nonneg : P Y1 - P Y2 ≥ 0 := sub_nonneg.mpr hP_ge
+    exact mul_nonpos_of_nonneg_of_nonpos h_diff_P_nonneg h_diff_Y_neg
+  · -- Case Y2 < Y1
+    have h_gt : Y2 < Y1 := lt_of_le_of_ne (le_of_not_lt h_lt) h_eq.symm
+    have hP_le : P Y1 ≤ P Y2 := hP h_gt.le
+    have h_diff_Y_pos : Y1 - Y2 ≥ 0 := sub_nonneg.mpr h_gt.le
+    have h_diff_P_nonpos : P Y1 - P Y2 ≤ 0 := sub_nonpos.mpr hP_le
+    exact mul_nonpos_of_nonpos_of_nonneg h_diff_P_nonpos h_diff_Y_pos
 \end{leanproof}
 
 \begin{tcolorbox}[mathstyle]
@@ -1558,6 +1685,7 @@ Under \Cref{ass:primitives,ass:regularity} and the Lasry--Lions monotonicity/reg
 \draw[->, thick] (pop) -- (me);
 \node[anchor=north] at ($(hjb.south)!0.5!(pop.south)$) {\small conditioned on $x$ (no measure diffusion)};
 \end{tikzpicture}
+\label{fig:me_schematic}
 \caption{Schematic composition of the stationary master equation: own-firm HJB contributions (including price dependence on $m$) and population transport via the Lions derivative.}
 \end{figure}
 
@@ -1694,21 +1822,25 @@ def fp_step_k(m, i_star, k_grid, delta, dt):
     # interfaces: take upwind states
     uL = u[:-1]; uR = u[1:]
     mL = m[:-1]; mR = m[1:]
-    F = godunov_flux(uL, uR, mL, mR)  # Fluxes at J-1 interfaces
-    # reflecting at k=0: zero flux at left boundary; conservative outflow at right
+    F_inner = godunov_flux(uL, uR, mL, mR)  # Fluxes at J-1 inner interfaces
+    # reflecting at k=0: zero probability flux at left boundary; conservative outflow at right
     F_left = 0.0
-    F_right = F[-1]  # Assuming conservative outflow; adjust if needed
+    # Conservative outflow at right boundary (example; adjust if needed)
+    F_right = F_inner[-1] if u[-1] >= 0 else u[-1] * m[-1]
+
     divF = np.empty_like(m)
-    divF[1:-1] = (F[:-1] - F[1:]) / np.diff(k_grid)
-    divF[0] = (F_left - F[0]) / (k_grid[1] - k_grid[0])
-    divF[-1] = (F[-2] - F_right) / (k_grid[-1] - k_grid[-2])
+    # Note: grid spacing calculation depends on grid definition (centers vs edges)
+    dk = np.diff(k_grid)
+    divF[1:-1] = (F_inner[:-1] - F_inner[1:]) / dk[1:]
+    divF[0] = (F_left - F_inner[0]) / dk[0]
+    divF[-1] = (F_inner[-1] - F_right) / dk[-1]
     return m - dt * divF
 
-# CFL guidance: dt * max_j |u_j| / min_j Delta k_j <= 1 for stability
+# CFL guidance (explicit): dt * max_j |u_j| / min_j Delta k_j <= 1
 \end{lstlisting}
 
 \begin{tcolorbox}[mathstyle]
-\textbf{CFL/Stability.} For the drift-only $k$-transport, a sufficient condition is $\displaystyle \frac{\Delta t}{\Delta k_\mathrm{min}}\max_j |i^*_j - \delta k_j| \le 1$. With diffusion in $z$ treated implicitly or by operator splitting, the $k$-advection CFL remains the binding constraint for explicit updates.
+\textbf{CFL/Stability.} For the drift-only $k$-transport, a sufficient condition for explicit updates is $\displaystyle \frac{\Delta t}{\Delta k_\mathrm{min}}\max_j |i^*_j - \delta k_j| \le 1$.
 \end{tcolorbox}
 
 \begin{lemma}{Mass conservation under zero boundary flux}{mass-conserve-upwind}
@@ -2126,6 +2258,10 @@ d_slope = sp.diff(slope, phi_m)
 assert sp.simplify(d_slope + k/phi_m**2) == 0
 \end{sympycheck}
 
+\begin{tcolorbox}[didacticstyle]
+\textbf{Interpretation.} Higher disinvestment costs ($\phi_-$) flatten the investment policy slope when $V_k<1$. This makes firms less willing to sell capital even when its marginal value drops, increasing the persistence of installed capital and slowing down aggregate adjustments during downturns.
+\end{tcolorbox}
+
 \begin{lemma}{Output variance increases with idiosyncratic volatility}{var-monotone-sigmaz}
 Let $q=e^{x+z}k^\alpha$ with $z\sim \mathcal N(\mu,\sigma_z^2)$ independent across firms. Then $\mathrm{Var}[q]\propto e^{\sigma_z^2}(e^{\sigma_z^2}-1)$, strictly increasing in $\sigma_z$.
 \end{lemma}
@@ -2139,6 +2275,10 @@ expected = sp.exp(2*mu + s2) * (2*sp.exp(s2) - 1)
 assert sp.simplify(dVar - expected) == 0
 # For s2 = 0, expected > 0 because exp(s2) = 1 ? (2*exp(s2) - 1) = 1 > 0.
 \end{sympycheck}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Interpretation.} Increased idiosyncratic uncertainty ($\sigma_z$) spreads the productivity distribution. Due to the convexity of the output function in $z$ (exponential), this increases both the mean and the variance of output across firms, potentially leading to higher aggregate volatility.
+\end{tcolorbox}
 
 
 %========================
@@ -2232,15 +2372,39 @@ and integration w\.r.t.\ $m$ yields $\chi(k,z,x)\,\Psi'(Y)\,Y(m,x)$.
 
 % (Consolidated duplicate Appendix A header and intro; merged unique lemma and bookkeeping below)
 
-\begin{lemma}{Functional chain rule along mixture paths (sketch)}{func-chain}
-Let $F(m)=G\!\left(\int\!\varphi\,\diff m\right)$ with $G\in C^1$ and $\varphi$ smooth and integrable. For $m_\varepsilon=(1-\varepsilon)m+\varepsilon\,\nu$ we have
-\[
-\left.\frac{\diff}{\diff\varepsilon}F(m_\varepsilon)\right\rvert\_{\varepsilon=0}
-\;=\;G'\!\left(\textstyle\int\varphi\,\diff m\right)\,\int\!\varphi\,\diff(\nu-m)
-\;=\;\int\!\underbrace{\frac{\delta F}{\delta m}(m)(\xi)}_{\;=\,G'(\Phi(m))\,\varphi(\xi)}\,\big(\nu-m\big)(\diff\xi).
-\]
-\emph{Sketch.} Differentiate $F(m_\varepsilon)=G\big((1-\varepsilon)\Phi(m)+\varepsilon\,\Phi(\nu)\big)$ in $\varepsilon$ at $0$ and use linearity of $\Phi(\cdot)=\int\varphi\,\diff(\cdot)$. This is the Flat-derivative chain rule used in \S\ref{sec:me-externality}.
-\end{lemma}
+% (Deduplicated) The Flat-derivative mixture-path chain rule appears earlier
+% as Lemma~\Cref{lem:directional}. We omit a redundant restatement here.
+
+\begin{leanproof}
+import Mathlib.Algebra.BigOperators.Basic
+
+open scoped BigOperators
+
+-- Discrete Lasry–Lions monotonicity blueprint for finitely supported laws.
+-- Let Y1 = ∑_j q_j w1_j and Y2 = ∑_j q_j w2_j. Then
+-- ∑_i (P(Y1)-P(Y2)) q_i (w1_i - w2_i) = (P(Y1)-P(Y2)) (Y1 - Y2) ≤ 0 for antitone P.
+variable {iota : Type*} [Fintype iota]
+
+theorem ll_mono_discrete (q : iota → ℝ) (P : ℝ → ℝ)
+  (w1 w2 : iota → ℝ) (hP : Antitone P) :
+  ∑ i, (P (∑ j, q j * w1 j) - P (∑ j, q j * w2 j)) * q i * (w1 i - w2 i)
+    ≤ 0 := by
+  classical
+  set Y1 : ℝ := ∑ j, q j * w1 j
+  set Y2 : ℝ := ∑ j, q j * w2 j
+  have hfactor : ∑ i, (P Y1 - P Y2) * (q i * (w1 i - w2 i))
+      = (P Y1 - P Y2) * (∑ i, (q i * (w1 i - w2 i))) := by
+    simp [mul_sum, sum_mul, mul_comm, mul_left_comm, mul_assoc]
+  have hsum : (∑ i, q i * (w1 i - w2 i)) = Y1 - Y2 := by
+    simp [Y1, Y2, mul_sub, Finset.sum_sub_distrib]
+  have : ∑ i, (P Y1 - P Y2) * q i * (w1 i - w2 i)
+      = (P Y1 - P Y2) * (Y1 - Y2) := by
+    simpa [hfactor, hsum, mul_comm, mul_left_comm, mul_assoc]
+  -- Apply antitone cross-product sign lemma (proved above) to conclude.
+  have hx : (P Y1 - P Y2) * (Y1 - Y2) ≤ 0 :=
+    antitone_implies_cross_product_nonpos P hP Y1 Y2
+  simpa [this] using hx
+\end{leanproof}
 
 \begin{tcolorbox}[mathstyle]
 \textbf{Bookkeeping.} Transport terms in (ME) require \emph{Lions} derivatives $\Dm U(\xi)$ and their $\xi$-partials; price externalities arising from $m\mapsto P(\Phi(m))$ use the \emph{Flat} derivative $\delta\_m$ of a scalar functional. See \Cref{sec:diff-p2} for precise definitions and chain rules.
@@ -2684,6 +2848,16 @@ problem = multicountry_model(dim=5, preference="EZ", ez_params=params)
 \end{verbatim}
 The consumption mapping \verb|c_fn(x)| can be provided by the user; by default,
 the model uses a positive aggregator from dividend-like states.
+\end{tcolorbox}
+
+\begin{tcolorbox}[literaturestyle]
+\textbf{Normalization and References.}
+The continuous-time EZ aggregator (\Cref{eq:ez-agg}) follows the standard normalization established by Duffie and Epstein (1992) \cite{duffie_epstein_1992}. This formulation ensures consistency with discrete-time EZ utility and facilitates the derivation of the market price of risk. Recent applications using this normalization include \cite{Sauzet2023}.
+\end{tcolorbox}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Limit Cases: CRRA Utility.}
+If $\gamma = 1/\psi$ (standard time-separable CRRA utility), the parameter $\vartheta=1$ (assuming $\gamma\neq 1$) and the risk adjustment term in the aggregator vanishes. The HJB identity simplifies, and the market price of risk reduces to the standard consumption-based pricing kernel exposure. The Lean4 checks in \Cref{app:lean} verify that the risk coefficient is zero when $\gamma=1$ (log utility) or $\psi=1$.
 \end{tcolorbox}
 
 %========================

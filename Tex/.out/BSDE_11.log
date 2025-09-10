@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  10 SEP 2025 08:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  10 SEP 2025 17:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -459,13 +459,19 @@ Library (tcolorbox): 'tcbtheorems.code.tex' version '6.7.1'
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen285
+\pgfarrowlength=\dimen286
+\pgfarrowwidth=\dimen287
+\pgfarrowlinewidth=\dimen288
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
 \t@pgfplots@toka=\toks47
 \t@pgfplots@tokb=\toks48
 \t@pgfplots@tokc=\toks49
-\pgfplots@tmpa=\dimen285
+\pgfplots@tmpa=\dimen289
 \c@pgfplots@coordindex=\count328
 \c@pgfplots@scanlineindex=\count329
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
@@ -481,24 +487,24 @@ Package pgfplots: loading complementary utilities for your pgf version...
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count332
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen286
-\pgfdecoratedremainingdistance=\dimen287
-\pgfdecoratedinputsegmentcompleteddistance=\dimen288
-\pgfdecoratedinputsegmentremainingdistance=\dimen289
-\pgf@decorate@distancetomove=\dimen290
+\pgfdecoratedcompleteddistance=\dimen290
+\pgfdecoratedremainingdistance=\dimen291
+\pgfdecoratedinputsegmentcompleteddistance=\dimen292
+\pgfdecoratedinputsegmentremainingdistance=\dimen293
+\pgf@decorate@distancetomove=\dimen294
 \pgf@decorate@repeatstate=\count333
-\pgfdecorationsegmentamplitude=\dimen291
-\pgfdecorationsegmentlength=\dimen292
+\pgfdecorationsegmentamplitude=\dimen295
+\pgfdecorationsegmentlength=\dimen296
 )
 \tikz@lib@dec@box=\box80
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count334
-\pgfplots@xmin@reg=\dimen293
-\pgfplots@xmax@reg=\dimen294
-\pgfplots@ymin@reg=\dimen295
-\pgfplots@ymax@reg=\dimen296
-\pgfplots@zmin@reg=\dimen297
-\pgfplots@zmax@reg=\dimen298
+\pgfplots@xmin@reg=\dimen297
+\pgfplots@xmax@reg=\dimen298
+\pgfplots@ymin@reg=\dimen299
+\pgfplots@ymax@reg=\dimen300
+\pgfplots@zmin@reg=\dimen301
+\pgfplots@zmax@reg=\dimen302
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
@@ -566,7 +572,7 @@ LaTeX Info: Redefining \leftprotrusion on input line 1088.
 \MT@prot@toks=\toks55
 LaTeX Info: Redefining \rightprotrusion on input line 1107.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen299
+\MT@outer@kern=\dimen303
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
 \MT@listname@count=\count336
@@ -584,47 +590,47 @@ LaTeX Info: Redefining \microtypesetup on input line 3065.
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip62
-\enit@outerparindent=\dimen300
+\enit@outerparindent=\dimen304
 \enit@toks=\toks56
 \enit@inbox=\box82
 \enit@count@id=\count337
 \enitdp@description=\count338
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen301
-\lightrulewidth=\dimen302
-\cmidrulewidth=\dimen303
-\belowrulesep=\dimen304
-\belowbottomsep=\dimen305
-\aboverulesep=\dimen306
-\abovetopsep=\dimen307
-\cmidrulesep=\dimen308
-\cmidrulekern=\dimen309
-\defaultaddspace=\dimen310
+\heavyrulewidth=\dimen305
+\lightrulewidth=\dimen306
+\cmidrulewidth=\dimen307
+\belowrulesep=\dimen308
+\belowbottomsep=\dimen309
+\aboverulesep=\dimen310
+\abovetopsep=\dimen311
+\cmidrulesep=\dimen312
+\cmidrulekern=\dimen313
+\defaultaddspace=\dimen314
 \@cmidla=\count339
 \@cmidlb=\count340
-\@aboverulesep=\dimen311
-\@belowrulesep=\dimen312
+\@aboverulesep=\dimen315
+\@belowrulesep=\dimen316
 \@thisruleclass=\count341
 \@lastruleclass=\count342
-\@thisrulewidth=\dimen313
+\@thisrulewidth=\dimen317
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen314
+\col@sep=\dimen318
 \ar@mcellbox=\box83
-\extrarowheight=\dimen315
+\extrarowheight=\dimen319
 \NC@list=\toks57
 \extratabsurround=\skip63
 \backup@length=\skip64
 \ar@cellbox=\box84
 )
-\TX@col@width=\dimen316
-\TX@old@table=\dimen317
-\TX@old@col=\dimen318
-\TX@target=\dimen319
-\TX@delta=\dimen320
+\TX@col@width=\dimen320
+\TX@old@table=\dimen321
+\TX@old@col=\dimen322
+\TX@target=\dimen323
+\TX@delta=\dimen324
 \TX@cols=\count343
 \TX@ftn=\toks58
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
@@ -639,7 +645,7 @@ Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
 \l__siunitx_number_group_first_int=\count351
 \l__siunitx_number_group_size_int=\count352
 \l__siunitx_number_group_minimum_int=\count353
-\l__siunitx_angle_tmp_dim=\dimen321
+\l__siunitx_angle_tmp_dim=\dimen325
 \l__siunitx_angle_marker_box=\box85
 \l__siunitx_angle_unit_box=\box86
 \l__siunitx_compound_count_int=\count354
@@ -652,15 +658,15 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ))
 \l__siunitx_table_tmp_box=\box87
-\l__siunitx_table_tmp_dim=\dimen322
-\l__siunitx_table_column_width_dim=\dimen323
+\l__siunitx_table_tmp_dim=\dimen326
+\l__siunitx_table_column_width_dim=\dimen327
 \l__siunitx_table_integer_box=\box88
 \l__siunitx_table_decimal_box=\box89
 \l__siunitx_table_uncert_box=\box90
 \l__siunitx_table_before_box=\box91
 \l__siunitx_table_after_box=\box92
-\l__siunitx_table_before_dim=\dimen324
-\l__siunitx_table_carry_dim=\dimen325
+\l__siunitx_table_before_dim=\dimen328
+\l__siunitx_table_carry_dim=\dimen329
 \l__siunitx_unit_tmp_int=\count355
 \l__siunitx_unit_position_int=\count356
 \l__siunitx_unit_total_int=\count357
@@ -919,16 +925,16 @@ Package: lineno 2025/05/13 line numbers on paragraphs v5.5
 \linenopenalty=\count488
 \output=\toks59
 \linenoprevgraf=\count489
-\linenumbersep=\dimen326
-\linenumberwidth=\dimen327
+\linenumbersep=\dimen330
+\linenumberwidth=\dimen331
 \c@linenumber=\count490
 \c@pagewiselinenumber=\count491
 \c@LN@truepage=\count492
 \c@internallinenumber=\count493
 \c@internallinenumbers=\count494
-\quotelinenumbersep=\dimen328
-\bframerule=\dimen329
-\bframesep=\dimen330
+\quotelinenumbersep=\dimen332
+\bframerule=\dimen333
+\bframesep=\dimen334
 \bframebox=\box94
 \@LN@amsmath@ams@eqpen=\count495
 )
@@ -943,21 +949,21 @@ Package: lineno 2025/05/13 line numbers on paragraphs v5.5
 \c@FV@HighlightLinesStop=\count501
 \FV@LoopCount=\count502
 \FV@NCharsBox=\box97
-\FV@BreakIndent=\dimen331
+\FV@BreakIndent=\dimen335
 \FV@BreakIndentNChars=\count503
-\FV@BreakSymbolSepLeft=\dimen332
+\FV@BreakSymbolSepLeft=\dimen336
 \FV@BreakSymbolSepLeftNChars=\count504
-\FV@BreakSymbolSepRight=\dimen333
+\FV@BreakSymbolSepRight=\dimen337
 \FV@BreakSymbolSepRightNChars=\count505
-\FV@BreakSymbolIndentLeft=\dimen334
+\FV@BreakSymbolIndentLeft=\dimen338
 \FV@BreakSymbolIndentLeftNChars=\count506
-\FV@BreakSymbolIndentRight=\dimen335
+\FV@BreakSymbolIndentRight=\dimen339
 \FV@BreakSymbolIndentRightNChars=\count507
 \c@FancyVerbLineBreakLast=\count508
 \FV@LineBox=\box98
 \FV@LineIndentBox=\box99
 \c@FV@BreakBufferDepth=\count509
-\FV@LineWidth=\dimen336
+\FV@LineWidth=\dimen340
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/latex2pydata\latex2pydata.sty
 Package: latex2pydata 2025/03/26 v0.6.0 latex2pydata - write data to file in Python literal format
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
@@ -983,14 +989,14 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \lst@gtempboxa=\box102
 \lst@token=\toks65
 \lst@length=\count514
-\lst@currlwidth=\dimen337
+\lst@currlwidth=\dimen341
 \lst@column=\count515
 \lst@pos=\count516
-\lst@lostspace=\dimen338
-\lst@width=\dimen339
+\lst@lostspace=\dimen342
+\lst@width=\dimen343
 \lst@newlines=\count517
 \lst@lineno=\count518
-\lst@maxwidth=\dimen340
+\lst@maxwidth=\dimen344
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
@@ -1027,7 +1033,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen341
+\@linkdim=\dimen345
 \Hy@linkcounter=\count528
 \Hy@pagecounter=\count529
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
@@ -1054,15 +1060,15 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks OFF on input line 4468.
 \c@Hy@tempcnt=\count531
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen342
+\XeTeXLinkMargin=\dimen346
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count532
-\Field@Width=\dimen343
-\Fld@charsize=\dimen344
+\Field@Width=\dimen347
+\Fld@charsize=\dimen348
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -1109,33 +1115,33 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 Package cleveref Info: no abbreviation of names on input line 7852.
 )
 ==> First Aid for cleveref.sty applied!
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 236.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 269.
 \@quotelevel=\count538
 \@quotereset=\count539
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 236.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 269.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.aux)
 \openout1 = `BSDE_11.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 269.
+LaTeX Font Info:    ... okay on input line 269.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1174,13 +1180,13 @@ LaTeX Font Info:    ... okay on input line 236.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count540
-\scratchdimen=\dimen345
+\scratchdimen=\dimen349
 \scratchbox=\box104
 \nofMPsegments=\count541
 \nofMParguments=\count542
 \everyMPshowfont=\toks66
 \MPscratchCnt=\count543
-\MPscratchDim=\dimen346
+\MPscratchDim=\dimen350
 \MPnumerator=\count544
 \makeMPintoPDFobject=\count545
 \everyMPtoPDFconversion=\toks67
@@ -1198,13 +1204,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \microtypecontext on input line 236.
-Package microtype Info: Applying patch `item' on input line 236.
-Package microtype Info: Applying patch `toc' on input line 236.
-Package microtype Info: Applying patch `eqnum' on input line 236.
-Package microtype Info: Applying patch `footnote' on input line 236.
-Package microtype Info: Applying patch `verbatim' on input line 236.
-LaTeX Info: Redefining \microtypesetup on input line 236.
+LaTeX Info: Redefining \microtypecontext on input line 269.
+Package microtype Info: Applying patch `item' on input line 269.
+Package microtype Info: Applying patch `toc' on input line 269.
+Package microtype Info: Applying patch `eqnum' on input line 269.
+Package microtype Info: Applying patch `footnote' on input line 269.
+Package microtype Info: Applying patch `verbatim' on input line 269.
+LaTeX Info: Redefining \microtypesetup on input line 269.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1220,7 +1226,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 236.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 269.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
@@ -1234,79 +1240,69 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'BSDE_11.bbl' found.
  (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_11.bbl)
-Package biblatex Info: Reference section=0 on input line 236.
-Package biblatex Info: Reference segment=0 on input line 236.
+Package biblatex Info: Reference section=0 on input line 269.
+Package biblatex Info: Reference segment=0 on input line 269.
 \c@lstlisting=\count546
-Package hyperref Info: Link coloring ON on input line 236.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 238.
+Package hyperref Info: Link coloring ON on input line 269.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 238.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 238.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 238.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 238.
+(Font)              <12> on input line 271.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 238.
+(Font)              <8> on input line 271.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 238.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 238.
+(Font)              <6> on input line 271.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 238.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 271.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 241.
+(Font)              <10> on input line 274.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 241.
+(Font)              <7> on input line 274.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 241.
+(Font)              <5> on input line 274.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- (BSDE_11.toc
+
+
+LaTeX Warning: Reference `app:common-noise' on page 1 undefined on input line 276.
+
+(BSDE_11.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 4.
 
 
 [1
 
-{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 44.
- (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 44.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-)
+{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}])
 \tf@toc=\write6
 \openout6 = `BSDE_11.toc'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 255.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 288.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1314,22 +1310,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 261.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 294.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [2]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
 
 [3{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 488.
-
-
-[5]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 518.
+(Font)              <14.4> on input line 461.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 489.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 491.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1342,180 +1347,333 @@ Package microtype Info: Character `texttrademark ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 
+[5]
+
+LaTeX Warning: Reference `lem:w2-gauss-1d' on page 1 undefined on input line 526.
+
+
+
 [6]
 
-LaTeX Warning: Reference `lem:w2-gauss-1d' on page 1 undefined on input line 575.
-
-
-
 [7]
+
+LaTeX Warning: Reference `sec:master-equation' on page 1 undefined on input line 632.
+
+
 
 [8]
 
 [9]
 
-LaTeX Warning: Reference `sec:master-equation' on page 1 undefined on input line 681.
+LaTeX Warning: Reference `flat_deriv' on page 1 undefined on input line 703.
 
 
 
 [10]
 
-LaTeX Warning: Reference `flat_deriv' on page 1 undefined on input line 752.
+LaTeX Warning: Reference `lem:chain_lions' on page 1 undefined on input line 761.
+
+
+LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 762.
+
+
+LaTeX Warning: Reference `sec:master-equation' on page 11 undefined on input line 764.
+
+
+LaTeX Warning: Reference `sec:master-equation' on page 11 undefined on input line 765.
 
 
 
 [11]
 
-LaTeX Warning: Reference `lem:chain_lions' on page 1 undefined on input line 810.
+LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 771.
 
 
-LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 811.
+LaTeX Warning: Reference `prop:externality' on page 1 undefined on input line 771.
 
 
-LaTeX Warning: Reference `sec:master-equation' on page 12 undefined on input line 813.
+LaTeX Warning: Reference `lem:chain_lions' on page 1 undefined on input line 772.
 
 
-LaTeX Warning: Reference `sec:master-equation' on page 12 undefined on input line 814.
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
+[]\T1/lmr/m/it/10.95 (+20) Lions deriva-tive: \T1/lmr/m/n/10.95 (+20) by [], $\OML/lmm/m/it/10.95 D[]m[]P\OT1/lmr/m/n/10.95 (+20) (^^H(\OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (+20) ))[](\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 (+20) ) = \OML/lmm/m/it/10.95 P[]\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 Y\OT1/lmr/m/n/10.95 (+20) ) \OMS/lmsy/m/n/10.95 r\OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 (+20) ) =
+ []
+
+
+Overfull \hbox (42.51645pt too wide) detected at line 794
+[][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 L[]z'\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 z \OT1/lmr/m/n/10.95 = [][] \OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) (\OML/lmm/m/it/10.95 L[]z[]m\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 z;  [][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 L[]x'\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 x \OT1/lmr/m/n/10.95 = [][] \OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) (\OML/lmm/m/it/10.95 L[]x[]m\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 x;
+ []
 
 
 
 [12]
 
-LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 820.
+LaTeX Warning: Reference `lem:adjoint-pairing-k' on page 1 undefined on input line 870.
 
 
-LaTeX Warning: Reference `prop:externality' on page 1 undefined on input line 820.
-
-
-LaTeX Warning: Reference `lem:chain_lions' on page 1 undefined on input line 821.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
-[]\T1/lmr/m/it/10.95 (+20) Lions deriva-tive: \T1/lmr/m/n/10.95 (+20) by [], $\OML/lmm/m/it/10.95 D[]m[]P\OT1/lmr/m/n/10.95 (+20) (^^H(\OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (+20) ))[](\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 (+20) ) = \OML/lmm/m/it/10.95 P[]\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 Y\OT1/lmr/m/n/10.95 (+20) ) \OMS/lmsy/m/n/10.95 r\OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 (+20) ) =
- []
-
-
-Overfull \hbox (42.51645pt too wide) detected at line 851
-[][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 L[]z'\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 z \OT1/lmr/m/n/10.95 = [][] \OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) (\OML/lmm/m/it/10.95 L[]z[]m\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 z\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 z;  [][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 L[]x'\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 x \OT1/lmr/m/n/10.95 = [][] \OML/lmm/m/it/10.95 '\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) (\OML/lmm/m/it/10.95 L[]x[]m\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 x\OT1/lmr/m/n/10.95 ) d\OML/lmm/m/it/10.95 x:
- []
+LaTeX Warning: Reference `lem:adjoint-pairing-zx' on page 1 undefined on input line 870.
 
 
 
 [13]
 
-[14]
-
-LaTeX Warning: Reference `sec:ez' on page 1 undefined on input line 925.
+LaTeX Warning: Reference `sec:ez' on page 1 undefined on input line 886.
 
 
-Overfull \hbox (52.4328pt too wide) detected at line 930
+Overfull \hbox (52.4328pt too wide) detected at line 891
 [][][][][]
  []
 
 
-LaTeX Warning: Reference `def:ez' on page 1 undefined on input line 931.
+LaTeX Warning: Reference `def:ez' on page 1 undefined on input line 892.
 
 
-LaTeX Warning: Reference `prop:sdf-ez' on page 1 undefined on input line 931.
+LaTeX Warning: Reference `prop:sdf-ez' on page 1 undefined on input line 892.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 941.
+(Font)              <9> on input line 902.
 
 
-[15
+[14
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.961 \end{proof}
+l.922 \end{proof}
                  ]
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1001: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:962: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1001 ...dratic branch: d/dp L*(p) = i*(p) - δ k
+l.962 ...adratic branch: d/dp L*(p) = i*(p) - δ k
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1002: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:963: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 variable {k φ δ p : ℝ}
+l.963 variable {k φ δ p : ℝ}
+                                
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:966: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.966 ...branch (k φ δ : ℝ) (p : ℝ) : ℝ :=
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:967: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.967 ...φ/2) * (iStar k φ p)^2 / k - p * δ * k
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:970: LaTeX Error: Unicode character ≠ (U+2260)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.970   (hk : k ≠ 0) (hφ : φ ≠ 0) :
+                                         
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:970: LaTeX Error: Unicode character ≠ (U+2260)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.970   (hk : k ≠ 0) (hφ : φ ≠ 0) :
+                                         
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:971: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.971 ...erivAt (fun p : ℝ => Lbranch k φ δ p)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:972: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.972              (iStar k φ p - δ * k) p := by
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:990: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.990   -- d/dp [-p δ k] = -δ k
                                  
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1005: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:990: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1005 ...ranch (k φ δ : ℝ) (p : ℝ) : ℝ :=
+l.990   -- d/dp [-p δ k] = -δ k
+                                 
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:991: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.991 ... ℝ => - p * δ * k) (-(δ * k)) p := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1006: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:991: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ...�/2) * (iStar k φ p)^2 / k - p * δ * k
+l.991 ... ℝ => - p * δ * k) (-(δ * k)) p := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1009: LaTeX Error: Unicode character ≠ (U+2260)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:993: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009   (hk : k ≠ 0) (hφ : φ ≠ 0) :
-                                          
+l.993 ...hasDerivAt_id' p).const_mul (δ * k)).neg
+                                                  
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1009: LaTeX Error: Unicode character ≠ (U+2260)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:994: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009   (hk : k ≠ 0) (hφ : φ ≠ 0) :
-                                          
+l.994 ...plify to g p - δ k = iStar k φ p - δ k
+                                                  
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1010: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:994: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1010 ...rivAt (fun p : ℝ => Lbranch k φ δ p)
+l.994 ...plify to g p - δ k = iStar k φ p - δ k
                                                   
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:995: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.995 ... - (φ/2) * (g p * g p) / k - p * δ * k)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:996: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.996 ...p + g p * (k/φ)) ) + (-(δ*k)) ) p := by
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+
+[15]
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1008: LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1008 variable {k φ δ p : ℝ}
+                                 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -1527,125 +1685,99 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1011 ...         (iStar k φ p - δ * k) p := by
+l.1011 ...ranch (k φ δ : ℝ) (p : ℝ) : ℝ :=
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1029: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1012: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1029   -- d/dp [-p δ k] = -δ k
-                                  
+l.1012 ...�/2) * (iStar k φ p)^2 / k - p * δ * k
+                                                  
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1029: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1014: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1029   -- d/dp [-p δ k] = -δ k
-                                  
+l.1014 ...Star k φ p - δ k; differentiate again.
+                                                  
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1030: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1016: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1030 ...ℝ => - p * δ * k) (-(δ * k)) p := by
+l.1016 ...=> iStar k φ p - δ * k) (k/φ) p := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1030: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1017: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1030 ...ℝ => - p * δ * k) (-(δ * k)) p := by
+l.1017 ...φ) * p - (k/φ) - δ k is constant k/φ
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1032: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1024: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1032 ...asDerivAt_id' p).const_mul (δ * k)).neg
+l.1024 ...erivAt (fun _ : ℝ => δ * k) 0 p := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1033: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1025: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1033 ...lify to g p - δ k = iStar k φ p - δ k
+l.1025 ...impa using (hasDerivAt_const p (δ * k))
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1033: LaTeX Error: Unicode character δ (U+03B4)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1026: LaTeX Error: Unicode character δ (U+03B4)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1033 ...lify to g p - δ k = iStar k φ p - δ k
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1034: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1034 ...- (φ/2) * (g p * g p) / k - p * δ * k)
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1035: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1035 ... + g p * (k/φ)) ) + (-(δ*k)) ) p := by
-                                                  
+l.1026   -- subtract constant term δ k
+                                       
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -1653,202 +1785,192 @@ You may provide a definition with
 
 [16]
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1047: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1047 variable {k φ δ p : ℝ}
-                                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1050: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1050 ...ranch (k φ δ : ℝ) (p : ℝ) : ℝ :=
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1051: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1051 ...�/2) * (iStar k φ p)^2 / k - p * δ * k
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1053: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1053 ...Star k φ p - δ k; differentiate again.
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1055: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1055 ...=> iStar k φ p - δ * k) (k/φ) p := by
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1056: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1056 ...φ) * p - (k/φ) - δ k is constant k/φ
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1063: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1063 ...erivAt (fun _ : ℝ => δ * k) 0 p := by
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1064: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1064 ...impa using (hasDerivAt_const p (δ * k))
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1065: LaTeX Error: Unicode character δ (U+03B4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1065   -- subtract constant term δ k
-                                       
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-
 [17]
 
-[18] (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+LaTeX Warning: Reference `fig:policy_ip' on page 1 undefined on input line 1121.
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
+[18]
+
+LaTeX Warning: Reference `app:verification' on page 19 undefined on input line 1163.
+
+
+LaTeX Warning: Reference `eq:FP' on page 19 undefined on input line 1165.
+
+
+
 [19]
-
-LaTeX Warning: Reference `app:verification' on page 20 undefined on input line 1168.
-
-
-LaTeX Warning: Reference `eq:FP' on page 20 undefined on input line 1170.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1180 \begin{equation}
+l.1175 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1180 \begin{equation}
+l.1175 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1180 \begin{equation}
+l.1175 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1180 \begin{equation}
+l.1175 \begin{equation}
                        
+
+LaTeX Warning: Reference `fig:transport_uk' on page 1 undefined on input line 1212.
+
+
+LaTeX Warning: Reference `fig:fv_reflecting' on page 20 undefined on input line 1212.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: Missing $ inserted.
+<inserted text> 
+                $
+l.1246     }
+            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246     }
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: Missing $ inserted.
+<inserted text> 
+                $
+l.1246     }
+            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246     }
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: Missing $ inserted.
+<inserted text> 
+                $
+l.1246     }
+            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1246: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246     }
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `sec:routeA' on page 20 undefined on input line 1290.
+
+
+LaTeX Warning: Reference `sec:routeA' on page 20 undefined on input line 1290.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1304: LaTeX Error: Unicode character Σ (U+03A3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1304 .../dx  # Σ_j div = (F_left - F_right)/Δk
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1304: LaTeX Error: Unicode character Δ (U+0394)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1304 .../dx  # Σ_j div = (F_left - F_right)/Δk
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
 
 [20]
 
-LaTeX Warning: Reference `eq:FP' on page 21 undefined on input line 1208.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1224 \begin{equation}
-                       \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1224 \begin{equation}
-                       \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1224 \begin{equation}
-                       \label{eq:isoelastic}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1224 \begin{equation}
-                       \label{eq:isoelastic}
-
 [21]
 
-LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1277.
+LaTeX Warning: Reference `eq:FP' on page 22 undefined on input line 1337.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1353 \begin{equation}
+                       \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1353 \begin{equation}
+                       \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1353 \begin{equation}
+                       \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1353 \begin{equation}
+                       \label{eq:isoelastic}
+
+[22]
+
+LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1409.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@assumption.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1279 ...egularity and finiteness}{me-regularity}
+l.1411 ...egularity and finiteness}{me-regularity}
                                                   
 
-LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 1285.
+LaTeX Warning: Reference `lem:chain_flat' on page 1 undefined on input line 1417.
 
 
 
-[22]
-Overfull \hbox (39.0253pt too wide) detected at line 1301
+[23]
+Overfull \hbox (39.0253pt too wide) detected at line 1433
 \OMS/lmsy/m/n/10.95 T\OT1/lmr/m/n/10.95 [\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m/n/10.95 ](\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^Q \OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 i[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X; x; m\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 ^^N^^T\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 @[]^^T[]D[]mU[]^^T[]  \OT1/lmr/m/n/10.95 +  \OML/lmm/m/it/10.95 ^^V[]z\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^P\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 @[]^^P[]D[]mU[]^^P[]  \OT1/lmr/m/n/10.95 +  []\OML/lmm/m/it/10.95 ^^[[]z[] @[][][][]D[]mU[]^^P[]:
  []
 
@@ -1856,13 +1978,13 @@ Overfull \hbox (39.0253pt too wide) detected at line 1301
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1304 ...ditional on $x$)}{transport-bookkeeping}
+l.1436 ...ditional on $x$)}{transport-bookkeeping}
                                                   
 
-LaTeX Warning: Reference `ass:me-regularity' on page 1 undefined on input line 1305.
+LaTeX Warning: Reference `ass:me-regularity' on page 1 undefined on input line 1437.
 
 
-Overfull \hbox (162.28253pt too wide) detected at line 1311
+Overfull \hbox (162.28253pt too wide) detected at line 1443
 [] \OMS/lmsy/m/n/10.95 T\OT1/lmr/m/n/10.95 [\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m/n/10.95 ](\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 d\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) = [] [](\OML/lmm/m/it/10.95 i[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X; x; m\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 ^^N^^T\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 @[]^^T\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m/n/10.95 ) []\OML/lmm/m/it/10.95 ^^T  \OT1/lmr/m/n/10.95 +  \OML/lmm/m/it/10.95 ^^V[]z\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^P\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 @[]^^P\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m/n/10.95 ) []\OML/lmm/m/it/10.95 ^^P  \OT1/lmr/m/n/10.95 +  []\OML/lmm/m/it/10.95 ^^[[]z[] @[][][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m/n/10.95 ) []\OML/lmm/m/it/10.95 ^^P[] m\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 d\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )\OML/lmm/m/it/10.95 :
  []
 
@@ -1870,309 +1992,308 @@ Overfull \hbox (162.28253pt too wide) detected at line 1311
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1318 \begin{equation}
+l.1450 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1318 \begin{equation}
+l.1450 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1318 \begin{equation}
+l.1450 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1318 \begin{equation}
+l.1450 \begin{equation}
                        
 
-LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1322.
+LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1454.
 
 
-LaTeX Warning: Reference `ass:me-regularity' on page 1 undefined on input line 1325.
+LaTeX Warning: Reference `ass:me-regularity' on page 1 undefined on input line 1457.
 
 
-LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1325.
+LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 1457.
 
 
-
-[23]
-
-LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 1331.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1348 ...ality under flat price}{flat-price-zero}
-                                                  
-
-LaTeX Warning: Reference `prop:externality' on page 1 undefined on input line 1353.
+LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 1463.
 
 
 
 [24]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1480 ...ality under flat price}{flat-price-zero}
+                                                  
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1380: LaTeX Error: Unicode character χ (U+03C7)
+LaTeX Warning: Reference `prop:externality' on page 1 undefined on input line 1485.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1512: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1380 ...le {P : ℝ → ℝ} {Y χ0 χeps : ℝ}
+l.1512 ...le {P : ℝ → ℝ} {Y χ0 χeps : ℝ}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1380: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1512: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1380 ...le {P : ℝ → ℝ} {Y χ0 χeps : ℝ}
+l.1512 ...le {P : ℝ → ℝ} {Y χ0 χeps : ℝ}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1385: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1517: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1385 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
+l.1517 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1385: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1517: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1385 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
+l.1517 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1385: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1517: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1385 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
+l.1517 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1385: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1517: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1385 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
+l.1517 ...+ ε * χeps)) (χ0 * c * χeps) 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1386: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1518: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1386 ...Y + ε * χeps has derivative χeps at 0
+l.1518 ...Y + ε * χeps has derivative χeps at 0
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1386: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1518: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1386 ...Y + ε * χeps has derivative χeps at 0
+l.1518 ...Y + ε * χeps has derivative χeps at 0
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1387: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1519: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1387 ...un ε : ℝ => ε * χeps) χeps 0 := by
+l.1519 ...un ε : ℝ => ε * χeps) χeps 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1387: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1519: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1387 ...un ε : ℝ => ε * χeps) χeps 0 := by
+l.1519 ...un ε : ℝ => ε * χeps) χeps 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1388: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1520: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1388 ...(hasDerivAt_id' (0:ℝ)).mul_const χeps
+l.1520 ...(hasDerivAt_id' (0:ℝ)).mul_const χeps
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1389: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1521: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1389 ...� : ℝ => Y + ε * χeps) χeps 0 := by
+l.1521 ...� : ℝ => Y + ε * χeps) χeps 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1389: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1521: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1389 ...� : ℝ => Y + ε * χeps) χeps 0 := by
+l.1521 ...� : ℝ => Y + ε * χeps) χeps 0 := by
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1391: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1523: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1391 ...hain rule, then multiply by constant χ0
+l.1523 ...hain rule, then multiply by constant χ0
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1393: LaTeX Error: Unicode character χ (U+03C7)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1525: LaTeX Error: Unicode character χ (U+03C7)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1393     using (hP.comp 0 hlin).const_mul χ0
+l.1525     using (hP.comp 0 hlin).const_mul χ0
                                                
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-LaTeX Warning: Reference `app:common-noise' on page 1 undefined on input line 1397.
+
+[25]
+
+LaTeX Warning: Reference `app:common-noise' on page 1 undefined on input line 1529.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1440: LaTeX Error: Unicode character μ (U+03BC)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1572: LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1440 ...mputable def μdiff : SignedMeasure S :=
+l.1572 ...mputable def μdiff : SignedMeasure S :=
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1444: LaTeX Error: Unicode character μ (U+03BC)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1576: LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1444 ...egral : ℝ := (μdiff m1 m2).integral f
+l.1576 ...egral : ℝ := (μdiff m1 m2).integral f
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1448: LaTeX Error: Unicode character μ (U+03BC)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1580: LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1448      (μdiff m1 m2).integral f
+l.1580      (μdiff m1 m2).integral f
                                      
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1449: LaTeX Error: Unicode character μ (U+03BC)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1581: LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1449 ...m2).toJordanDecomposition.pos.toMeasure)
+l.1581 ...m2).toJordanDecomposition.pos.toMeasure)
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1450: LaTeX Error: Unicode character μ (U+03BC)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1582: LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1450 ...2).toJordanDecomposition.neg.toMeasure).
+l.1582 ...2).toJordanDecomposition.neg.toMeasure).
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2181,74 +2302,74 @@ You may provide a definition with
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1458 ...e Hamiltonian (sign convention)}{H-mono}
+l.1590 ...e Hamiltonian (sign convention)}{H-mono}
                                                   
 
-LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 1459.
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 1591.
 
 
-Overfull \hbox (3.67902pt too wide) detected at line 1472
+Overfull \hbox (3.67902pt too wide) detected at line 1604
 []
  []
 
 
-LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1524.
+LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1651.
 
 
-LaTeX Warning: Reference `app:common-noise' on page 1 undefined on input line 1525.
+LaTeX Warning: Reference `app:common-noise' on page 1 undefined on input line 1652.
 
 
-LaTeX Warning: Reference `ass:regularity' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `ass:regularity' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1530.
+LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1657.
 
 
-LaTeX Warning: Reference `def:LL-mono' on page 1 undefined on input line 1534.
+LaTeX Warning: Reference `def:LL-mono' on page 1 undefined on input line 1661.
 
 
-LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1534.
+LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1661.
 
 
-LaTeX Warning: Reference `thm:equivalence' on page 1 undefined on input line 1539.
+LaTeX Warning: Reference `thm:equivalence' on page 1 undefined on input line 1666.
 
 
-LaTeX Warning: Reference `sec:routeA' on page 1 undefined on input line 1539.
+LaTeX Warning: Reference `sec:routeA' on page 1 undefined on input line 1666.
 
 
-LaTeX Warning: Reference `sec:routeB' on page 1 undefined on input line 1539.
+LaTeX Warning: Reference `sec:routeB' on page 1 undefined on input line 1666.
 
 
-LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1542.
+LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 1669.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1548: LaTeX Error: Not in outer par mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1675: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1548 \begin{figure}[ht]
+l.1675 \begin{figure}[ht]
                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1548: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1675: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1548 \begin{figure}[ht]
+l.1675 \begin{figure}[ht]
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2256,10 +2377,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1548: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1675: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1548 \begin{figure}[ht]
+l.1675 \begin{figure}[ht]
                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -2269,80 +2390,85 @@ look up `weird error' in the index to The TeXbook.)
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1579 ...ecting Boundary at $k=0$}{reflecting-k0}
+l.1707 ...ecting Boundary at $k=0$}{reflecting-k0}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1588 ...subgradient condition}{boundary-subgrad}
+l.1716 ...subgradient condition}{boundary-subgrad}
                                                   
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 1668.
+LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 1796.
 
 
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 1668.
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 1796.
 
 
-LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 1669.
+LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 1797.
 
 
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 1678.
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 1806.
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1684.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1812.
 
-Overfull \hbox (19.10635pt too wide) in paragraph at lines 1688--1689
+Overfull \hbox (19.10635pt too wide) in paragraph at lines 1816--1817
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (111.0871pt too wide) in paragraph at lines 1698--1699
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Underfull \hbox (badness 10000) in paragraph at lines 1825--1826
+[][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (32.24646pt too wide) in paragraph at lines 1700--1701
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (189.92773pt too wide) in paragraph at lines 1826--1827
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (25.6764pt too wide) in paragraph at lines 1707--1708
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (45.38657pt too wide) in paragraph at lines 1828--1829
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 1711--1712
-[]\T1/lmr/bx/n/10.95 (+20) CFL/Stability. \T1/lmr/m/n/10.95 (+20) For the drift-only $\OML/lmm/m/it/10.95 k$\T1/lmr/m/n/10.95 (+20) -transport, a suf-fi-cient con-di-tion is
+Overfull \hbox (111.0871pt too wide) in paragraph at lines 1832--1833
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.96625pt too wide) in paragraph at lines 1839--1840
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1714 ...ero boundary flux}{mass-conserve-upwind}
+l.1846 ...ero boundary flux}{mass-conserve-upwind}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1759 ...nition}{DeepSets Architecture}{deepsets}
+l.1891 ...nition}{DeepSets Architecture}{deepsets}
                                                   
-Overfull \hbox (4.088pt too wide) detected at line 1771
+Overfull \hbox (4.088pt too wide) detected at line 1903
 \OML/lmm/m/it/10.95 U[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 k; z; x; m\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^Y \OML/lmm/m/it/10.95 ^^Z[][]k; z; x; \OT1/lmr/m/n/10.95 ^^H[](\OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 )[]\OML/lmm/m/it/10.95 ;  D[]mU[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ; \OML/lmm/m/it/10.95 k; z; x; m\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^Y \OML/lmm/m/it/10.95 ^^Z[][]^^X; k; z; x; \OT1/lmr/m/n/10.95 ^^H[](\OML/lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 )[]\OML/lmm/m/it/10.95 :
  []
 
 
-LaTeX Warning: Reference `app:loss' on page 1 undefined on input line 1781.
+LaTeX Warning: Reference `app:loss' on page 1 undefined on input line 1913.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1792
+Underfull \hbox (badness 10000) in paragraph at lines 1923--1924
 []\T1/lmr/bx/n/10.95 (+20) On iden-ti-fi-a-bil-ity. \T1/lmr/m/n/10.95 (+20) Be-cause $\OML/lmm/m/it/10.95 D[]mU$ \T1/lmr/m/n/10.95 (+20) ap-pears only through
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 1791--1792
+Underfull \hbox (badness 1540) in paragraph at lines 1923--1924
 \OML/lmm/m/it/10.95 @[]D[]mU; @[]D[]mU; @[]D[]mU$\T1/lmr/m/n/10.95 (+20) , adding con-stants leaves the ME in-vari-
  []
 
@@ -2350,116 +2476,116 @@ Underfull \hbox (badness 1540) in paragraph at lines 1791--1792
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1794 ...of the transport term}{gauge-invariance}
+l.1926 ...of the transport term}{gauge-invariance}
                                                   
 
-LaTeX Warning: Reference `lem:transport-bookkeeping' on page 1 undefined on input line 1795.
+LaTeX Warning: Reference `lem:transport-bookkeeping' on page 1 undefined on input line 1927.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@assumption.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1823 ...arity for DeepSets models}{deepsets-reg}
+l.1955 ...arity for DeepSets models}{deepsets-reg}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1827 ...rence (DeepSets)}{universality-deepsets}
+l.1959 ...rence (DeepSets)}{universality-deepsets}
                                                   
 
-LaTeX Warning: Reference `ass:deepsets-reg' on page 1 undefined on input line 1828.
+LaTeX Warning: Reference `ass:deepsets-reg' on page 1 undefined on input line 1960.
 
 
-Overfull \hbox (32.24646pt too wide) in paragraph at lines 1842--1843
+Overfull \hbox (32.24646pt too wide) in paragraph at lines 1974--1975
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1843--1844
+Underfull \hbox (badness 10000) in paragraph at lines 1975--1976
 [][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1848--1849
+Underfull \hbox (badness 10000) in paragraph at lines 1980--1981
 [][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1854--1855
+Underfull \hbox (badness 10000) in paragraph at lines 1986--1987
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1870--1871
+Underfull \hbox (badness 10000) in paragraph at lines 2002--2003
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (71.66678pt too wide) in paragraph at lines 1883--1884
+Overfull \hbox (71.66678pt too wide) in paragraph at lines 2015--2016
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.38657pt too wide) in paragraph at lines 1884--1885
+Overfull \hbox (45.38657pt too wide) in paragraph at lines 2016--2017
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (19.10635pt too wide) in paragraph at lines 1900--1901
+Overfull \hbox (19.10635pt too wide) in paragraph at lines 2032--2033
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (97.94699pt too wide) in paragraph at lines 1901--1902
+Overfull \hbox (97.94699pt too wide) in paragraph at lines 2033--2034
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.96625pt too wide) in paragraph at lines 1902--1903
+Overfull \hbox (5.96625pt too wide) in paragraph at lines 2034--2035
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.96625pt too wide) in paragraph at lines 1905--1906
+Overfull \hbox (5.96625pt too wide) in paragraph at lines 2037--2038
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1906--1907
+Underfull \hbox (badness 10000) in paragraph at lines 2038--2039
 [][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (78.23683pt too wide) in paragraph at lines 1927--1928
+Overfull \hbox (78.23683pt too wide) in paragraph at lines 2059--2060
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.81651pt too wide) in paragraph at lines 1931--1932
+Overfull \hbox (38.81651pt too wide) in paragraph at lines 2063--2064
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.96625pt too wide) in paragraph at lines 1933--1934
+Overfull \hbox (5.96625pt too wide) in paragraph at lines 2065--2066
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1947: LaTeX Error: Not in outer par mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2079: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1947 \begin{table}[ht]
+l.2079 \begin{table}[ht]
                         
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1947: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2079: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1947 \begin{table}[ht]
+l.2079 \begin{table}[ht]
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2467,31 +2593,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1947: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2079: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1947 \begin{table}[ht]
+l.2079 \begin{table}[ht]
                         
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1982: LaTeX Error: Not in outer par mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2114: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1982 \begin{table}[ht]
+l.2114 \begin{table}[ht]
                         
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1982: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2114: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1982 \begin{table}[ht]
+l.2114 \begin{table}[ht]
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2499,31 +2625,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1982: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2114: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1982 \begin{table}[ht]
+l.2114 \begin{table}[ht]
                         
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1997: LaTeX Error: Not in outer par mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2129: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1997 \begin{figure}[ht]
+l.2129 \begin{figure}[ht]
                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1997: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2129: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1997 \begin{figure}[ht]
+l.2129 \begin{figure}[ht]
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2531,17 +2657,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:1997: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2129: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1997 \begin{figure}[ht]
+l.2129 \begin{figure}[ht]
                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (25.6764pt too wide) in paragraph at lines 2032--2033
+Overfull \hbox (25.6764pt too wide) in paragraph at lines 2164--2165
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2549,190 +2675,343 @@ Overfull \hbox (25.6764pt too wide) in paragraph at lines 2032--2033
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2089 ...nd Elasticity ($\eta$)}{sensitivity-eta}
+l.2221 ...nd Elasticity ($\eta$)}{sensitivity-eta}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2117 ...tment responsiveness}{asymmetry-dampens}
+l.2249 ...tment responsiveness}{asymmetry-dampens}
                                                   
 
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 2118.
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 2250.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2129 ...ncratic volatility}{var-monotone-sigmaz}
+l.2265 ...ncratic volatility}{var-monotone-sigmaz}
                                                   
 
-LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 2151.
+LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 2291.
 
 
-LaTeX Warning: Reference `sec:me-externality' on page 25 undefined on input line 2151.
+LaTeX Warning: Reference `sec:me-externality' on page 26 undefined on input line 2291.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2183 ...in Rule for FP Flows}{chain_rule_fp_app}
+l.2323 ...in Rule for FP Flows}{chain_rule_fp_app}
                                                   
-Overfull \hbox (21.45032pt too wide) detected at line 2189
+Overfull \hbox (21.45032pt too wide) detected at line 2329
 []\OML/lmm/m/it/10.95 F\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 m[]\OT1/lmr/m/n/10.95 ) = [][] []\OMS/lmsy/m/n/10.95 hr[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 D[]mF\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 m[]\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )\OML/lmm/m/it/10.95 ;  b\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )\OMS/lmsy/m/n/10.95 i \OT1/lmr/m/n/10.95 + [] [][]\OML/lmm/m/it/10.95 ^^[^^[[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 r[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 D[]mF\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 m[]\OT1/lmr/m/n/10.95 )(\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )[][] \OML/lmm/m/it/10.95 m[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 d\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )\OML/lmm/m/it/10.95 :
  []
 
 
-LaTeX Warning: Reference `eq:HJB' on page 25 undefined on input line 2194.
+LaTeX Warning: Reference `eq:HJB' on page 26 undefined on input line 2334.
 
 
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 2196.
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 2336.
 
 
-LaTeX Warning: Reference `eq:FP' on page 25 undefined on input line 2207.
+LaTeX Warning: Reference `eq:FP' on page 26 undefined on input line 2347.
 
 
-LaTeX Warning: Reference `eq:FP' on page 25 undefined on input line 2211.
+LaTeX Warning: Reference `eq:FP' on page 26 undefined on input line 2351.
 
 
-LaTeX Warning: Reference `lem:chain_rule_fp_app' on page 1 undefined on input line 2216.
+LaTeX Warning: Reference `lem:chain_rule_fp_app' on page 1 undefined on input line 2356.
 
 
-Overfull \hbox (42.54788pt too wide) detected at line 2221
+Overfull \hbox (42.54788pt too wide) detected at line 2361
 []
  []
 
 
-LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 2222.
+LaTeX Warning: Reference `thm:ME' on page 1 undefined on input line 2362.
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2235 ...long mixture paths (sketch)}{func-chain}
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2384: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.2384 ...j q_j w1_j and Y2 = ∑_j q_j w2_j. Then
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
-LaTeX Warning: Reference `sec:me-externality' on page 25 undefined on input line 2242.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2384: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2384 ...j q_j w1_j and Y2 = ∑_j q_j w2_j. Then
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
-LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 2246.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2385: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2385 ...)-P(Y2)) (Y1 - Y2) ≤ 0 for antitone P.
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
-Overfull \hbox (53.86978pt too wide) detected at line 2263
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2390: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2390 ...�� j, q j * w2 j)) * q i * (w1 i - w2 i)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2390: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2390 ...�� j, q j * w2 j)) * q i * (w1 i - w2 i)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2390: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2390 ...�� j, q j * w2 j)) * q i * (w1 i - w2 i)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2393: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2393   set Y1 : ℝ := ∑ j, q j * w1 j
+                                          
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2394: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2394   set Y2 : ℝ := ∑ j, q j * w2 j
+                                          
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2395: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2395 ...i, (P Y1 - P Y2) * (q i * (w1 i - w2 i))
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2396: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2396 ...) * (∑ i, (q i * (w1 i - w2 i))) := by
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2398: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2398 ... i, q i * (w1 i - w2 i)) = Y1 - Y2 := by
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2400: LaTeX Error: Unicode character ∑ (U+2211)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2400 ...� i, (P Y1 - P Y2) * q i * (w1 i - w2 i)
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+LaTeX Warning: Reference `sec:diff-p2' on page 1 undefined on input line 2410.
+
+
+Overfull \hbox (53.86978pt too wide) detected at line 2427
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2268--2269
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2433
 []\T1/lmr/bx/n/10.95 (+20) KKT Penalty \T1/lmr/m/n/10.95 (+20) (if ap-pli-ca-ble, e.g., for $\OML/lmm/m/it/10.95 i \OMS/lmsy/m/n/10.95 ^^U ^^@[]\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 k\OT1/lmr/m/n/10.95 (+20) )$\T1/lmr/m/n/10.95 (+20) ): $\OMS/lmsy/m/n/10.95 P[] \OT1/lmr/m/n/10.95 (+20) =
  []
 
 
-LaTeX Warning: Reference `sec:boundary-regularity' on page 1 undefined on input line 2269.
+LaTeX Warning: Reference `sec:boundary-regularity' on page 1 undefined on input line 2433.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2295 ... (toy discrete check)}{cn-diag-discrete}
+l.2459 ... (toy discrete check)}{cn-diag-discrete}
                                                   
 
-LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 2330.
+LaTeX Warning: Reference `lem:H-mono' on page 1 undefined on input line 2494.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2336.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2500.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2365.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2529.
 
-Underfull \hbox (badness 2573) in paragraph at lines 2433--2433
+Underfull \hbox (badness 2573) in paragraph at lines 2597--2597
 []\T1/lmr/bx/n/14.4 (+20) Appendix E: Sym-bolic Ver-i-fi-ca-tion (Python-TeX +
  []
 
 
-LaTeX Warning: Reference `app:verification' on page 1 undefined on input line 2545.
+LaTeX Warning: Reference `app:verification' on page 1 undefined on input line 2709.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2572 ...inuous-time Epstein--Zin Aggregator}{ez}
+l.2736 ...inuous-time Epstein--Zin Aggregator}{ez}
                                                   
 
-LaTeX Warning: Reference `sec:notation' on page 1 undefined on input line 2573.
+LaTeX Warning: Reference `sec:notation' on page 1 undefined on input line 2737.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2584 \begin{equation}
+l.2748 \begin{equation}
                        \label{eq:ez-agg}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2584 \begin{equation}
+l.2748 \begin{equation}
                        \label{eq:ez-agg}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2584 \begin{equation}
+l.2748 \begin{equation}
                        \label{eq:ez-agg}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2584 \begin{equation}
+l.2748 \begin{equation}
                        \label{eq:ez-agg}
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2601 ...ricing kernel exposure under EZ}{sdf-ez}
+l.2765 ...ricing kernel exposure under EZ}{sdf-ez}
                                                   
 
-LaTeX Warning: Reference `def:ez' on page 1 undefined on input line 2604.
+LaTeX Warning: Reference `def:ez' on page 1 undefined on input line 2768.
 
 
-LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 2630.
+LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 2794.
 
 
-LaTeX Warning: Reference `eq:HJB-EZ' on page 1 undefined on input line 2663.
+LaTeX Warning: Reference `eq:HJB-EZ' on page 1 undefined on input line 2827.
 
 
-LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 2672.
+LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 2836.
 
 
-Overfull \hbox (45.04793pt too wide) in paragraph at lines 2674--2674
+Overfull \hbox (45.04793pt too wide) in paragraph at lines 2838--2838
 []\T1/lmtt/m/n/10.95 bsde_dsgE/models/epstein_zin.py: EZParams, ez_generator, sdf_exposure_from_ez 
  []
 
 
-Overfull \hbox (27.80173pt too wide) in paragraph at lines 2675--2675
+Overfull \hbox (27.80173pt too wide) in paragraph at lines 2839--2839
 []\T1/lmtt/m/n/10.95 bsde_dsgE/models/multicountry.py: preference="EZ" to enable the aggregator[] 
  []
 
 
-Overfull \hbox (56.5454pt too wide) in paragraph at lines 2682--2682
+Overfull \hbox (56.5454pt too wide) in paragraph at lines 2846--2846
 []\T1/lmtt/m/n/10.95 params = EZParams(rho=0.02, gamma=10.0, psi=1.5)  # Use rho for time preference[] 
  []
 
 
-Overfull \hbox (4.8068pt too wide) in paragraph at lines 2683--2683
+Overfull \hbox (4.8068pt too wide) in paragraph at lines 2847--2847
 []\T1/lmtt/m/n/10.95 problem = multicountry_model(dim=5, preference="EZ", ez_params=params)[] 
  []
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2717: LaTeX Error: Not in outer par mode.
+LaTeX Warning: Reference `eq:ez-agg' on page 1 undefined on input line 2855.
+
+
+LaTeX Warning: Reference `app:lean' on page 1 undefined on input line 2860.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2891: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2717 \begin{table}[h]
+l.2891 \begin{table}[h]
                        
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2717: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2891: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.2717 \begin{table}[h]
+l.2891 \begin{table}[h]
                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2740,31 +3019,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2717: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2891: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.2717 \begin{table}[h]
+l.2891 \begin{table}[h]
                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2805: LaTeX Error: Not in outer par mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2979: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2805 \begin{table}[h]
+l.2979 \begin{table}[h]
                        
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2805: Undefined control sequence.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2979: Undefined control sequence.
 \@float@Hx ...ltovf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.2805 \begin{table}[h]
+l.2979 \begin{table}[h]
                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2772,36 +3051,36 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2805: Missing number, treated as zero.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2979: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.2805 \begin{table}[h]
+l.2979 \begin{table}[h]
                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2821--2821
+Underfull \hbox (badness 10000) in paragraph at lines 2995--2995
 []|\T1/lmr/m/n/10 (+20) Added de-tailed pseu-docode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2821--2821
+Underfull \hbox (badness 10000) in paragraph at lines 2995--2995
 []|\T1/lmr/m/n/10 (+20) Improved ci-ta-tions (Duffie^^UEpstein,
  []
 
 
-LaTeX Warning: Reference `def:ez' on page 25 undefined on input line 2883.
+LaTeX Warning: Reference `def:ez' on page 26 undefined on input line 3057.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2885: LaTeX Error: \begin{itemize} on input line 1402 ended by \end{document}.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:3059: LaTeX Error: \begin{itemize} on input line 1534 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2885 \end{document}
+l.3059 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2827,10 +3106,10 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'BSDE_11.run.xml'.
 \openout1 = `BSDE_11.run.xml'.
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2885: You can't use `\end' in internal vertical mode.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:3059: You can't use `\end' in internal vertical mode.
 \enddocument ...cument/end}\deadcycles \z@ \@@end 
                                                   
-l.2885 \end{document}
+l.3059 \end{document}
                      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -2838,13 +3117,13 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:2885: LaTeX Error: \begin{itemize} on input line 1402 ended by \end{document}.
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_11.tex:3059: LaTeX Error: \begin{itemize} on input line 1534 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2885 \end{document}
+l.3059 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2858,11 +3137,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 59336 strings out of 468134
- 1394964 string characters out of 5430256
- 3138161 words of memory out of 5000000
- 86577 multiletter control sequences out of 15000+600000
- 787000 words of font info for 375 fonts, out of 8000000 for 9000
+ 59748 strings out of 468134
+ 1405729 string characters out of 5430256
+ 3153001 words of memory out of 5000000
+ 86992 multiletter control sequences out of 15000+600000
+ 787130 words of font info for 379 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,21n,121p,1261b,2684s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
