@@ -7,6 +7,17 @@ $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 -shell-escape %O %S';
 $out_dir = '.out';
 $aux_dir = '.out';
 
+# Ensure BibTeX can find .bib files in the source tree even when running
+# inside $aux_dir/.out. (kpathsea uses ':' as the path separator on *nix.)
+$ENV{BIBINPUTS} = exists $ENV{BIBINPUTS}
+  ? "$ENV{BIBINPUTS}:..:."
+  : "..:.";
+
+# Prefer biber for biblatex; configure search path for .bib when running in .out
+$biber = 'biber --input-directory=.. %O %B';
+# Disable BibTeX auto-use; we rely on biber via biblatex
+$bibtex_use = 0;
+
 # PythonTeX integration: run pythontex automatically whenever .pytxcode changes
 add_cus_dep('pytxcode','pytxmcr',0,'pythontex');
 use File::Basename;
@@ -30,6 +41,16 @@ sub pythontex {
     close($fh);
   }
   return $res;
+}
+
+# Ensure biber runs when biblatex writes a .bcf (with out_dir)
+add_cus_dep('bcf','bbl',0,'run_biber');
+sub run_biber {
+  my ($src) = @_;
+  my $fname = basename($src);        # e.g., BSDE_11.bcf
+  my $job   = $fname; $job =~ s/\.bcf$//;   # BSDE_11
+  my $cmd = "bash -lc 'cd .out && biber --input-directory=.. \"$job\"'";
+  return system($cmd);
 }
 
 # Clean up PythonTeX artifacts on latexmk -c
