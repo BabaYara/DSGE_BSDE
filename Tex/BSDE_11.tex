@@ -50,8 +50,13 @@
   \DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}    % f
   \DeclareUnicodeCharacter{03BD}{\ensuremath{\nu}}        % ?
   \DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}        % μ
+  \DeclareUnicodeCharacter{03B4}{\ensuremath{\delta}}     % δ (delta)
+  \DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}     % Δ (Delta)
+  \DeclareUnicodeCharacter{03A3}{\ensuremath{\Sigma}}     % Σ (Sigma)
+  \DeclareUnicodeCharacter{03C7}{\ensuremath{\chi}}       % χ (chi)
   \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ˜
   \DeclareUnicodeCharacter{2212}{\ensuremath{-}}         % − (minus sign)
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\ne}}       % ≠ (not equal)
   \DeclareUnicodeCharacter{208A}{\ensuremath{_+}}        % ₊ (subscript plus)
   \DeclareUnicodeCharacter{208B}{\ensuremath{_-}}        % ₋ (subscript minus)
   \DeclareUnicodeCharacter{2211}{\ensuremath{\sum}}      % ∑ (summation)
@@ -76,6 +81,35 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{tabularx}
+% ----------------------------------------------------------------------------
+% Table column macros — intent & usage
+% - L{w}: ragged-right text column with fixed width w (e.g., 0.28\linewidth)
+% - C{w}: centered column with fixed width w (good for short numeric entries)
+% - Y:    ragged-right, elastic X-like column (expands to fill remaining width)
+% Specs below include edge @{} to trim outer padding and reduce overfull risk.
+%
+% Typical patterns (pick to match your table):
+%   \begin{tabularx}{\linewidth}{\TableLLX{0.28\linewidth}{0.18\linewidth}}
+%   \begin{tabularx}{\linewidth}{\TableLCX{0.22\linewidth}{0.20\linewidth}}
+%   \begin{tabularx}{\linewidth}{\TableLCCX{0.30\linewidth}{0.14\linewidth}{0.10\linewidth}}
+% Guidance:
+% - Prefer \linewidth inside boxes (tcolorbox); use \textwidth for floats.
+% - Choose L widths so L+L (or L+C+...) < 1; Y will absorb slack.
+% - Keep text columns ragged to avoid justification-induced overfull boxes.
+% - Wrap the tabularx with \TableTightBegin ... \TableTightEnd to slightly
+%   reduce col sep and increase row spacing uniformly.
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\TableLX}[1]{@{} L{#1} Y @{}}
+\newcommand{\TableLLX}[2]{@{} L{#1} L{#2} Y @{}}
+\newcommand{\TableLCX}[2]{@{} L{#1} C{#2} Y @{}}
+\newcommand{\TableLCCX}[3]{@{} L{#1} C{#2} C{#3} Y @{}}
+% Tightening helpers: apply around tabularx to standardize spacing
+\newcommand{\TableTighten}{\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.08}}
+\newcommand{\TableTightBegin}{\begingroup\TableTighten}
+\newcommand{\TableTightEnd}{\endgroup}
+% ----------------------------------------------------------------------------
 \usepackage{siunitx}
 
 % Colors (load explicitly to ensure \definecolor is available on all setups)
@@ -417,8 +451,8 @@ and therefore
 \centering
 \small
 % Make non-X columns wrap and avoid justification to prevent overfulls
-\begingroup\setlength{\tabcolsep}{5pt}% tighter cols
-\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{0.28\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}X @{} }
+\TableTightBegin
+\begin{tabularx}{\linewidth}{\TableLLX{0.28\linewidth}{0.18\linewidth}}
 \toprule
 \textbf{Symbol} & \textbf{Type} & \textbf{Meaning} \\
 \midrule
@@ -471,7 +505,7 @@ $r_t$ & process & Real short rate implied by $M_t$ \\
 $\Lambda_t$ & process & Market price of risk (Brownian exposure of $M_t$) \\
 \bottomrule
 \end{tabularx}
-\endgroup
+\TableTightEnd
 \caption{Notation used throughout.}
 \end{table}
 
@@ -1225,10 +1259,12 @@ Envelope check: numerically, \(dH/dp \approx i_{\mathrm{star}}(V_k,k,\phi_+,\phi
 
 \begin{tcolorbox}[didacticstyle]
 \sloppy\footnotesize
-\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{0.42\linewidth} >{\raggedright\arraybackslash}X @{} }
+\TableTightBegin
+\begin{tabularx}{\linewidth}{\TableLX{0.42\linewidth}}
 \textbf{Intuition} & The firm compares marginal $V_k$ to the frictionless unit price of investment. If $V_k>1$, invest, with slope controlled by $\phi_+$; if $V_k<1$, disinvest, with slope dampened by $\phi_-$ (costlier). The kink at $V_k=1$ generates inaction bands.\\
 \textbf{Mathematics} & The Hamiltonian is a convex conjugate of $h$ (after shifting by $p-1$). KKT conditions produce a piecewise-affine policy with a change in slope at $p=1$. Global well-posedness follows from coercivity of $h$ in $i$ and measurability in $k$.
 \end{tabularx}
+\TableTightEnd
 \end{tcolorbox}
 
 % Extra intuition and rigor for HJB/policy mapping
@@ -2988,7 +3024,8 @@ If $\gamma = 1/\psi$ (standard time-separable CRRA utility), the parameter $\var
 \centering
 \small
 % Flexible columns to avoid overfull; wrap long headers
-\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\centering\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}X @{} }
+\TableTightBegin
+\begin{tabularx}{\linewidth}{\TableLCX{0.22\linewidth}{0.20\linewidth}}
 \toprule
 \textbf{Subsection} & \textbf{Initial Score (Avg)} & \textbf{Key Failure Modes Identified (Consolidated)} \\
 \midrule
@@ -3003,6 +3040,7 @@ Preamble/Global & 6.5 & Build configuration needed robustness; theorem environme
 App G (EZ SDF) & N/A & Endogenous SDF mentioned but not detailed, derived, or verified. \\
 \bottomrule
 \end{tabularx}
+\TableTightEnd
 \caption{Diagnosis (consolidated over five iterations).}
 \end{table}
 
@@ -3077,7 +3115,8 @@ lake build
 \centering
 \small
 % Let the first column wrap; keep numeric cols centered with fixed width
-\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{0.30\linewidth} >{\centering\arraybackslash}p{0.14\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} >{\raggedright\arraybackslash}X @{} }
+\TableTightBegin
+\begin{tabularx}{\linewidth}{\TableLCCX{0.30\linewidth}{0.14\linewidth}{0.10\linewidth}}
 \toprule
 \textbf{Criterion} & \textbf{Before (Est.)} & \textbf{After} & \textbf{Justification (Consolidated)} \\
 \midrule
@@ -3091,6 +3130,7 @@ Notation Hygiene & 7.0 & 9.0 & Implemented structured theorem environments; expa
 Verification Coverage & 2.0 & 9.5 & Extensive SymPy checks and Lean4 proofs covering core lemmas and derivations. \\
 \bottomrule
 \end{tabularx}
+\TableTightEnd
 \caption{Evaluation summary.}
 \end{table}
 

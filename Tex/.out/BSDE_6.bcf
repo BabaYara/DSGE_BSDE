@@ -172,7 +172,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nyt</bcf:value>
+      <bcf:value>ynt</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -2371,31 +2371,53 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">BSDE_6.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">carmona_delarue_2018_mfg</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">carmona_delarue_2018_mfg</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">carmona_delarue_2018_mfg</bcf:citekey>
-    <bcf:citekey order="3" intorder="2">cardaliaguet_delarue_lasry_lions_2019</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">cardaliaguet_delarue_lasry_lions_2019</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">carmona_delarue_2018_mfg</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">cardaliaguet_delarue_lasry_lions_2019</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">carmona_delarue_2018_mfg</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">cardaliaguet_delarue_lasry_lions_2019</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">mou_zhang_cn_master</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">cardaliaguet_delarue_lasry_lions_2019</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">duffie_epstein_1992</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">Sauzet2023</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">duffie_epstein_1992</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">duffie_epstein_1992</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">Sauzet2023</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">PardouxPeng1990</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">PardouxPeng1992</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">Gobet2005</bcf:citekey>
+    <bcf:citekey order="3" intorder="2">BenderSteiner2012</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">EHanJentzen2017</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">ParkTu2025</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Dumas1989</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">KaratzasShreve1991</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">PardouxPeng1990</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">MaYong1999</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Nualart2006</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Gobet2005</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">ParkTu2025</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Giles2008</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">EHanJentzen2017</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">DomelevoWarin2023</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Beck2019</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">Goudenegge2020</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Hure2020</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">BenderSteiner2012</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">EHanJentzen2017</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Duffie2001</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">ChanKogan2002</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Dumas1989</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">Tevzadze2008</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">CheriditoNam2017</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">HuTang2016</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">Kobylanski2000</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">MaYinZhang2008</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">KaratzasShreve1991</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">FigueroaNisen2018</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">ParkTu2025</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">Tancik2020</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">GuDao2024_Mamba</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">ForetEtAl2021</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">ContFournie2013</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">BarlesBuckdahnPardoux1997</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">Bachouch2022</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">Carmona2016</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">MAGNet2019</bcf:citekey>
+    <bcf:citekey order="39" intorder="2">GMADDPG2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nyt">
+  <bcf:sortingtemplate name="ynt">
     <bcf:sort order="1">
       <bcf:sortitem order="1">presort</bcf:sortitem>
     </bcf:sort>
@@ -2403,6 +2425,11 @@
       <bcf:sortitem order="1">sortkey</bcf:sortitem>
     </bcf:sort>
     <bcf:sort order="3">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+      <bcf:sortitem literal="1" order="3">9999</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
       <bcf:sortitem order="1">sortname</bcf:sortitem>
       <bcf:sortitem order="2">author</bcf:sortitem>
       <bcf:sortitem order="3">editor</bcf:sortitem>
@@ -2410,24 +2437,16 @@
       <bcf:sortitem order="5">sorttitle</bcf:sortitem>
       <bcf:sortitem order="6">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
     <bcf:sort order="5">
       <bcf:sortitem order="1">sorttitle</bcf:sortitem>
       <bcf:sortitem order="2">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
-    </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nyt/global//global/global/global"
+                name="ynt/global//global/global/global"
                 type="entry"
-                sortingtemplatename="nyt"
+                sortingtemplatename="ynt"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

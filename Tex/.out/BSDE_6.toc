@@ -1,0 +1,85 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}%
+\contentsline {part}{I\hspace {1em}Core Theory of Forward-Backward SDEs}{7}{part.1}%
+\contentsline {section}{\numberline {2}Canonical Form and Standing Notation}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Existence and Uniqueness for Decoupled Systems}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Fully Coupled Systems: The Monotone Case}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Malliavin Differentiability and the Clark-Ocone Formula}{12}{subsection.2.3}%
+\contentsline {part}{II\hspace {1em}Numerical Algorithms for FBSDEs}{13}{part.2}%
+\contentsline {section}{\numberline {3}Discretization Preliminaries}{13}{section.3}%
+\contentsline {section}{\numberline {4}Classical Time-Stepping Schemes}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Euler-Maruyama Scheme and the LSMC Method}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Higher-Order Schemes and Bias Reduction}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Deep Learning Solvers}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Vanilla Deep BSDE Algorithm}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Malliavin-AD Tower for Stability and Accuracy}{16}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Motivation and Roadmap}{16}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Level-1 Malliavin BSDE}{16}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Alternative Deep Learning Architectures}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}A-Posteriori Error Bounds}{17}{subsection.5.4}%
+\contentsline {part}{III\hspace {1em}A Suite of Benchmark Problems}{19}{part.3}%
+\contentsline {section}{\numberline {6}The Allen-Cahn Equation}{19}{section.6}%
+\contentsline {section}{\numberline {7}The Hamilton-Jacobi-Bellman Equation}{20}{section.7}%
+\contentsline {section}{\numberline {8}Black-Scholes Equation with Nonlinearities}{20}{section.8}%
+\contentsline {part}{IV\hspace {1em}Application: A Heterogeneous-Agent General Equilibrium Model}{22}{part.4}%
+\contentsline {section}{\numberline {9}The Economic Environment and Equilibrium Derivation}{22}{section.9}%
+\contentsline {section}{\numberline {10}The Fully Coupled FBSDE Formulation}{23}{section.10}%
+\contentsline {section}{\numberline {11}Numerical Strategy and Distill-Grade Formulation}{24}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Foundations: Scope, Assumptions, and Economic Core}{24}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Economic Core: SDF, Prices, and Aggregation}{25}{subsubsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.2}Well-posedness: A Diagonally Quadratic BSDE System}{26}{subsection.11.2}%
+\contentsline {paragraph}{The Structure of the Driver.}{26}{paragraph*.2}%
+\contentsline {subsection}{\numberline {11.3}Infinite Horizon and Boundary Analysis}{27}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Infinite Horizon Done Right: The Discounted BSDE}{27}{subsubsection.11.3.1}%
+\contentsline {paragraph}{Pragmatic Truncation Recipe.}{28}{paragraph*.3}%
+\contentsline {subsubsection}{\numberline {11.3.2}Boundary Analysis and Feller Classification}{28}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Stabilizing Variable Transformations}{28}{subsubsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.4}The Definitive Computational Blueprint for the GE QBSDE System (2025)}{29}{subsection.11.4}%
+\contentsline {paragraph}{Pillar 1: Analytical Stabilization via the Cole-Hopf Transformation.}{29}{paragraph*.4}%
+\contentsline {paragraph}{Pillar 2: Bias Control and the Physics of Integration.}{29}{paragraph*.5}%
+\contentsline {subparagraph}{2.1. The Physics of Self-Consistency Bias.}{29}{subparagraph*.6}%
+\contentsline {subparagraph}{2.2. The Itô--Heun (Trapezoidal) Mandate.}{29}{subparagraph*.8}%
+\contentsline {paragraph}{Pillar 3: Computational Efficiency: QMC and the Geometry of AD.}{29}{paragraph*.9}%
+\contentsline {subparagraph}{3.1. Data Efficiency: Randomized Quasi-Monte Carlo (rQMC).}{30}{subparagraph*.10}%
+\contentsline {subparagraph}{3.2. The Geometry and Efficiency of AD.}{30}{subparagraph*.12}%
+\contentsline {paragraph}{Pillar 4: The Modern Architecture Stack: Smoothness and Sequences.}{30}{paragraph*.14}%
+\contentsline {subparagraph}{4.1. The Smoothness Mandate.}{30}{subparagraph*.15}%
+\contentsline {subparagraph}{4.2. The Shift to Sequence Models (Mamba).}{31}{subparagraph*.16}%
+\contentsline {paragraph}{Pillar 5: Robust Solver Strategy and Optimization.}{31}{paragraph*.19}%
+\contentsline {subparagraph}{5.1. Handling Coupling: Iterative Decoupling (Picard Iteration).}{31}{subparagraph*.20}%
+\contentsline {subparagraph}{5.2. Robust Optimization and Generalization.}{31}{subparagraph*.21}%
+\contentsline {paragraph}{Pillar 6: Certification, Verification, and UQ.}{32}{paragraph*.22}%
+\contentsline {subparagraph}{6.1. Implementation Verification: Method of Manufactured Solutions (MMS).}{32}{subparagraph*.23}%
+\contentsline {subparagraph}{6.2. Solution Certification: A-Posteriori Error Bounds.}{32}{subparagraph*.24}%
+\contentsline {subparagraph}{6.3. Uncertainty Quantification (UQ): Deep Ensembles.}{33}{subparagraph*.25}%
+\contentsline {paragraph}{Pillar 7: The Unified Pipeline}{33}{paragraph*.27}%
+\contentsline {part}{V\hspace {1em}Extensions and Outlook}{36}{part.5}%
+\contentsline {section}{\numberline {12}Delay and Path-Dependent FBSDEs}{36}{section.12}%
+\contentsline {paragraph}{Motivation.}{36}{paragraph*.28}%
+\contentsline {paragraph}{Theory and Numerics.}{36}{paragraph*.29}%
+\contentsline {section}{\numberline {13}Jumps and Lévy Processes}{36}{section.13}%
+\contentsline {paragraph}{Motivation.}{36}{paragraph*.30}%
+\contentsline {paragraph}{Theory and Numerics.}{36}{paragraph*.31}%
+\contentsline {section}{\numberline {14}Mean-Field Games and FBSDEs}{37}{section.14}%
+\contentsline {paragraph}{Motivation.}{37}{paragraph*.32}%
+\contentsline {paragraph}{Theory and Numerics.}{37}{paragraph*.33}%
+\contentsline {section}{\numberline {15}Grand Challenges for 2030}{37}{section.15}%
+\contentsline {section}{Epilogue}{38}{Item.36}%
+\contentsline {part}{Appendices}{38}{part*.34}%
+\contentsline {part}{Appendices}{38}{part*.34}%
+\contentsline {section}{\numberline {A}Proofs and Derivations}{39}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Proof Sketch for the Ma-Yong Theorem \ref {thm:YongMa}}{39}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Derivations for the Two-Agent GE Model}{39}{subsection.A.2}%
+\contentsline {paragraph}{A. Derivation of the Wealth Share SDE (Eq. \ref {eq:wealth_share_SDE_new_main}).}{39}{paragraph*.35}%
+\contentsline {paragraph}{B. Derivation of the Transformed SDE for \(\mathcal {X}_t\).}{40}{paragraph*.36}%
+\contentsline {section}{\numberline {B}Benchmark Problem Specifications}{40}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}B.1: Allen-Cahn Equation}{40}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}B.2: HJB Equation (LQ Control)}{40}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}B.3: Nonlinear Black-Scholes}{41}{subsection.B.3}%
+\contentsline {section}{\numberline {C}Computational Appendix: The Two-Agent GE Model Implementation}{41}{appendix.C}%
+\contentsline {section}{Appendix C: GE Model Implementation}{41}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}C.1: Preamble and Reproducibility Audit}{41}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}C.2: Defining the Transformed Economic Model}{42}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}C.3: Neural Network Architecture (Equinox)}{44}{subsection.C.3}%
+\contentsline {subsection}{\numberline {C.4}C.4: The Simulation Loop and Loss Function}{45}{subsection.C.4}%
+\contentsline {subsection}{\numberline {C.5}C.5: Training Setup and Acceptance Tests}{46}{subsection.C.5}%

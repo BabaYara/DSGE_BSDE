@@ -44,15 +44,16 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>BSDE_11.bcf</file>
+      <file>BSDE_6.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>BSDE_11.bbl</file>
+      <file>BSDE_6.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
+      <file>blx-natbib.def</file>
       <file>standard.bbx</file>
       <file>authoryear.bbx</file>
       <file>authoryear.cbx</file>
@@ -64,22 +65,22 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>BSDE_11</infile>
+      <infile>BSDE_6</infile>
     </cmdline>
     <input>
-      <file>BSDE_11.bcf</file>
+      <file>BSDE_6.bcf</file>
     </input>
     <output>
-      <file>BSDE_11.bbl</file>
+      <file>BSDE_6.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>BSDE_11.bbl</file>
+      <file>BSDE_6.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>BSDE_11.bcf</file>
+      <file>BSDE_6.bcf</file>
     </requires>
     <requires type="editable">
-      <file>references.bib</file>
+      <file>BSDE_6.bib</file>
     </requires>
   </external>
 </requests>

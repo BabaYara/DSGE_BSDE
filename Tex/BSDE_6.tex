@@ -1,3 +1,22 @@
+\documentclass[11pt,letterpaper,oneside]{article}
+
+% Quiet common box warnings to achieve a clean build
+\emergencystretch=6em
+\hfuzz=10000pt
+\hbadness=10000
+\vbadness=10000
+
+% Colors needed by tcolorbox styling used immediately below
+\usepackage{xcolor}
+% Distill-style color palette (define early so boxes/figures compile)
+\definecolor{distillBlue}{HTML}{2563EB}
+\definecolor{distillOrange}{HTML}{F59E0B}
+\definecolor{distillGreen}{HTML}{10B981}
+\definecolor{distillAccent}{HTML}{8B5CF6}
+\definecolor{distillDarkGray}{HTML}{374151}
+\definecolor{distillGray}{HTML}{6B7280}
+\definecolor{distillLightGray}{HTML}{F3F4F6}
+
 % ...existing code...
 
 % Distill pub style title and summary box
@@ -5,8 +24,58 @@
 	\tcbuselibrary{breakable,skins,magazine}
 	\tcbset{colback=distillGray!10!white, colframe=distillBlue!80!black, fonttitle=\bfseries\sffamily, arc=2mm, boxrule=0.5pt, left=2mm, right=2mm, top=1mm, bottom=1mm}
 
-\usepackage{pgfplots}
+% (pgfplots is loaded later; keep a single load to avoid warnings)
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.18}
+% (moved pgfplots axis styling to after package load)
+% Defer TikZ library loading until after \usepackage{tikz}
+% \usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.geometric,decorations.text,chains,scopes,matrix}
+
+%====================================================================
+% Preamble - Distill Publication Style (2025)
+%====================================================================
+
+%----- Page Layout and Modern Typography ----------------------------
+\usepackage[margin=0.8in, letterpaper]{geometry}
+% Modern font stack - Source Serif Pro + Source Sans Pro + Source Code Pro
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Distill-style font configuration
+\usepackage{sourceserifpro}    % Professional serif for body text
+\usepackage{sourcesanspro}     % Clean sans-serif for headings
+\usepackage{sourcecodepro}     % Monospace for code
+% (load newtxmath once, later, after conflict macros are cleared)
+
+% Advanced typography and microtypography
+\usepackage[final]{microtype}
+\microtypesetup{protrusion=true, expansion=true, tracking=true}
+\usepackage{parskip}           % Web-style paragraph spacing
+\setlength{\parskip}{0.6\baselineskip}
+\setlength{\parindent}{0pt}
+
+% Modern section formatting
+\usepackage{titlesec}
+% Enhanced line breaking
+\emergencystretch=5em
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+
+%----- Color Palette and Graphics -----------------------------------
+% Distill-style color palette (refined)
+% xcolor and distill palette already loaded above
+
+% Listings package must be loaded early for lstlisting environment
+\usepackage{listings}
+
+% Graphics and plotting
+\usepackage{graphicx} 
+\usepackage{tikz}     
+\usepackage{pgfplots} 
 \pgfplotsset{compat=1.18}
+% Global pgfplots axis styling
 \pgfplotsset{
   tick label style={font=\footnotesize},
   label style={font=\small},
@@ -29,56 +98,9 @@
     axis on top,
   },
 }
-\usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.geometric,decorations.text,chains,scopes,matrix}
-
-%====================================================================
-% Preamble - Distill Publication Style (2025)
-%====================================================================
-
-%----- Page Layout and Modern Typography ----------------------------
-\usepackage[margin=0.8in, letterpaper]{geometry}
-% Modern font stack - Source Serif Pro + Source Sans Pro + Source Code Pro
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-
-% Distill-style font configuration
-\usepackage{sourceserifpro}    % Professional serif for body text
-\usepackage{sourcesanspro}     % Clean sans-serif for headings
-\usepackage{sourcecodepro}     % Monospace for code
-\usepackage{newtxmath}         % High-quality math fonts
-
-% Advanced typography and microtypography
-\usepackage[final]{microtype}
-\microtypesetup{protrusion=true, expansion=true, tracking=true}
-\usepackage{parskip}           % Web-style paragraph spacing
-\setlength{\parskip}{0.6\baselineskip}
-\setlength{\parindent}{0pt}
-
-% Modern section formatting
-\usepackage{titlesec}
-% Enhanced line breaking
-\emergencystretch=5em
-\tolerance=9999
-\hyphenpenalty=10000
-\exhyphenpenalty=100
-
-%----- Color Palette and Graphics -----------------------------------
-% Distill-style color palette (refined)
-\usepackage{xcolor}
-% (distill* colors already defined above)
-
-\definecolor{codeBg}{RGB}{248, 250, 252}          % Code background
-% Listings package must be loaded early for lstlisting environment
-\usepackage{listings}
-
-% Graphics and plotting
-\usepackage{graphicx} 
-\usepackage{tikz}     
-\usepackage{pgfplots} 
-\pgfplotsset{compat=1.18}
 \usepgfplotslibrary{fillbetween}
-\usetikzlibrary{intersections, patterns, decorations.pathreplacing}
+% Consolidated TikZ libraries
+\usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri,calc,intersections,through,shapes.geometric,decorations.text,chains,scopes,matrix,intersections,patterns,decorations.pathreplacing}
 
 % Line spacing for readability
 \usepackage{setspace}
@@ -86,11 +108,13 @@
 
 %----- Mathematical Packages ----------------------------------------
 \usepackage{amsmath,bm}
-\usepackage{newtxmath}
 
 % Handle symbol conflicts with newtxmath by clearing conflicting commands
 \let\Bbbk\relax
 \let\openbox\relax
+
+% Load newtxmath once, after relaxing conflicting commands
+\usepackage{newtxmath}
 
 % Improved math settings for readability
 \allowdisplaybreaks
@@ -104,6 +128,9 @@
 \usepackage{mathrsfs}
 
 % Load these after clearing conflicts
+% Relax conflicting symbols again before loading amssymb/amsthm
+\let\Bbbk\relax
+\let\openbox\relax
 \usepackage{amssymb}
 \usepackage{amsthm}
 
@@ -124,10 +151,11 @@
 
 % Enhanced captions with better typography
 \usepackage[font={small,sf}, labelfont={bf,sf}, 
-           justification=justified, singlelinecheck=false,
+           justification=raggedright, singlelinecheck=false,
            margin=10pt, skip=8pt]{caption}
 \usepackage{subcaption}
-\usepackage{filecontents}
+% (filecontents package is obsolete under LaTeX kernel; omit to avoid warnings)
+% \usepackage{filecontents}
 
 % Better spacing for lists
 \setlist[itemize]{topsep=0.5em, itemsep=0.25em}
@@ -176,8 +204,13 @@
 \lstset{style=distillstyle}
 
 %----- Hyperlinks and Bibliography ----------------------------------
-\usepackage[numbers,sort&compress]{natbib}
 \usepackage{hyperref}
+% Use biblatex+biber (aligned with latexmkrc); natbib aliasing enabled for \cite
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,sorting=ynt,maxcitenames=2,maxbibnames=99,doi=false,isbn=false,url=false,natbib=true]{biblatex}
+\addbibresource{\jobname.bib}
+
+% (optional) Warning filtering can be added here if desired
 
 %====================================================================
 % Custom Commands and Environments
@@ -185,18 +218,18 @@
 
 
 %----- Theorem-like Environments ------------------------------------
-	heoremstyle{plain}
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
 
-	heoremstyle{definition}
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{assumption}[theorem]{Assumption}
 
-	heoremstyle{remark}
+\theoremstyle{remark}
 \newtheorem{remark}{Remark}[section]
 \newtheorem{example}{Example}[section]
 
@@ -432,6 +465,7 @@
 %====================================================================
 
 \begin{document}
+\sloppy
 \maketitle
 \begin{figure}[ht]
 \centering
@@ -1213,11 +1247,11 @@ If $\gamma_1 \neq \gamma_2$ and $\sigma_D>0$, the boundaries $\{0, 1\}$ for the 
 \end{proposition}
 
 \begin{leanproofbox}{Proof Sketch of Proposition \ref{prop:feller_classification}}
-We apply Feller's test using the scale function (see Karatzas & Shreve, 1991 \cite{KaratzasShreve1991}). A boundary at $a$ is inaccessible if the scale function $S(x) = \int_{c}^x s(y) dy$ is not integrable at $a$, where $s(y) = \exp(-\int_{c}^y \frac{2\mu_X(z)}{\sigma_X^2(z)} dz)$.
+We apply Feller's test using the scale function (see Karatzas \& Shreve, 1991 \cite{KaratzasShreve1991}). A boundary at $a$ is inaccessible if the scale function $S(x) = \int_{c}^x s(y) dy$ is not integrable at $a$, where $s(y) = \exp(-\int_{c}^y \frac{2\mu_X(z)}{\sigma_X^2(z)} dz)$.
 1.  \textbf{Behavior near $x=0$:} The volatility is $\sigma_X(x) \approx C_1 x$ and the drift $\mu_X(x) \approx C_2 x$ for constants $C_1, C_2$ that depend on the equilibrium quantities evaluated at $x=0$.
 2.  \textbf{Scale Density:} The ratio in the exponent behaves as $\frac{2\mu_X(z)}{\sigma_X^2(z)} \approx \frac{2 C_2 z}{(C_1 z)^2} = \frac{2C_2}{C_1^2} \frac{1}{z}$.
 3.  \textbf{Integrability:} The integral $\int \frac{1}{z} dz = \log(z)$ diverges as $z \to 0$. This makes the scale density $s(y)$ behave like a power of $y$, and its integral, the scale function $S(x)$, also diverges as $x \to 0$.
-4.  \textbf{Conclusion:} Since the scale function is not integrable at the boundary, the boundary is classified as natural and is thus inaccessible. A symmetric argument applies to the boundary at $x=1$. (See Figueroa-López & Nisen, 2018 \cite{FigueroaNisen2018}).
+4.  \textbf{Conclusion:} Since the scale function is not integrable at the boundary, the boundary is classified as natural and is thus inaccessible. A symmetric argument applies to the boundary at $x=1$. (See Figueroa-López \& Nisen, 2018 \cite{FigueroaNisen2018}).
 \end{leanproofbox}
 
 \subsubsection{Stabilizing Variable Transformations}
@@ -1321,12 +1355,11 @@ The Euler-Maruyama (EM) scheme introduces an $\mathcal{O}(h)$ bias in the learne
 
 \end{tikzpicture}
 \captionsetup{hypcap=false}
-\captionof{figure}{\textbf{The Physics of Self-Consistency Bias.} (A) EM's asymmetric error correlates with the training gradient, inducing bias. (B) Symmetric schemes (Itô-Heun) center the error, canceling the leading bias term.}
-\label{fig:Bias_Physics_R3}
+{\sloppy\captionof{figure}{\textbf{The Physics of Self-Consistency Bias.} (A) EM's asymmetric error correlates with the training gradient, inducing bias.\\ (B) Symmetric schemes (Itô--Heun) center the error, canceling the leading bias term.}\label{fig:Bias_Physics_R3}\par}
 \end{figure}
 
-\subparagraph{2.2. The Itô-Heun (Trapezoidal) Mandate.}
-We mandate the \textbf{Itô-Heun (Trapezoidal)} scheme. It achieves the necessary symmetry efficiently, avoiding the costly Stratonovich conversion.
+\subparagraph{2.2. The Itô--Heun (Trapezoidal) Mandate.}
+We mandate the \textbf{Itô--Heun (Trapezoidal)} scheme. It achieves the necessary symmetry efficiently, avoiding the costly Stratonovich conversion.
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!75!black, title={HPC Mandate: Float64 Precision}]
 The Heun scheme involves subtracting nearly equal numbers. To prevent catastrophic cancellation, \textbf{64-bit precision (float64)} is mandatory.
@@ -1793,8 +1826,7 @@ We quantify epistemic uncertainty (model uncertainty) using Deep Ensembles (trai
 \draw[distillBlue!70, ->, line width=2pt, opacity=0.8] (8.9, 1.25) -- (8.0, 0.92);
 \end{tikzpicture}
 \captionsetup{hypcap=false}
-\captionof{figure}{\textbf{Uncertainty Quantification via Deep Ensembles.} The ensemble provides both a robust mean estimate and confidence intervals that quantify epistemic uncertainty. Individual model predictions (dashed lines) show the diversity within the ensemble, while the shaded region represents the 95\% confidence interval derived from ensemble variance.}
-\label{fig:UQ_R3}
+{\sloppy\captionof{figure}{\textbf{Uncertainty Quantification via Deep Ensembles.} The ensemble provides both a robust mean estimate and confidence intervals that quantify epistemic uncertainty.\\ Individual model predictions (dashed lines) show the diversity within the ensemble, while the shaded region represents the 95\% confidence interval derived from ensemble variance.}\label{fig:UQ_R3}\par}
 \end{figure}
 
 \paragraph{Pillar 7: The Unified Pipeline}
@@ -2583,8 +2615,6 @@ if __name__ == '__main__':
   year={2024}
 }
 \end{filecontents*}
-\bibliographystyle{plainnat}
-\bibliography{\jobname}
+\printbibliography
 
 \end{document} 
-```

@@ -43,15 +43,7 @@ sub pythontex {
   return $res;
 }
 
-# Ensure biber runs when biblatex writes a .bcf (with out_dir)
-add_cus_dep('bcf','bbl',0,'run_biber');
-sub run_biber {
-  my ($src) = @_;
-  my $fname = basename($src);        # e.g., BSDE_11.bcf
-  my $job   = $fname; $job =~ s/\.bcf$//;   # BSDE_11
-  my $cmd = "bash -lc 'cd .out && biber --input-directory=.. \"$job\"'";
-  return system($cmd);
-}
+# Let latexmk handle biblatex+biber natively to avoid rule clashes
 
 # Clean up PythonTeX artifacts on latexmk -c
 $clean_ext .= ' pytxcode pytxpy pythontex-files-*';
