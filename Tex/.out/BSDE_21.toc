@@ -14,19 +14,21 @@
 \contentsline {paragraph}{Homogeneity in dividends.}{11}{section*.4}%
 \contentsline {paragraph}{Integrability.}{12}{section*.5}%
 \contentsline {section}{\numberline {9}Computation: FBSDE}{12}{section.9}%
-\contentsline {section}{\numberline {10}Verification and Diagnostics}{12}{section.10}%
-\contentsline {paragraph}{Residual norms.}{12}{section*.6}%
-\contentsline {paragraph}{Stopping rules.}{12}{section*.7}%
-\contentsline {paragraph}{Sanity checks.}{12}{section*.8}%
-\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{13}{section.11}%
-\contentsline {paragraph}{Aggregation.}{13}{section*.9}%
-\contentsline {paragraph}{Comparative statics.}{13}{section*.10}%
-\contentsline {section}{\numberline {A}Appendix A: Full Derivations and Pairings}{13}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{13}{subsection.A.1}%
+\contentsline {paragraph}{Backward block (log-utility pricing).}{12}{section*.6}%
+\contentsline {paragraph}{Numerics.}{12}{section*.7}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{13}{section.10}%
+\contentsline {paragraph}{Residual norms.}{13}{section*.8}%
+\contentsline {paragraph}{Stopping rules.}{13}{section*.9}%
+\contentsline {paragraph}{Sanity checks.}{13}{section*.10}%
+\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{14}{section.11}%
+\contentsline {paragraph}{Aggregation.}{14}{section*.11}%
+\contentsline {paragraph}{Comparative statics.}{14}{section*.12}%
+\contentsline {section}{\numberline {A}Appendix A: Full Derivations and Pairings}{14}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{14}{subsection.A.1}%
 \contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{14}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Deriving the master equation}{14}{subsection.A.3}%
-\contentsline {subsection}{\numberline {A.4}Externality term in detail}{14}{subsection.A.4}%
-\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{14}{appendix.B}%
+\contentsline {subsection}{\numberline {A.3}Deriving the master equation}{15}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Externality term in detail}{15}{subsection.A.4}%
+\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{15}{appendix.B}%
 \contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{15}{appendix.C}%
-\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{15}{appendix.D}%
+\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{16}{appendix.D}%
 \contentsline {section}{\numberline {E}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{17}{appendix.E}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  16 SEP 2025 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  16 SEP 2025 19:56
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1554,98 +1554,559 @@ LaTeX Warning: Reference `eq:s_drift' on page 11 undefined on input line 555.
 
 
 [11]
-Overfull \hbox (160.59132pt too wide) in paragraph at lines 582--589
-\OT1/lmr/m/n/10.95 (-20) 4538048\OML/lmm/m/it/10.95 https \OT1/lmr/m/n/10.95 (-20) : \OML/lmm/m/it/10.95 ==papers:ssrn:com=sol\OT1/lmr/m/n/10.95 (-20) 3\OML/lmm/m/it/10.95 =papers:cfm\OT1/lmr/m/n/10.95 (-20) ?\OML/lmm/m/it/10.95 abstract[]d \OT1/lmr/m/n/10.95 (-20) = 4122454\OML/lmm/m/it/10.95 https \OT1/lmr/m/n/10.95 (-20) : \OML/lmm/m/it/10.95 ==papers:ssrn:com=sol\OT1/lmr/m/n/10.95 (-20) 3\OML/lmm/m/it/10.95 =papers:cfm\OT1/lmr/m/n/10.95 (-20) ?\OML/lmm/m/it/10.95 abstract[]d \OT1/lmr/m/n/10.95 (-20) =
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 582.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 582.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--582
+[][][][][]$\T1/lmtt/m/n/9 https : / / papers . ssrn . com / sol3 / papers . cfm ? abstract _ id = 4538048$[][]\T1/lmr/m/n/9 (+20) ,[][]$\T1/lmtt/m/n/9 https : / / papers . ssrn . com / sol3 /
  []
 
 
-Overfull \hbox (160.97458pt too wide) in paragraph at lines 582--589
-\OT1/lmr/m/n/10.95 (-20) 5199943\OML/lmm/m/it/10.95 https \OT1/lmr/m/n/10.95 (-20) : \OML/lmm/m/it/10.95 ==papers:ssrn:com=sol\OT1/lmr/m/n/10.95 (-20) 3\OML/lmm/m/it/10.95 =papers:cfm\OT1/lmr/m/n/10.95 (-20) ?\OML/lmm/m/it/10.95 abstract[]d \OT1/lmr/m/n/10.95 (-20) = 4742398\OML/lmm/m/it/10.95 https \OT1/lmr/m/n/10.95 (-20) : \OML/lmm/m/it/10.95 ==papers:ssrn:com=sol\OT1/lmr/m/n/10.95 (-20) 3\OML/lmm/m/it/10.95 =papers:cfm\OT1/lmr/m/n/10.95 (-20) ?\OML/lmm/m/it/10.95 abstract[]d \OT1/lmr/m/n/10.95 (-20) =
+Underfull \hbox (badness 10000) in paragraph at lines 582--582
+\T1/lmtt/m/n/9 papers . cfm ? abstract _ id = 4122454$[][]\T1/lmr/m/n/9 (+20) ,[][]$\T1/lmtt/m/n/9 https : / / papers . ssrn . com / sol3 / papers . cfm ? abstract _ id = 5199943$[][]\T1/lmr/m/n/9 (+20) ,[][]$\T1/lmtt/m/n/9 https :
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--582
+\T1/lmtt/m/n/9 / / papers . ssrn . com / sol3 / papers . cfm ? abstract _ id = 4742398$[][]\T1/lmr/m/n/9 (+20) ,[][]$\T1/lmtt/m/n/9 https : / / papers . ssrn . com / sol3 / papers . cfm ?
+ []
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:583: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.583 ^^H
+         egin{align}
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: LaTeX Error: \mathrm allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.584 \diff
+            X^i_t &= \kappa_i^^Hig(^^Har X_i - X^i_t^^Hig)\,\diff t + \sigma...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: Missing $ inserted.
+<inserted text> 
+                $
+l.584 \diff X^
+              i_t &= \kappa_i^^Hig(^^Har X_i - X^i_t^^Hig)\,\diff t + \sigma...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: Misplaced alignment tab character &.
+l.584 \diff X^i_t &
+                   = \kappa_i^^Hig(^^Har X_i - X^i_t^^Hig)\,\diff t + \sigma...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.584 \diff X^i_t &= \kappa_i^^H
+                                ig(^^Har X_i - X^i_t^^Hig)\,\diff t + \sigma...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.584 \diff X^i_t &= \kappa_i^^Hig(^^H
+                                      ar X_i - X^i_t^^Hig)\,\diff t + \sigma...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:584: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.584 ...i_t &= \kappa_i^^Hig(^^Har X_i - X^i_t^^H
+                                                  ig)\,\diff t + \sigma_i\,\...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:586: Misplaced alignment tab character &.
+l.586 angle_t &
+               =
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.588 \end{align}
+                 
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.588 \end{align}
+                 
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Missing $ inserted.
+<inserted text> 
+                $
+l.588 \end{align}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Missing } inserted.
+<inserted text> 
+                }
+l.588 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Too many }'s.
+\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
+                                                  
+l.588 \end{align}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.588 \end{align}
+                 
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (365.89893pt too wide) detected at line 588
+[]
+ []
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Too many }'s.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.588 \end{align}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.588 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Missing $ inserted.
+<inserted text> 
+                $
+l.588 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.588 \end{align}
+                 
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:588: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.588 \end{align}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:589: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.589 ...hbf{X}_t)=\sum_{i=1}^2 D^i_t[\kappa_i(^^H
+                                                  ar X_i - X^i_t)+	frac12\si...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:593: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.593 ...e stochastic discount factor $M_t=e^{-^^H
+                                                  eta t}/C_t$ and market pri...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:594: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.594 ^^H
+         egin{align}
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:595: LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.595 \mathbf
+             {Y}_T &= \mathbf{0},\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:595: Missing $ inserted.
+<inserted text> 
+                $
+l.595 \mathbf{Y}_
+                 T &= \mathbf{0},\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:595: Misplaced alignment tab character &.
+l.595 \mathbf{Y}_T &
+                    = \mathbf{0},\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: Misplaced alignment tab character &.
+l.596 \diff \mathbf{Y}_t &
+                          = -\Big[^^Heta\,\mathbf{Y}_t - ^^Lrac{\mathbf{D}_t...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.596 \diff \mathbf{Y}_t &= -\Big[^^H
+                                     eta\,\mathbf{Y}_t - ^^Lrac{\mathbf{D}_t...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: Missing $ inserted.
+<inserted text> 
+                $
+l.596 ...{Y}_t &= -\Big[^^Heta\,\mathbf{Y}_t - ^^L
+                                                  rac{\mathbf{D}_t}{C_t} + \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.596 ...Big[^^Heta\,\mathbf{Y}_t - ^^Lrac{\mathbf
+                                                  {D}_t}{C_t} + \mathbf{Z}_t...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: Missing $ inserted.
+<inserted text> 
+                $
+l.596 ...^^Heta\,\mathbf{Y}_t - ^^Lrac{\mathbf{D}_
+                                                  t}{C_t} + \mathbf{Z}_t\,	h...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:596: Extra }, or forgotten $.
+l.596 ...Heta\,\mathbf{Y}_t - ^^Lrac{\mathbf{D}_t}
+                                                  {C_t} + \mathbf{Z}_t\,	het...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.597 \end{align}
+                 
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.597 \end{align}
+                 
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Missing $ inserted.
+<inserted text> 
+                $
+l.597 \end{align}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Missing } inserted.
+<inserted text> 
+                }
+l.597 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.597 \end{align}
+                 
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (365.89893pt too wide) detected at line 597
+[]
+ []
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Too many }'s.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.597 \end{align}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Missing $ inserted.
+<inserted text> 
+                $
+l.597 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.597 \end{align}
+                 
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:597: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.597 \end{align}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:598: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 ...ces the Euler pricing condition: the $^^H
+                                                  eta\,\mathbf{Y}_t$ term di...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:598: LaTeX Error: Unicode character ^^H (U+0008)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 ...umerically by taking $T$ so that $e^{-^^H
+                                                  eta T}$ is negligible and ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
 
 [12]
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:660: LaTeX Error: Unicode character � (U+FFFD)
+[13]
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:673: LaTeX Error: Unicode character � (U+FFFD)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.660 ...rengthens the value premium mechanism �
+l.673 ...rengthens the value premium mechanism �
                                                    la costly reversibility b...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-LaTeX Warning: Reference `eq:HJB' on page 13 undefined on input line 670.
+LaTeX Warning: Reference `eq:HJB' on page 14 undefined on input line 683.
 
 
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 672.
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 685.
 
 
-
-[13]
-
-LaTeX Warning: Reference `eq:FP' on page 14 undefined on input line 683.
+LaTeX Warning: Reference `eq:FP' on page 14 undefined on input line 696.
 
 
-LaTeX Warning: Reference `eq:FP' on page 14 undefined on input line 686.
+LaTeX Warning: Reference `eq:FP' on page 14 undefined on input line 699.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:686: LaTeX Error: Unicode character � (U+FFFD)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:699: LaTeX Error: Unicode character � (U+FFFD)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.686 ...ack $i^*(\cdot,m_t)$. By functional It�
+l.699 ...ack $i^*(\cdot,m_t)$. By functional It�
                                                   's lemma for $U(K_t,Z_t,x,...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-LaTeX Warning: Reference `lem:chain' on page 1 undefined on input line 695.
-
-
 
 [14]
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:735: LaTeX Error: Unicode character � (U+FFFD)
+LaTeX Warning: Reference `lem:chain' on page 1 undefined on input line 708.
+
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:748: LaTeX Error: Unicode character � (U+FFFD)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.735 ...nt shared by firms), the functional It�
+l.748 ...nt shared by firms), the functional It�
                                                    calculus on $\mathcal P_2...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 750.
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 750.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 763.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 779.
 
 
 [15]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 818.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 763.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 776.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 792.
+
+
+[16]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 831.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1656,45 +2117,45 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package microtype Info: Character `texttrademark ' is missing
 (microtype)             in font `TS1/lmtt/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[16]
 \c@pytx@pycon@default@default@line=\count428
 
 
-Package PythonTeX Warning: Non-existent console content on input line 908.
+Package PythonTeX Warning: Non-existent console content on input line 921.
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:929: LaTeX Error: Unicode character � (U+FFFD)
+
+[17]
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:942: LaTeX Error: Unicode character � (U+FFFD)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.929 ...s; see also related notes by Gangbo--M�
+l.942 ...s; see also related notes by Gangbo--M�
                                                   sz�ros--Mou--Zhang.)
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:929: LaTeX Error: Unicode character � (U+FFFD)
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex:942: LaTeX Error: Unicode character � (U+FFFD)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.929 ...e also related notes by Gangbo--M�sz�
+l.942 ...e also related notes by Gangbo--M�sz�
                                                   ros--Mou--Zhang.)
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
 
-[17]
+[18]
 
-[18] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.aux)
+[19] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
@@ -1708,17 +2169,17 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 50333 strings out of 468134
- 1185128 string characters out of 5430256
- 2345890 words of memory out of 5000000
- 77806 multiletter control sequences out of 15000+600000
- 730353 words of font info for 249 fonts, out of 8000000 for 9000
+ 50431 strings out of 468134
+ 1186397 string characters out of 5430256
+ 2206472 words of memory out of 5000000
+ 77841 multiletter control sequences out of 15000+600000
+ 758262 words of font info for 288 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,19n,121p,1065b,2865s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.pdf (18 pages, 537054 bytes).
+ 116i,19n,121p,1065b,2889s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.pdf (19 pages, 579398 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 58381 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 436 PDF objects out of 1000 (max. 8388607)
+ 169 named destinations out of 1000 (max. 500000)
+ 75789 words of extra memory for PDF output out of 89155 (max. 10000000)
 
