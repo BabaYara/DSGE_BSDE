@@ -1,4 +1,4 @@
-=>PYTHONTEX#pycon#default#default#0#console#####848#
+=>PYTHONTEX#pycon#default#default#0#console#####849#
 import sympy as sp
 
 # 1) Isoelastic simplification:  Y P'(Y) = -eta P(Y)

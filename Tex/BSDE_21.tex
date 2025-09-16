@@ -564,14 +564,14 @@ Standard comparison principles for second-order ODEs secure existence, uniquenes
 \end{tcolorbox}
 \section{Boundary and Regularity Conditions}
 
-\paragraph{Boundary at $k=0$.} Reflecting: the probability flux vanishes and feasible controls satisfy $i^*\ge 0$ at the boundary. A sufficient condition enforcing no instantaneous arbitrage is $U_k(0,\cdot)\le 1$ (marginal value of installed capital no higher than the unit purchase price).
+\paragraph{Endpoints in $\varsigma$.} The share process $\varsigma_t$ lives on $(0,1)$ with diffusion coefficient $\varsigma^2(1-\varsigma)^2\lVert\bm{\sigma}_1-\bm{\sigma}_2\rVert^2$ that vanishes at $\varsigma\in\{0,1\}$. These endpoints are natural boundaries under both $\mathbb{P}$ and $\mathbb{Q}$, so we solve the valuation ODE on $(0,1)$ with Dirichlet conditions $f_1(0)=0$, $f_1(1)=1/\rho$, $f_2(1)=0$, $f_2(0)=1/\rho$ inherited from the single-tree limits. Regularity follows from the smooth coefficients of $\mathcal{L}^{\mathbb{Q}}_{\varsigma}$, yielding solutions $f_i\in C^2((0,1))\cap C([0,1])$.
 
-\paragraph{Growth.} From the coercivity of $h$ in $i$ and the linear drift in $k$, one obtains $U(k,z,x,m)=O(k)$ as $k\to\infty$. This ensures finiteness of the HJB Hamiltonian and stabilizes numerical approximations.
+\paragraph{Homogeneity in dividends.} The log-utility kernel $\Lambda_t=e^{-\rho t}C_t^{-1}$ makes prices homogeneous of degree one: $P_i(D_1,D_2)=D_i f_i(\varsigma)$. Ensuring $\rho>\sup_{\varsigma}\mu_i^{\mathbb{Q}}(\varsigma)$ keeps $f_i$ bounded, enforces the transversality condition $\lim_{T\to\infty}\E[e^{-\rho T}C_T^{-1}D_{i,T}]=0$, and prevents explosive solutions. Consequently $P_i$ grows at most linearly with dividends, consistent with the Lucas-tree benchmark.
 
-\paragraph{Integrability.} Admissible distributions $m$ integrate $k^\alpha$ and $1/k$ where these appear (e.g., $\E_m[k^\alpha]$ in $Y$ and $i^2/k$ in adjustment costs). In practice one imposes a numerically compact domain in $k$ with conservative outflow at the upper boundary.
+\paragraph{Integrability.} We assume the dividend law $m$ has finite first and second moments so that $\E_m[D_j]$ and $\E_m[(D_1+D_2)^{-1}D_j]$ exist. These integrability requirements ensure the generator--action pairings defining the valuation operator are well-posed and that expectations of discounted dividends under $\Lambda$ converge.
 
 \begin{tcolorbox}[didacticstyle]
-\textbf{Economic translation.} Reflecting $k=0$ prevents negative capital; growth bounds rule out explosive investment; integrability ensures dividends and costs are well-defined across firms. These are the minimal conditions that keep the economics clean and the PDEs well-posed.
+\textbf{Economic translation.} Extremes $\varsigma\to0$ or $1$ correspond to one tree vanishing: the boundary data encode that only the surviving tree retains value. Linear homogeneity captures that prices scale with dividends, while integrability states that the log agent discounts future payouts fast enough for the present value to remain finite.
 \end{tcolorbox}
 
 %========================
@@ -583,9 +583,9 @@ Standard comparison principles for second-order ODEs secure existence, uniquenes
 $  
 https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4538048 
 https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4122454 
- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5199943
- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742398
- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4649043$
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5199943
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742398
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4649043$
 
 %========================
 % % Verification & Diagnostics
