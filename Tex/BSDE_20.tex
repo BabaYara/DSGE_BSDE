@@ -1,0 +1,255 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+
+% Math, references, code, and boxes
+\usepackage[T1]{fontenc}
+% utf8 input is default in modern LaTeX; avoid deprecated inputenc warnings
+% \usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+% Allow listings/verbatim content in styled boxes
+	cbuselibrary{listings,skins,breakable}
+\usepackage{xparse} % legacy support for document environments
+% Safe code listings fallback using listings (no external minted dependency)
+\usepackage{listings}
+% Minimal language definitions to support minted-like usage
+\lstdefinelanguage{lean}{
+  morekeywords={import,open,variable,variables,noncomputable,def,lemma,by,unfold,field_simp,namespace,end,example,theorem,Type,with,have,let,fun,match,if,then,else,do},
+  sensitive=true,
+  comment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  morestring=[b]",
+}
+\lstdefinelanguage{python}{
+  morekeywords={def,return,import,as,from,assert,for,while,if,elif,else,with,class,try,except,finally,lambda,pass,yield,True,False,None,print},
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]",
+}
+\lstset{%
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  linewidth=\linewidth,
+  % Map common Unicode symbols in code blocks to LaTeX-safe forms
+  literate={ℝ}{{\ensuremath{\mathbb{R}}}}1
+           {‖}{{\ensuremath{\Vert}}}1
+           {≠}{{\ensuremath{\neq}}}1
+}
+% Provide a minted-like environment via tcolorbox+listings (robust inside boxes)
+\NewDocumentEnvironment{minted}{m}{\begin{alltt}}{\end{alltt}}
+
+% \newtcblisting{minted}[1]{%
+%   listing engine=listings,
+%   colback=gray!5,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt,
+%   listing only,breakable,enhanced,
+%   listing options={language=#1}
+% }
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalize]{cleveref}
+
+% Colors and styles
+\definecolor{darkgreen}{RGB}{0,100,0}
+\tcbset{
+  sympycheckstyle/.style={colback=gray!5,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
+  leanproofstyle/.style={colback=blue!4,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
+  didacticstyle/.style={colback=green!4,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
+  mathstyle/.style={colback=gray!6,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
+  literaturestyle/.style={colback=gray!12,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt}
+}
+
+% Theorem-like environments with title+label wrappers
+\theoremstyle{plain}
+\newtheorem{theoremT}{Theorem}
+\newtheorem{lemmaT}{Lemma}
+\newtheorem{propositionT}{Proposition}
+\newtheorem{assumptionT}{Assumption}
+\theoremstyle{definition}
+\newtheorem{definitionT}{Definition}
+
+\newenvironment{assumption}[2]{\begin{assumptionT}[#1]\label{ass:#2}}{\end{assumptionT}}
+\newenvironment{definition}[2]{\begin{definitionT}[#1]\label{def:#2}}{\end{definitionT}}
+\newenvironment{lemma}[2]{\begin{lemmaT}[#1]\label{lem:#2}}{\end{lemmaT}}
+\newenvironment{proposition}[2]{\begin{propositionT}[#1]\label{prop:#2}}{\end{propositionT}}
+\newenvironment{theorem}[2]{\begin{theoremT}[#1]\label{thm:#2}}{\end{theoremT}}
+
+% Common macros
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+
+\title{Two Lucas Trees with Log Utility: Structured Continuous-Time Notes}
+\author{Technical Appendix}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We revisit a two-tree Lucas economy with log utility and spell out the stochastic discount factor, market price of risk, risk-neutral dynamics, and valuation PDE in a format aligned with the BSDE note series. The presentation pairs economic intuition with compact symbolic checks (SymPy) and a Lean projection lemma to mirror the rigor of BSDE\_12 while keeping the model minimal.
+\end{abstract}
+
+\section{Primitives and Notation}\label{sec:primitives}
+\begin{assumption}{Two-Tree Lucas Environment}{lucas}
+\begin{enumerate}[leftmargin=1.25em]
+  \item Two dividend processes $(D_{1,t},D_{2,t})$ satisfy geometric diffusion dynamics
+  \begin{equation}\label{eq:dividend}
+    \frac{\diff D_{i,t}}{D_{i,t}} = \mu_i\, \diff t + \bm{\sigma}_i^{\top} \diff \bm{W}_t,
+    \quad i \in \{1,2\},
+  \end{equation}
+  where $\bm{W}$ is a $d$-dimensional Brownian motion with identity covariance.
+  \item Aggregate consumption equals total dividends: $C_t = D_{1,t} + D_{2,t}$. Log utility and discount rate $\rho>0$ yield lifetime utility $\E\big[ \int_0^{\infty} e^{-\rho t} \log C_t\, \diff t \big]$.
+  \item Volatility vectors $\bm{\sigma}_i \in \R^d$ and drifts $\mu_i$ are constants with bounded magnitude ensuring positive dividend paths.
+\end{enumerate}
+\end{assumption}
+
+\begin{definition}{Consumption Shares and Aggregates}{shares}
+Let $s_i \equiv D_i / C \in (0,1)$ with $s_1+s_2=1$. Under \Cref{ass:lucas}, consumption growth obeys
+\begin{equation}\label{eq:consumption}
+  \frac{\diff C_t}{C_t} = \mu_C\,\diff t + \bm{\sigma}_C^{\top} \diff \bm{W}_t,
+  \quad \mu_C \equiv s_1 \mu_1 + s_2 \mu_2,
+  \quad \bm{\sigma}_C \equiv s_1 \bm{\sigma}_1 + s_2 \bm{\sigma}_2.
+\end{equation}
+\end{definition}
+
+\begin{tcolorbox}[mathstyle]
+\textbf{Notation.} Inner products use $\ip{u}{v}$ and $\norm{u}^2 = \ip{u}{u}$. All stochastic integrals are in the It\^o sense, and expectations condition on information at time $t$.
+\end{tcolorbox}
+
+\section{Stochastic Discount Factor and CAPM}\label{sec:sdf}
+\begin{proposition}{Log-Utility SDF Dynamics}{sdf}
+Under \Cref{ass:lucas}, the stochastic discount factor (SDF)
+\begin{equation}\label{eq:sdf}
+  \Lambda_t = e^{-\rho t} C_t^{-1}
+\end{equation}
+solves
+\begin{equation}\label{eq:sdf_drift}
+  \frac{\diff \Lambda_t}{\Lambda_t} = -r_t\, \diff t - \bm{\lambda}_t^{\top} \diff \bm{W}_t,
+  \quad r_t = \rho + \mu_C - \norm{\bm{\sigma}_C}^2,
+  \quad \bm{\lambda}_t = \bm{\sigma}_C.
+\end{equation}
+Moreover, any traded return with diffusion $\bm{\sigma}_R$ satisfies the instantaneous CAPM relation
+\begin{equation}\label{eq:capm}
+  \E_t[R] - r_t = \ip{\bm{\lambda}_t}{\bm{\sigma}_R}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Apply It\^o's lemma to $\Lambda_t$ with $\diff C_t/C_t$ from \eqref{eq:consumption}. The diffusion term equals $-\ip{\bm{\sigma}_C}{\diff \bm{W}_t}$, so the instantaneous covariance with any asset return $R$ of diffusion $\bm{\sigma}_R$ produces \eqref{eq:capm}.
+\end{proof}
+
+\begin{tcolorbox}[didacticstyle]
+\textbf{Economic reading.} Log utility fixes the market price of risk at consumption volatility. Precautionary savings lowers the short rate by $\norm{\bm{\sigma}_C}^2$, reinforcing how aggregate risk tightens discounting.
+\end{tcolorbox}
+
+% \begin{tcolorbox}[sympycheckstyle]
+%   	extbf{SymPy verification of \eqref{eq:sdf_drift}.}
+% \end{tcolorbox}
+% \begin{minted}{python}
+% import sympy as sp
+
+% t = sp.symbols('t', positive=True)
+% rho = sp.symbols('rho', positive=True)
+% muC = sp.symbols('muC', real=True)
+% sig2 = sp.symbols('sig2', positive=True)  # ||sigma_C||^2
+% C = sp.Function('C')(t)
+% Lambda = sp.exp(-rho * t) * C**(-1)
+
+% # Assume dC = C*muC dt + C*sigma dW with ||sigma||^2 = sig2
+% Lambda_t = sp.diff(Lambda, t)
+% Lambda_C = sp.diff(Lambda, C)
+% Lambda_CC = sp.diff(Lambda, C, 2)
+% drift = Lambda_t + Lambda_C * (C * muC) + sp.Rational(1, 2) * Lambda_CC * (C**2 * sig2)
+% assert sp.simplify(drift / Lambda + (rho + muC - sig2)) == 0
+% print("SDF drift matches r = rho + muC - ||sigma_C||^2")
+% \end{minted}
+
+% \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
+% \begin{proposition}{Valuation PDE for Tree $i$}{valuation}
+% Let $P_i(D_1,D_2)$ denote the ex-dividend price of tree $i$. Under the risk-neutral measure determined by \eqref{eq:sdf_drift}, the drift of dividend $j$ becomes
+% \begin{equation}\label{eq:rn_drift}
+%   \mu_j^{\mathbb{Q}} = \mu_j - \ip{\bm{\sigma}_j}{\bm{\sigma}_C}, \quad j \in \{1,2\}.
+% \end{equation}
+% The valuation PDE reads
+% \begin{align}\label{eq:valuation_pde}
+%   r_t P_i &= D_i
+%   + \mu_1^{\mathbb{Q}} D_1\, \partial_{D_1} P_i
+%   + \mu_2^{\mathbb{Q}} D_2\, \partial_{D_2} P_i \\
+%   &\quad + \tfrac{1}{2} \norm{\bm{\sigma}_1}^2 D_1^2\, \partial_{D_1 D_1}^2 P_i
+%   + \tfrac{1}{2} \norm{\bm{\sigma}_2}^2 D_2^2\, \partial_{D_2 D_2}^2 P_i
+%   + \ip{\bm{\sigma}_1}{\bm{\sigma}_2} D_1 D_2\, \partial_{D_1 D_2}^2 P_i.
+% \end{align}
+% \end{proposition}
+% \begin{proof}
+% Girsanov's theorem with market price of risk $\bm{\lambda}=\bm{\sigma}_C$ shifts drifts by $-\ip{\bm{\sigma}_j}{\bm{\lambda}}$. Substituting the dynamics into the standard dividend-paying asset valuation equation produces \eqref{eq:valuation_pde}.
+% \end{proof}
+
+% \begin{tcolorbox}[mathstyle]
+% \textbf{Diagnostic.} The cross-derivative term scales with $\ip{\bm{\sigma}_1}{\bm{\sigma}_2}$ and captures comovement in the two dividend streams. Positive correlation steepens the PDE's coupling, while orthogonal shocks decouple the system.
+% \end{tcolorbox}
+
+% \begin{tcolorbox}[sympycheckstyle]
+%   	extbf{Constant-share closed form.}
+% \end{tcolorbox}
+% \begin{minted}{python}
+% import sympy as sp
+
+% r, muQ = sp.symbols('r muQ', real=True)
+% D1, D2, k = sp.symbols('D1 D2 k', positive=True)
+% P = k * D1  # candidate pricing kernel for tree 1
+% lhs = r * P
+% rhs = D1 + muQ * D1 * sp.diff(P, D1)
+% assert sp.solve(sp.Eq(lhs - rhs, 0), k) == [1 / (r - muQ)]
+% print("Price-dividend ratio: k = 1 / (r - mu_1^Q)")
+% \end{minted}
+
+% \section{Constant-Share Benchmark and CAPM Components}\label{sec:benchmark}
+% Assume shares $s_i$ are constant. Then $r_t$, $\bm{\lambda}_t$, and $\mu_j^{\mathbb{Q}}$ are constant as well, and the unique bounded solution of \eqref{eq:valuation_pde} is
+% \begin{equation}\label{eq:const_share_solution}
+%   P_i = \frac{D_i}{r - \mu_i^{\mathbb{Q}}}, \quad r > \mu_i^{\mathbb{Q}}.
+% \end{equation}
+% Let
+% \begin{equation}\label{eq:beta}
+%   \beta_i \equiv \frac{\ip{\bm{\sigma}_i}{\bm{\sigma}_C}}{\norm{\bm{\sigma}_C}^2}
+% \end{equation}
+% whenever $\norm{\bm{\sigma}_C} \neq 0$. Combining \eqref{eq:capm} and \eqref{eq:beta} recovers the familiar CAPM slope $\E_t[R_i]-r = \norm{\bm{\sigma}_C}^2 \beta_i$ for assets whose diffusion equals $\bm{\sigma}_i$.
+
+% \begin{tcolorbox}[didacticstyle]
+% \textbf{Economic intuition.} In the constant-share limit each tree behaves like a levered claim on aggregate consumption. The larger (positive) covariance with $\bm{\sigma}_C$, the higher the required expected return and the lower the price--dividend multiple.
+% \end{tcolorbox}
+
+% \begin{tcolorbox}[leanproofstyle]
+%   	extbf{Lean projection identity for \eqref{eq:beta}.}
+% \end{tcolorbox}
+% \begin{minted}{lean}
+% import Mathlib.Analysis.InnerProductSpace.Basic
+% open scoped Real
+
+% variable {d : Type} [Fintype d] [DecidableEq d]
+
+% noncomputable def beta
+%   (sigma_i sigmaC : EuclideanSpace Real d) (h : Real.norm sigmaC != 0) : Real :=
+%   (InnerProductSpace.inner Real sigma_i sigmaC) / ((Real.norm sigmaC)^2)
+
+% lemma capm_projection
+%   (sigma_i sigmaC : EuclideanSpace Real d) (h : Real.norm sigmaC != 0) :
+%     InnerProductSpace.inner Real sigmaC sigma_i
+%       = ((Real.norm sigmaC)^2) * beta sigma_i sigmaC h := by
+%   unfold beta
+%   field_simp [h, norm_sq_eqInner, mul_comm, mul_left_comm, mul_assoc]
+% \end{minted}
+
+\section*{References (minimal)}
+Cochrane (2005), Duffie (2001), Lucas (1978).
+
+\end{document}

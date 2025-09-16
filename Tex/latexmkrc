@@ -30,7 +30,16 @@ sub pythontex {
   my ($src) = @_;
   my $fname = basename($src);          # e.g., BSDE_11.pytxcode
   my $job   = $fname; $job =~ s/\.pytxcode$//;   # BSDE_11
-  my $cmd = "bash -lc 'cd .out && pythontex \"$fname\"'";
+
+  my $is_windows = ($^O eq 'MSWin32');
+  my $cmd;
+  if ($is_windows) {
+    # Use cmd semantics; run from .out directory
+    $cmd = "cmd /c cd .out && pythontex \"$fname\"";
+  } else {
+    # POSIX: use bash if available, else plain sh
+    $cmd = "bash -lc 'cd .out && pythontex \"$fname\"'";
+  }
   my $res = system($cmd);
   # Fallback: touch macros file(s) if missing
   my $mcr_uc = ".out/${job}.pytxmcr";              # BSDE_11.pytxmcr

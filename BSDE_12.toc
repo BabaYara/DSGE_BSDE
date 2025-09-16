@@ -1,0 +1,31 @@
+\contentsline {section}{Executive Summary / Cheat-Sheet}{5}{}%
+\contentsline {section}{\numberline {B}Notation and Acronyms}{6}{}%
+\contentsline {section}{\numberline {C}Primitives and Assumptions}{8}{}%
+\contentsline {section}{\numberline {D}Mathematical Setup: State Space, Measures, and Differentiation on {$\mathcal P$}{P}}{9}{}%
+\contentsline {subsection}{\numberline {D.1}State space and probability metrics}{9}{}%
+\contentsline {subsection}{\numberline {D.2}Generators, domains, and adjoints}{9}{}%
+\contentsline {section}{\numberline {E}General Equilibrium and Asset Pricing}{9}{}%
+\contentsline {section}{\numberline {F}Firm Problem and the Stationary HJB}{10}{}%
+\contentsline {section}{\numberline {G}Kolmogorov--Forward (FP) Equation}{11}{}%
+\contentsline {subsection}{\numberline {G.1}Boundary and integrability}{11}{}%
+\contentsline {section}{\numberline {H}Market Clearing}{11}{}%
+\contentsline {section}{\numberline {I}Master Equation (Stationary, Conditional on x)}{11}{}%
+\contentsline {subsection}{\numberline {I.1}Derivation of the General Equilibrium Externalities}{12}{}%
+\contentsline {subsection}{\numberline {I.2}Equivalence and Monotonicity}{13}{}%
+\contentsline {section}{\numberline {J}Boundary and Regularity Conditions}{13}{}%
+\contentsline {section}{\numberline {K}Computation: Two KS-Free Routes}{14}{}%
+\contentsline {subsection}{\numberline {K.1}Route A: {HJB}--{FP} Fixed Point (General Equilibrium)}{14}{}%
+\contentsline {paragraph}{Algorithm (General Equilibrium).}{14}{}%
+\contentsline {subsection}{\numberline {K.2}Route B: Direct Master-PDE Collocation (General Equilibrium)}{14}{}%
+\contentsline {paragraph}{Residual construction.}{14}{}%
+\contentsline {section}{\numberline {L}Verification and Diagnostics}{15}{}%
+\contentsline {paragraph}{Residual norms.}{15}{}%
+\contentsline {paragraph}{Sanity checks.}{15}{}%
+\contentsline {section}{\numberline {M}Economics: Aggregation, Irreversibility, and Asset Pricing}{15}{}%
+\contentsline {paragraph}{Aggregation.}{15}{}%
+\contentsline {paragraph}{Irreversibility and Asset Prices.}{15}{}%
+\contentsline {paragraph}{Comparative statics.}{15}{}%
+\contentsline {section}{\numberline {A}Appendix B: Residual-Loss Template (for implementation)}{20}{}%
+\contentsline {section}{\numberline {B}Appendix C: Common-Noise Master Equation (Reference Note)}{21}{}%
+\contentsline {section}{\numberline {C}Appendix D: Tiny Pseudocode (Plain {\texttt {listings}}{listings})}{21}{}%
+\contentsline {section}{\numberline {D}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{21}{}%

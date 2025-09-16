@@ -1,0 +1,29 @@
+marimo configuration:
+	python interpreter: c:\Python313\python.exe
+	marimo version: 0.15.2
+	extension version: 0.6.9
+
+server status:
+	not running
+
+server configuration:
+	host: localhost
+	default port: 2818
+	https enabled: false
+	token auth enabled: false
+
+environment settings:
+	sandbox mode: false
+	watch mode: true
+
+UI settings:
+	browser type: embedded
+	show terminal: true
+	debug mode: false
+
+system information:
+	platform: win32
+	anonymous id: 29cd6031-f463-413b-b0bb-96438dfe7261
+	architecture: x64
+	node version: v22.18.0
+	vscode version: 1.104.0-insider
