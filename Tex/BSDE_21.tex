@@ -33,8 +33,7 @@
 % Use listings instead of minted to avoid external dependencies
 \usepackage{listings}
 % PythonTeX (disabled): define a lightweight 'pyconsole' as listings to avoid external deps
-\lstnewenvironment{pyconsole}{}{}
-\AtBeginEnvironment{pyconsole}{\lstset{language=Python}}
+\lstnewenvironment{pyconsole}{\lstset{language=Python}}{}
 
 % Acronyms: lightweight fallback to avoid package complexity
 \newcommand{\ac}[1]{{\mdseries\textsc{#1}}}
@@ -372,7 +371,7 @@ Set $\bm{\sigma}_R=\bm{\sigma}_j$ in \eqref{eq:capm}. Girsanov's theorem with ma
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-  extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
+  	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
 \end{tcolorbox}
 
 \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
