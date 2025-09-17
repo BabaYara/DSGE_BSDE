@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1758111622.17369 "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex" ".out/BSDE_21.pdf" "BSDE_21" 1758111625.44732 0
-  ".out/BSDE_21.aux" 1758111624 8695 5b7f7c08c695d3eac83985d1ec22c2ed "pdflatex"
-  ".out/BSDE_21.toc" 1758111624 1836 1e7a2ad832e2baa7c9c2fec362b69cca "pdflatex"
-  "BSDE_21.tex" 1758111621 39119 e12b04111ea8c7d1ec49fca953b95842 ""
+["pdflatex"] 1758124438.21441 "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex" ".out/BSDE_21.pdf" "BSDE_21" 1758124442.55536 0
+  ".out/BSDE_21.aux" 1758124442 10178 ed3d7f708550e0bec33a93569e55b3e2 "pdflatex"
+  ".out/BSDE_21.toc" 1758124442 2045 6e1d8353e4876e0c4e49bff4a17dc357 "pdflatex"
+  "BSDE_21.tex" 1758124432 47658 1d0b5983538e4eb245427683e226baef ""
   "C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1757591226 361682 4b8982a9ceb6d7775f09b4b967a063fe ""
   "C:/Users/fababa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1755911573 13257779 e6f93eb87c199b1e8242852b87a7a9f9 ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -306,7 +306,7 @@
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex" 1758111621 39119 e12b04111ea8c7d1ec49fca953b95842 ""
+  "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_21.tex" 1758124432 47658 1d0b5983538e4eb245427683e226baef ""
   (generated)
   ".out/BSDE_21.aux"
   ".out/BSDE_21.log"

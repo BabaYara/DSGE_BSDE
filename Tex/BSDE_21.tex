@@ -261,7 +261,7 @@ Dividing by $C_t$ and using $s_t=D_{1,t}/C_t$ (so $D_{2,t}/C_t=1-s_t$) yields
 \end{align*}
 \end{proof}
 
-\begin{sympycheck}[title={Verification: Consumption dynamics (Lemma~\ref{lem:C})}]
+\begin{sympycheck}[title={Verification: Consumption dynamics}]
 \begin{pyconsole}
 import sympy as sp
 
@@ -313,7 +313,7 @@ The relative-growth term expands to $(\mu_1-\mu_C(s_t))\,\diff t + (\bm{\sigma}_
 Similarly $\norm{\bm{\sigma}_C(s)}^2 - \ip{\bm{\sigma}_1}{\bm{\sigma}_C(s)} = (1-s)\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)$. Multiplying the drift and diffusion contributions by $s_t$ delivers the stated expressions for $\mu_s(s)$ and $\bm{\sigma}_s(s)$.
 \end{proof}
 
-\begin{sympycheck}[title={Verification: Share dynamics (Lemma~\ref{lem:s})}]
+\begin{sympycheck}[title={Verification: Share dynamics}]
 \begin{pyconsole}
 import sympy as sp
 
@@ -340,7 +340,7 @@ The diffusion $(C_t,s_t)$ has infinitesimal generator $\mathcal{L}$ acting on sm
 \[
   \mathcal{L}f = \mu_C C \partial_C f + \mu_s \partial_s f + \tfrac12 \norm{\bm{\sigma}_C}^2 C^2 \partial_{CC} f + \tfrac12 \norm{\bm{\sigma}_s}^2 \partial_{ss} f + (\bm{\sigma}_C\cdot\bm{\sigma}_s) C \partial_{Cs} f,
 \]
-where $\mu_s(s)$ and $\bm{\sigma}_s(s)$ are the drift and diffusion coefficients from Lemma~\ref{lem:s}. This generator underpins the valuation equations in the following sections.
+where $\mu_s(s)$ and $\bm{\sigma}_s(s)$ are the drift and diffusion coefficients from the share dynamics result. This generator underpins the valuation equations in the following sections.
 
 \section{Stochastic Discount Factor and CAPM}\label{sec:sdf}
 
@@ -355,23 +355,87 @@ so $r_t=\rho+\mu_C(s_t)-\norm{\bm{\sigma}_C(s_t)}^2$ and $\bm{\lambda}_t=\bm{\si
 \end{equation}
 \end{proposition}
 \begin{proof}
-Apply It\^o's lemma to $\Lambda_t = e^{-\rho t} C_t^{-1}$. The partial derivatives are $\partial_t\Lambda=-\rho\Lambda$, $\partial_C\Lambda=-C^{-1}\Lambda$, and $\partial_{CC}\Lambda=2C^{-2}\Lambda$. With $\diff C_t/C_t$ from Lemma~\ref{lem:C}, the dynamics simplify to \eqref{eq:sdf_drift}. The CAPM statement follows from $\E_t[\diff R_t]-r_t\,\diff t=-\Cov_t(\diff R_t,\diff\Lambda_t/\Lambda_t)$.
+We apply It\^o's lemma to the function $f(t, C) = e^{-\rho t} C^{-1}$. The derivatives are $\partial_t f = -\rho f$, $\partial_C f = -C^{-1} f$, $\partial_{CC} f = 2C^{-2} f$. Using $\diff C_t = C_t\mu_C\,\diff t + C_t\bm{\sigma}_C^{\top}\diff\bm{W}_t$ (suppressing $s_t$ for brevity), It\^o's lemma yields
+\[
+  \diff\Lambda_t = \partial_t f\,\diff t + \partial_C f\,\diff C_t + \tfrac12\,\partial_{CC} f\,\langle\diff C_t,\diff C_t\rangle_t.
+\]
+Since $\langle\diff C_t,\diff C_t\rangle_t = C_t^2\norm{\bm{\sigma}_C}^2\,\diff t$, we obtain
+\begin{align*}
+  \diff\Lambda_t
+  &= -\rho\Lambda_t\,\diff t + (-C_t^{-1}\Lambda_t)(C_t\mu_C\,\diff t + C_t\bm{\sigma}_C^{\top}\diff\bm{W}_t) + \tfrac12(2 C_t^{-2}\Lambda_t)(C_t^2\norm{\bm{\sigma}_C}^2\,\diff t) \\
+  &= \Lambda_t\Big[(-\rho-\mu_C+\norm{\bm{\sigma}_C}^2)\,\diff t - \bm{\sigma}_C^{\top}\diff\bm{W}_t\Big].
+\end{align*}
+Dividing by $\Lambda_t$ gives \cref{eq:sdf_drift}. Matching $\diff\Lambda_t/\Lambda_t = -r_t\,\diff t - \bm{\lambda}_t^{\top}\diff\bm{W}_t$ identifies $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$ and $r_t=\rho+\mu_C(s_t)-\norm{\bm{\sigma}_C(s_t)}^2$. The CAPM statement follows from $\E_t[\diff R_t]-r_t\,\diff t=-\Cov_t(\diff\Lambda_t/\Lambda_t,\diff R_t)$.
 \end{proof}
 
+\begin{sympycheck}[title={Verification: SDF dynamics via It\^o's Lemma}]
+\begin{pyconsole}
+import sympy as sp
+
+rho, muC, sigmaC_sq = sp.symbols('rho muC sigmaC_sq', real=True)
+sigmaC = sp.symbols('sigmaC')
+t, C = sp.symbols('t C', positive=True, real=True)
+
+Lambda = sp.exp(-rho*t) * C**(-1)
+
+dL_dt = sp.diff(Lambda, t)
+dL_dC = sp.diff(Lambda, C)
+dL_dCC = sp.diff(dL_dC, C)
+drift = dL_dt + dL_dC * (C*muC) + sp.Rational(1,2) * dL_dCC * (C**2*sigmaC_sq)
+
+normalized_drift = sp.simplify(drift / Lambda)
+expected_drift = -rho - muC + sigmaC_sq
+assert sp.simplify(normalized_drift - expected_drift) == 0
+
+normalized_diffusion = sp.simplify((dL_dC * C*sigmaC) / Lambda)
+assert sp.simplify(normalized_diffusion - (-sigmaC)) == 0
+\end{pyconsole}
+\end{sympycheck}
+
+\begin{leanproof}[title={Structural Definition: Log-Utility SDF}]
+We verify the structure $\Lambda_t = e^{-\rho t} u'(C_t)$ where $u(C) = \log C$.
+\begin{lstlisting}[language={},basicstyle=\ttfamily\small]
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.Calculus.Deriv.Basic
+
+noncomputable section
+open Real
+
+variable (rho : Real) (C : Real) (hC : C > 0)
+def utility (C : Real) : Real := log C
+
+lemma utility_deriv (hC : C > 0) : deriv utility C = 1/C := by
+  simp [utility, deriv_log, hC.ne']
+
+def sdf (t : Real) (C : Real) : Real := exp (-rho * t) * (deriv utility C)
+
+lemma sdf_structure (t : Real) (hC : C > 0) :
+  sdf rho t C = exp (-rho * t) * C^{-1} := by
+  simp [sdf, utility_deriv hC, inv_eq_one_div]
+\end{lstlisting}
+\end{leanproof}
+
 \begin{corollary}{Tree-level risk premia}{cor:capm_trees}
-For the equity claim on tree $j\in\{1,2\}$ with diffusion $\bm{\sigma}_j$,
+For the equity claim on tree $j\in\{1,2\}$ with return diffusion $\bm{\sigma}_{R^j}$, the risk premium is
 \begin{equation}\label{eq:tree_capm}
-  \E_t[\diff R^j_t]-r_t\,\diff t=\ip{\bm{\sigma}_C(s_t)}{\bm{\sigma}_j}\,\diff t,
-  \qquad
+  \E_t[\diff R^j_t]-r_t\,\diff t=\ip{\bm{\sigma}_C(s_t)}{\bm{\sigma}_{R^j}}\,\diff t.
+\end{equation}
+The risk-neutral drift of the dividend process $D_j$ (with physical drift $\mu_j$ and diffusion $\bm{\sigma}_j$) is
+\begin{equation}\label{eq:rn_drift_cor}
   \mu_j^{\mathbb{Q}}(s_t)=\mu_j-\ip{\bm{\sigma}_j}{\bm{\sigma}_C(s_t)}.
 \end{equation}
 \end{corollary}
 \begin{proof}
-Set $\bm{\sigma}_R=\bm{\sigma}_j$ in \eqref{eq:capm}. Girsanov's theorem with market price $\bm{\lambda}_t$ gives the risk-neutral drift.
+Set $\bm{\sigma}_R=\bm{\sigma}_{R^j}$ in \eqref{eq:capm} with $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$. For the risk-neutral dynamics, apply Girsanov: $\diff\bm{W}_t^{\mathbb{Q}}=\diff\bm{W}_t+\bm{\lambda}_t\,\diff t$. Then
+\[
+  \frac{\diff D_{j,t}}{D_{j,t}}=\mu_j\,\diff t+\bm{\sigma}_j^{\top}(\diff\bm{W}_t^{\mathbb{Q}}-\bm{\lambda}_t\,\diff t)
+  = (\mu_j-\ip{\bm{\sigma}_j}{\bm{\lambda}_t})\,\diff t + \bm{\sigma}_j^{\top}\diff\bm{W}_t^{\mathbb{Q}}.
+\]
+Substituting $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$ yields \eqref{eq:rn_drift_cor}.
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-  	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
+	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
 \end{tcolorbox}
 
 \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
@@ -413,29 +477,108 @@ recovers the familiar CAPM slope $\E_t[R_i]-r=\norm{\bm{\sigma}_C}^2\beta_i$ whe
 \textbf{Economic intuition.} In the constant-share benchmark each tree replicates a levered claim on aggregate consumption. Trees with higher covariance with $\bm{\sigma}_C$ must offer higher expected returns, shrinking their price--dividend multiples.
 \end{tcolorbox}
 
-\section{Market Clearing and Price Mapping}
-The log-utility kernel renders prices homogeneous of degree one in dividends. Writing $s_t=D_{1,t}/C_t$, each tree price factorises as
+\section{Dimensionality Reduction and the Valuation ODE}\label{sec:reduction}
+
+The structure of the Lucas economy with log utility allows for a significant dimensionality reduction from a 2D PDE to a 1D ODE.
+
+\begin{proposition}{Homogeneity and Price--Dividend Ratios}{prop:homogeneity}
+Prices are homogeneous of degree one in dividends. Consequently, the price of tree $i$ factorises as:
 \begin{equation}\label{eq:pd_ratio}
-  P_i(D_1,D_2) = D_i f_i(s), \qquad f_i:(0,1)\to\R_+.
+  P_i(D_1,D_2) = D_i f_i(s_t), \qquad f_i:(0,1)\to\R_+,
 \end{equation}
-Substituting into \eqref{eq:valuation_pde} collapses valuation to the one-dimensional boundary value problem
+where $f_i(s)$ is the price--dividend ratio, depending only on the share $s_t$.
+\end{proposition}
+\begin{proof}
+The SDF $\Lambda_t=e^{-\rho t}C_t^{-1}$ is homogeneous of degree $-1$ in $C_t$ (and thus in dividends). The price is $P_{i,t} = \E_t\big[\int_t^\infty (\Lambda_u/\Lambda_t) D_{i,u}\,\diff u\big]$. If all initial dividends are scaled by $\kappa>0$, $C_u$ scales by $\kappa$ for all $u\ge t$. The SDF ratio $\Lambda_u/\Lambda_t$ remains invariant, and $D_{i,u}$ scales by $\kappa$. Thus, $P_{i,t}$ scales linearly with $\kappa$. Since the dynamics of $s_t$ are independent of the level $C_t$, the resulting price--dividend ratio must depend only on $s_t$.
+\end{proof}
+
+To utilise this structure in the valuation PDE \eqref{eq:valuation_pde}, we require the dynamics of the state variable $s_t$ under the risk-neutral measure $\mathbb{Q}$.
+
+\subsection{Risk-Neutral Dynamics of the Share Process}
+
+\begin{lemma}{Risk-neutral share dynamics}{lem:sQ}
+Under the risk-neutral measure $\mathbb{Q}$ induced by $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$, the share process $s_t$ follows
+\begin{equation}\label{eq:s_drift_Q}
+  \diff s_t = \mu_s^{\mathbb{Q}}(s_t)\,\diff t + \bm{\sigma}_s(s_t)^{\top}\diff\bm{W}_t^{\mathbb{Q}},
+\end{equation}
+where the diffusion $\bm{\sigma}_s(s)=s(1-s)(\bm{\sigma}_1-\bm{\sigma}_2)$ is invariant under the change of measure, and the risk-neutral drift is
+\begin{equation}\label{eq:mu_s_Q}
+  \mu_s^{\mathbb{Q}}(s) = s(1-s)\Big(\mu_1^{\mathbb{Q}}(s)-\mu_2^{\mathbb{Q}}(s)+\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)\Big).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Under $\mathbb{P}$, $\diff s_t = \mu_s(s_t)\,\diff t + \bm{\sigma}_s(s_t)^{\top}\diff\bm{W}_t$. Using $\diff\bm{W}_t = \diff\bm{W}_t^{\mathbb{Q}} - \bm{\lambda}_t\,\diff t$ with $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$,
+\[
+  \diff s_t = \big(\mu_s(s_t) - \ip{\bm{\sigma}_s(s_t)}{\bm{\sigma}_C(s_t)}\big)\,\diff t + \bm{\sigma}_s(s_t)^{\top}\diff\bm{W}_t^{\mathbb{Q}}.
+\]
+The adjustment equals $\ip{\bm{\sigma}_s(s)}{\bm{\sigma}_C(s)} = s(1-s)\ip{\bm{\sigma}_1-\bm{\sigma}_2}{\bm{\sigma}_C(s)}$. Substituting the expression for $\mu_s$ and regrouping using $\mu_j^{\mathbb{Q}}(s)$ yields \eqref{eq:mu_s_Q}.
+\end{proof}
+
+\begin{sympycheck}[title={Verification: Risk-neutral share drift $\mu_s^{\mathbb{Q}}(s)$}]
+This verifies the algebraic equivalence between the Girsanov-transformed drift and the stated result using risk-neutral dividend drifts.
+\begin{pyconsole}
+import sympy as sp
+
+s, mu1, mu2 = sp.symbols('s mu1 mu2', real=True)
+# Define symbols for inner products <sigma_i, sigma_j>
+sig1_sq, sig2_sq, sig1_sig2 = sp.symbols('sig1_sq sig2_sq sig1_sig2', real=True)
+
+# Inner products involving sigmaC
+sig1_sigC = s*sig1_sq + (1-s)*sig1_sig2
+sigC_sig2 = s*sig1_sig2 + (1-s)*sig2_sq
+# <sigmaC, sigma2-sigma1>
+sigC_diff = sigC_sig2 - sig1_sigC
+
+# Physical drift mu_s (Lemma 3.2)
+mu_s = s*(1-s)*(mu1 - mu2 + sigC_diff)
+
+# Girsanov adjustment: <sigma_s, lambda_t>
+# sigma_s = s(1-s)(sigma1-sigma2). lambda_t = sigmaC.
+# <sigma_s, sigmaC> = s(1-s) * (<sigma1, sigmaC> - <sigma2, sigmaC>)
+adjustment = s*(1-s)*(sig1_sigC - sigC_sig2)
+
+# LHS: Drift under Q via Girsanov
+mu_s_Q_girsanov = mu_s - adjustment
+
+# RHS: Stated drift under Q (Lemma 7.2)
+mu1_Q = mu1 - sig1_sigC
+mu2_Q = mu2 - sigC_sig2
+mu_s_Q_stated = s*(1-s)*(mu1_Q - mu2_Q + sigC_diff)
+
+# Verification
+assert sp.simplify(mu_s_Q_girsanov - mu_s_Q_stated) == 0
+\end{pyconsole}
+\end{sympycheck}
+
+\subsection{The Valuation ODE}
+
+The infinitesimal generator $\mathcal{L}^{\mathbb{Q}}_s$ of the 1D diffusion $s_t$ under $\mathbb{Q}$ acts on smooth $g(s)$ as $\mathcal{L}^{\mathbb{Q}}_s g = a(s) g'' + b^{\mathbb{Q}}(s) g'$, where
+\[
+  a(s) = \tfrac12 \norm{\bm{\sigma}_s(s)}^2 = \tfrac12 s^2(1-s)^2\norm{\bm{\sigma}_1-\bm{\sigma}_2}^2,\qquad
+  b^{\mathbb{Q}}(s)=\mu_s^{\mathbb{Q}}(s).
+\]
+
+\begin{theorem}{Valuation ODE for Price--Dividend Ratios}{thm:valuation_ode}
+The price--dividend ratio $f_i(s)$ for tree $i$ satisfies the second-order linear ODE:
 \begin{equation}\label{eq:ode_price}
-  \mathcal{L}^{\mathbb{Q}}_s f_i(s) - \big(r(s)-\mu_i^{\mathbb{Q}}(s)\big) f_i(s) + 1 = 0,
+  a(s) f_i''(s) + b^{\mathbb{Q}}(s) f_i'(s) - \big(r(s)-\mu_i^{\mathbb{Q}}(s)\big) f_i(s) + 1 = 0,
 \end{equation}
-where $\mathcal{L}^{\mathbb{Q}}_s$ denotes the generator of $s_t$ under the risk-neutral dynamics induced by $\bm{\lambda}_t$, and $r(s)$ and $\mu_i^{\mathbb{Q}}(s)$ follow from \cref{prop:sdf,cor:capm_trees}. Boundary conditions $f_1(0)=0$, $f_1(1)=1/\rho$ and $f_2(1)=0$, $f_2(0)=1/\rho$ capture the limits in which one tree vanishes.
+where $a(s)$ and $b^{\mathbb{Q}}(s)$ are defined above, and $r(s)$ and $\mu_i^{\mathbb{Q}}(s)$ are as defined earlier.
+\end{theorem}
+\begin{proof}
+Substitute the ansatz $P_i(D_1,D_2)=D_i f_i(s)$ into \eqref{eq:valuation_pde} and exploit homogeneity, or equivalently apply Feynman--Kac to the martingale pricing condition under $\mathbb{Q}$.
+\end{proof}
 
 \begin{tcolorbox}[mathstyle]
-For smooth $g$, the operator reads $\mathcal{L}^{\mathbb{Q}}_s g(s)=a(s) g''(s)+b^{\mathbb{Q}}(s) g'(s)$ with
-\[
-  a(s)=\tfrac12 s^2(1-s)^2\norm{\bm{\sigma}_1-\bm{\sigma}_2}^2,
-  \qquad
-  b^{\mathbb{Q}}(s)=s(1-s)\Big(\mu_1^{\mathbb{Q}}(s)-\mu_2^{\mathbb{Q}}(s)+\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)\Big).
-\]
-Standard boundary value methods yield $f_i$ under mild conditions.
+	extbf{Boundary behaviour and Feller's classification.} The diffusion coefficient $a(s)$ vanishes quadratically as $s\to0$ or $s\to1$. Assuming $\bm{\sigma}_1\neq\bm{\sigma}_2$, $a(s)>0$ on $(0,1)$, so the process is regular internally. Feller's classification indicates that $s=0$ and $s=1$ are natural boundaries (inaccessible in finite time), confirming $s_t\in(0,1)$.
 \end{tcolorbox}
 
 \section{Boundary and Regularity Conditions}
-The share process lives on $(0,1)$ with diffusion coefficient $s^2(1-s)^2\norm{\bm{\sigma}_1-\bm{\sigma}_2}^2$ that vanishes at the endpoints. These are natural boundaries under both $\mathbb{P}$ and $\mathbb{Q}$, so we solve \eqref{eq:ode_price} on $(0,1)$ with Dirichlet boundary data stated above. The log-utility SDF enforces homogeneity: $P_i(D_1,D_2)=D_i f_i(s)$ grows at most linearly in dividends provided $\rho>\sup_s \mu_i^{\mathbb{Q}}(s)$, which also guarantees transversality.
+The ODE \eqref{eq:ode_price} is solved subject to Dirichlet boundary conditions. As $s\to 1$ (Tree 2 vanishes), $C_t\approx D_{1,t}$. Tree 1 becomes the market with price--dividend ratio $1/\rho$, while Tree 2 is worthless; the roles reverse as $s\to0$:
+\[
+  f_1(1)=1/\rho, \quad f_1(0)=0; \qquad f_2(0)=1/\rho, \quad f_2(1)=0.
+\]
+Homogeneity ensures $P_i(D_1,D_2)=D_i f_i(s)$ grows at most linearly in dividends provided the discount rate is sufficiently high, specifically $\rho>\sup_s \mu_i^{\mathbb{Q}}(s)$. This condition also guarantees transversality.
 
 \begin{tcolorbox}[didacticstyle]
 Extremes $s\to0$ or $1$ correspond to one tree vanishing. The boundary data encode that the surviving tree reverts to the single-tree Lucas benchmark while the disappearing tree is worthless.
@@ -449,6 +592,9 @@ The boundary-value problem \eqref{eq:ode_price} is linear and one-dimensional, s
 \begin{enumerate}[leftmargin=1.25em]
   \item \textbf{Finite Differences (FD).} Discretise the domain $s\in[0,1]$ into $N+1$ points. Derivatives in \cref{eq:ode_price} are approximated using finite-difference stencils. Central differences offer second-order accuracy for diffusion. For the drift term $b^{\mathbb{Q}}(s) f'(s)$, upwind schemes are typically required to ensure stability, especially when drift dominates diffusion (high P\'eclet number).
   \item \textbf{Finite Volume Methods (FVM).} FVM integrates the equation over control volumes and approximates fluxes across cell faces. By enforcing the balance of fluxes, FVM preserves conservation properties and remains robust when coefficients degenerate near the boundaries $s=0,1$. FVM is also notably flexible for extensions involving high-dimensional or infinite-dimensional controls \cite{chen2025applications}.
+  \begin{tcolorbox}[literaturestyle, title={FVM for Continuum Controls}]
+  \cite{chen2025applications} demonstrate FVM when controls or states form a continuum (e.g., debt maturity profiles). FVM approximates the continuous function by step functions over discretised intervals (volumes), converting an infinite-dimensional problem to a high-dimensional one suitable for probabilistic solvers (\cref{sec:computation_probabilistic}) while remaining robust under complex asymptotics (e.g., Pareto tails).
+  \end{tcolorbox}
   \item \textbf{System structure and complexity.} Both FD and FVM discretisations yield a linear system $A\bm{f}_i=\bm{b}$. The locality of the differential operators implies that $A$ is sparse and typically tridiagonal, enabling the Thomas algorithm to solve the system in $O(N)$ time.
   \begin{sympycheck}[title={Verification: Tridiagonal structure from 1D discretisation}]
   \small Standard FD stencils (e.g., centred differences for diffusion, upwinding for drift) only couple adjacent grid points ($j-1, j, j+1$), ensuring that $A$ is tridiagonal. Appendix~\ref{app:sympy} records a symbolic confirmation.
@@ -462,7 +608,7 @@ For the two-tree Lucas model, these classical methods deliver highly accurate so
 \subsection{Modern Probabilistic Methods (Deep BSDE)}\label{sec:computation_probabilistic}
 High-dimensional extensions---multiple trees, stochastic volatility, heterogeneous agents---render grid-based PDE methods impractical because of the curse of dimensionality. Reformulating the valuation problem as a forward--backward SDE enables simulation-based solvers such as the Deep BSDE method \cite{han2018solving,huang2025probabilistic}.
 \begin{tcolorbox}[literaturestyle]
-  	extbf{Motivation for probabilistic solvers.} The probabilistic formulation bypasses high-dimensional Hessian evaluations. \cite{huang2025probabilistic} shows that this leads to nearly linear complexity growth in the state dimension while preserving the martingale structure of asset prices.
+  extbf{Motivation for probabilistic solvers.} The BSDE formulation avoids the high-dimensional Hessians required by PDE solvers (and PINNs), yielding nearly linear complexity growth in state dimension while preserving martingale structure \cite{huang2025probabilistic}.
 \end{tcolorbox}
 \begin{proposition}{FBSDE representation for tree $i$}{prop:fbsde}
 Let $P_t^i=C_t f_i(s_t)$ denote the price of tree $i$. The system $(C_t,s_t,P_t^i,\bm{Z}_t^i)$ solves the coupled FBSDE
@@ -475,15 +621,37 @@ Let $P_t^i=C_t f_i(s_t)$ denote the price of tree $i$. The system $(C_t,s_t,P_t^
 where $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$ is the market price of risk and $\bm{Z}_t^i$ is the diffusion exposure ensuring that discounted prices remain martingales.
 \end{proposition}
 \begin{proof}
-The forward dynamics follow from Lemmas~\ref{lem:C} and \ref{lem:s}. Pricing under $\mathbb{Q}$ satisfies the linear BSDE with driver $(r_t P_t^i-D_t^i)$. Girsanov's theorem ($\diff\bm{W}_t^{\mathbb{Q}} = \diff\bm{W}_t + \bm{\lambda}_t\,\diff t$) then yields the $\mathbb{P}$-drift adjustment $(\bm{Z}_t^i)^{\top}\bm{\lambda}_t$. The algebraic structure of this adjustment is certified in Appendix~\ref{app:lean_verification}.
+The forward dynamics follow from the derived dynamics of $C_t$ and $s_t$. Pricing under $\mathbb{Q}$ satisfies the linear BSDE with driver $(r_t P_t^i-D_t^i)$. Girsanov's theorem ($\diff\bm{W}_t^{\mathbb{Q}} = \diff\bm{W}_t + \bm{\lambda}_t\,\diff t$) then yields the $\mathbb{P}$-drift adjustment $(\bm{Z}_t^i)^{\top}\bm{\lambda}_t$.
 
-Applying It\^o's lemma to the Markov representation $P_t^i=C_t f_i(s_t)$ gives the diffusion exposure
+To identify $\bm{Z}_t^i$, apply It\^o's lemma to the Markov representation $P_t^i(C_t, s_t)=C_t f_i(s_t)$. (Here $f_i$ denotes the price--consumption ratio; this differs from the price--dividend ratio in \cref{sec:reduction}.) The partial derivatives are $\partial_C P^i = f_i(s_t)$ and $\partial_s P^i = C_t f_i'(s_t)$. Using the diffusions of $C_t$ ($C_t\bm{\sigma}_C(s_t)$) and $s_t$ ($\bm{\sigma}_s(s_t)$) gives
 \[
-  \bm{Z}_t^i = \underbrace{C_t f_i(s_t)\,\bm{\sigma}_C(s_t)}_{\partial_C P \cdot \mathrm{diff}(C)} + \underbrace{C_t f_i'(s_t)\,\bm{\sigma}_s(s_t)}_{\partial_s P \cdot \mathrm{diff}(s)}.
+  \bm{Z}_t^i = f_i(s_t)\,C_t\bm{\sigma}_C(s_t) + C_t f_i'(s_t)\,\bm{\sigma}_s(s_t).
 \]
 \end{proof}
 
-\begin{sympycheck}[title={Verification of diffusion exposure $\bm{Z}_t^i$ (Prop.~\ref{prop:fbsde})}]
+\begin{leanproof}[title={Algebraic Structure of Girsanov Drift Adjustment}]
+We verify the structure of the drift adjustment when moving from $\mathbb{Q}$ to $\mathbb{P}$.
+\begin{lstlisting}[language={},basicstyle=\ttfamily\small]
+import Mathlib.Data.Real.Basic
+
+variable (r P D : Real)
+variable (Z_lambda_product : Real) -- Represents the inner product <Z, lambda>
+
+-- Drift under Q (driver of the BSDE)
+def drift_Q (r P D : Real) : Real := r * P - D
+
+-- Drift under P (Girsanov adjusted)
+def drift_P (r P D : Real) (Z_lambda_product : Real) : Real :=
+  drift_Q r P D + Z_lambda_product
+
+lemma drift_P_structure_verified :
+    drift_P r P D Z_lambda_product = (r * P - D) + Z_lambda_product := by
+  simp [drift_P, drift_Q]
+\end{lstlisting}
+\end{leanproof}
+
+\begin{sympycheck}[title={Verification of diffusion exposure $\bm{Z}_t^i$}]
+We verify the application of the chain rule (It\^o diffusion part) to $P_t^i = C_t f_i(s_t)$.
 \begin{pyconsole}
 import sympy as sp
 
@@ -493,16 +661,22 @@ f_i = sp.Function('f_i')
 
 P_i = C * f_i(s)
 Z_ito = sp.diff(P_i, C) * (C * sigma_C) + sp.diff(P_i, s) * sigma_s
-Z_stated = C * f_i(s) * sigma_C + C * sp.diff(f_i(s), s) * sigma_s
+Z_stated = f_i(s) * (C * sigma_C) + (C * sp.diff(f_i(s), s)) * sigma_s
 assert sp.simplify(Z_ito - Z_stated) == 0
 \end{pyconsole}
 \end{sympycheck}
 
-The Deep BSDE algorithm approximates $f_i(s)$ and its gradient $f_i'(s)$ (needed for $\bm{Z}_t^i$) with neural networks. It simulates the FBSDE forward in time and minimises a loss that penalises deviations from the Markov structure $P_t^i=C_t f_i(s_t;\Theta)$. Automatic differentiation of $f_i(s;\Theta)$ provides $f_i'(s)$. Appendix~\ref{app:algorithms} describes Algorithm~\ref{alg:deepbsde}, adapted from \cite{han2018solving} and \cite{huang2025probabilistic}, and emphasises batching, antithetic sampling, and diagnostics aligning with \cref{sec:verification}.
+The Deep BSDE algorithm solves this system by approximating the unknown functions $f_i(s)$ and $f_i'(s)$ using neural networks parameterised by $\Theta$.
+\begin{enumerate}[leftmargin=1.25em]
+  \item \textbf{Approximation and Automatic Differentiation.} Represent $f_i(s;\Theta)$; obtain $f_i'(s;\Theta)$ via automatic differentiation to compute $\bm{Z}_t^i$.
+  \item \textbf{Simulation.} Simulate the forward components $(C_t, s_t)$ and the backward component $P_t^i$ (using the approximated $\bm{Z}_t^i$) forward in time.
+  \item \textbf{Infinite-Horizon Adaptation.} Without a terminal condition, minimise a pathwise loss enforcing $P_k^m \approx C_k^m f_i(s_k^m;\Theta)$ at every step (Forward Euler Scheme), following \cite{huang2025probabilistic}. This drives convergence to the time-homogeneous fixed point.
+\end{enumerate}
+Appendix~\ref{app:algorithms} provides algorithmic details and stabilisation techniques (batching, antithetic pairing).
 
 \section{Verification and Diagnostics}\label{sec:verification}
 
-Model implementations should report the calibration, seeds, and numerical tolerances; track martingale diagnostics for $\Lambda_t P_t^i$; and compare simulated moments of $(C_t,s_t)$ against analytical targets. Appendix~\ref{app:sympy} runs executable SymPy checks for Lemmas~\ref{lem:C}--\ref{lem:s} and Proposition~\ref{prop:sdf}, while Appendix~\ref{app:lean_verification} certifies the state transformation in Lean4.
+Model implementations should report the calibration, seeds, and numerical tolerances; track martingale diagnostics for $\Lambda_t P_t^i$; and compare simulated moments of $(C_t,s_t)$ against analytical targets. Appendix~\ref{app:sympy} runs executable SymPy checks for core lemmas and propositions, while Appendix~\ref{app:lean_verification} certifies the state transformation bijection in Lean4.
 
 \section{Economic Remarks}
 Log utility keeps prices proportional to dividends, so all cross-sectional variation in valuations flows through the share $s_t$. Higher dispersion in dividend growth rates pushes $s_t$ toward the dominant tree, raising that tree's expected return through \eqref{eq:tree_capm}. Correlated shocks magnify this channel via $\bm{\sigma}_C(s_t)$, while perfectly correlated trees reduce the model to a single Lucas tree with aggregate diffusion $\bm{\sigma}_C$.
@@ -573,26 +747,7 @@ lemma transform_bijective : Function.Bijective transform := by
 \end{leanproof}
 
 
-\begin{leanproof}[title={Algebraic Structure of Girsanov Drift Adjustment (Prop.~\ref{prop:fbsde})}]
-\begin{lstlisting}[basicstyle=\ttfamily\small]
-import Mathlib.Data.Real.Basic
-
-variable (r P D : Real)
-variable (Z_lambda_product : Real)
-
-def drift_Q (r P D : Real) : Real := r * P - D
-
-def drift_P (r P D : Real) (Z_lambda_product : Real) :
-    Real :=
-  drift_Q r P D + Z_lambda_product
-
-lemma drift_P_structure_verified :
-    drift_P r P D Z_lambda_product = (r * P - D) + Z_lambda_product := by
-  simp [drift_P, drift_Q]
-
-#print drift_P_structure_verified
-\end{lstlisting}
-\end{leanproof}
+% (Moved the Girsanov drift adjustment check into the main text; see Section~\ref{sec:computation_probabilistic}.)
 
 \section{Appendix B: Symbolic Verification (PythonTeX + SymPy)}\label{app:sympy}
 \begin{sympycheck}
@@ -671,7 +826,7 @@ assert dependencies == expected_dependencies
 
     \item \quad\quad Draw shocks $\{\Delta\bm{W}_k^m\}_{m=1}^M$ (e.g., Gaussian with antithetic sampling for variance reduction).
 
-    \item \quad\quad Compute controls $\bm{Z}_k^m$ using the expression in Proposition~\ref{prop:fbsde}. This requires $f_i'(s_k^m;\Theta)$, obtained via automatic differentiation of the network.
+  \item \quad\quad Compute controls $\bm{Z}_k^m$ using the expression above. This requires $f_i'(s_k^m;\Theta)$, obtained via automatic differentiation of the network.
 
     \item \quad\quad Update states with Euler--Maruyama:
 

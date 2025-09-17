@@ -443,11 +443,11 @@ INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sy
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
-OUTPUT c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.toc
 INPUT C:\Users\fababa\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
+OUTPUT c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.toc
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmss.fd
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmss.fd
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmss.fd
@@ -496,9 +496,9 @@ INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
+INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmri10.tfm
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmri10.tfm
 INPUT c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.aux
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\fababa\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb

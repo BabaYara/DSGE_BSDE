@@ -6,15 +6,17 @@
 \contentsline {subsection}{\numberline {3.2}Dynamics of consumption and share}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Generator in $(C,s)$ coordinates}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{8}{section.4}%
-\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{8}{section.5}%
-\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{9}{section.6}%
-\contentsline {section}{\numberline {7}Market Clearing and Price Mapping}{9}{section.7}%
-\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{10}{section.8}%
-\contentsline {section}{\numberline {9}Computation: Solution Strategies}{10}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{10}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{11}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Verification and Diagnostics}{12}{section.10}%
-\contentsline {section}{\numberline {11}Economic Remarks}{12}{section.11}%
-\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{13}{appendix.A}%
-\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{14}{appendix.B}%
-\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{16}{appendix.C}%
+\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{10}{section.5}%
+\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{10}{section.6}%
+\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{12}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{13}{section.8}%
+\contentsline {section}{\numberline {9}Computation: Solution Strategies}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{13}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{14}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{16}{section.10}%
+\contentsline {section}{\numberline {11}Economic Remarks}{16}{section.11}%
+\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{16}{appendix.A}%
+\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{17}{appendix.B}%
+\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{18}{appendix.C}%

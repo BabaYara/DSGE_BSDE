@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  17 SEP 2025 08:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  17 SEP 2025 11:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -939,15 +939,15 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 5.
-)
-\tf@toc=\write4
-\openout4 = `BSDE_21.toc'.
-
 
 
 [1
 
-{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}])
+\tf@toc=\write4
+\openout4 = `BSDE_21.toc'.
+
+
 
 [2]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 133.
@@ -984,11 +984,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.250 \end{lemma}
-                 ]
-
-LaTeX Warning: Reference `lem:C' on page 6 undefined on input line 264.
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+                 ] (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 284.
@@ -1002,16 +998,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [6]
-
-LaTeX Warning: Reference `lem:s' on page 7 undefined on input line 316.
-
-
 Overfull \hbox (85.90193pt too wide) in paragraph at lines 321--323
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
-
-
-LaTeX Warning: Reference `lem:s' on page 7 undefined on input line 343.
 
 
 
@@ -1056,275 +1045,339 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) h
                    \relax 
 l.353 \begin{equation}
                       \label{eq:capm}
-
-LaTeX Warning: Reference `lem:C' on page 8 undefined on input line 358.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.363 \begin{equation}
-                      \label{eq:tree_capm}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.363 \begin{equation}
-                      \label{eq:tree_capm}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.363 \begin{equation}
-                      \label{eq:tree_capm}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.363 \begin{equation}
-                      \label{eq:tree_capm}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.380 \begin{equation}
-                      \label{eq:rn_drift}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.380 \begin{equation}
-                      \label{eq:rn_drift}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.380 \begin{equation}
-                      \label{eq:rn_drift}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.380 \begin{equation}
-                      \label{eq:rn_drift}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.391 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.391 \end{align}
-                 
-
-[8]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.403 \begin{equation}
-                      \label{eq:const_share_solution}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.403 \begin{equation}
-                      \label{eq:const_share_solution}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.403 \begin{equation}
-                      \label{eq:const_share_solution}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.403 \begin{equation}
-                      \label{eq:const_share_solution}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.407 \begin{equation}
-                      \label{eq:beta}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.407 \begin{equation}
-                      \label{eq:beta}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.407 \begin{equation}
-                      \label{eq:beta}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.407 \begin{equation}
-                      \label{eq:beta}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.418 \begin{equation}
-                      \label{eq:pd_ratio}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.418 \begin{equation}
-                      \label{eq:pd_ratio}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.418 \begin{equation}
-                      \label{eq:pd_ratio}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.418 \begin{equation}
-                      \label{eq:pd_ratio}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.422 \begin{equation}
-                      \label{eq:ode_price}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.422 \begin{equation}
-                      \label{eq:ode_price}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.422 \begin{equation}
-                      \label{eq:ode_price}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.422 \begin{equation}
-                      \label{eq:ode_price}
-
-LaTeX Warning: Reference `cor:capm_trees' on page 1 undefined on input line 425.
-
-
-LaTeX Warning: Reference `prop:sdf' on page 1 undefined on input line 425.
-
-
-
-[9
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.435 \end{tcolorbox}
-                     ]
-
-[10]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.467 ... representation for tree $i$}{prop:fbsde}
-                                                  
-
-LaTeX Warning: Reference `lem:C' on page 11 undefined on input line 478.
-
-
-LaTeX Warning: Reference `lem:s' on page 11 undefined on input line 478.
-
-
-
-[11]
-
-LaTeX Warning: Reference `prop:fbsde' on page 12 undefined on input line 486.
-
-
-LaTeX Warning: Reference `lem:C' on page 12 undefined on input line 505.
-
-
-LaTeX Warning: Reference `lem:s' on page 12 undefined on input line 505.
-
-
-LaTeX Warning: Reference `prop:sdf' on page 12 undefined on input line 505.
-
-
-Overfull \hbox (7.60223pt too wide) in paragraph at lines 544--546
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (102.1032pt too wide) in paragraph at lines 561--562
+Overfull \hbox (72.76183pt too wide) in paragraph at lines 384--386
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (215.50435pt too wide) in paragraph at lines 562--563
+
+[8]
+Overfull \hbox (26.50243pt too wide) in paragraph at lines 410--412
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.420 \begin{equation}
+                      \label{eq:tree_capm}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.420 \begin{equation}
+                      \label{eq:tree_capm}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.420 \begin{equation}
+                      \label{eq:tree_capm}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.420 \begin{equation}
+                      \label{eq:tree_capm}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.424 \begin{equation}
+                      \label{eq:rn_drift_cor}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.424 \begin{equation}
+                      \label{eq:rn_drift_cor}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.424 \begin{equation}
+                      \label{eq:rn_drift_cor}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.424 \begin{equation}
+                      \label{eq:rn_drift_cor}
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.442 ...luation PDE for tree $i$}{prop:valuation}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.444 \begin{equation}
+                      \label{eq:rn_drift}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.444 \begin{equation}
+                      \label{eq:rn_drift}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.444 \begin{equation}
+                      \label{eq:rn_drift}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.444 \begin{equation}
+                      \label{eq:rn_drift}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.455 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.455 \end{align}
+                 
+
+[9]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467 \begin{equation}
+                      \label{eq:const_share_solution}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467 \begin{equation}
+                      \label{eq:const_share_solution}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467 \begin{equation}
+                      \label{eq:const_share_solution}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467 \begin{equation}
+                      \label{eq:const_share_solution}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.471 \begin{equation}
+                      \label{eq:beta}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.471 \begin{equation}
+                      \label{eq:beta}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.471 \begin{equation}
+                      \label{eq:beta}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.471 \begin{equation}
+                      \label{eq:beta}
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.484 ...Price--Dividend Ratios}{prop:homogeneity}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486 \begin{equation}
+                      \label{eq:pd_ratio}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486 \begin{equation}
+                      \label{eq:pd_ratio}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486 \begin{equation}
+                      \label{eq:pd_ratio}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486 \begin{equation}
+                      \label{eq:pd_ratio}
+
+[10]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@lemma.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.499 ...mma}{Risk-neutral share dynamics}{lem:sQ}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.501 \begin{equation}
+                      \label{eq:s_drift_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.501 \begin{equation}
+                      \label{eq:s_drift_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.501 \begin{equation}
+                      \label{eq:s_drift_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.501 \begin{equation}
+                      \label{eq:s_drift_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.505 \begin{equation}
+                      \label{eq:mu_s_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.505 \begin{equation}
+                      \label{eq:mu_s_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.505 \begin{equation}
+                      \label{eq:mu_s_Q}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.505 \begin{equation}
+                      \label{eq:mu_s_Q}
+Overfull \hbox (85.90193pt too wide) in paragraph at lines 524--526
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.0613pt too wide) in paragraph at lines 537--538
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+
+[11]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.563 \begin{equation}
+                      \label{eq:ode_price}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.563 \begin{equation}
+                      \label{eq:ode_price}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.563 \begin{equation}
+                      \label{eq:ode_price}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.563 \begin{equation}
+                      \label{eq:ode_price}
+
+[12]
+
+[13]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@proposition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.613 ... representation for tree $i$}{prop:fbsde}
+                                                  
+
+[14]
+Overfull \hbox (51.70268pt too wide) in paragraph at lines 638--640
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (20.20236pt too wide) in paragraph at lines 648--649
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (20.2014pt too wide) in paragraph at lines 664--665
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+
+[15]
+Overfull \hbox (7.60223pt too wide) in paragraph at lines 718--720
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (102.1032pt too wide) in paragraph at lines 735--736
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (215.50435pt too wide) in paragraph at lines 736--737
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (70.60287pt too wide) in paragraph at lines 563--564
+Overfull \hbox (70.60287pt too wide) in paragraph at lines 737--738
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
 
-[12]
-
-[13]
-
-LaTeX Warning: Reference `prop:fbsde' on page 14 undefined on input line 576.
-
-
-Overfull \hbox (20.20236pt too wide) in paragraph at lines 590--591
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (85.90193pt too wide) in paragraph at lines 605--607
+[16]
+Overfull \hbox (85.90193pt too wide) in paragraph at lines 760--762
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--637
+Underfull \hbox (badness 10000) in paragraph at lines 790--792
 [][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
 
-Overfull \hbox (243.5832pt too wide) in paragraph at lines 638--639
+Overfull \hbox (243.5832pt too wide) in paragraph at lines 793--794
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.3415pt too wide) in paragraph at lines 646--647
+Overfull \hbox (33.3415pt too wide) in paragraph at lines 801--802
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-LaTeX Warning: Reference `prop:fbsde' on page 15 undefined on input line 674.
 
+[18]
 
+[19]
 
-[15]
-
-[16]
-
-[17] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.aux)
+[20] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 46866 strings out of 468134
- 1106537 string characters out of 5430256
- 1836348 words of memory out of 5000000
- 74356 multiletter control sequences out of 15000+600000
- 721842 words of font info for 209 fonts, out of 8000000 for 9000
+ 47030 strings out of 468134
+ 1108854 string characters out of 5430256
+ 1831066 words of memory out of 5000000
+ 74423 multiletter control sequences out of 15000+600000
+ 722683 words of font info for 219 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,13n,121p,1065b,1500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.pdf (17 pages, 489910 bytes).
+Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_21.pdf (20 pages, 518402 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 258 named destinations out of 1000 (max. 500000)
+ 661 PDF objects out of 1000 (max. 8388607)
+ 335 named destinations out of 1000 (max. 500000)
  55821 words of extra memory for PDF output out of 61914 (max. 10000000)
 
