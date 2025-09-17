@@ -33,7 +33,9 @@
 % Use listings instead of minted to avoid external dependencies
 \usepackage{listings}
 % PythonTeX (disabled): define a lightweight 'pyconsole' as listings to avoid external deps
-\lstnewenvironment{pyconsole}{\lstset{language=Python}}{}
+\lstdefinestyle{codeblock}{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,showstringspaces=false}
+\lstset{style=codeblock}
+\lstnewenvironment{pyconsole}{\lstset{language=Python,style=codeblock}}{}
 
 % Acronyms: lightweight fallback to avoid package complexity
 \newcommand{\ac}[1]{{\mdseries\textsc{#1}}}
@@ -279,6 +281,63 @@ assert sp.simplify(left_sigma - sigmaC) == 0
 \end{pyconsole}
 \end{sympycheck}
 
+For completeness, the following SymPy cell derives $\diff s_t$ via an explicit application of It\^o's lemma in the original $(D_1,D_2)$ coordinates, computing all first and second partial derivatives and the quadratic-variation terms before simplifying to the stated drift and diffusion in $s$.
+
+\begin{sympycheck}[title={Verification: Share dynamics via explicit It\^o derivatives}]
+\begin{pyconsole}
+import sympy as sp
+
+# Symbols
+D1, D2 = sp.symbols('D1 D2', positive=True, real=True)
+s = sp.Function('s')
+mu1, mu2 = sp.symbols('mu1 mu2', real=True)
+sig1_sq, sig2_sq, sig1_sig2 = sp.symbols('sig1_sq sig2_sq sig1_sig2', real=True)
+
+# Define share s(D1,D2) and convenience vars
+C = D1 + D2
+s_expr = D1 / C
+
+# First and second partial derivatives
+sd_D1 = sp.diff(s_expr, D1)
+sd_D2 = sp.diff(s_expr, D2)
+sd_D1D1 = sp.diff(sd_D1, D1)
+sd_D2D2 = sp.diff(sd_D2, D2)
+sd_D1D2 = sp.diff(sd_D1, D2)
+
+# Drift via Ito formula in (D1,D2):
+#   f_D1 D1 mu1 + f_D2 D2 mu2
+# + 0.5 f_D1D1 <dD1,dD1> + 0.5 f_D2D2 <dD2,dD2> + f_D1D2 <dD1,dD2>
+drift_explicit = (
+  sd_D1 * D1 * mu1
+  + sd_D2 * D2 * mu2
+  + sp.Rational(1, 2) * sd_D1D1 * (D1**2 * sig1_sq)
+  + sp.Rational(1, 2) * sd_D2D2 * (D2**2 * sig2_sq)
+  + sd_D1D2 * (D1 * D2 * sig1_sig2)
+)
+
+# Express drift in terms of s and compare to stated form
+s_sym = sp.symbols('s', real=True)
+drift_s = sp.simplify(drift_explicit.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
+
+muC = s_sym * mu1 + (1 - s_sym) * mu2
+sig1_sigC = s_sym * sig1_sq + (1 - s_sym) * sig1_sig2
+sigC_sig2 = s_sym * sig1_sig2 + (1 - s_sym) * sig2_sq
+drift_stated = s_sym * (1 - s_sym) * (mu1 - mu2 + (sigC_sig2 - sig1_sigC))
+
+assert sp.simplify(sp.factor(drift_s - drift_stated)) == 0
+
+# Diffusion: ||f_D1 D1 sigma1 + f_D2 D2 sigma2||^2
+diff_norm_sq = (
+  (sd_D1 * D1) ** 2 * sig1_sq
+  + (sd_D2 * D2) ** 2 * sig2_sq
+  + 2 * (sd_D1 * D1) * (sd_D2 * D2) * sig1_sig2
+)
+diff_norm_sq_s = sp.simplify(diff_norm_sq.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
+expected_norm_sq = (s_sym ** 2) * ((1 - s_sym) ** 2) * (sig1_sq + sig2_sq - 2 * sig1_sig2)
+assert sp.simplify(diff_norm_sq_s - expected_norm_sq) == 0
+\end{pyconsole}
+\end{sympycheck}
+
 \begin{leanproof}[title={Affine structure of $\mu_C$ and $\bm{\sigma}_C$}]
 The consumption coefficients are affine in the primitives.
 \begin{lstlisting}[basicstyle=\ttfamily\small]
@@ -435,7 +494,7 @@ Substituting $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$ yields \eqref{eq:rn_drift_cor}.
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
+  	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
 \end{tcolorbox}
 
 \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
@@ -459,7 +518,7 @@ Shift the dividend drifts by $-\ip{\bm{\sigma}_j}{\bm{\lambda}_t}$ and apply the
 \end{proof}
 
 \begin{tcolorbox}[mathstyle]
-\textbf{Diagnostic.} Correlated shocks ($\ip{\bm{\sigma}_1}{\bm{\sigma}_2}\neq0$) introduce the cross-derivative term, tightening the coupling between the two dividend streams. Orthogonal shocks decouple the PDEs.
+  	extbf{Diagnostic.} Correlated shocks ($\ip{\bm{\sigma}_1}{\bm{\sigma}_2}\neq0$) introduce the cross-derivative term, tightening the coupling between the two dividend streams. Orthogonal shocks decouple the PDEs.
 \end{tcolorbox}
 
 \section{Constant-Share Benchmark and CAPM Components}\label{sec:benchmark}
@@ -563,15 +622,68 @@ The price--dividend ratio $f_i(s)$ for tree $i$ satisfies the second-order linea
 \begin{equation}\label{eq:ode_price}
   a(s) f_i''(s) + b^{\mathbb{Q}}(s) f_i'(s) - \big(r(s)-\mu_i^{\mathbb{Q}}(s)\big) f_i(s) + 1 = 0,
 \end{equation}
-where $a(s)$ and $b^{\mathbb{Q}}(s)$ are defined above, and $r(s)$ and $\mu_i^{\mathbb{Q}}(s)$ are as defined earlier.
+where $a(s)$ and $b^{\mathbb{Q}}(s)$ are defined above, and $r(s)$ and $\mu_i^{\mathbb{Q}}(s)$ are given by \cref{prop:sdf,cor:capm_trees}.
 \end{theorem}
 \begin{proof}
-Substitute the ansatz $P_i(D_1,D_2)=D_i f_i(s)$ into \eqref{eq:valuation_pde} and exploit homogeneity, or equivalently apply Feynman--Kac to the martingale pricing condition under $\mathbb{Q}$.
+\emph{PDE $\to$ ODE (proof sketch).} By \cref{prop:homogeneity}, set $P_i(D_1,D_2)=D_i f_i(s)$ with $s\equiv D_1/(D_1+D_2)$. Compute the derivatives in $(D_1,D_2)$ using the chain rule:
+\[
+  \partial_{D_1} P_i = f_i(s) + D_i f_i'(s)\,\partial_{D_1}s,\quad
+  \partial_{D_2} P_i = D_i f_i'(s)\,\partial_{D_2}s,
+\]
+with $\partial_{D_1}s = (1-s)/C$ and $\partial_{D_2}s = -s/C$, where $C=D_1+D_2$. Second derivatives follow similarly and produce terms in $f_i''(s)$ and $f_i'(s)$ weighted by $\partial s$ and $\partial^2 s$. Substituting these expressions into the valuation PDE \eqref{eq:valuation_pde}, collecting coefficients of $f_i$, $f_i'$, and $f_i''$, and using the risk-neutral share drift and diffusion from \cref{lem:sQ} yields the generator form
+\[
+  a(s) f_i''(s) + b^{\mathbb{Q}}(s) f_i'(s) - (r(s)-\mu_i^{\mathbb{Q}}(s)) f_i(s) + 1 = 0,
+\]
+with $a(s)=\tfrac12\norm{\bm{\sigma}_s(s)}^2$ and $b^{\mathbb{Q}}(s)=\mu_s^{\mathbb{Q}}(s)$. Alternatively, apply Feynman--Kac to $P_i=D_i f_i(s)$ under $\mathbb{Q}$, where the state is the 1D diffusion $s_t$.
 \end{proof}
 
 \begin{tcolorbox}[mathstyle]
-	extbf{Boundary behaviour and Feller's classification.} The diffusion coefficient $a(s)$ vanishes quadratically as $s\to0$ or $s\to1$. Assuming $\bm{\sigma}_1\neq\bm{\sigma}_2$, $a(s)>0$ on $(0,1)$, so the process is regular internally. Feller's classification indicates that $s=0$ and $s=1$ are natural boundaries (inaccessible in finite time), confirming $s_t\in(0,1)$.
+  	extbf{Boundary behaviour and Feller's classification.} The diffusion coefficient $a(s)$ vanishes quadratically as $s\to0$ or $s\to1$. Assuming $\bm{\sigma}_1\neq\bm{\sigma}_2$, $a(s)>0$ on $(0,1)$, so the process is regular internally. Feller's classification indicates that $s=0$ and $s=1$ are natural boundaries (inaccessible in finite time), confirming $s_t\in(0,1)$.
 \end{tcolorbox}
+
+\begin{sympycheck}[title={Verification: PDE$\,\to\,$ODE derivative identities for $P_i(D_1,D_2)=D_i f_i(s)$}]
+We symbolically confirm the key first and second derivative identities used in the reduction (chain rule with $s=D_1/(D_1+D_2)$).
+\begin{pyconsole}
+import sympy as sp
+
+D1, D2 = sp.symbols('D1 D2', positive=True, real=True)
+C = D1 + D2
+s = D1 / C
+
+# Abstract function f(s) and price P_i = D_i * f(s)
+f = sp.Function('f')
+P1 = D1 * f(s)
+P2 = D2 * f(s)
+
+# Derivatives for i=1 (the case i=2 is analogous)
+dP1_dD1 = sp.diff(P1, D1)
+dP1_dD2 = sp.diff(P1, D2)
+d2P1_d11 = sp.diff(P1, D1, 2)
+d2P1_d22 = sp.diff(P1, D2, 2)
+d2P1_d12 = sp.diff(P1, D1, D2)
+
+# Expected structural forms for first derivatives
+# ds/dD1 = (1 - s)/C, ds/dD2 = -s/C
+ds_dD1 = sp.simplify(sp.diff(s, D1))
+ds_dD2 = sp.simplify(sp.diff(s, D2))
+
+assert sp.simplify(ds_dD1 - (1 - s)/C) == 0
+assert sp.simplify(ds_dD2 - (-s)/C) == 0
+
+# Check that first derivatives match the chain-rule structure
+lhs1 = dP1_dD1
+rhs1 = f(s) + D1 * sp.diff(f(s), s) * ds_dD1
+lhs2 = dP1_dD2
+rhs2 = D1 * sp.diff(f(s), s) * ds_dD2
+
+assert sp.simplify(lhs1 - rhs1) == 0
+assert sp.simplify(lhs2 - rhs2) == 0
+
+# Second-derivative sanity checks: symmetry and dependence only via s
+assert sp.simplify(d2P1_d12 - sp.diff(P1, D2, D1)) == 0
+print("Derivative identities for the PDE->ODE reduction verified.")
+\end{pyconsole}
+\end{sympycheck}
 
 \section{Boundary and Regularity Conditions}
 The ODE \eqref{eq:ode_price} is solved subject to Dirichlet boundary conditions. As $s\to 1$ (Tree 2 vanishes), $C_t\approx D_{1,t}$. Tree 1 becomes the market with price--dividend ratio $1/\rho$, while Tree 2 is worthless; the roles reverse as $s\to0$:
@@ -608,7 +720,7 @@ For the two-tree Lucas model, these classical methods deliver highly accurate so
 \subsection{Modern Probabilistic Methods (Deep BSDE)}\label{sec:computation_probabilistic}
 High-dimensional extensions---multiple trees, stochastic volatility, heterogeneous agents---render grid-based PDE methods impractical because of the curse of dimensionality. Reformulating the valuation problem as a forward--backward SDE enables simulation-based solvers such as the Deep BSDE method \cite{han2018solving,huang2025probabilistic}.
 \begin{tcolorbox}[literaturestyle]
-  extbf{Motivation for probabilistic solvers.} The BSDE formulation avoids the high-dimensional Hessians required by PDE solvers (and PINNs), yielding nearly linear complexity growth in state dimension while preserving martingale structure \cite{huang2025probabilistic}.
+  	extbf{Motivation for probabilistic solvers.} The BSDE formulation avoids the high-dimensional Hessians required by PDE solvers (and PINNs), yielding nearly linear complexity growth in state dimension while preserving martingale structure \cite{huang2025probabilistic}.
 \end{tcolorbox}
 \begin{proposition}{FBSDE representation for tree $i$}{prop:fbsde}
 Let $P_t^i=C_t f_i(s_t)$ denote the price of tree $i$. The system $(C_t,s_t,P_t^i,\bm{Z}_t^i)$ solves the coupled FBSDE

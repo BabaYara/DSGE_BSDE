@@ -15,6 +15,7 @@ help:
 	@echo "  table1-check    Run scripts/check_table1.py"
 	@echo "  strict-table1   Enforce STRICT_TABLE1 gating for CI/local"
 	@echo "  train-macro     Train MacroFinanceNet (short demo)"
+	@echo "  tex            Build Tex/BSDE_21.tex with latexmk (if available)"
 
 setup:
 	$(PYTHON) -m pip install -U pip
@@ -49,3 +50,11 @@ strict-table1:
 
 train-macro:
 	$(PYTHON) scripts/train_macro_solver.py --epochs 200 --paths 1024 --dt 0.001 --steps 0 --eval-symmetric
+
+tex:
+	# Prefer latexmk; fall back to pdflatex if needed
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -interaction=nonstopmode Tex/BSDE_21.tex; \
+	else \
+		pdflatex -interaction=nonstopmode Tex/BSDE_21.tex || true; \
+	fi

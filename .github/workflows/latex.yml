@@ -1,0 +1,28 @@
+name: LaTeX build
+
+on:
+  push:
+    paths:
+      - 'Tex/**.tex'
+  pull_request:
+    paths:
+      - 'Tex/**.tex'
+
+jobs:
+  build-tex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live minimal
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+      - name: Build BSDE_21.tex
+        working-directory: Tex
+        run: |
+          latexmk -pdf -interaction=nonstopmode BSDE_21.tex
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: BSDE_21-pdf
+          path: Tex/BSDE_21.pdf
