@@ -1,0 +1,34 @@
+\contentsline {section}{Executive Summary }{3}{section*.2}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.1}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{5}{section.2}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Space, Measures, and Differentiation on $\mathcal P$}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}State space and probability metrics}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Generators, domains, and adjoints}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{8}{section.4}%
+\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Boundary and integrability}{10}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{11}{section.6}%
+\contentsline {section}{\numberline {7}Market Clearing and Price Mapping}{12}{section.7}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{13}{section.8}%
+\contentsline {paragraph}{Endpoints in $\varsigma $.}{13}{section*.4}%
+\contentsline {paragraph}{Homogeneity in dividends.}{13}{section*.5}%
+\contentsline {paragraph}{Integrability.}{13}{section*.6}%
+\contentsline {section}{\numberline {9}Computation: FBSDE}{13}{section.9}%
+\contentsline {paragraph}{Backward block (log-utility pricing).}{14}{section*.7}%
+\contentsline {paragraph}{Numerics.}{14}{section*.8}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{14}{section.10}%
+\contentsline {paragraph}{Residual norms.}{14}{section*.9}%
+\contentsline {paragraph}{Stopping rules.}{14}{section*.10}%
+\contentsline {paragraph}{Sanity checks.}{14}{section*.11}%
+\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{15}{section.11}%
+\contentsline {paragraph}{Aggregation.}{15}{section*.12}%
+\contentsline {paragraph}{Comparative statics.}{15}{section*.13}%
+\contentsline {section}{\numberline {A}Appendix A: Full Derivations and Pairings}{16}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{16}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{16}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Deriving the master equation}{16}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Externality term in detail}{16}{subsection.A.4}%
+\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{17}{appendix.B}%
+\contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{17}{appendix.C}%
+\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{17}{appendix.D}%
+\contentsline {section}{\numberline {E}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{19}{appendix.E}%

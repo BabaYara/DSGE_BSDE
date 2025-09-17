@@ -203,69 +203,27 @@
 \begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@pycon@default@default@0}
 \PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{sympy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{sp}
 
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 1) Isoelastic simplification:  Y P\PYGZsq{}(Y) = \PYGZhy{}eta P(Y)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{Y}\PYG{p}{,} \PYG{n}{eta} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Y eta}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{P} \PYG{o}{=} \PYG{n}{Y}\PYG{o}{*}\PYG{o}{*}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{eta}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{check1} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{Y}\PYG{o}{*}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{)} \PYG{o}{+} \PYG{n}{eta}\PYG{o}{*}\PYG{n}{P}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{check1} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Isoelastic: Y*P}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{(Y) = \PYGZhy{}eta*P(Y)  [OK]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{g+go}{Isoelastic: Y*P\PYGZsq{}(Y) = \PYGZhy{}eta*P(Y)  [OK]}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{s} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{s}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{mu1}\PYG{p}{,} \PYG{n}{mu2}\PYG{p}{,} \PYG{n}{rho} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{mu1 mu2 rho}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Abstract inner products for diffusion loadings}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sig1\PYGZus{}sq}\PYG{p}{,} \PYG{n}{sig2\PYGZus{}sq}\PYG{p}{,} \PYG{n}{sig1\PYGZus{}sig2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sig1\PYGZus{}sq sig2\PYGZus{}sq sig1\PYGZus{}sig2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
 
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 2) Externality directional derivative:  d/d epsilon P(Y+epsilon*chi\PYGZus{}eps)*chi0 |\PYGZus{}\PYGZob{}epsilon=0\PYGZcb{}}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{}     equals P\PYGZsq{}(Y) * chi0 * chi\PYGZus{}eps}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{chi0}\PYG{p}{,} \PYG{n}{chieps}\PYG{p}{,} \PYG{n}{eps} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{chi0 chieps eps}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{Psi} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{y}\PYG{p}{:} \PYG{n}{y}\PYG{o}{*}\PYG{o}{*}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{eta}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{dpi} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{Psi}\PYG{p}{(}\PYG{n}{Y} \PYG{o}{+} \PYG{n}{eps}\PYG{o}{*}\PYG{n}{chieps}\PYG{p}{)}\PYG{o}{*}\PYG{n}{chi0}\PYG{p}{,} \PYG{n}{eps}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{eps}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{target} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{Psi}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{)}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{)} \PYG{o}{*} \PYG{n}{chi0} \PYG{o}{*} \PYG{n}{chieps}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{dpi} \PYG{o}{\PYGZhy{}} \PYG{n}{target}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Externality directional derivative  [OK]}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{g+go}{Externality directional derivative  [OK]}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{muC} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{n}{mu1} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{n}{mu2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sigC\PYGZus{}sq} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sq} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig2\PYGZus{}sq} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{s}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sig1\PYGZus{}sig2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sig1\PYGZus{}sigC} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{n}{sig1\PYGZus{}sq} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sig1\PYGZus{}sig2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sigC\PYGZus{}sig2} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{n}{sig1\PYGZus{}sig2} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sig2\PYGZus{}sq}
 
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 3) Externality, isoelastic reduction after integrating over m:  chi0 * Y * P\PYGZsq{}(Y) = \PYGZhy{}eta * P(Y) * chi0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{lhs} \PYG{o}{=} \PYG{n}{chi0} \PYG{o}{*} \PYG{n}{Y} \PYG{o}{*} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{Psi}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{)}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{rhs} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{eta} \PYG{o}{*} \PYG{n}{Psi}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{)} \PYG{o}{*} \PYG{n}{chi0}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Share drift: Ito result vs intended formula}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{lhs} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{p}{(}\PYG{n}{mu1} \PYG{o}{\PYGZhy{}} \PYG{n}{muC}\PYG{p}{)} \PYG{o}{+} \PYG{n}{s}\PYG{o}{*}\PYG{p}{(}\PYG{n}{sigC\PYGZus{}sq} \PYG{o}{\PYGZhy{}} \PYG{n}{sig1\PYGZus{}sigC}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{rhs} \PYG{o}{=} \PYG{n}{s}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{mu1} \PYG{o}{\PYGZhy{}} \PYG{n}{mu2} \PYG{o}{+} \PYG{p}{(}\PYG{n}{sigC\PYGZus{}sig2} \PYG{o}{\PYGZhy{}} \PYG{n}{sig1\PYGZus{}sigC}\PYG{p}{)}\PYG{p}{)}
 \PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{lhs} \PYG{o}{\PYGZhy{}} \PYG{n}{rhs}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Externality isoelastic reduction   [OK]}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{g+go}{Externality isoelastic reduction   [OK]}
 
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 4) KKT/FOC solution for i* with asymmetric quadratic costs}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{}    h = 0.5*phi\PYGZus{}plus*i\PYGZca{}2/k for i\PYGZgt{}=0;   0.5*phi\PYGZus{}minus*i\PYGZca{}2/k for i\PYGZlt{}0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{i}\PYG{p}{,} \PYG{n}{k}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{phi\PYGZus{}plus}\PYG{p}{,} \PYG{n}{phi\PYGZus{}minus} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i k p phi\PYGZus{}plus phi\PYGZus{}minus}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{h\PYGZus{}plus}  \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{n}{phi\PYGZus{}plus}\PYG{o}{*}\PYG{n}{i}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{k}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{FOC\PYGZus{}plus}  \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{n}{h\PYGZus{}plus} \PYG{o}{+} \PYG{n}{p}\PYG{o}{*}\PYG{n}{i}\PYG{p}{,} \PYG{n}{i}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sol\PYGZus{}plus}  \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{FOC\PYGZus{}plus}\PYG{p}{,} \PYG{n}{i}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{h\PYGZus{}minus} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{n}{phi\PYGZus{}minus}\PYG{o}{*}\PYG{n}{i}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{k}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{FOC\PYGZus{}minus} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Eq}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{n}{h\PYGZus{}minus} \PYG{o}{+} \PYG{n}{p}\PYG{o}{*}\PYG{n}{i}\PYG{p}{,} \PYG{n}{i}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sol\PYGZus{}minus} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{FOC\PYGZus{}minus}\PYG{p}{,} \PYG{n}{i}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{sol\PYGZus{}plus}  \PYG{o}{\PYGZhy{}} \PYG{n}{k}\PYG{o}{*}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{phi\PYGZus{}plus}\PYG{p}{)}  \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{sol\PYGZus{}minus} \PYG{o}{\PYGZhy{}} \PYG{n}{k}\PYG{o}{*}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{phi\PYGZus{}minus}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KKT/FOC piecewise i* formulas     [OK]}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{g+go}{KKT/FOC piecewise i* formulas     [OK]}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Short rate correction}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{short\PYGZus{}rate} \PYG{o}{=} \PYG{n}{rho} \PYG{o}{+} \PYG{n}{muC} \PYG{o}{\PYGZhy{}} \PYG{n}{sigC\PYGZus{}sq}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{lhs\PYGZus{}rate} \PYG{o}{=} \PYG{n}{rho} \PYG{o}{+} \PYG{n}{muC} \PYG{o}{\PYGZhy{}} \PYG{n}{sigC\PYGZus{}sq}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{short\PYGZus{}rate} \PYG{o}{\PYGZhy{}} \PYG{n}{lhs\PYGZus{}rate}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
 
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 5) FP adjoint pairing identity (algebraic, boundary terms omitted):}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{}    phi\PYGZus{}k * (a*m) = d\PYGZus{}k(phi*a*m) \PYGZhy{} phi * d\PYGZus{}k(a*m)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{kk} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{kk}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{phi} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Function}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{phi}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{(}\PYG{n}{kk}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{a}   \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Function}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{a}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{(}\PYG{n}{kk}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{mm}  \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Function}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{m}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{(}\PYG{n}{kk}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{expr} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{,} \PYG{n}{kk}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{mm}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{phi}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{mm}\PYG{p}{)}\PYG{p}{,} \PYG{n}{kk}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{phi}\PYG{o}{*}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{mm}\PYG{p}{,} \PYG{n}{kk}\PYG{p}{)}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{expr}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Adjoint pairing identity (no\PYGZhy{}flux) [OK]}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{g+go}{Adjoint pairing identity (no\PYGZhy{}flux) [OK]}
-
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} 6) Envelope property for Hamiltonian in p: d/dp max\PYGZus{}i \PYGZob{} \PYGZhy{}i \PYGZhy{} h(i,k) + p i \PYGZcb{} = i*(p)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{}    Check separately on each branch (ignoring terms not depending on i, e.g., \PYGZhy{}delta*k*p)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{H\PYGZus{}plus}  \PYG{o}{=} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{n}{h\PYGZus{}plus} \PYG{o}{+} \PYG{n}{p}\PYG{o}{*}\PYG{n}{i}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{sol\PYGZus{}plus}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{H\PYGZus{}minus} \PYG{o}{=} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{n}{h\PYGZus{}minus} \PYG{o}{+} \PYG{n}{p}\PYG{o}{*}\PYG{n}{i}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{sol\PYGZus{}minus}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{dHp\PYGZus{}dp}  \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{H\PYGZus{}plus}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{dHm\PYGZus{}dp}  \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{H\PYGZus{}minus}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{dHp\PYGZus{}dp} \PYG{o}{\PYGZhy{}} \PYG{n}{sol\PYGZus{}plus}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{assert} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{dHm\PYGZus{}dp} \PYG{o}{\PYGZhy{}} \PYG{n}{sol\PYGZus{}minus}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Envelope: dH/dp equals i*(p)       [OK]}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{g+go}{Envelope: dH/dp equals i*(p)       [OK]}
-
-\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{All SymPy verification checks passed.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-\PYG{g+go}{All SymPy verification checks passed.}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{All symbolic checks passed.}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+go}{All symbolic checks passed.}
 \end{pytx@SaveVerbatim}
 

@@ -28,22 +28,28 @@ sub pythontex {
   # macros file for this document (e.g., console-only usage), create an
   # empty one to satisfy the dependency and allow latexmk to proceed.
   my ($src) = @_;
-  my $fname = basename($src);          # e.g., BSDE_11.pytxcode
-  my $job   = $fname; $job =~ s/\.pytxcode$//;   # BSDE_11
+  # Normalize directory and name from the path latexmk gives us. This avoids
+  # duplicate rule invocations with mixed relative/absolute paths.
+  my $dir   = dirname($src);
+  my $fname = basename($src);                  # e.g., BSDE_21.pytxcode
+  my $job   = $fname; $job =~ s/\.pytxcode$//;  # BSDE_21
 
   my $is_windows = ($^O eq 'MSWin32');
-  my $cmd;
+  my $cmd_main;
   if ($is_windows) {
-    # Use cmd semantics; run from .out directory
-    $cmd = "cmd /c cd .out && pythontex \"$fname\"";
+    # Use /d to allow drive letter change; keep nonstop interaction
+    $cmd_main   = "cmd /c cd /d \"$dir\" && pythontex \"$fname\"";
   } else {
-    # POSIX: use bash if available, else plain sh
-    $cmd = "bash -lc 'cd .out && pythontex \"$fname\"'";
+    $cmd_main   = "bash -lc 'cd \"$dir\" && pythontex \"$fname\"'";
   }
-  my $res = system($cmd);
-  # Fallback: touch macros file(s) if missing
-  my $mcr_uc = ".out/${job}.pytxmcr";              # BSDE_11.pytxmcr
-  my $mcr_lc = ".out/" . lc($job) . ".pytxmcr";  # bsde_11.pytxmcr
+
+  my $res = system($cmd_main);
+  # Note: If a transient format/version mismatch occurs, latexmk will
+  # rerun LaTeX and re-invoke this rule; we don't try to pass extra flags.
+
+  # Fallback: touch macros file(s) if missing so the dependency can be satisfied
+  my $mcr_uc = "$dir/${job}.pytxmcr";              # BSDE_21.pytxmcr
+  my $mcr_lc = "$dir/" . lc($job) . ".pytxmcr";  # bsde_21.pytxmcr
   unless (-e $mcr_uc or -e $mcr_lc) {
     open(my $fh, '>', $mcr_uc);
     print $fh "% PythonTeX macro placeholder (no-op)\n";
