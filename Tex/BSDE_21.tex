@@ -1,4 +1,4 @@
-\documentclass[11pt,letterpaper,oneside]{article}
+﻿\documentclass[11pt,letterpaper,oneside]{article}
 \usepackage[margin=1in]{geometry}
 
 % Math & theorem stack
@@ -99,20 +99,9 @@
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
 \crefname{corollary}{Corollary}{Corollaries}
-\Crefname{corollary}{Corollaries}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
 
-\crefname{tcb@cnt@assumption}{Assumption}{Assumptions}
-\Crefname{tcb@cnt@assumption}{Assumption}{Assumptions}
-\crefname{tcb@cnt@definition}{Definition}{Definitions}
-\Crefname{tcb@cnt@definition}{Definition}{Definitions}
-\crefname{tcb@cnt@lemma}{Lemma}{Lemmas}
-\Crefname{tcb@cnt@lemma}{Lemma}{Lemmas}
-\crefname{tcb@cnt@proposition}{Proposition}{Propositions}
-\Crefname{tcb@cnt@proposition}{Proposition}{Propositions}
-\crefname{tcb@cnt@theorem}{Theorem}{Theorems}
-\Crefname{tcb@cnt@theorem}{Theorems}{Theorems}
-\crefname{tcb@cnt@corollary}{Corollary}{Corollaries}
-\Crefname{tcb@cnt@corollary}{Corollaries}{Corollaries}
+% Note: No need to set Cleveref names for internal tcolorbox counters.
 
 % Convenience macros
 \DeclareMathOperator{\E}{\mathbb{E}}
@@ -261,29 +250,92 @@ Aggregate consumption satisfies
 \end{align}
 \end{lemma}
 \begin{proof}
-Linearising $C_t=D_{1,t}+D_{2,t}$, substituting the dividend dynamics \eqref{eq:dividend}, and dividing by $C_t$ deliver \eqref{eq:C_drift}.
+The differential of aggregate consumption is \mbox{$\diff C_t = \diff D_{1,t}+\diff D_{2,t}$}. Substituting the dividend dynamics from \cref{eq:dividend} gives
+\[
+  \diff C_t = (D_{1,t}\mu_1+D_{2,t}\mu_2)\,\diff t + (D_{1,t}\bm{\sigma}_1+D_{2,t}\bm{\sigma}_2)^{\top}\diff\bm{W}_t.
+\]
+Dividing by $C_t$ and using $s_t=D_{1,t}/C_t$ (so $D_{2,t}/C_t=1-s_t$) yields
+\begin{align*}
+  \frac{\diff C_t}{C_t}
+  &= (s_t\mu_1+(1-s_t)\mu_2)\,\diff t + (s_t\bm{\sigma}_1+(1-s_t)\bm{\sigma}_2)^{\top}\diff\bm{W}_t \\
+  &= \mu_C(s_t)\,\diff t + \bm{\sigma}_C(s_t)^{\top}\diff\bm{W}_t.
+\end{align*}
 \end{proof}
 
+\begin{sympycheck}[title={Verification: Consumption dynamics (Lemma~\ref{lem:C})}]
+\begin{pyconsole}
+import sympy as sp
+
+s, mu1, mu2 = sp.symbols('s mu1 mu2', real=True)
+sigma1, sigma2 = sp.symbols('sigma1 sigma2')
+
+muC = s*mu1 + (1-s)*mu2
+sigmaC = s*sigma1 + (1-s)*sigma2
+
+left_drift = s*mu1 + (1-s)*mu2
+left_sigma = s*sigma1 + (1-s)*sigma2
+
+assert sp.simplify(left_drift - muC) == 0
+assert sp.simplify(left_sigma - sigmaC) == 0
+\end{pyconsole}
+\end{sympycheck}
+
+\begin{leanproof}[title={Affine structure of $\mu_C$ and $\bm{\sigma}_C$}]
+The consumption coefficients are affine in the primitives.
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+import Mathlib.Data.Real.Basic
+
+lemma affine_mix (s x1 x2 : Real) :
+    s * x1 + (1 - s) * x2 = x2 + s * (x1 - x2) := by
+  ring
+\end{lstlisting}
+The identity specialises componentwise to $\bm{\sigma}_C(s)$.
+\end{leanproof}
+
 \begin{lemma}{Dynamics of the consumption share}{lem:s}
-The share process obeys
+The share process obeys $\diff s_t = \mu_s(s_t)\,\diff t + \bm{\sigma}_s(s_t)^{\top}\diff\bm{W}_t$, where
 \begin{align}
-  \diff s_t &= s_t(1-s_t)\Big(\mu_1-\mu_2+\bm{\sigma}_C(s_t)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)\Big)\,\diff t \\
-            &\quad + s_t(1-s_t)(\bm{\sigma}_1-\bm{\sigma}_2)^{\top}\diff \bm{W}_t.
+  \mu_s(s) &\equiv s(1-s)\Big(\mu_1-\mu_2+\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)\Big), \\
+  \bm{\sigma}_s(s) &\equiv s(1-s)(\bm{\sigma}_1-\bm{\sigma}_2).
   \label{eq:s_drift}
 \end{align}
 \end{lemma}
 \begin{proof}
-It\^o's lemma applied to $s_t=D_{1,t}/C_t$ yields
+Apply It\^o's lemma to $s_t = D_{1,t}/C_t$. The quotient rule gives
 \[
-  \diff s_t = s_t\Big(\frac{\diff D_{1,t}}{D_{1,t}}-\frac{\diff C_t}{C_t}\Big)+s_t\Big((\frac{\diff C_t}{C_t})^2-\frac{\diff D_{1,t}}{D_{1,t}}\frac{\diff C_t}{C_t}\Big).
+  \frac{\diff s_t}{s_t} = \Big(\frac{\diff D_{1,t}}{D_{1,t}}-\frac{\diff C_t}{C_t}\Big) + \Big(\norm{\bm{\sigma}_C(s_t)}^2 - \ip{\bm{\sigma}_1}{\bm{\sigma}_C(s_t)}\Big)\,\diff t.
 \]
-Using Lemma~\ref{lem:C} for $\diff C_t/C_t$ and the dividend diffusion for $\diff D_{1,t}/D_{1,t}$, and simplifying the quadratic-variation terms, gives \eqref{eq:s_drift}.
+The relative-growth term expands to $(\mu_1-\mu_C(s_t))\,\diff t + (\bm{\sigma}_1-\bm{\sigma}_C(s_t))^{\top}\diff\bm{W}_t$. Using $\mu_C(s) = s\mu_1 + (1-s)\mu_2$ and $\bm{\sigma}_C(s) = s\bm{\sigma}_1 + (1-s)\bm{\sigma}_2$ we have
+\[
+  \mu_1-\mu_C(s) = (1-s)(\mu_1-\mu_2),
+  \qquad
+  \bm{\sigma}_1-\bm{\sigma}_C(s) = (1-s)(\bm{\sigma}_1-\bm{\sigma}_2).
+\]
+Similarly $\norm{\bm{\sigma}_C(s)}^2 - \ip{\bm{\sigma}_1}{\bm{\sigma}_C(s)} = (1-s)\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)$. Multiplying the drift and diffusion contributions by $s_t$ delivers the stated expressions for $\mu_s(s)$ and $\bm{\sigma}_s(s)$.
 \end{proof}
+
+\begin{sympycheck}[title={Verification: Share dynamics (Lemma~\ref{lem:s})}]
+\begin{pyconsole}
+import sympy as sp
+
+s, mu1, mu2 = sp.symbols('s mu1 mu2', real=True)
+sig1_sq, sig2_sq, sig1_sig2 = sp.symbols('sig1_sq sig2_sq sig1_sig2', real=True)
+
+muC = s*mu1 + (1-s)*mu2
+sigC_sq = s**2*sig1_sq + (1-s)**2*sig2_sq + 2*s*(1-s)*sig1_sig2
+sig1_sigC = s*sig1_sq + (1-s)*sig1_sig2
+sigC_sig2 = s*sig1_sig2 + (1-s)*sig2_sq
+
+drift_ito = s*(mu1 - muC) + s*(sigC_sq - sig1_sigC)
+drift_stated = s*(1-s)*(mu1 - mu2 + (sigC_sig2 - sig1_sigC))
+
+assert sp.simplify(drift_ito - drift_stated) == 0
+\end{pyconsole}
+\end{sympycheck}
 
 \begin{tcolorbox}[didacticstyle]
 \textbf{Interpretation.} The share $s_t$ drifts toward the tree with higher expected growth $\mu_j$ and toward the tree with smaller exposure to aggregate risk. The factor $s_t(1-s_t)$ reflects the unit-sum constraint and keeps the process in $(0,1)$.
 \end{tcolorbox}
-
 \subsection{Generator in $(C,s)$ coordinates}
 The diffusion $(C_t,s_t)$ has infinitesimal generator $\mathcal{L}$ acting on smooth functions $f(C,s)$ by
 \[
@@ -320,7 +372,7 @@ Set $\bm{\sigma}_R=\bm{\sigma}_j$ in \eqref{eq:capm}. Girsanov's theorem with ma
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
+  extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
 \end{tcolorbox}
 
 \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
@@ -390,7 +442,7 @@ The share process lives on $(0,1)$ with diffusion coefficient $s^2(1-s)^2\norm{\
 Extremes $s\to0$ or $1$ correspond to one tree vanishing. The boundary data encode that the surviving tree reverts to the single-tree Lucas benchmark while the disappearing tree is worthless.
 \end{tcolorbox}
 
-\\section{Computation: Solution Strategies}\label{sec:computation}
+\section{Computation: Solution Strategies}\label{sec:computation}
 The numerical task is to recover the price--dividend ratios $f_i(s)$ by solving the coupled boundary value problem \eqref{eq:ode_price}. We first summarise the established numerical solvers for this benchmark before turning to modern probabilistic methods that scale to higher dimensions.
 
 \subsection{Classical ODE/PDE Methods}\label{sec:computation_classical}
@@ -411,7 +463,7 @@ For the two-tree Lucas model, these classical methods deliver highly accurate so
 \subsection{Modern Probabilistic Methods (Deep BSDE)}\label{sec:computation_probabilistic}
 High-dimensional extensions---multiple trees, stochastic volatility, heterogeneous agents---render grid-based PDE methods impractical because of the curse of dimensionality. Reformulating the valuation problem as a forward--backward SDE enables simulation-based solvers such as the Deep BSDE method \cite{han2018solving,huang2025probabilistic}.
 \begin{tcolorbox}[literaturestyle]
-\textbf{Motivation for probabilistic solvers.} The probabilistic formulation bypasses high-dimensional Hessian evaluations. \textcite{huang2025probabilistic} shows that this leads to nearly linear complexity growth in the state dimension while preserving the martingale structure of asset prices.
+  	extbf{Motivation for probabilistic solvers.} The probabilistic formulation bypasses high-dimensional Hessian evaluations. \cite{huang2025probabilistic} shows that this leads to nearly linear complexity growth in the state dimension while preserving the martingale structure of asset prices.
 \end{tcolorbox}
 \begin{proposition}{FBSDE representation for tree $i$}{prop:fbsde}
 Let $P_t^i=C_t f_i(s_t)$ denote the price of tree $i$. The system $(C_t,s_t,P_t^i,\bm{Z}_t^i)$ solves the coupled FBSDE
@@ -447,7 +499,7 @@ assert sp.simplify(Z_ito - Z_stated) == 0
 \end{pyconsole}
 \end{sympycheck}
 
-The Deep BSDE algorithm approximates $f_i(s)$ and its gradient $f_i'(s)$ (needed for $\bm{Z}_t^i$) with neural networks. It simulates the FBSDE forward in time and minimises a loss that penalises deviations from the Markov structure $P_t^i=C_t f_i(s_t;\Theta)$. Automatic differentiation of $f_i(s;\Theta)$ provides $f_i'(s)$. Appendix~\ref{app:algorithms} describes Algorithm~\ref{alg:deepbsde}, adapted from \textcite{han2018solving} and \textcite{huang2025probabilistic}, and emphasises batching, antithetic sampling, and diagnostics aligning with \cref{sec:verification}.
+The Deep BSDE algorithm approximates $f_i(s)$ and its gradient $f_i'(s)$ (needed for $\bm{Z}_t^i$) with neural networks. It simulates the FBSDE forward in time and minimises a loss that penalises deviations from the Markov structure $P_t^i=C_t f_i(s_t;\Theta)$. Automatic differentiation of $f_i(s;\Theta)$ provides $f_i'(s)$. Appendix~\ref{app:algorithms} describes Algorithm~\ref{alg:deepbsde}, adapted from \cite{han2018solving} and \cite{huang2025probabilistic}, and emphasises batching, antithetic sampling, and diagnostics aligning with \cref{sec:verification}.
 
 \section{Verification and Diagnostics}\label{sec:verification}
 
@@ -459,7 +511,7 @@ Log utility keeps prices proportional to dividends, so all cross-sectional varia
 \appendix
 \section{Appendix A: Formal Verification (Lean4)}\label{app:lean_verification}
 \begin{leanproof}
-\begin{lstlisting}[language={},basicstyle=\ttfamily\small]
+\begin{lstlisting}[basicstyle=\ttfamily\small]
 import Mathlib.Data.Real.Basic
 
 -- ASCII-only sketch to avoid Unicode in LaTeX
@@ -523,7 +575,7 @@ lemma transform_bijective : Function.Bijective transform := by
 
 
 \begin{leanproof}[title={Algebraic Structure of Girsanov Drift Adjustment (Prop.~\ref{prop:fbsde})}]
-\begin{lstlisting}[language={},basicstyle=\ttfamily\small]
+\begin{lstlisting}[basicstyle=\ttfamily\small]
 import Mathlib.Data.Real.Basic
 
 variable (r P D : Real)
@@ -573,8 +625,8 @@ print("All symbolic checks passed.")
 \end{sympycheck}
 
 
-\\begin{sympycheck}[title={Verification: Tridiagonal structure from 1D discretization (Sec.~\\ref{sec:computation_classical})}]
-\\begin{pyconsole}
+\begin{sympycheck}[title={Verification: Tridiagonal structure from 1D discretization (Sec.~\ref{sec:computation_classical})}]
+\begin{pyconsole}
 import sympy as sp
 
 # Define symbols for the grid and coefficients
@@ -597,8 +649,10 @@ expected_dependencies = {f_jm1, f_j, f_jp1}
 
 print(f"Dependencies at row j: {dependencies}")
 assert dependencies == expected_dependencies
-\\end{pyconsole}
-\\end{sympycheck}\n\n\section{Appendix C: Computational Algorithms}\label{app:algorithms}
+\end{pyconsole}
+\end{sympycheck}
+
+\section{Appendix C: Computational Algorithms}\label{app:algorithms}
 
 \begin{tcolorbox}[float, title={Algorithm 1: Deep BSDE Training Loop (Infinite-Horizon Adaptation)}, label={alg:deepbsde}]
 \small
@@ -634,11 +688,9 @@ assert dependencies == expected_dependencies
 
     \item \quad Compute the loss function. In the infinite-horizon setting, the loss enforces the Markov property $P_k^m \approx C_k^m f_i(s_k^m;\Theta)$ at all steps (Forward Euler Scheme, see \cite{huang2025probabilistic}):
 
-  \[
-
+  \begin{equation*}
     \mathcal{L}(\Theta) = \frac{1}{MN}\sum_{m=1}^M\sum_{k=1}^N \big\lVert P_k^m - C_k^m f_i(s_k^m;\Theta) \big\rVert^2.
-
-  \]
+  \end{equation*}
 
     \item \quad Update $\Theta$ with stochastic gradients (e.g. Adam) and apply diagnostics from Section~\ref{sec:verification}.
 
