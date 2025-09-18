@@ -16,6 +16,9 @@ help:
 	@echo "  strict-table1   Enforce STRICT_TABLE1 gating for CI/local"
 	@echo "  train-macro     Train MacroFinanceNet (short demo)"
 	@echo "  tex            Build Tex/BSDE_21.tex with latexmk (if available)"
+	@echo "  tex-12         Build Tex/BSDE_12.tex (shell-escape for minted/pythontex)"
+	@echo "  tex-safe-12    Build Tex/BSDE_12.tex without shell-escape (alltt fallback)"
+	@echo "  tex-all        Build BSDE_21 and BSDE_12 (safe mode)"
 
 setup:
 	$(PYTHON) -m pip install -U pip
@@ -58,3 +61,22 @@ tex:
 	else \
 		pdflatex -interaction=nonstopmode Tex/BSDE_21.tex || true; \
 	fi
+
+.PHONY: tex-12
+tex-12:
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -shell-escape -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex; \
+	else \
+		pdflatex -shell-escape -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex || true; \
+	fi
+
+.PHONY: tex-safe-12
+tex-safe-12:
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex; \
+	else \
+		pdflatex -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex || true; \
+	fi
+
+.PHONY: tex-all
+tex-all: tex tex-safe-12

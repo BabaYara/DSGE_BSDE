@@ -1,0 +1,46 @@
+\contentsline {section}{Executive Summary / Cheat-Sheet}{1}{section*.2}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{2}{section.9}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{2}{section.11}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Space, Measures, and Differentiation on $\mathcal P$}{4}{section.29}%
+\contentsline {subsection}{\numberline {3.1}State space and probability metrics}{4}{subsection.30}%
+\contentsline {subsection}{\numberline {3.2}Differentiation on $\mathcal P_2$: Lions vs Flat Derivatives}{7}{subsection.35}%
+\contentsline {subsection}{\numberline {3.3}Generators, domains, and adjoints}{11}{subsection.42}%
+\contentsline {section}{\numberline {4}Firm Problem and the Stationary HJB}{13}{section.48}%
+\contentsline {paragraph}{Endogenous SDF (drop-in form).}{13}{section*.51}%
+\contentsline {section}{\numberline {5}Kolmogorov--Forward (FP) Equation}{18}{section.67}%
+\contentsline {subsection}{\numberline {5.1}Boundary and integrability}{19}{subsection.70}%
+\contentsline {section}{\numberline {6}Market Clearing and Price Mapping}{21}{section.73}%
+\contentsline {section}{\numberline {7}Master Equation (Stationary, Conditional on x)}{22}{section.76}%
+\contentsline {subsection}{\numberline {7.1}The Master Equation Formulation}{22}{subsection.82}%
+\contentsline {subsection}{\numberline {7.2}The Price Externality: Derivation and Simplification}{23}{subsection.87}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{29}{section.93}%
+\contentsline {paragraph}{Growth.}{30}{section*.98}%
+\contentsline {paragraph}{Integrability.}{30}{section*.99}%
+\contentsline {section}{\numberline {9}Computation: Two KS-Free Routes}{31}{section.100}%
+\contentsline {subsection}{\numberline {9.1}Route A: {\mdseries \textsc {HJB}}--{\mdseries \textsc {FP}} Fixed Point}{31}{subsection.101}%
+\contentsline {paragraph}{Algorithm (stationary, conditional on $x$).}{31}{section*.102}%
+\contentsline {paragraph}{Discretization details.}{31}{section*.108}%
+\contentsline {paragraph}{Diagnostics.}{31}{section*.109}%
+\contentsline {subsection}{\numberline {9.2}Route B: Direct Master-PDE Collocation}{33}{subsection.140}%
+\contentsline {paragraph}{Algorithm (Direct ME Collocation).}{34}{section*.143}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{38}{section.236}%
+\contentsline {paragraph}{Residual norms.}{38}{section*.237}%
+\contentsline {paragraph}{Stopping rules.}{38}{section*.238}%
+\contentsline {paragraph}{Sanity checks.}{38}{section*.241}%
+\contentsline {paragraph}{Wasserstein-2 drift diagnostic (practical).}{38}{section*.242}%
+\contentsline {paragraph}{Sliced Wasserstein (2D approximation).}{39}{section*.257}%
+\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{39}{section.275}%
+\contentsline {paragraph}{Aggregation.}{39}{section*.276}%
+\contentsline {paragraph}{Irreversibility.}{40}{section*.277}%
+\contentsline {paragraph}{Comparative statics.}{40}{section*.278}%
+\contentsline {subsection}{\numberline {11.1}Analytical Support for Comparative Statics}{40}{subsection.279}%
+\contentsline {section}{\numberline {A}Appendix A: Derivations and Technical Lemmas}{42}{appendix.283}%
+\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{43}{subsection.287}%
+\contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{43}{subsection.288}%
+\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{44}{appendix.291}%
+\contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{45}{appendix.292}%
+\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{46}{appendix.294}%
+\contentsline {section}{\numberline {E}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{48}{appendix.374}%
+\contentsline {section}{\numberline {F}Appendix F: Lean4 Micro-Proofs (Sketches)}{49}{appendix.375}%
+\contentsline {section}{\numberline {G}Appendix G: Endogenous SDF with Epstein--Zin Aggregator}{50}{appendix.376}%
+\contentsline {section}{Appendix: Revision Overview}{53}{section*.380}%

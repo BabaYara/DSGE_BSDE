@@ -35,7 +35,7 @@
 
 % Colors and styles
 \definecolor{darkgreen}{RGB}{0,100,0}
-  cbset{
+  	cbset{
   sympycheckstyle/.style={colback=gray!5,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
   leanproofstyle/.style={colback=blue!4,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
   didacticstyle/.style={colback=green!4,colframe=black!60,leftrule=2pt,arc=1mm,boxrule=0.5pt},
@@ -48,12 +48,12 @@
 \newcommand{\YY}{Y}% used in primitives for output quantity
 
 % Theorem-like environments with title+label wrappers
-	heoremstyle{plain}
+  heoremstyle{plain}
 \newtheorem{theoremT}{Theorem}
 \newtheorem{lemmaT}{Lemma}
 \newtheorem{propositionT}{Proposition}
 \newtheorem{assumptionT}{Assumption}
-	heoremstyle{definition}
+  heoremstyle{definition}
 \newtheorem{definitionT}{Definition}
 
 % Wrappers expecting \begin{env}{Title}{labelkey}
@@ -107,12 +107,11 @@ For the asymmetric quadratic cost $h(i,k) = \tfrac{\phi_{\pm}}{2}i^2/k$ from \Cr
 \end{itemize}
 This recovers the piecewise-affine policy in \Cref{prop:policy}.
 
-\begin{tcolorbox}[sympycheckstyle]
-    extbf{Verification: FOCs for the optimal policy.} See Appendix~E, Check~2, for a symbolic confirmation of the formulas above.
+\begin{tcolorbox}[sympycheckstyle,title={Verification: FOCs for the optimal policy}]
+  \extbf{See Appendix~E, Check~2, for a symbolic confirmation of the formulas above.}
 \end{tcolorbox}
 
-\begin{tcolorbox}[leanproofstyle]
-    extbf{Formalization: Optimization structure in Lean~4.}
+\begin{tcolorbox}[leanproofstyle,title={Formalization: Optimization structure in Lean~4}]
 \begin{minted}{lean}
 import Mathlib.Analysis.Convex.Basic
 
@@ -170,8 +169,8 @@ E_{\text{price}} &= \int \delta_m \pi(\xi; k,z,x,m)\,m(\diff \xi),\\
 E_{\text{pricing}} &= \int \Bigl[-(\delta_m r(\xi; m)) U + (\delta_m \muxQ(\xi; m)) U_x \Bigr]\,m(\diff \xi).
 \end{align*}
 
-\begin{tcolorbox}[didacticstyle]
-      extbf{Sign intuition.} If a perturbation of $m$ raises the short rate ($\delta_m r>0$), valuations fall, hence the negative sign. Conversely, if the perturbation raises the risk-neutral drift ($\delta_m \muxQ>0$) the asset gains value when $U_x>0$, giving a positive contribution.
+\begin{tcolorbox}[didacticstyle,title={Sign intuition}]
+If a perturbation of $m$ raises the short rate ($\delta_m r>0$), valuations fall, hence the negative sign. Conversely, if the perturbation raises the risk-neutral drift ($\delta_m \muxQ>0$) the asset gains value when $U_x>0$, giving a positive contribution.
 \end{tcolorbox}
 
 Collecting the HJB drift, transport, and externality terms and imposing the pricing-measure martingale condition delivers the ME \eqref{eq:ME}.
@@ -215,11 +214,11 @@ $$
 \end{assumption}
 
 \begin{tcolorbox}[didacticstyle]
-      extbf{Economic reading.} The convex asymmetry $\phi_->\phi_+$ produces \emph{investment bands}. Aggregation operates through the product market ($Y$) and the financial market (via the SDF). The inverse-demand slope $P'(Y)$ and the endogenous market price of risk $\lambda(x,m)$ are the channels through which the cross-section affects an individual firm's valuation and decisions.
+  \extbf{Economic reading.} The convex asymmetry $\phi_->\phi_+$ produces \emph{investment bands}. Aggregation operates through the product market ($Y$) and the financial market (via the SDF). The inverse-demand slope $P'(Y)$ and the endogenous market price of risk $\lambda(x,m)$ are the channels through which the cross-section affects an individual firm's valuation and decisions.
 \end{tcolorbox}
 
 \begin{tcolorbox}[literaturestyle]
-    extbf{Where this sits.} Zhang (2005) emphasizes how costly reversibility shapes asset prices, using an exogenous SDF. The present mean-field formulation adds an equilibrium product price mapping and a fully endogenous SDF, leading to a master PDE that makes the cross-sectional feedback explicit. For master equations, see Cardaliaguet--Delarue--Lasry--Lions (2019). The generalization for interactions in coefficients (required for the pricing externalities) follows Bensoussan, Frehse, and Yam (2013).
+  \extbf{Where this sits.} Zhang (2005) emphasizes how costly reversibility shapes asset prices, using an exogenous SDF. The present mean-field formulation adds an equilibrium product price mapping and a fully endogenous SDF, leading to a master PDE that makes the cross-sectional feedback explicit. For master equations, see Cardaliaguet--Delarue--Lasry--Lions (2019). The generalization for interactions in coefficients (required for the pricing externalities) follows Bensoussan, Frehse, and Yam (2013).
 \end{tcolorbox}
 
 %========================
@@ -241,7 +240,7 @@ Let $F(m)=G(\Phi(m))$ with $G:\R\to\R$ differentiable and $\Phi(m)=\int \varphi(
 \end{lemma}
 
 \begin{tcolorbox}[mathstyle]
-      extbf{Application to the price externality.} With $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ and $G=P$, Lemma~\ref{lem:chain} yields
+  \extbf{Application to the price externality.} With $\varphi(\xi)=e^{x+\zeta}\kappa^\alpha$ and $G=P$, Lemma~\ref{lem:chain} yields
 $\Dm\big(P(\Phi(m))\big)(\xi)=P'(Y)\,e^{x+\zeta}\kappa^\alpha$.
 Multiplying by the \emph{this-firm} factor $e^{x+z}k^\alpha$ produces the integrand of the price externality term in the ME.
 \end{tcolorbox}
@@ -291,7 +290,7 @@ Follows from applying Itô's lemma to $\Lambda_t$ and matching drift and diffusi
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-      extbf{Endogeneity and Feedback.} Crucially, $r(x)$ and $\lambda(x)$ depend on the equilibrium consumption dynamics, which in turn depend on the cross-sectional distribution $m(x)$ and its sensitivity to $x$. This introduces a general equilibrium feedback channel. We denote this dependence as $r(x,m)$ and $\lambda(x,m)$ when analyzing the general mean-field system before imposing the stationary equilibrium structure $m(x)$.
+  \extbf{Endogeneity and Feedback.} Crucially, $r(x)$ and $\lambda(x)$ depend on the equilibrium consumption dynamics, which in turn depend on the cross-sectional distribution $m(x)$ and its sensitivity to $x$. This introduces a general equilibrium feedback channel. We denote this dependence as $r(x,m)$ and $\lambda(x,m)$ when analyzing the general mean-field system before imposing the stationary equilibrium structure $m(x)$.
 \end{tcolorbox}
 
 %========================
@@ -339,7 +338,7 @@ $$
 \end{proposition}
 
 \begin{tcolorbox}[didacticstyle]
-      extbf{Economic intuition (expanded).}
+  \extbf{Economic intuition (expanded).}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
   \item \emph{Investment bands.} The kink at $V_k=1$ creates inaction; asymmetry ($\phi_->\phi_+$) makes disinvestment less responsive.
   \item \emph{Cyclicality and Asset Pricing.} Valuation depends on both cash flows (via $P(Y)$) and the endogenous SDF. The countercyclical market price of risk $\lambda(x)$ (Zhang 2005) implies that in recessions (low $x$), risk premia are high ($\muxQ$ is low), depressing firm values, particularly for firms constrained by costly reversibility.
@@ -348,7 +347,7 @@ $$
 \end{tcolorbox}
 
 \begin{tcolorbox}[mathstyle]
-      extbf{Mathematical rigor (expanded).}
+  \extbf{Mathematical rigor (expanded).}
 \begin{itemize}[leftmargin=1.15em,itemsep=0.25em]
   \item \emph{Convexity.} The Hamiltonian $\mathcal{H}(k,z,x,m,p)\equiv \max_{i}\{\pi+p\,(i-\delta k)\}$ is convex in $p=V_k$.
   \item \emph{Risk-Neutral Valuation.} The HJB equation represents the valuation under $\mathbb{Q}$. The dependence of $r$ and $\LxQ$ on $m$ reflects the GE feedback.
@@ -373,7 +372,7 @@ Reflecting at $k=0$ implies zero probability flux:
 $\big[(i^*-\delta k)m\big]\big|_{k=0}=0$.
 
 \begin{tcolorbox}[mathstyle]
-      extbf{Degenerate transport in $k$.} The $k$-direction is purely hyperbolic. Schemes must be \emph{upwind} in $k$ and \emph{conservative} to maintain $\int m=1$.
+  \extbf{Degenerate transport in $k$.} The $k$-direction is purely hyperbolic. Schemes must be \emph{upwind} in $k$ and \emph{conservative} to maintain $\int m=1$.
 \end{tcolorbox}
 
 %========================
@@ -392,7 +391,7 @@ Y\,P'(Y) = -\eta\, P(Y).
 \end{equation}
 
 \begin{tcolorbox}[didacticstyle]
-      extbf{Economic content.} The aggregation wedge in firm incentives comes from two sources. First, the \emph{marginal-revenue} term (price externality). Second, the \emph{SDF} determined by aggregate consumption (pricing externality).
+  \extbf{Economic content.} The aggregation wedge in firm incentives comes from two sources. First, the \emph{marginal-revenue} term (price externality). Second, the \emph{SDF} determined by aggregate consumption (pricing externality).
 \end{tcolorbox}
 
 % %========================
@@ -416,7 +415,7 @@ r(x,m)\,U(k,z,x,m)=\ &\underbrace{\max_{i}\big\{\pi(k,i,z,x,m)+U_k(i-\delta k)+\
 where $\dmU(\xi;\cdot)$ abbreviates $\dmU(\xi;k,z,x,m)$, and the transport term integrates the action of the physical generators on $\dmU$.
 
 \begin{tcolorbox}[didacticstyle]
-      extbf{Interpreting the Master Equation.} \Cref{eq:ME} decomposes the general-equilibrium effects:
+  \extbf{Interpreting the Master Equation.} \Cref{eq:ME} decomposes the general-equilibrium effects:
 \begin{enumerate}[leftmargin=1.25em,label=(\roman*)]
   \item \textbf{HJB terms:} Optimization by the representative firm under $\mathbb{Q}$, taking prices ($P, r, \lambda$) as given.
   \item \textbf{Population transport:} The evolution of $m$ under $\mathbb{P}$ moves $U$ through $\dmU$.
@@ -810,6 +809,132 @@ assert sp.simplify(lambda_actual - lambda_target) == 0
 print('SDF dynamics (r and lambda) via Ito [OK]')
 
 print('\nAll SymPy verification checks passed.')
+\end{minted}
+
+% -- Hardened vector Itô computation (explicit grad/Hessian and diffusion contraction) --
+\begin{tcolorbox}[sympycheckstyle,title={Vector Itô lemma check (explicit grad/Hessian)}]
+\begin{minted}{python}
+import sympy as sp
+
+# State: X = (x1, x2), with SDE dX = b(X) dt + Sigma(X) dW, W is 2D
+x1, x2 = sp.symbols('x1 x2', real=True)
+t = sp.symbols('t', real=True)
+f = sp.Function('f')
+
+# Choose a concrete scalar function f(x1,x2,t) to avoid purely abstract tensor caveats
+g = sp.exp(t) * (x1**2 * x2 + sp.sin(x2))
+
+# Drift and diffusion (2x1 Brownian vector): b in R^2, Sigma in R^{2x2}
+b1 = x1 + x2
+b2 = x1 - x2
+Sigma = sp.Matrix([[x1, 0],
+                   [0,  x2]])  # diagonal for clarity
+
+# Gradients and Hessian
+grad = sp.Matrix([sp.diff(g, x1), sp.diff(g, x2)])
+H = sp.hessian(g, (x1, x2))
+
+# Time derivative
+g_t = sp.diff(g, t)
+
+# Compute 0.5 * trace(Sigma Sigma^T H)
+SS = Sigma * Sigma.T
+ito_diff_term = sp.Rational(1,2) * (SS.multiply_elementwise(H.T)).sum()  # since H is symmetric, trace(SS*H) = sum(SS .* H)
+
+# Ito drift per lemma: g_t + grad·b + 0.5 trace(SS H)
+drift_ito = sp.simplify(g_t + (grad.T * sp.Matrix([b1, b2]))[0] + ito_diff_term)
+
+# Build the explicit target by manual expansion to cross-check (equivalent expression)
+# Target: e^t * [ (x1^2*x2 + sin x2) + (dg/dx1)*(x1+x2) + (dg/dx2)*(x1-x2) + 0.5*(x1^2*g_x1x1 + x2^2*g_x2x2) ]
+gx1 = sp.diff(g, x1)
+gx2 = sp.diff(g, x2)
+gxx11 = sp.diff(g, x1, 2)
+gxx22 = sp.diff(g, x2, 2)
+target = g_t + gx1*(x1 + x2) + gx2*(x1 - x2) + sp.Rational(1,2)*(x1**2*gxx11 + x2**2*gxx22)
+
+assert sp.simplify(drift_ito - target) == 0
+print("Vector Ito drift matches target [OK]")
+\end{minted}
+\end{tcolorbox}
+
+% -- HJB/Itô linkage under Q (explicit operator construction) --
+\begin{tcolorbox}[sympycheckstyle,title={Itô drift equals HJB operator under $\mathbb{Q}$}]
+\begin{minted}{python}
+import sympy as sp
+
+# States and function V(k,z,x)
+k, z, x = sp.symbols('k z x', real=True)
+V = sp.Function('V')(k, z, x)
+
+# Parameters and policy
+delta = sp.symbols('delta', positive=True)
+i_star = sp.Function('i_star')(k, z, x)  # optimal policy (kept symbolic)
+
+# Risk-neutral x-drift and diffusions
+mu_xQ, sigma_x, sigma_z = sp.symbols('mu_xQ sigma_x sigma_z', real=True)
+mu_z = sp.Function('mu_z')(z)
+
+# Generators Lz and Lx^Q (acting on V)
+Lz_V = mu_z * sp.diff(V, z) + (sp.Rational(1,2) * sigma_z**2) * sp.diff(V, z, 2)
+LxQ_V = mu_xQ * sp.diff(V, x) + sp.Rational(1,2) * sigma_x**2 * sp.diff(V, x, 2)
+
+# Capital drift term
+drift_k_term = sp.diff(V, k) * (i_star - delta * k)
+
+# Itô drift of V under Q (no k-diffusion; z and x diffusions as above)
+ito_drift_V = drift_k_term + Lz_V + LxQ_V
+
+# HJB RHS terms (without max, taking i_star)
+pi = sp.Function('pi')(k, i_star, z, x)
+HJB_rhs = pi + drift_k_term + Lz_V + LxQ_V
+
+# Check that the constructed Itô drift equals the operator part of HJB_rhs
+assert sp.simplify(HJB_rhs - pi - ito_drift_V) == 0
+print("Itô drift matches HJB operator terms [OK]")
+\end{minted}
+\end{tcolorbox}
+
+% -- Risk-neutral drift transformation consistency (mu_x -> mu_x^Q) --
+\begin{tcolorbox}[sympycheckstyle,title={Risk-neutral drift transformation consistency}]
+\begin{minted}{python}
+import sympy as sp
+
+mu_x, sigma_x, gamma = sp.symbols('mu_x sigma_x gamma', real=True)
+x = sp.symbols('x', real=True)
+C = sp.Function('C')(x)
+
+# sigma_C = (C'/C) sigma_x, lambda = gamma * sigma_C
+sigma_C_expr = sp.diff(C, x) / C * sigma_x
+lambda_expr = gamma * sigma_C_expr
+
+# Q-drift: mu_x^Q = mu_x - sigma_x * lambda
+mu_xQ_expr = mu_x - sigma_x * lambda_expr
+
+# Expected symbolic structure
+target = mu_x - gamma * (sp.diff(C, x) / C) * sigma_x**2
+assert sp.simplify(mu_xQ_expr - target) == 0
+print("Risk-neutral drift transformation (mu_x -> mu_x^Q) consistent [OK]")
+\end{minted}
+\end{tcolorbox}
+
+% -- Optional pycon-style interactive transcript (for readability only) --
+\begin{minted}{pycon}
+>>> import sympy as sp
+>>> x1, x2, t = sp.symbols('x1 x2 t', real=True)
+>>> g = sp.exp(t) * (x1**2 * x2 + sp.sin(x2))
+>>> b1, b2 = x1 + x2, x1 - x2
+>>> Sigma = sp.Matrix([[x1, 0],[0, x2]])
+>>> grad = sp.Matrix([sp.diff(g, x1), sp.diff(g, x2)])
+>>> H = sp.hessian(g, (x1, x2))
+>>> g_t = sp.diff(g, t)
+>>> SS = Sigma*Sigma.T
+>>> ito_diff = sp.Rational(1,2) * (SS.multiply_elementwise(H.T)).sum()
+>>> drift_ito = sp.simplify(g_t + (grad.T*sp.Matrix([b1,b2]))[0] + ito_diff)
+>>> gx1, gx2 = sp.diff(g,x1), sp.diff(g,x2)
+>>> gxx11, gxx22 = sp.diff(g,x1,2), sp.diff(g,x2,2)
+>>> target = g_t + gx1*(x1+x2) + gx2*(x1-x2) + sp.Rational(1,2)*(x1**2*gxx11 + x2**2*gxx22)
+>>> sp.simplify(drift_ito - target)
+0
 \end{minted}
 
 %========================

@@ -1,22 +1,22 @@
 \contentsline {section}{Executive Summary }{3}{section*.2}%
-\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.1}%
-\contentsline {section}{\numberline {2}Primitives and Assumptions}{5}{section.2}%
-\contentsline {section}{\numberline {3}Mathematical Setup: State Dynamics and Generators}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}State space and transformations}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Dynamics of consumption and share}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Generator in $(C,s)$ coordinates}{8}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{9}{section.4}%
-\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{11}{section.5}%
-\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{11}{section.6}%
-\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{11}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{12}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{13}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{15}{section.8}%
-\contentsline {section}{\numberline {9}Computation: Solution Strategies}{15}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{15}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{16}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Verification and Diagnostics}{18}{section.10}%
-\contentsline {section}{\numberline {11}Economic Remarks}{18}{section.11}%
-\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{18}{appendix.A}%
-\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{19}{appendix.B}%
-\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{20}{appendix.C}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.5}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{5}{section.7}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Dynamics and Generators}{5}{section.19}%
+\contentsline {subsection}{\numberline {3.1}State space and transformations}{5}{subsection.20}%
+\contentsline {subsection}{\numberline {3.2}Dynamics of consumption and share}{5}{subsection.22}%
+\contentsline {subsection}{\numberline {3.3}Generator in $(C,s)$ coordinates}{8}{subsection.115}%
+\contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{10}{section.131}%
+\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{11}{section.176}%
+\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{13}{section.204}%
+\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{13}{section.207}%
+\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{14}{subsection.210}%
+\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{15}{subsection.245}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{16}{section.287}%
+\contentsline {section}{\numberline {9}Computation: Solution Strategies}{17}{section.288}%
+\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{17}{subsection.289}%
+\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{18}{subsection.294}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{20}{section.327}%
+\contentsline {section}{\numberline {11}Economic Remarks}{20}{section.328}%
+\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{20}{appendix.329}%
+\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{21}{appendix.389}%
+\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{22}{appendix.437}%
