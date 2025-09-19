@@ -6,17 +6,23 @@
 \contentsline {subsection}{\numberline {3.2}Dynamics of consumption and share}{5}{subsection.22}%
 \contentsline {subsection}{\numberline {3.3}Generator in $(C,s)$ coordinates}{8}{subsection.115}%
 \contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{10}{section.131}%
-\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{11}{section.176}%
-\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{13}{section.204}%
-\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{13}{section.207}%
-\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{14}{subsection.210}%
-\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{15}{subsection.245}%
-\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{16}{section.287}%
-\contentsline {section}{\numberline {9}Computation: Solution Strategies}{17}{section.288}%
-\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{17}{subsection.289}%
-\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{18}{subsection.294}%
-\contentsline {section}{\numberline {10}Verification and Diagnostics}{20}{section.327}%
-\contentsline {section}{\numberline {11}Economic Remarks}{20}{section.328}%
-\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{20}{appendix.329}%
-\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{21}{appendix.389}%
-\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{22}{appendix.437}%
+\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{13}{section.195}%
+\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{14}{section.223}%
+\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{15}{section.226}%
+\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{15}{subsection.229}%
+\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{16}{subsection.264}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{18}{section.306}%
+\contentsline {section}{\numberline {9}Computation: Solution Strategies}{18}{section.307}%
+\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{18}{subsection.308}%
+\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{19}{subsection.313}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{21}{section.346}%
+\contentsline {section}{\numberline {11}Economic Remarks}{21}{section.347}%
+\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{22}{appendix.348}%
+\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{23}{appendix.408}%
+\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{24}{appendix.456}%
+\contentsline {section}{\numberline {D}Implementation Addendum: Three Trees with Log Utility (Auditable)}{26}{appendix.472}%
+\contentsline {subsection}{\numberline {D.1}(A) Improved prompt for external auditor}{26}{subsection.473}%
+\contentsline {subsection}{\numberline {D.2}(B) Follow--through: compact, runnable JAX/Equinox code}{26}{subsection.474}%
+\contentsline {subsection}{\numberline {D.3}(C) One new robustness item}{32}{subsection.755}%
+\contentsline {subsection}{\numberline {D.4}(D) Required plots}{32}{subsection.756}%
+\contentsline {subsection}{\numberline {D.5}(E) Literature matrix (\(\ge \)35 sources; what we take)}{32}{subsection.757}%

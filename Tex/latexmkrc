@@ -15,8 +15,10 @@ $ENV{BIBINPUTS} = exists $ENV{BIBINPUTS}
 
 # Prefer biber for biblatex; configure search path for .bib when running in .out
 $biber = 'biber --input-directory=.. %O %B';
-# Disable BibTeX auto-use; we rely on biber via biblatex
-$bibtex_use = 0;
+# Allow latexmk to run biber when biblatex requests it (remove global veto)
+# Note: With biblatex detected, latexmk will prefer biber automatically.
+# See latexmk documentation: $bibtex_use = 0 disables bibtex/biber; default is auto.
+# We intentionally do not override to 0 so citations are resolved.
 
 # PythonTeX integration: run pythontex automatically whenever .pytxcode changes
 add_cus_dep('pytxcode','pytxmcr',0,'pythontex');

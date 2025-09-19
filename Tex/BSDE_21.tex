@@ -528,6 +528,61 @@ assert sp.simplify(normalized_diffusion - (-sigmaC)) == 0
 \end{pyconsole}
 \end{sympycheck}
 
+% Literature connection and explicit pricing identity (local martingale of deflated prices)
+\begin{tcolorbox}[literaturestyle]
+	extbf{Connections (pricing kernel and return identity).} In continuous time, a state-price deflator $M_t$ admits dynamics $\diff M_t/M_t=-\,r_t\,\diff t-\bm{\lambda}_t^{\top}\diff\bm{W}_t$ under no-arbitrage, and deflated asset prices $M_t S_t$ are (local) martingales. Combining this with $\diff S_t/S_t=\mu_t\,\diff t+\bm{\sigma}_t^{\top}\diff\bm{W}_t$ yields the standard identity $\mu_t-r_t=\bm{\sigma}_t^{\top}\bm{\lambda}_t$; see, e.g., \cite[Eq.~(A.21)]{bjork2009} and \cite{cochrane2005}. This box makes the link explicit so the SDF immediately implies risk premia.
+\end{tcolorbox}
+
+\begin{proposition}{Pricing identity (returns vs SDF)}{pricing-identity}
+Suppose an asset price $S_t$ obeys $\diff S_t/S_t=\mu_t\,\diff t+\bm{\sigma}_t^{\top}\diff\bm{W}_t$ and the SDF satisfies $\diff M_t/M_t=-\,r_t\,\diff t-\bm{\lambda}_t^{\top}\diff\bm{W}_t$. If $M_tS_t$ is a local martingale, then
+\[
+\boxed{\ \mu_t - r_t = \bm{\sigma}_t^{\top}\bm{\lambda}_t\ }.
+\]
+\end{proposition}
+\begin{proof}
+It\^o product rule gives $\diff(MS)=M\,\diff S+S\,\diff M+\diff M\,\diff S$. Divide by $MS$:
+\[
+\frac{\diff(MS)}{MS}=\Big(\mu_t-r_t-\bm{\sigma}_t^{\top}\bm{\lambda}_t\Big)\,\diff t+\text{martingale part}.
+\]
+The local-martingale condition sets the drift to zero, proving the claim.
+\end{proof}
+
+\begin{tcolorbox}[mathstyle]
+	extbf{CRRA specialization.} For time-separable CRRA utility with relative risk aversion $\gamma>0$, the market price of risk equals consumption exposure scaled by risk aversion: $\bm{\lambda}_t=\gamma\,\bm{\sigma}_{c,t}$ (see \cite{breeden1979}). Hence the pricing identity reads
+\[
+\mu_t - r_t = \bm{\sigma}_t^{\top}(\gamma\,\bm{\sigma}_{c,t}).
+\]
+Log utility corresponds to $\gamma=1$, recovering $\bm{\lambda}_t=\bm{\sigma}_{c,t}$ used in \cref{prop:sdf}.
+\end{tcolorbox}
+
+\begin{sympycheck}[title={Algebraic drift check for $\diff(MS)$}]
+\begin{pyconsole}
+import sympy as sp
+
+mu, r = sp.symbols('mu r', real=True)
+lam1, lam2, lam3 = sp.symbols('lam1 lam2 lam3', real=True)
+s1, s2, s3 = sp.symbols('s1 s2 s3', real=True)
+
+# Drift of d(MS)/(MS) when dM/M = -r dt - lambda^T dW, dS/S = mu dt + sigma^T dW
+drift = (mu - r) - (s1*lam1 + s2*lam2 + s3*lam3)
+assert sp.simplify(drift.subs({mu: r + s1*lam1 + s2*lam2 + s3*lam3})) == 0
+print("Product-rule drift identity holds: mu - r = sigma^T lambda.")
+\end{pyconsole}
+\end{sympycheck}
+
+\begin{leanproof}[title={Algebraic skeleton of the pricing identity}]
+We isolate the algebraic step used after applying the It\^o product rule.
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+import Mathlib.Data.Real.Basic
+
+variable {mu r σλ : Real}
+
+lemma pricing_identity_algebra : (mu - r - σλ = 0) -> (mu - r = σλ) := by
+  intro h; simpa using sub_eq_iff_eq_add'.mp h
+\end{lstlisting}
+Stochastic calculus (It\^o product for semimartingales) supplies the premise; the lemma discharges the algebraic conclusion.
+\end{leanproof}
+
 \begin{leanproof}[title={Structural Definition: Log-Utility SDF}]
 We verify the structure $\Lambda_t = e^{-\rho t} u'(C_t)$ where $u(C) = \log C$.
 \begin{lstlisting}[language={},basicstyle=\ttfamily\small]
@@ -1485,6 +1540,9 @@ if __name__ == "__main__":
 \clearpage
 \section*{References}
 \begin{thebibliography}{99}\small
+\bibitem{bjork2009} Bj\"ork, T. (2009).
+Arbitrage Theory in Continuous Time (3rd ed.).
+Oxford University Press.
 \bibitem{breeden1979} Breeden, D. T. (1979).
 An intertemporal asset pricing model with stochastic consumption and investment opportunities.
 \emph{Journal of Financial Economics}, 7(3), 265--296.

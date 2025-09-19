@@ -79,7 +79,7 @@
       <file>BSDE_13.bcf</file>
     </requires>
     <requires type="editable">
-      <file>references.bib</file>
+      <file>Tex/references.bib</file>
     </requires>
   </external>
 </requests>

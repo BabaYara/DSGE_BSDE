@@ -26,8 +26,17 @@
 \usepackage{xparse}
 \usepackage{alltt}
 \usepackage{tcolorbox}
-% Safe code listings fallback: emulate minted via alltt to avoid shell-escape and verbatim-in-box constraints
-\NewDocumentEnvironment{minted}{m}{\begin{alltt}}{\end{alltt}}
+% Code listings: prefer minted if available; otherwise fall back to alltt.
+% This keeps the document compilable without -shell-escape, while enabling
+% proper syntax highlighting and pycon transcripts when minted is present.
+\IfFileExists{minted.sty}{%
+  \usepackage[cache=false]{minted}% require -shell-escape when building
+  \setminted{fontsize=\footnotesize,breaklines=true,autogobble=true,frame=lines,framesep=2mm,python3=true}
+}{%
+  \usepackage{alltt}
+  % Emulate a minimal minted environment: ignore the language argument
+  \NewDocumentEnvironment{minted}{m}{\begin{alltt}}{\end{alltt}}%
+}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usepackage{hyperref}
@@ -48,12 +57,12 @@
 \newcommand{\YY}{Y}% used in primitives for output quantity
 
 % Theorem-like environments with title+label wrappers
-  heoremstyle{plain}
+	heoremstyle{plain}
 \newtheorem{theoremT}{Theorem}
 \newtheorem{lemmaT}{Lemma}
 \newtheorem{propositionT}{Proposition}
 \newtheorem{assumptionT}{Assumption}
-  heoremstyle{definition}
+	heoremstyle{definition}
 \newtheorem{definitionT}{Definition}
 
 % Wrappers expecting \begin{env}{Title}{labelkey}
@@ -76,6 +85,8 @@
 \newcommand{\dmU}{\delta_m U}
 \newcommand{\Dm}{\delta_m}
 \newcommand{\extbf}[1]{\textbf{#1}}
+% Shorthand minted styles (no-op under alltt fallback)
+\AtBeginDocument{\IfFileExists{minted.sty}{\setminted[pycon]{fontsize=\footnotesize}\setminted[python]{fontsize=\footnotesize}\setminted[lean]{fontsize=\footnotesize}}{}}
 
 \begin{document}
 
@@ -449,7 +460,7 @@ The price externality derivation follows from \Cref{lem:chain}. The pricing exte
 \end{proof}
 
 \begin{tcolorbox}[mathstyle]
-  extbf{Complexity of Pricing Externalities.} The terms $\delta_m r$ and $\delta_m \lambda$ depend on the Lions derivatives of the consumption dynamics ($\mu_C(m), \sigma_C(m)$). Calculating these requires understanding how the equilibrium consumption process $C(m)$ responds to infinitesimal changes in the distribution $m$. This involves differentiating through the fixed-point definition of the equilibrium, which is highly complex.
+  \extbf{Complexity of Pricing Externalities.} The terms $\delta_m r$ and $\delta_m \lambda$ depend on the Lions derivatives of the consumption dynamics ($\mu_C(m), \sigma_C(m)$). Calculating these requires understanding how the equilibrium consumption process $C(m)$ responds to infinitesimal changes in the distribution $m$. This involves differentiating through the fixed-point definition of the equilibrium, which is highly complex.
 \end{tcolorbox}
 
 
@@ -487,7 +498,7 @@ Assume \Cref{ass:primitives,ass:regularity} hold. Under sufficient differentiabi
 \end{theorem}
 
 \begin{tcolorbox}[literaturestyle]
-	extbf{Equivalence and uniqueness.} Establishing uniqueness in this GE setting requires generalizing the Lasry--Lions monotonicity condition to account for the pricing externalities. This depends on the properties of the equilibrium consumption process and how it responds to changes in the distribution $m$.
+  extbf{Equivalence and uniqueness.} Establishing uniqueness in this GE setting requires generalizing the Lasry--Lions monotonicity condition to account for the pricing externalities. This depends on the properties of the equilibrium consumption process and how it responds to changes in the distribution $m$.
 \end{tcolorbox}
 
 % Schematic: ME term composition
@@ -918,6 +929,7 @@ print("Risk-neutral drift transformation (mu_x -> mu_x^Q) consistent [OK]")
 \end{tcolorbox}
 
 % -- Optional pycon-style interactive transcript (for readability only) --
+\begin{tcolorbox}[sympycheckstyle,title={Interactive Itô and operator checks (pycon transcript)}]
 \begin{minted}{pycon}
 >>> import sympy as sp
 >>> x1, x2, t = sp.symbols('x1 x2 t', real=True)
@@ -935,7 +947,23 @@ print("Risk-neutral drift transformation (mu_x -> mu_x^Q) consistent [OK]")
 >>> target = g_t + gx1*(x1+x2) + gx2*(x1-x2) + sp.Rational(1,2)*(x1**2*gxx11 + x2**2*gxx22)
 >>> sp.simplify(drift_ito - target)
 0
+>>> # HJB operator check under Q for V(k,z,x)
+>>> k, z, x = sp.symbols('k z x', real=True)
+>>> V = sp.Function('V')(k, z, x)
+>>> delta = sp.symbols('delta', positive=True)
+>>> i_star = sp.Function('i_star')(k, z, x)
+>>> mu_xQ, sigma_x, sigma_z = sp.symbols('mu_xQ sigma_x sigma_z', real=True)
+>>> mu_z = sp.Function('mu_z')(z)
+>>> Lz_V = mu_z*sp.diff(V,z) + sp.Rational(1,2)*sigma_z**2*sp.diff(V,z,2)
+>>> LxQ_V = mu_xQ*sp.diff(V,x) + sp.Rational(1,2)*sigma_x**2*sp.diff(V,x,2)
+>>> drift_k = sp.diff(V,k)*(i_star - delta*k)
+>>> ito_drift = sp.simplify(drift_k + Lz_V + LxQ_V)
+>>> pi = sp.Function('pi')(k, i_star, z, x)
+>>> HJB_rhs = sp.simplify(pi + drift_k + Lz_V + LxQ_V)
+>>> sp.simplify(HJB_rhs - pi - ito_drift)
+0
 \end{minted}
+\end{tcolorbox}
 
 %========================
 % Bibliography (manual)

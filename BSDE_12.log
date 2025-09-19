@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  16 SEP 2025 13:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  18 SEP 2025 14:16
 entering extended mode
  \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_12.tex
-(c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_12.tex
+**./Tex/BSDE_12.tex
+(Tex/BSDE_12.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -50,7 +51,15 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@dimlist=\toks18
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
-) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip51
 
@@ -60,7 +69,7 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
+\@emptytoks=\toks21
 \ex@=\dimen157
 ))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
@@ -100,21 +109,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip17
 \c@parentequation=\count293
 \dspbrk@lvl=\count294
-\tag@help=\toks20
+\tag@help=\toks22
 \row@=\count295
 \column@=\count296
 \maxfields@=\count297
-\andhelp@=\toks21
+\andhelp@=\toks23
 \eqnshift@=\dimen160
 \alignsep@=\dimen161
 \tagshift@=\dimen162
 \tagwidth@=\dimen163
 \totwidth@=\dimen164
 \lineht@=\dimen165
-\@envbody=\toks22
+\@envbody=\toks24
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 )
@@ -159,6 +168,64 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen174
 \xmathstrut@box=\box55
 \xmathstrut@dim=\dimen175
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
+\dth@everypar=\toks31
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip61
+\enit@outerparindent=\dimen176
+\enit@toks=\toks32
+\enit@inbox=\box56
+\enit@count@id=\count302
+\enitdp@description=\count303
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se.sty
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-07-20 L3 programming layer (loader) 
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count304
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\alltt.sty
+Package: alltt 2024/07/07 v2.0g defines alltt environment
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.st
 y
@@ -172,13 +239,13 @@ Package: tcolorbox 2025/07/08 version 6.7.1 text color boxes
 ty
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
 l-common.tex
-\pgfutil@everybye=\toks24
-\pgfutil@tempdima=\dimen176
-\pgfutil@tempdimb=\dimen177
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen177
+\pgfutil@tempdimb=\dimen178
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
 l-latex.def
-\pgfutil@abb=\box56
+\pgfutil@abb=\box57
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs
 .code.tex
@@ -204,13 +271,9 @@ cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
-f
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen178
-\Gin@req@width=\dimen179
+)
+\Gin@req@height=\dimen179
+\Gin@req@width=\dimen180
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys
 .sty
@@ -220,33 +283,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
 s.code.tex
-\pgfkeys@pathtoks=\toks25
-\pgfkeys@temptoks=\toks26
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
 slibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks27
+\pgfkeys@tmptoks=\toks36
 ))
-\pgf@x=\dimen180
-\pgf@y=\dimen181
-\pgf@xa=\dimen182
-\pgf@ya=\dimen183
-\pgf@xb=\dimen184
-\pgf@yb=\dimen185
-\pgf@xc=\dimen186
-\pgf@yc=\dimen187
-\pgf@xd=\dimen188
-\pgf@yd=\dimen189
+\pgf@x=\dimen181
+\pgf@y=\dimen182
+\pgf@xa=\dimen183
+\pgf@ya=\dimen184
+\pgf@xb=\dimen185
+\pgf@yb=\dimen186
+\pgf@xc=\dimen187
+\pgf@yc=\dimen188
+\pgf@xd=\dimen189
+\pgf@yd=\dimen190
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count302
-\c@pgf@countb=\count303
-\c@pgf@countc=\count304
-\c@pgf@countd=\count305
-\t@pgf@toka=\toks28
-\t@pgf@tokb=\toks29
-\t@pgf@tokc=\toks30
-\pgf@sys@id@count=\count306
+\c@pgf@counta=\count305
+\c@pgf@countb=\count306
+\c@pgf@countc=\count307
+\c@pgf@countd=\count308
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count309
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.
 cfg
@@ -265,33 +328,13 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
 yssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count307
-\pgfsyssoftpath@bigbuffer@items=\count308
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
 ysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
-)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 re.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
@@ -302,12 +345,12 @@ e.tex
 .code.tex)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpars
 er.code.tex
-\pgfmath@dimen=\dimen190
-\pgfmath@count=\count309
-\pgfmath@box=\box57
-\pgfmath@toks=\toks31
-\pgfmath@stack@operand=\toks32
-\pgfmath@stack@operation=\toks33
+\pgfmath@dimen=\dimen191
+\pgfmath@count=\count312
+\pgfmath@box=\box58
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
 tions.code.tex)
@@ -331,59 +374,59 @@ tions.integerarithmetics.code.tex)
 .code.tex)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloa
 t.code.tex
-\c@pgfmathroundto@lastzeros=\count310
+\c@pgfmathroundto@lastzeros=\count313
 ))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code
 .tex)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen191
-\pgf@picmaxx=\dimen192
-\pgf@picminy=\dimen193
-\pgf@picmaxy=\dimen194
-\pgf@pathminx=\dimen195
-\pgf@pathmaxx=\dimen196
-\pgf@pathminy=\dimen197
-\pgf@pathmaxy=\dimen198
-\pgf@xx=\dimen199
-\pgf@xy=\dimen256
-\pgf@yx=\dimen257
-\pgf@yy=\dimen258
-\pgf@zx=\dimen259
-\pgf@zy=\dimen260
+\pgf@picminx=\dimen192
+\pgf@picmaxx=\dimen193
+\pgf@picminy=\dimen194
+\pgf@picmaxy=\dimen195
+\pgf@pathminx=\dimen196
+\pgf@pathmaxx=\dimen197
+\pgf@pathminy=\dimen198
+\pgf@pathmaxy=\dimen199
+\pgf@xx=\dimen256
+\pgf@xy=\dimen257
+\pgf@yx=\dimen258
+\pgf@yy=\dimen259
+\pgf@zx=\dimen260
+\pgf@zy=\dimen261
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen261
-\pgf@path@lasty=\dimen262
+\pgf@path@lastx=\dimen262
+\pgf@path@lasty=\dimen263
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen263
-\pgf@shorten@start@additional=\dimen264
+\pgf@shorten@end@additional=\dimen264
+\pgf@shorten@start@additional=\dimen265
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 rescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box58
-\pgf@hbox=\box59
-\pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count311
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count314
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 regraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen265
+\pgflinewidth=\dimen266
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 retransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen266
-\pgf@pt@y=\dimen267
-\pgf@pt@temp=\dimen268
+\pgf@pt@x=\dimen267
+\pgf@pt@y=\dimen268
+\pgf@pt@temp=\dimen269
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 requick.code.tex
@@ -400,14 +443,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 rearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen269
+\pgfarrowsep=\dimen270
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen270
-\pgf@sys@shading@range@num=\count312
-\pgf@shadingcount=\count313
+\pgf@max=\dimen271
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reimage.code.tex
@@ -416,7 +459,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box61
+\pgfexternal@startupbox=\box62
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 relayers.code.tex
@@ -437,7 +480,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 eshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box62
+\pgfnodeparttextbox=\box63
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 eplot.code.tex
@@ -446,8 +489,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
 omp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen271
-\pgf@nodesepend=\dimen272
+\pgf@nodesepstart=\dimen272
+\pgf@nodesepend=\dimen273
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
 omp-version-1-18.sty
@@ -465,10 +508,10 @@ e.tex))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
 .code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen273
-\pgffor@skip=\dimen274
-\pgffor@stack=\toks34
-\pgffor@toks=\toks35
+\pgffor@iter=\dimen274
+\pgffor@skip=\dimen275
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
 ))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz\tikz.code.tex
@@ -477,34 +520,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
 raryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count314
-\pgfplotmarksize=\dimen275
+\pgf@plot@mark@count=\count317
+\pgfplotmarksize=\dimen276
 )
-\tikz@lastx=\dimen276
-\tikz@lasty=\dimen277
-\tikz@lastxsaved=\dimen278
-\tikz@lastysaved=\dimen279
-\tikz@lastmovetox=\dimen280
-\tikz@lastmovetoy=\dimen281
-\tikzleveldistance=\dimen282
-\tikzsiblingdistance=\dimen283
-\tikz@figbox=\box63
-\tikz@figbox@bg=\box64
-\tikz@tempbox=\box65
-\tikz@tempbox@bg=\box66
-\tikztreelevel=\count315
-\tikznumberofchildren=\count316
-\tikznumberofcurrentchild=\count317
-\tikz@fig@count=\count318
+\tikz@lastx=\dimen277
+\tikz@lasty=\dimen278
+\tikz@lastxsaved=\dimen279
+\tikz@lastysaved=\dimen280
+\tikz@lastmovetox=\dimen281
+\tikz@lastmovetoy=\dimen282
+\tikzleveldistance=\dimen283
+\tikzsiblingdistance=\dimen284
+\tikz@figbox=\box64
+\tikz@figbox@bg=\box65
+\tikz@tempbox=\box66
+\tikz@tempbox@bg=\box67
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 ematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count319
-\pgfmatrixcurrentcolumn=\count320
-\pgf@matrix@numberofcolumns=\count321
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
 )
-\tikz@expandcount=\count322
+\tikz@expandcount=\count325
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz/libraries\tikzlibrarytopaths.code.tex
@@ -512,8 +555,8 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks36
-\verbatim@line=\toks37
+\every@verbatim=\toks45
+\verbatim@line=\toks46
 \verbatim@in@stream=\read3
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
@@ -525,21 +568,21 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count323
+\etb@tempcnta=\count326
 )
-\tcb@titlebox=\box67
-\tcb@upperbox=\box68
-\tcb@lowerbox=\box69
-\tcb@phantombox=\box70
-\c@tcbbreakpart=\count324
-\c@tcblayer=\count325
-\c@tcolorbox@number=\count326
-\l__tcobox_tmpa_box=\box71
-\l__tcobox_tmpa_dim=\dimen284
-\tcb@temp=\box72
+\tcb@titlebox=\box68
+\tcb@upperbox=\box69
+\tcb@lowerbox=\box70
+\tcb@phantombox=\box71
+\c@tcbbreakpart=\count327
+\c@tcblayer=\count328
+\c@tcolorbox@number=\count329
+\l__tcobox_tmpa_box=\box72
+\l__tcobox_tmpa_dim=\dimen285
 \tcb@temp=\box73
 \tcb@temp=\box74
 \tcb@temp=\box75
+\tcb@temp=\box76
 ) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
 Package: minted 2025/05/14 v3.7.0 Yet another Pygments shim for LaTeX
 
@@ -564,11 +607,11 @@ rb
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count327
+\FV@CodeLineNo=\count330
 \FV@InFile=\read4
-\FV@TabBox=\box76
-\c@FancyVerbLine=\count328
-\FV@StepNumber=\count329
+\FV@TabBox=\box77
+\c@FancyVerbLine=\count331
+\FV@StepNumber=\count332
 \FV@OutFile=\write4
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
@@ -582,7 +625,10 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-)
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+))
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
 Package: lineno 2025/05/13 line numbers on paragraphs v5.5
 
@@ -594,48 +640,48 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 y
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-\linenopenalty=\count330
-\output=\toks38
-\linenoprevgraf=\count331
-\linenumbersep=\dimen285
-\linenumberwidth=\dimen286
-\c@linenumber=\count332
-\c@pagewiselinenumber=\count333
-\c@LN@truepage=\count334
-\c@internallinenumber=\count335
-\c@internallinenumbers=\count336
-\quotelinenumbersep=\dimen287
-\bframerule=\dimen288
-\bframesep=\dimen289
-\bframebox=\box77
-\@LN@amsmath@ams@eqpen=\count337
+\linenopenalty=\count333
+\output=\toks47
+\linenoprevgraf=\count334
+\linenumbersep=\dimen286
+\linenumberwidth=\dimen287
+\c@linenumber=\count335
+\c@pagewiselinenumber=\count336
+\c@LN@truepage=\count337
+\c@internallinenumber=\count338
+\c@internallinenumbers=\count339
+\quotelinenumbersep=\dimen288
+\bframerule=\dimen289
+\bframesep=\dimen290
+\bframebox=\box78
+\@LN@amsmath@ams@eqpen=\count340
 )
-\c@FancyVerbWriteLine=\count338
-\c@FancyVerbBufferLine=\count339
-\c@FV@TrueTabGroupLevel=\count340
-\c@FV@TrueTabCounter=\count341
-\FV@TabBox@Group=\box78
-\FV@bgcolorstructbox=\box79
-\FV@TmpLength=\skip58
-\c@FV@HighlightLinesStart=\count342
-\c@FV@HighlightLinesStop=\count343
-\FV@LoopCount=\count344
-\FV@NCharsBox=\box80
-\FV@BreakIndent=\dimen290
-\FV@BreakIndentNChars=\count345
-\FV@BreakSymbolSepLeft=\dimen291
-\FV@BreakSymbolSepLeftNChars=\count346
-\FV@BreakSymbolSepRight=\dimen292
-\FV@BreakSymbolSepRightNChars=\count347
-\FV@BreakSymbolIndentLeft=\dimen293
-\FV@BreakSymbolIndentLeftNChars=\count348
-\FV@BreakSymbolIndentRight=\dimen294
-\FV@BreakSymbolIndentRightNChars=\count349
-\c@FancyVerbLineBreakLast=\count350
-\FV@LineBox=\box81
-\FV@LineIndentBox=\box82
-\c@FV@BreakBufferDepth=\count351
-\FV@LineWidth=\dimen295
+\c@FancyVerbWriteLine=\count341
+\c@FancyVerbBufferLine=\count342
+\c@FV@TrueTabGroupLevel=\count343
+\c@FV@TrueTabCounter=\count344
+\FV@TabBox@Group=\box79
+\FV@bgcolorstructbox=\box80
+\FV@TmpLength=\skip62
+\c@FV@HighlightLinesStart=\count345
+\c@FV@HighlightLinesStop=\count346
+\FV@LoopCount=\count347
+\FV@NCharsBox=\box81
+\FV@BreakIndent=\dimen291
+\FV@BreakIndentNChars=\count348
+\FV@BreakSymbolSepLeft=\dimen292
+\FV@BreakSymbolSepLeftNChars=\count349
+\FV@BreakSymbolSepRight=\dimen293
+\FV@BreakSymbolSepRightNChars=\count350
+\FV@BreakSymbolIndentLeft=\dimen294
+\FV@BreakSymbolIndentLeftNChars=\count351
+\FV@BreakSymbolIndentRight=\dimen295
+\FV@BreakSymbolIndentRightNChars=\count352
+\c@FancyVerbLineBreakLast=\count353
+\FV@LineBox=\box82
+\FV@LineIndentBox=\box83
+\c@FV@BreakBufferDepth=\count354
+\FV@LineWidth=\dimen296
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/latex2pydata\latex2pyd
 ata.sty
@@ -644,8 +690,8 @@ thon literal format
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks39
-\pgfopts@list@add@b@toks=\toks40
+\pgfopts@list@add@a@toks=\toks48
+\pgfopts@list@add@b@toks=\toks49
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
@@ -653,15 +699,19 @@ Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count352
-\float@exts=\toks41
-\float@box=\box83
-\@float@everytoks=\toks42
-\@floatcapt=\box84
+\c@float@type=\count355
+\float@exts=\toks50
+\float@box=\box84
+\@float@everytoks=\toks51
+\@floatcapt=\box85
 )
-\c@minted@FancyVerbLineTemp=\count353
-\@float@every@listing=\toks43
-\c@listing=\count354
+\c@minted@FancyVerbLineTemp=\count356
+\@float@every@listing=\toks52
+\c@listing=\count357
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
@@ -687,16 +737,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count355
+\c@section@level=\count358
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.
 sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen296
-\Hy@linkcounter=\count356
-\Hy@pagecounter=\count357
+\@linkdim=\dimen297
+\Hy@linkcounter=\count359
+\Hy@pagecounter=\count360
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
@@ -706,7 +756,7 @@ Now handling font encoding PD1 ...
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count358
+\Hy@SavedSpaceFactor=\count361
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -719,14 +769,14 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count359
+\c@Hy@tempcnt=\count362
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen297
+\XeTeXLinkMargin=\dimen298
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -736,9 +786,9 @@ c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count360
-\Field@Width=\dimen298
-\Fld@charsize=\dimen299
+\Fld@menulength=\count363
+\Field@Width=\dimen299
+\Fld@charsize=\dimen300
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -746,16 +796,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count361
-\c@Item=\count362
-\c@Hfootnote=\count363
+\Hy@abspage=\count364
+\c@Item=\count365
+\c@Hfootnote=\count366
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count364
-\c@bookmark@seq@number=\count365
+\Fld@listcount=\count367
+\c@bookmark@seq@number=\count368
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
 lecheck.sty
@@ -768,7 +818,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip59
+\Hy@SectionHShift=\skip63
 )
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -783,6 +833,7 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
 Package cleveref Info: always capitalise cross-reference names on input line 78
 30.
 Package cleveref Info: include cross-reference names in hyperlinks on input lin
@@ -794,1067 +845,1093 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 )
 ==> First Aid for cleveref.sty applied!
 
-! LaTeX Error: Missing \begin{document}.
+Tex/BSDE_12.tex:47: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \section
-             {Appendix A: Detailed Derivations}\label{app:derivations}
+l.47   	c
+         bset{
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Missing \begin{document}.
+Overfull \hbox (148.12894pt too wide) in paragraph at lines 47--54
+[]\T1/cmr/m/n/10.95 cbset sympy-check-style/.style=colback=gray!5,colframe=blac
+k!60,leftrule=2pt,arc=1mm,boxrule=0.5pt,
+ []
+
+
+Overfull \hbox (91.69173pt too wide) in paragraph at lines 47--54
+\T1/cmr/m/n/10.95 lean-proof-style/.style=colback=blue!4,colframe=black!60,left
+rule=2pt,arc=1mm,boxrule=0.5pt,
+ []
+
+
+Overfull \hbox (90.48279pt too wide) in paragraph at lines 47--54
+\T1/cmr/m/n/10.95 di-dac-tic-style/.style=colback=green!4,colframe=black!60,lef
+trule=2pt,arc=1mm,boxrule=0.5pt,
+ []
+
+
+Overfull \hbox (72.93448pt too wide) in paragraph at lines 47--54
+\T1/cmr/m/n/10.95 math-style/.style=colback=gray!6,colframe=black!60,leftrule=2
+pt,arc=1mm,boxrule=0.5pt,
+ []
+
+
+Overfull \hbox (94.71783pt too wide) in paragraph at lines 47--54
+\T1/cmr/m/n/10.95 lit-er-a-turestyle/.style=colback=gray!10,colframe=black!60,l
+eftrule=2pt,arc=1mm,boxrule=0.5pt
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
+
+ []
+
+
+Tex/BSDE_12.tex:60: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \section{Appendix A: Detailed Derivations}
-                                               \label{app:derivations}
+l.60 	h
+       eoremstyle{plain}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+\c@theoremT=\count369
+\c@lemmaT=\count370
+\c@propositionT=\count371
+\c@assumptionT=\count372
+\c@definitionT=\count373
+(BSDE_12.aux)
+\openout1 = `BSDE_12.aux'.
 
-LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count374
+\scratchdimen=\dimen301
+\scratchbox=\box86
+\nofMPsegments=\count375
+\nofMParguments=\count376
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count377
+\MPscratchDim=\dimen302
+\MPnumerator=\count378
+\makeMPintoPDFobject=\count379
+\everyMPtoPDFconversion=\toks54
+)
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 91.
+\@outlinefile=\write5
+\openout5 = `BSDE_12.out'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
+
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
 
-
-(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-! Undefined control sequence.
-<recently read> \ltx@label 
-                           
-l.31 \end{equation}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 103
+.
 
 
-LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 32.
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 114
+.
 
 
-
-LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 43.
-
+LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 119.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.45     \item $
-                i \ge 0$: $h_i = \phi_+ i/k$. The FOC gives $p-1 = \phi_+ i/...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `prop:policy' on page 1 undefined on input line 48.
-
-
-! Package pgfkeys Error: I do not know the key '/tcb/sympycheckstyle' and I am 
-going to ignore it. Perhaps you misspelled it.
+Tex/BSDE_12.tex:121: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 \begin{tcolorbox}[sympycheckstyle]
-                                       
+l.121 ...rification: FOCs for the optimal policy}]
+                                                  
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
 Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
 
-! Package pgfkeys Error: I do not know the key '/tcb/leanproofstyle' and I am g
-oing to ignore it. Perhaps you misspelled it.
+Tex/BSDE_12.tex:125: Package pgfkeys Error: I do not know the key '/tcb/leanpro
+ofstyle' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54 \begin{tcolorbox}[leanproofstyle]
-                                      
+l.125 ...ation: Optimization structure in Lean~4}]
+                                                  
 (That was another \errmessage.)
 
-\pydata@fh@0=\write5
-\openout5 = `_98A24B86763A8124F3FA4F137A26B6F8.data.minted'.
+\pydata@fh@0=\write6
+\openout6 = `_98A24B86763A8124F3FA4F137A26B6F8.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250916134311 98A24B86763A8124F3FA4F
+runsystem(latexminted config  --timestamp 20250918141653 98A24B86763A8124F3FA4F
 137A26B6F8)...executed.
 
 
-! Package minted Error: minted v3+ executable is not installed or is not added 
-to PATH; or MiKTeX is being used with -aux-directory or -output-directory witho
-ut setting a TEXMF_OUTPUT_DIRECTORY environment variable.
+Tex/BSDE_12.tex:144: Package minted Error: minted v3+ executable is not install
+ed or is not added to PATH; or MiKTeX is being used with -aux-directory or -out
+put-directory without setting a TEXMF_OUTPUT_DIRECTORY environment variable.
 
 See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74 \end{minted}
-                 
+l.144 \end{minted}
+                  
 (That was another \errmessage.)
 
 
-! Package minted Error: Missing definition for highlighting style "default" (mi
-nted executable is unavailable or disabled); attempting to substitute fallback 
-style.
+Tex/BSDE_12.tex:144: Package minted Error: Missing definition for highlighting 
+style "default" (minted executable is unavailable or disabled); attempting to s
+ubstitute fallback style.
 
 See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74 \end{minted}
-                 
+l.144 \end{minted}
+                  
 (That was another \errmessage.)
 
 
-! Package minted Error: Cannot highlight code (minted executable is unavailable
- or disabled); attempting to typeset without highlighting.
+Tex/BSDE_12.tex:144: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
 
 See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74 \end{minted}
-                 
+l.144 \end{minted}
+                  
 (That was another \errmessage.)
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.81 L_
-       phi = v * sp.diff(phi, k)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.83 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Tex/BSDE_12.tex:160: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.85 RHS = (L_
-              phi * m) + (phi * L_star_m)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.88 \end{minted}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Bad space factor (0).
-<recently read> \@savsf 
-                        
-l.88 \end{minted}
-                 
-I allow only values in the range 1..32767 here.
-
-
-! LaTeX Error: \begin{tcb@savebox} on input line 54 ended by \end{VerbatimBuffe
-r}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
+See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 \end{minted}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.88 \end{minted}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+l.160 \end{minted}
+                  
+(That was another \errmessage.)
 
 
-Overfull \hbox (55.63681pt too wide) in paragraph at lines 84--88
-[]\OT1/cmr/m/n/10.95 LHS = sp.diff(phi * v * m, k) RHS = (L$[]\OML/cmm/m/it/10.
-95 hi \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 m\OT1/cmr/m/n/10.95 ) + (\OML
-/cmm/m/it/10.95 phi \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 L[]tar[]\OT1/cm
-r/m/n/10.95 )\OML/cmm/m/it/10.95 assertsp:simplify\OT1/cmr/m/n/10.95 (\OML/cmm/
-m/it/10.95 LHS \OMS/cmsy/m/n/10.95 ^^@
+Overfull \vbox (268.72337pt too high) has occurred while \output is active []
+
+
+
+[1
+
+{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+Tex/BSDE_12.tex:183: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.183 ...ox}[didacticstyle,title={Sign intuition}]
+                                                  
+(That was another \errmessage.)
+
+
+Overfull \hbox (11.27528pt too wide) in paragraph at lines 217--218
+[]$\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^A\OML/cmm/m/i
+t/10.95 ; k\OT1/cmr/m/n/10.95 )$ \T1/cmr/m/it/10.95 con-vex, lower semi-con-tin
+-u-ous; $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; k\OT1/
+cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U
  []
 
 
-! Package minted Error: Cannot highlight code (minted executable is unavailable
- or disabled); attempting to typeset without highlighting.
+
+[2]
+
+LaTeX Warning: Reference `sec:pricing' on page 1 undefined on input line 223.
+
+
+Tex/BSDE_12.tex:227: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:231: Package pgfkeys Error: I do not know the key '/tcb/literat
+urestyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \begin{tcolorbox}[literaturestyle]
+                                        
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:253: Package pgfkeys Error: I do not know the key '/tcb/mathsty
+le' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.253 \begin{tcolorbox}[mathstyle]
+                                  
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `lem:chain' on page 3 undefined on input line 254.
+
+
+
+[3]
+
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 267
+.
+
+
+Tex/BSDE_12.tex:303: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.303 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+
+[4]
+
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 340
+.
+
+
+Tex/BSDE_12.tex:351: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.351 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:360: Package pgfkeys Error: I do not know the key '/tcb/mathsty
+le' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.360 \begin{tcolorbox}[mathstyle]
+                                  
+(That was another \errmessage.)
+
+
+
+[5]
+
+Tex/BSDE_12.tex:385: Package pgfkeys Error: I do not know the key '/tcb/mathsty
+le' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.385 \begin{tcolorbox}[mathstyle]
+                                  
+(That was another \errmessage.)
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400 \begin{equation}
+                      \label{eq:isoelastic}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400 \begin{equation}
+                      \label{eq:isoelastic}
+
+Tex/BSDE_12.tex:404: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.404 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.425 \end{equation}
+                    ]
+
+Tex/BSDE_12.tex:428: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.428 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `eq:ME' on page 1 undefined on input line 429.
+
+
+LaTeX Warning: Reference `lem:chain' on page 1 undefined on input line 459.
+
+
+Tex/BSDE_12.tex:462: Package pgfkeys Error: I do not know the key '/tcb/mathsty
+le' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.462 \begin{tcolorbox}[mathstyle]
+                                  
+(That was another \errmessage.)
+
+
+
+[7]
+
+Tex/BSDE_12.tex:467: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.467 \begin{tcolorbox}[sympycheckstyle]
+                                        
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `prop:externality' on page 8 undefined on input line 4
+68.
+
+
+Tex/BSDE_12.tex:491: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
 
 See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 \end{minted}
-                 
+l.491 \end{minted}
+                  
 (That was another \errmessage.)
 
-! Undefined control sequence.
-\FV@CurrentVerbatimInsertEnvName ...inted@envname 
+
+LaTeX Warning: Reference `ass:regularity' on page 1 undefined on input line 497
+.
+
+
+LaTeX Warning: Reference `ass:primitives' on page 1 undefined on input line 497
+.
+
+
+Tex/BSDE_12.tex:500: Package pgfkeys Error: I do not know the key '/tcb/literat
+urestyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
-l.88 \end{minted}
-                 
+l.500 \begin{tcolorbox}[literaturestyle]
+                                        
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `ass:regularity' on page 1 undefined on input line 530
+.
+
+
+
+[8]
+
+Tex/BSDE_12.tex:539: Package pgfkeys Error: I do not know the key '/tcb/literat
+urestyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.539 \begin{tcolorbox}[literaturestyle]
+                                        
+(That was another \errmessage.)
+
+
+LaTeX Warning: Citation `han_2018_deep_bsde' on page 9 undefined on input line 
+540.
+
+
+LaTeX Warning: Citation `huang_2025_probabilistic' on page 9 undefined on input
+ line 540.
+
+
+LaTeX Warning: Citation `chen_huang_2025_controls' on page 9 undefined on input
+ line 549.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551 \begin{equation}
+                      \label{eq:FVM}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551 \begin{equation}
+                      \label{eq:FVM}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551 \begin{equation}
+                      \label{eq:FVM}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551 \begin{equation}
+                      \label{eq:FVM}
+
+Tex/BSDE_12.tex:561: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.561 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+
+[9]
+
+Tex/BSDE_12.tex:565: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.565 \begin{tcolorbox}[sympycheckstyle]
+                                        
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `eq:FVM_upwind' on page 10 undefined on input line 566
+.
+
+
+Tex/BSDE_12.tex:577: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.577 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+LaTeX Warning: Reference `prop:pricing' on page 1 undefined on input line 589.
+
+Tex/BSDE_12.tex:589: Double superscript.
+l.589 ...g \Cref{prop:pricing} and assemble $\LxQ^
+                                                  {(n)}$.
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+LaTeX Warning: Reference `eq:HJB' on page 1 undefined on input line 590.
+
+
+LaTeX Warning: Reference `sec:FVM' on page 1 undefined on input line 590.
+
+
+LaTeX Warning: Reference `eq:FP' on page 1 undefined on input line 591.
+
+
+LaTeX Warning: Reference `eq:FVM' on page 10 undefined on input line 591.
+
+
+LaTeX Warning: Reference `eq:FVM_upwind' on page 10 undefined on input line 591
+.
+
+
+Tex/BSDE_12.tex:595: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.595 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+
+
+[10]
+
+Tex/BSDE_12.tex:614: Package pgfkeys Error: I do not know the key '/tcb/mathsty
+le' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.614 \begin{tcolorbox}[mathstyle]
+                                  
+(That was another \errmessage.)
+
+
+LaTeX Warning: Citation `huang_2025_probabilistic' on page 11 undefined on inpu
+t line 620.
+
+
+Tex/BSDE_12.tex:630: Package pgfkeys Error: I do not know the key '/tcb/didacti
+cstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.630 \begin{tcolorbox}[didacticstyle]
+                                      
+(That was another \errmessage.)
+
+Tex/BSDE_12.tex:638: Undefined control sequence.
+l.638 ...Forward step.} For each time increment:\n
+                                                  \begin{enumerate}[label=\a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-<argument> ...uffer,insertenvname=\minted@envname 
-                                                  
-l.88 \end{minted}
-                 
+
+LaTeX Warning: Reference `eq:BSDE_V' on page 11 undefined on input line 641.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...} Minimize the pathwise Markov mismatch\n
+                                                  \[\n\mathcal{L}(\Theta) = ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-\FV@CurrentVerbatimInsertEnvName ...inted@envname 
-                                                  
-l.88 \end{minted}
-                 
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...nimize the pathwise Markov mismatch\n\[\n
+                                                  \mathcal{L}(\Theta) = \fra...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.88 \end{minted}
-                 
-(That makes 100 errors; please try again.) 
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...t^{(m)} - \widehat{Y}_t^{(m)} \big\|^2.\n
+                                                  \]\n\item \textbf{Equilibr...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...m)} - \widehat{Y}_t^{(m)} \big\|^2.\n\]\n
+                                                  \item \textbf{Equilibrium ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 .... Iterate steps~2--4 until convergence.\n
+                                                  \end{enumerate}\n\n\begin{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[11]
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...--4 until convergence.\n\end{enumerate}\n
+                                                  \n\begin{tcolorbox}[litera...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...4 until convergence.\n\end{enumerate}\n\n
+                                                  \begin{tcolorbox}[literatu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Tex/BSDE_12.tex:644: Package pgfkeys Error: I do not know the key '/tcb/literat
+urestyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.644 ...te}\n\n\begin{tcolorbox}[literaturestyle]
+                                                  \n\textbf{High-Dimensional...
+(That was another \errmessage.)
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...}\n\n\begin{tcolorbox}[literaturestyle]\n
+                                                  \textbf{High-Dimensional C...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Missing $ inserted.
+<inserted text> 
+                $
+l.644 ...{High-Dimensional Controls.} \\cite{chen_
+                                                  huang_2025_controls} combi...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Tex/BSDE_12.tex:644: Extra }, or forgotten $.
+l.644 ...ntrols.} \\cite{chen_huang_2025_controls}
+                                                   combine Deep BSDE solvers...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...listic and PDE tools can be hybridized.\n
+                                                  \end{tcolorbox}\n\n%======...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Missing $ inserted.
+<inserted text> 
+                $
+l.644 ...tools can be hybridized.\n\end{tcolorbox}
+                                                  \n\n%========================
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--644
+\T1/cmr/m/n/10.95 citechen$[]\OML/cmm/m/it/10.95 uang[]\OT1/cmr/m/n/10.95 025[]
+\OML/cmm/m/it/10.95 ontrolscombineDeepBSDEsolverswithFVM \OMS/cmsy/m/n/10.95 ^^
+@
+ []
+
+
+Overfull \hbox (180.82533pt too wide) in paragraph at lines 644--644
+\OML/cmm/m/it/10.95 stylediscretizationsformodelsfeaturinghigh \OMS/cmsy/m/n/10
+.95 ^^@ \OML/cmm/m/it/10.95 dimensionalcontrols; illustratinghowprobabilistican
+dPDEtoolscanbehybridized:$ 
+ []
+
+Tex/BSDE_12.tex:644: Missing } inserted.
+<inserted text> 
+                }
+l.644 ...tools can be hybridized.\n\end{tcolorbox}
+                                                  \n\n%========================
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...ols can be hybridized.\n\end{tcolorbox}\n
+                                                  \n%========================
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Tex/BSDE_12.tex:644: Undefined control sequence.
+l.644 ...s can be hybridized.\n\end{tcolorbox}\n\n
+                                                  %========================
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (30.74478pt too wide) in paragraph at lines 693--694
+\T1/cmr/m/n/10.95 For a col-lo-ca-tion tu-ple $\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
+t/10.95 k; z; x\OT1/cmr/m/n/10.95 )$\T1/cmr/m/n/10.95 , an em-pir-i-cal mea-sur
+e $\OML/cmm/m/it/10.95 m \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 ^^N[]
+$\T1/cmr/m/n/10.95 , and pa-ram-e-ter-ized $\OML/cmm/m/it/10.95 U[]; ^^N[]U[]; 
+r[]; ^^U[]$
+ []
+
+
+
+[12]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 716.
+
+
+Tex/BSDE_12.tex:753: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.753 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+
+[13]
+
+Tex/BSDE_12.tex:823: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.823 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+
+[14]
+
+Tex/BSDE_12.tex:826: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.826 ...tô lemma check (explicit grad/Hessian)}]
+                                                  
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:868: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.868 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+
+[15]
+
+Tex/BSDE_12.tex:872: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.872 ... equals HJB operator under $\mathbb{Q}$}]
+                                                  
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:905: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.905 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+
+[16]
+
+Tex/BSDE_12.tex:909: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.909 ...eutral drift transformation consistency}]
+                                                  
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:928: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.928 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:932: Package pgfkeys Error: I do not know the key '/tcb/sympych
+eckstyle' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.932 ... and operator checks (pycon transcript)}]
+                                                  
+(That was another \errmessage.)
+
+
+Tex/BSDE_12.tex:965: Package minted Error: Cannot highlight code (minted execut
+able is unavailable or disabled); attempting to typeset without highlighting.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.965 \end{minted}
+                  
+(That was another \errmessage.)
+
+
+
+[17]
+
+[18]
+
+[19] (BSDE_12.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `BSDE_12.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `BSDE_12.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  1101C16A2F861AF058D8CAF932E9A683;7170.
+ ) 
 Here is how much of TeX's memory you used:
- 27248 strings out of 468134
- 559976 string characters out of 5430256
- 1100599 words of memory out of 5000000
- 55501 multiletter control sequences out of 15000+600000
- 633500 words of font info for 65 fonts, out of 8000000 for 9000
+ 30449 strings out of 468134
+ 628104 string characters out of 5430256
+ 1138727 words of memory out of 5000000
+ 58495 multiletter control sequences out of 15000+600000
+ 647750 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,5n,121p,531b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,20n,121p,759b,1069s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-!  ==> Fatal error occurred, no output PDF file produced!
+pdfTeX warning (dest): name{section.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1
+000.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecrm1000.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\ectt1095.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\ectt1440.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljf
+our/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\fababa\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\fababa\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\fababa\AppDa
+ta\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\fabab
+a\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\User
+s\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <
+C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx109
+5.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecbx1200.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
+dpi600\ecbx1440.pk> <C:\Users\fababa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm1095.pk><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/fababa/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fababa/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/faba
+ba/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/U
+sers/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/fababa/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/fababa/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on BSDE_12.pdf (19 pages, 426819 bytes).
+PDF statistics:
+ 935 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

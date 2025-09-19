@@ -18,6 +18,8 @@ help:
 	@echo "  tex            Build Tex/BSDE_21.tex with latexmk (if available)"
 	@echo "  tex-12         Build Tex/BSDE_12.tex (shell-escape for minted/pythontex)"
 	@echo "  tex-safe-12    Build Tex/BSDE_12.tex without shell-escape (alltt fallback)"
+	@echo "  tex-13         Build Tex/BSDE_13.tex (safe: no shell-escape)"
+	@echo "  tex-13-full    Build Tex/BSDE_13_full.tex (with shell-escape)"
 	@echo "  tex-all        Build BSDE_21 and BSDE_12 (safe mode)"
 
 setup:
@@ -76,6 +78,22 @@ tex-safe-12:
 		latexmk -pdf -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex; \
 	else \
 		pdflatex -interaction=nonstopmode -file-line-error Tex/BSDE_12.tex || true; \
+	fi
+
+.PHONY: tex-13
+tex-13:
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -interaction=nonstopmode -file-line-error -r Tex/latexmkrc Tex/BSDE_13.tex || latexmk -pdf -interaction=nonstopmode Tex/BSDE_13.tex; \
+	else \
+		pdflatex -interaction=nonstopmode -file-line-error Tex/BSDE_13.tex || true; \
+	fi
+
+.PHONY: tex-13-full
+tex-13-full:
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -shell-escape -interaction=nonstopmode -file-line-error -r Tex/latexmkrc Tex/BSDE_13_full.tex || latexmk -pdf -shell-escape -interaction=nonstopmode Tex/BSDE_13_full.tex; \
+	else \
+		pdflatex -shell-escape -interaction=nonstopmode -file-line-error Tex/BSDE_13_full.tex || true; \
 	fi
 
 .PHONY: tex-all

@@ -1,0 +1,51 @@
+\contentsline {section}{Executive Summary / Cheat-Sheet}{3}{section*.2}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.9}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{4}{section.11}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Space, Measures, and Differentiation on $\mathcal P$}{5}{section.34}%
+\contentsline {subsection}{\numberline {3.1}State space and probability metrics}{5}{subsection.35}%
+\contentsline {subsection}{\numberline {3.2}Differentiation on $\mathcal P_2$: Lions vs Flat Derivatives}{9}{subsection.40}%
+\contentsline {subsection}{\numberline {3.3}Generators, domains, and adjoints}{13}{subsection.47}%
+\contentsline {subsection}{\numberline {3.4}Symbolic It\^o check: generator form for $U(k,z,x,m)$}{14}{subsection.53}%
+\contentsline {section}{\numberline {4}Firm Problem and the Stationary HJB}{15}{section.54}%
+\contentsline {paragraph}{Endogenous SDF (drop-in form).}{16}{section*.57}%
+\contentsline {paragraph}{CRRA SDF (consumption-based pricing).}{16}{section*.59}%
+\contentsline {section}{\numberline {5}Kolmogorov--Forward (FP) Equation}{23}{section.77}%
+\contentsline {subsection}{\numberline {5.1}Boundary and integrability}{24}{subsection.80}%
+\contentsline {section}{\numberline {6}Market Clearing and Price Mapping}{26}{section.83}%
+\contentsline {section}{\numberline {7}Master Equation (Stationary, Conditional on x)}{27}{section.86}%
+\contentsline {subsection}{\numberline {7.1}The Master Equation Formulation}{27}{subsection.92}%
+\contentsline {subsection}{\numberline {7.2}The Price Externality: Derivation and Simplification}{29}{subsection.97}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{35}{section.103}%
+\contentsline {paragraph}{Growth.}{36}{section*.108}%
+\contentsline {paragraph}{Integrability.}{36}{section*.109}%
+\contentsline {section}{\numberline {9}Computation: Two KS-Free Routes}{37}{section.110}%
+\contentsline {subsection}{\numberline {9.1}Route A: {\mdseries \textsc {HJB}}--{\mdseries \textsc {FP}} Fixed Point}{37}{subsection.111}%
+\contentsline {paragraph}{Algorithm (stationary, conditional on $x$).}{37}{section*.112}%
+\contentsline {paragraph}{Discretization details.}{37}{section*.118}%
+\contentsline {paragraph}{Diagnostics.}{37}{section*.119}%
+\contentsline {paragraph}{Upwind FP step (Godunov flux) --- pseudocode.}{37}{lstlisting.121}%
+\contentsline {subsection}{\numberline {9.2}Route B: Direct Master-PDE Collocation}{39}{subsection.163}%
+\contentsline {paragraph}{Algorithm (Direct ME Collocation).}{40}{section*.166}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{44}{section.259}%
+\contentsline {paragraph}{Residual norms.}{44}{section*.260}%
+\contentsline {paragraph}{Stopping rules.}{44}{section*.261}%
+\contentsline {paragraph}{Sanity checks.}{44}{section*.264}%
+\contentsline {paragraph}{Wasserstein-2 drift diagnostic (practical).}{44}{section*.265}%
+\contentsline {paragraph}{Sliced Wasserstein (2D approximation).}{45}{section*.280}%
+\contentsline {section}{\numberline {11}Economics: Aggregation, Irreversibility, Comparative Statics}{45}{section.298}%
+\contentsline {paragraph}{Aggregation.}{45}{section*.299}%
+\contentsline {paragraph}{Irreversibility.}{45}{section*.300}%
+\contentsline {paragraph}{Comparative statics.}{46}{section*.301}%
+\contentsline {subsection}{\numberline {11.1}Analytical Support for Comparative Statics}{46}{subsection.302}%
+\contentsline {section}{\numberline {A}Appendix A: Derivations and Technical Lemmas}{50}{appendix.308}%
+\contentsline {subsection}{\numberline {A.1}Envelope/KKT and policy recovery}{51}{subsection.312}%
+\contentsline {subsection}{\numberline {A.2}Adjoint pairing for FP}{52}{subsection.313}%
+\contentsline {section}{\numberline {B}Appendix B: Residual-Loss Template (for implementation)}{53}{appendix.316}%
+\contentsline {section}{\numberline {C}Appendix C: Common-Noise Master Equation (Reference Note)}{54}{appendix.317}%
+\contentsline {section}{\numberline {D}Appendix D: Tiny Pseudocode (Plain \texttt {listings})}{55}{appendix.319}%
+\contentsline {section}{\numberline {E}Appendix E: Symbolic Verification (PythonTeX + SymPy)}{57}{appendix.399}%
+\contentsline {section}{\numberline {F}Appendix F: Lean4 Micro-Proofs (Sketches)}{58}{appendix.400}%
+\contentsline {section}{\numberline {G}Appendix G: Endogenous SDF with Epstein--Zin Aggregator}{59}{appendix.401}%
+\contentsline {section}{Appendix: Revision Overview}{62}{section*.405}%
+\contentsline {section}{Appendix H: Context-Engineered Prompt and Minimal Deep-FBSDE Follow-through}{65}{section*.418}%
+\contentsline {section}{References}{68}{section*.425}%
