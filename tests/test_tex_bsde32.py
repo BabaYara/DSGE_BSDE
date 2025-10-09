@@ -1,5 +1,9 @@
 import re
+import shutil
+import subprocess
 from pathlib import Path
+
+import pytest
 
 
 def _get_literate_block(tex: str) -> str:
@@ -33,3 +37,33 @@ def test_bsde32_literate_maps_extended_unicode():
             line.startswith(f"{{{char}}}") and ("\\" + latex) in line
             for line in lines
         ), f"Expected literate mapping for {char!r}"
+
+
+def test_bsde32_compiles_with_latexmk(tmp_path):
+    latexmk = shutil.which("latexmk")
+    if latexmk is None:
+        pytest.skip("latexmk executable is unavailable")
+
+    outdir = tmp_path / "pdf"
+    auxdir = tmp_path / "aux"
+    outdir.mkdir()
+    auxdir.mkdir()
+
+    jobname = "bsde32_ci"
+    cmd = [
+        latexmk,
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        f"-jobname={jobname}",
+        f"-outdir={outdir}",
+        f"-auxdir={auxdir}",
+        "-r",
+        "latexmkrc",
+        "BSDE_32.tex",
+    ]
+
+    subprocess.run(cmd, check=True, cwd=Path("Tex"))
+    pdf_path = outdir / f"{jobname}.pdf"
+    assert pdf_path.exists(), "latexmk should produce a PDF output"
