@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,letterpaper,oneside]{article}
+\documentclass[11pt,letterpaper,oneside]{article}
 
 
 \usepackage[margin=1in]{geometry}
@@ -127,6 +127,14 @@
     {?}{{$\vee$}}1
     {?}{{$\neg$}}1
     {?}{{$\neq$}}1
+    {ℝ}{{$\mathbb{R}$}}1
+    {∇}{{$\nabla$}}1
+    {Σ}{{$\Sigma$}}1
+    {σ}{{$\sigma$}}1
+    {μ}{{$\mu$}}1
+    {ρ}{{$\rho$}}1
+    {γ}{{$\gamma$}}1
+    {κ}{{$\kappa$}}1
 }
 
 % Minimal Lean language definition for listings
@@ -729,7 +737,7 @@ where $\delta_{ij}$ is the Kronecker delta. (Proof and verification appear in \c
       \[
         \mathfrak{F}_i(\bm{s}) \equiv \mu_{s_i}^{\mathbb{Q}}(\bm{s}) - \frac12\,\partial_{s_i}A_{s_i s_i}(\bm{s}) - \sum_{j\neq i}\partial_{s_j}A_{s_i s_j}(\bm{s}).
       \]
-      Using \cref{drift_boundary} and $A_{s_i s_j} = s_i s_j \langle\bm{\sigma}_i - \bm{\sigma}_C(\bm{s}), \bm{\sigma}_j - \bm{\sigma}_C(\bm{s})\rangle$, every term is $O(s_i)$; consequently $\mathfrak{F}_i(\bm{s}) = O(s_i) \to 0$ as $s_i \downarrow 0$. The faces are therefore borderline in Fichera's classification and, in the GBM setting, turn out to be inaccessible.
+      Using \cref{lem:drift_boundary} and $A_{s_i s_j} = s_i s_j \langle\bm{\sigma}_i - \bm{\sigma}_C(\bm{s}), \bm{\sigma}_j - \bm{\sigma}_C(\bm{s})\rangle$, every term is $O(s_i)$; consequently $\mathfrak{F}_i(\bm{s}) = O(s_i) \to 0$ as $s_i \downarrow 0$. The faces are therefore borderline in Fichera's classification and, in the GBM setting, turn out to be inaccessible.
 
 \begin{sympycheck}[title={Fichera quantity $\mathfrak{F}_i$ vanishes on $s_i=0$}]
 \begin{pyconsole}
@@ -746,7 +754,7 @@ sp.simplify(sp.limit(F, s, 0))
 \begin{tcolorbox}[didacticstyle,title={Intuition: Attainability of Boundaries}]
   The key question at $s_i=0$ is whether diffusion is strong enough relative to drift to reach the boundary.
 
-  The drift $\mu_{s,i}^{\mathbb{Q}}$ vanishes linearly ($O(s_i)$; see \cref{drift_boundary}). The diffusion matrix $A$ also degenerates; the diagonal component $A_{s_i s_i}$ scales quadratically, $O(s_i^2)$. The log-ratio representation (\cref{lem:log_ratios}) shows that shares remain strictly positive for finite time, so the boundaries are \emph{not} hit, but the degeneracy still dictates asymptotic behaviour.
+  The drift $\mu_{s,i}^{\mathbb{Q}}$ vanishes linearly ($O(s_i)$; see \cref{lem:drift_boundary}). The diffusion matrix $A$ also degenerates; the diagonal component $A_{s_i s_i}$ scales quadratically, $O(s_i^2)$. The log-ratio representation (\cref{lem:log_ratios}) shows that shares remain strictly positive for finite time, so the boundaries are \emph{not} hit, but the degeneracy still dictates asymptotic behaviour.
 \end{tcolorbox}
 
     \begin{proposition}{Faces are Inaccessible in Finite Time}{faces_inaccessible}
@@ -1947,7 +1955,7 @@ The algorithm in \cref{alg:deepbsde} follows the forward--backward system that e
   \]
   where $\bm{\mu}_{\bm{s}}^{\mathbb{Q}}$ stacks the drifts in \cref{eq:mu_s_Q_correct}.
 
-  \item \textbf{Linear valuation PDE.} With discount rate $r(\bm{s})$ and running payoff $D_i = s_i C$, the homogeneity result (\cref{homogeneity}) implies that $P_i(C,\bm{s})=C\,g_i(\bm{s})$ solves the reduced valuation PDE (\cref{eq:pde_price}).
+  \item \textbf{Linear valuation PDE.} With discount rate $r(\bm{s})$ and running payoff $D_i = s_i C$, the homogeneity result (\cref{prop:homogeneity}) implies that $P_i(C,\bm{s})=C\,g_i(\bm{s})$ solves the reduced valuation PDE (\cref{eq:pde_price}).
 
   \item \textbf{Feynman--Kac to BSDE.} Applying the Feynman--Kac theorem to the PDE gives the linear BSDE for the ex-dividend price $Y_t^{i}:=P_i(\bm{s}_t)$:
   \begin{equation}\label{eq:fbsde_price}
