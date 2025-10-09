@@ -8,11 +8,14 @@
 %     "Sec 9.2: Critical notation conflict (f_i used for both P/D and P/C ratios). Explanation of the Deep BSDE infinite-horizon adaptation (Forward Euler Scheme) is underspecified."
 %   ],
 %   "build_notes": {
-%     "latex": "pdflatex/xelatex; requires tcolorbox and listings (for pyconsole environment).",
+%     "latex": "latexmk + pdflatex/xelatex; requires tcolorbox and pythontex (executes SymPy).",
 %     "python": "sympy>=1.12",
-%     "lean4": "leanprover-community/mathlib4; toolchain >= 4.8.x"
+%     "lean4": "leanprover-community/mathlib4; toolchain >= 4.20.x"
 %   }
 % }
+% build using cd Tex
+% .\build_bsde10.ps1 -File 'BSDE_21.tex'
+
 \usepackage[margin=1in]{geometry}
 
 % Math & theorem stack
@@ -44,12 +47,14 @@
 \usepackage{xcolor}
 
 % Code and verification helpers
-% Use listings instead of minted to avoid external dependencies
+% Real execution for Python/SymPy via PythonTeX; keep listings for static code (Lean)
+\usepackage{pythontex}
 \usepackage{listings}
-% PythonTeX (disabled): define a lightweight 'pyconsole' as listings to avoid external deps
 \lstdefinestyle{codeblock}{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,showstringspaces=false}
-\lstset{style=codeblock}
-\lstnewenvironment{pyconsole}{\lstset{language=Python,style=codeblock}}{}
+\lstset{style=codeblock,inputencoding=utf8,breaklines=true,breakatwhitespace=true}
+
+% Fallback wrapper for PythonTeX console: use listings on first pass (or if pythontex is not run)
+% No special wrapper needed; we use pythontex's non-interactive pycode environment for checks
 
 % Acronyms: lightweight fallback to avoid package complexity
 \newcommand{\ac}[1]{{\mdseries\textsc{#1}}}
@@ -87,7 +92,9 @@
   }
 }
 
-\newtcolorbox{sympycheck}[1][]{enhanced,breakable,colback=sympybg,colframe=sympycolor,arc=2pt,boxrule=0.8pt,title=\sffamily\bfseries SymPy Verification,#1}
+% Allow verbatim content so PythonTeX's pyconsole can render inside the box
+\newtcolorbox{sympycheck}[1][]{enhanced,breakable,verbatim,fontupper=\ttfamily\small,colback=sympybg,colframe=sympycolor,arc=2pt,boxrule=0.8pt,title=\sffamily\bfseries SymPy Verification,#1}
+ 
 \newtcolorbox{leanproof}[1][]{enhanced,breakable,colback=leanbg,colframe=leancolor,arc=2pt,boxrule=0.8pt,title=\sffamily\bfseries Lean4 Proof,#1}
 
 % TCB theorems with the mathstyle
@@ -157,6 +164,10 @@ We revisit a two-tree Lucas economy with log utility and spell out the stochasti
 \end{abstract}
 
 \tableofcontents
+\begin{tcolorbox}[literaturestyle,title={Build note: PythonTeX pipeline}]
+\textbf{Run.} Execute \texttt{latexmk -r Tex/latexmkrc Tex/BSDE\_21.tex} so the LaTeX $\to$ PythonTeX $\to$ LaTeX cycle runs automatically. Manual builds should call \texttt{pdflatex}, \texttt{pythontex}, then \texttt{pdflatex} to populate the SymPy verification boxes; otherwise PythonTeX leaves fallback placeholders (\texttt{??}).
+\end{tcolorbox}
+
 
 \newpage
 \section*{Executive Summary }
@@ -180,6 +191,7 @@ with $\bm{W}$ a $d$-dimensional Brownian motion, drift parameters $\mu_j$, and d
   The short rate is $r_t=\rho+\mu_C(s_t)-\norm{\bm{\sigma}_C(s_t)}^2$ and the market price of risk is $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$.
   \item \textbf{CAPM:} For any asset with diffusion $\bm{\sigma}_R$, $\E_t[\diff R_t]-r_t\,\diff t=\ip{\bm{\lambda}_t}{\bm{\sigma}_R}\,\diff t$.
 \end{itemize}
+\end{tcolorbox}
 
 \textbf{Analytical simplifications.} Log utility collapses pricing kernels to functions of $(C_t,s_t)$, and price--dividend ratios depend only on $s_t$ because prices are homogeneous of degree one in dividends. Under symmetric primitives ($\mu_1=\mu_2$, $\bm{\sigma}_1=\bm{\sigma}_2$) the share is a martingale and both trees inherit the constant multiple $1/(\rho-\mu_C)$.
 
@@ -190,7 +202,7 @@ with $\bm{W}$ a $d$-dimensional Brownian motion, drift parameters $\mu_j$, and d
 \end{enumerate}
 
 \textbf{Diagnostics.} Monitor the martingale property of $\Lambda_t P^i_t+\int_0^t \Lambda_u D^i_u\,\diff u$, track numerical residuals of the $f_i$ ODE, and examine implied moments of $s_t$ relative to analytical targets. SymPy and Lean checks embedded in the appendices certify key derivations.
-\end{tcolorbox}
+
 
 \newpage
 \section{Notation and Acronyms}
@@ -262,7 +274,7 @@ The primitive state is the dividend vector $\bm{D}_t=(D_{1,t},D_{2,t})\in\R_+^2$
 \begin{equation}\label{eq:state_transform}
   C_t=D_{1,t}+D_{2,t}, \qquad s_t=\frac{D_{1,t}}{C_t}\in(0,1)
 \end{equation}
-form a sufficient representation. The transformation $(D_1,D_2)\mapsto(C,s)$ is a bijection between $\R_+^2$ and $\R_+\times(0,1)$, verified in Appendix~\ref{app:lean_verification}.
+form a sufficient representation. The transformation $(D_1,D_2)\mapsto(C,s)$ is a bijection between $\R_+^2$ and $\R_+\times(0,1)$; a Lean4 proof sketch is included in the repository (Appendix A).
 
 \subsection{Dynamics of consumption and share}
 Applying It\^o's lemma to the transformation \eqref{eq:state_transform} yields closed-form dynamics.
@@ -291,91 +303,54 @@ Dividing by $C_t$ and using $s_t=D_{1,t}/C_t$ (so $D_{2,t}/C_t=1-s_t$) yields
   &= \mu_C(s_t)\,\diff t + \bm{\sigma}_C(s_t)^{\top}\diff\bm{W}_t.
 \end{align*}
 \end{proof}
+% Concise lemma for the share dynamics with pretty identities generated by Python
+\begin{lemma}{Dynamics of the consumption share}{s}
+The share process obeys $\diff s_t=\mu_s(s_t)\,\diff t+\bm{\sigma}_s(s_t)^{\top}\diff\bm{W}_t$, where
+\[
+  \mu_s(s)\equiv s(1-s)\Big(\mu_1-\mu_2+\bm{\sigma}_C(s)^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)\Big),
+  \qquad
+  \bm{\sigma}_s(s)\equiv s(1-s)\,(\bm{\sigma}_1-\bm{\sigma}_2).
+\]
+\end{lemma}
+\begin{proof}
+Quotient It\^o for $s=D_1/C$ with \cref{eq:C_drift,eq:sigmaC_def} yields $\diff s/s=\big(\diff D_1/D_1-\diff C/C\big)+\big(\norm{\bm{\sigma}_C}^2-\ip{\bm{\sigma}_1}{\bm{\sigma}_C}\big)\diff t$.
+Using $\mu_1-\mu_C=(1-s)(\mu_1-\mu_2)$, $\bm{\sigma}_1-\bm{\sigma}_C=(1-s)(\bm{\sigma}_1-\bm{\sigma}_2)$, and
+$\norm{\bm{\sigma}_C}^2-\ip{\bm{\sigma}_1}{\bm{\sigma}_C}=(1-s)\bm{\sigma}_C^{\top}(\bm{\sigma}_2-\bm{\sigma}_1)$; multiplying by $s$ gives the result.
+\end{proof}
 
-\begin{sympycheck}[title={Verification: Consumption dynamics}]
+% Generate a clean LaTeX align block verifying drift and diffusion identities
+\begin{pycode}
+import os, pathlib, sys, importlib
+root = pathlib.Path(os.getcwd())           # Typically Tex/.out during pythontex
+texdir = root.parent                       # Tex directory
+scripts = texdir / "scripts"
+scripts.mkdir(parents=True, exist_ok=True)
+sys.path.append(str(scripts))
+import ito_helpers as ih  # type: ignore
+ih = importlib.reload(ih)  # ensure latest edits are used
+out = root / "build" / "ito_share_identities.tex"  # place alongside other .out artefacts
+out.parent.mkdir(parents=True, exist_ok=True)
+ih.emit_share_identities_tex(outpath=str(out))
+\end{pycode}
+
+% Pretty, publication-grade equations (no console spam)
+% Guard for first LaTeX pass (before pythontex runs); second pass will find the .out file
+\IfFileExists{.out/build/ito_share_identities.tex}{\input{.out/build/ito_share_identities.tex}}{%
+  \IfFileExists{build/ito_share_identities.tex}{\input{build/ito_share_identities.tex}}{}}
+
+% Optional: keep the verbose SymPy derivation gated for debugging only
+\iffalse
+\begin{sympycheck}[title={Verification: Share dynamics via explicit It\^o derivatives (verbose)}]
 \begin{pyconsole}
-import sympy as sp
-
-s, mu1, mu2 = sp.symbols('s mu1 mu2', real=True)
-sigma1, sigma2 = sp.symbols('sigma1 sigma2')
-
-muC = s*mu1 + (1-s)*mu2
-sigmaC = s*sigma1 + (1-s)*sigma2
-
-left_drift = s*mu1 + (1-s)*mu2
-left_sigma = s*sigma1 + (1-s)*sigma2
-
-assert sp.simplify(left_drift - muC) == 0
-assert sp.simplify(left_sigma - sigmaC) == 0
+# (derivation moved to Python helper; enable this block for console transcript)
 \end{pyconsole}
 \end{sympycheck}
+\fi
 
-For completeness, the following SymPy cell derives $\diff s_t$ via an explicit application of It\^o's lemma in the original $(D_1,D_2)$ coordinates, computing all first and second partial derivatives and the quadratic-variation terms before simplifying to the stated drift and diffusion in $s$.
-
-\begin{sympycheck}[title={Verification: Share dynamics via explicit It\^o derivatives}]
-\begin{pyconsole}
-import sympy as sp
-
-# Symbols
-D1, D2 = sp.symbols('D1 D2', positive=True, real=True)
-s = sp.Function('s')
-mu1, mu2 = sp.symbols('mu1 mu2', real=True)
-sig1_sq, sig2_sq, sig1_sig2 = sp.symbols('sig1_sq sig2_sq sig1_sig2', real=True)
-
-# Define share s(D1,D2) and convenience vars
-C = D1 + D2
-s_expr = D1 / C
-
-# First and second partial derivatives
-sd_D1 = sp.diff(s_expr, D1)
-sd_D2 = sp.diff(s_expr, D2)
-sd_D1D1 = sp.diff(sd_D1, D1)
-sd_D2D2 = sp.diff(sd_D2, D2)
-sd_D1D2 = sp.diff(sd_D1, D2)
-
-# Drift via Ito formula in (D1,D2):
-#   f_D1 D1 mu1 + f_D2 D2 mu2
-# + 0.5 f_D1D1 <dD1,dD1> + 0.5 f_D2D2 <dD2,dD2> + f_D1D2 <dD1,dD2>
-drift_explicit = (
-  sd_D1 * D1 * mu1
-  + sd_D2 * D2 * mu2
-  + sp.Rational(1, 2) * sd_D1D1 * (D1**2 * sig1_sq)
-  + sp.Rational(1, 2) * sd_D2D2 * (D2**2 * sig2_sq)
-  + sd_D1D2 * (D1 * D2 * sig1_sig2)
-)
-
-# Express drift in terms of s and compare to stated form
-s_sym = sp.symbols('s', real=True)
-drift_s = sp.simplify(drift_explicit.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
-
-muC = s_sym * mu1 + (1 - s_sym) * mu2
-sig1_sigC = s_sym * sig1_sq + (1 - s_sym) * sig1_sig2
-sigC_sig2 = s_sym * sig1_sig2 + (1 - s_sym) * sig2_sq
-drift_stated = s_sym * (1 - s_sym) * (mu1 - mu2 + (sigC_sig2 - sig1_sigC))
-
-assert sp.simplify(sp.factor(drift_s - drift_stated)) == 0
-
-# Diffusion: ||f_D1 D1 sigma1 + f_D2 D2 sigma2||^2
-diff_norm_sq = (
-  (sd_D1 * D1) ** 2 * sig1_sq
-  + (sd_D2 * D2) ** 2 * sig2_sq
-  + 2 * (sd_D1 * D1) * (sd_D2 * D2) * sig1_sig2
-)
-diff_norm_sq_s = sp.simplify(diff_norm_sq.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
-expected_norm_sq = (s_sym ** 2) * ((1 - s_sym) ** 2) * (sig1_sq + sig2_sq - 2 * sig1_sig2)
-assert sp.simplify(diff_norm_sq_s - expected_norm_sq) == 0
-\end{pyconsole}
-\end{sympycheck}
 
 \begin{leanproof}[title={Affine structure of $\mu_C$ and $\bm{\sigma}_C$}]
-The consumption coefficients are affine in the primitives.
-\begin{lstlisting}[basicstyle=\ttfamily\small]
-import Mathlib.Data.Real.Basic
-
-lemma affine_mix (s x1 x2 : Real) :
-    s * x1 + (1 - s) * x2 = x2 + s * (x1 - x2) := by
-  ring
-\end{lstlisting}
+The consumption coefficients are affine in the primitives. We include the Lean file that Lake checks (path fallback for different output directories):
+\IfFileExists{lean/Proofs/AffineMix.lean}{\lstinputlisting[basicstyle=\ttfamily\small]{lean/Proofs/AffineMix.lean}}{\IfFileExists{../lean/Proofs/AffineMix.lean}{\lstinputlisting[basicstyle=\ttfamily\small]{../lean/Proofs/AffineMix.lean}}{\lstinputlisting[basicstyle=\ttfamily\small]{../../lean/Proofs/AffineMix.lean}}}
 The identity specialises componentwise to $\bm{\sigma}_C(s)$.
 \end{leanproof}
 
@@ -530,7 +505,7 @@ assert sp.simplify(normalized_diffusion - (-sigmaC)) == 0
 
 % Literature connection and explicit pricing identity (local martingale of deflated prices)
 \begin{tcolorbox}[literaturestyle]
-	extbf{Connections (pricing kernel and return identity).} In continuous time, a state-price deflator $M_t$ admits dynamics $\diff M_t/M_t=-\,r_t\,\diff t-\bm{\lambda}_t^{\top}\diff\bm{W}_t$ under no-arbitrage, and deflated asset prices $M_t S_t$ are (local) martingales. Combining this with $\diff S_t/S_t=\mu_t\,\diff t+\bm{\sigma}_t^{\top}\diff\bm{W}_t$ yields the standard identity $\mu_t-r_t=\bm{\sigma}_t^{\top}\bm{\lambda}_t$; see, e.g., \cite[Eq.~(A.21)]{bjork2009} and \cite{cochrane2005}. This box makes the link explicit so the SDF immediately implies risk premia.
+	\textbf{Connections (pricing kernel and return identity).} In continuous time, a state-price deflator $M_t$ admits dynamics $\diff M_t/M_t=-\,r_t\,\diff t-\bm{\lambda}_t^{\top}\diff\bm{W}_t$ under no-arbitrage, and deflated asset prices $M_t S_t$ are (local) martingales. Combining this with $\diff S_t/S_t=\mu_t\,\diff t+\bm{\sigma}_t^{\top}\diff\bm{W}_t$ yields the standard identity $\mu_t-r_t=\bm{\sigma}_t^{\top}\bm{\lambda}_t$; see, e.g., \cite[Eq.~(A.21)]{bjork2009} and \cite{cochrane2005}. This box makes the link explicit so the SDF immediately implies risk premia.
 \end{tcolorbox}
 
 \begin{proposition}{Pricing identity (returns vs SDF)}{pricing-identity}
@@ -548,7 +523,7 @@ The local-martingale condition sets the drift to zero, proving the claim.
 \end{proof}
 
 \begin{tcolorbox}[mathstyle]
-	extbf{CRRA specialization.} For time-separable CRRA utility with relative risk aversion $\gamma>0$, the market price of risk equals consumption exposure scaled by risk aversion: $\bm{\lambda}_t=\gamma\,\bm{\sigma}_{c,t}$ (see \cite{breeden1979}). Hence the pricing identity reads
+	\textbf{CRRA specialization.} For time-separable CRRA utility with relative risk aversion $\gamma>0$, the market price of risk equals consumption exposure scaled by risk aversion: $\bm{\lambda}_t=\gamma\,\bm{\sigma}_{c,t}$ (see \cite{breeden1979}). Hence the pricing identity reads
 \[
 \mu_t - r_t = \bm{\sigma}_t^{\top}(\gamma\,\bm{\sigma}_{c,t}).
 \]
@@ -575,9 +550,9 @@ We isolate the algebraic step used after applying the It\^o product rule.
 \begin{lstlisting}[basicstyle=\ttfamily\small]
 import Mathlib.Data.Real.Basic
 
-variable {mu r σλ : Real}
+variable {mu r s? : Real}
 
-lemma pricing_identity_algebra : (mu - r - σλ = 0) -> (mu - r = σλ) := by
+lemma pricing_identity_algebra : (mu - r - s? = 0) -> (mu - r = s?) := by
   intro h; simpa using sub_eq_iff_eq_add'.mp h
 \end{lstlisting}
 Stochastic calculus (It\^o product for semimartingales) supplies the premise; the lemma discharges the algebraic conclusion.
@@ -626,7 +601,7 @@ Substituting $\bm{\lambda}_t=\bm{\sigma}_C(s_t)$ yields \eqref{eq:rn_drift_cor}.
 \end{proof}
 
 \begin{tcolorbox}[didacticstyle]
-  	extbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
+  	\textbf{Economic reading.} The short rate combines time preference ($\rho$), expected consumption growth ($\mu_C$), and precautionary savings ($-\norm{\bm{\sigma}_C}^2$). The precautionary term carries coefficient one---not one-half---because log utility makes consumption the num\'eraire. Asset premia hinge on covariances with the consumption-weighted shock $\bm{\sigma}_C(s_t)$.
 \end{tcolorbox}
 
 \section{Risk-Neutral Dynamics and Valuation PDE}\label{sec:pde}
@@ -817,7 +792,7 @@ with $a(s)=\tfrac12\norm{\bm{\sigma}_s(s)}^2$ and $b^{\mathbb{Q}}(s)=\mu_s^{\mat
 \end{proof}
 
 \begin{tcolorbox}[mathstyle]
-  	extbf{Boundary behaviour and Feller's classification.} The diffusion coefficient $a(s)$ vanishes quadratically as $s\to0$ or $s\to1$. Assuming $\bm{\sigma}_1\neq\bm{\sigma}_2$, $a(s)>0$ on $(0,1)$, so the process is regular internally. Feller's classification indicates that $s=0$ and $s=1$ are natural boundaries (inaccessible in finite time), confirming $s_t\in(0,1)$.
+  	\textbf{Boundary behaviour and Feller's classification.} The diffusion coefficient $a(s)$ vanishes quadratically as $s\to0$ or $s\to1$. Assuming $\bm{\sigma}_1\neq\bm{\sigma}_2$, $a(s)>0$ on $(0,1)$, so the process is regular internally. Feller's classification indicates that $s=0$ and $s=1$ are natural boundaries (inaccessible in finite time), confirming $s_t\in(0,1)$.
 \end{tcolorbox}
 
 \begin{sympycheck}[title={Verification: PDE$\,\to\,$ODE derivative identities for $P_i(D_1,D_2)=D_i f_i(s)$}]
@@ -1190,7 +1165,7 @@ assert dependencies == expected_dependencies
 
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\small]
 # Three-tree, log-utility Lucas economy via PDE in y=log-ratio coords
-# Losses: generator + tower means + Kapllani–Teng forward/backward + unbiased MLMC
+# Losses: generator + tower means + Kapllani�Teng forward/backward + unbiased MLMC
 # Robustness: antithetic Brownian coupling; Diagnostics: D/P slices & heatmap
 
 import math, functools, os, csv
@@ -1408,7 +1383,7 @@ def plot_DP_slices(model):
   plt.plot(np.array(s1), np.array(DP[:, 0]), label="D1/P1")
   plt.plot(np.array(s1), np.array(DP[:, 1]), label="D2/P2")
   plt.plot(np.array(s1), np.array(DP[:, 2]), label="D3/P3")
-  plt.axhline(cfg.delta, linestyle="--", label="Market D/P = δ")
+  plt.axhline(cfg.delta, linestyle="--", label="Market D/P = d")
   plt.xlabel("s1 (s3=0.20, s2=0.80-s1)")
   plt.ylabel("Dividend-to-Price")
   plt.title("Dividend-to-Price slices on simplex")
@@ -1455,7 +1430,7 @@ def plot_heatmap_D1P1(model):
 def sympy_checks():
   if not HAVE_SYMPY:
     print("SymPy not available; skipping checks."); return
-  print("Check: log-ratio drift cancels under equal μ: OK (by construction)")
+  print("Check: log-ratio drift cancels under equal �: OK (by construction)")
   s1, s2 = sp.symbols('s1 s2', positive=True)
   s3 = 1 - s1 - s2
   B = s1 * s2 * s3
@@ -1537,7 +1512,7 @@ if __name__ == "__main__":
 \medskip
 \noindent\emph{Note.} Full citation strings and DOIs are provided in the online notes; links above point to primary sources.
 
-\clearpage
+% \clearpage
 \section*{References}
 \begin{thebibliography}{99}\small
 \bibitem{bjork2009} Bj\"ork, T. (2009).
@@ -1573,4 +1548,5 @@ Asset prices in an exchange economy.
 \end{thebibliography}
 
 \end{document}
+
 

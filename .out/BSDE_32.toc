@@ -1,0 +1,54 @@
+\contentsline {section}{Executive Summary }{3}{section*.2}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{4}{section.6}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{5}{section.8}%
+\contentsline {subsection}{\numberline {2.1}State space and transformations}{6}{subsection.17}%
+\contentsline {subsection}{\numberline {2.2}Dynamics of consumption and share}{7}{subsection.20}%
+\contentsline {subsection}{\numberline {2.3}Generator in $(C,\bm {s})$ coordinates}{9}{subsection.50}%
+\contentsline {section}{\numberline {3}Stochastic Discount Factor and CAPM}{10}{section.58}%
+\contentsline {section}{\numberline {4}Dimensionality Reduction and the Valuation PDE}{11}{section.63}%
+\contentsline {subsection}{\numberline {4.1}Risk-Neutral Dynamics of the Share Process}{11}{subsection.66}%
+\contentsline {subsection}{\numberline {4.2}The Valuation PDE in Share Coordinates}{13}{subsection.73}%
+\contentsline {section}{\numberline {5}Boundary Conditions and Regularity}{14}{section.78}%
+\contentsline {section}{\numberline {6}Computation: High-Dimensional Strategies}{16}{section.87}%
+\contentsline {subsection}{\numberline {6.1}Probabilistic Reformulation (Deep BSDE)}{16}{subsection.88}%
+\contentsline {subsection}{\numberline {6.2}Coordinate Transformation: Log-Ratios}{17}{subsection.96}%
+\contentsline {subsection}{\numberline {6.3}Deep BSDE Implementation and Stabilization}{18}{subsection.100}%
+\contentsline {subsubsection}{\numberline {6.3.1}Architecture: Barrier Ansatz}{18}{subsubsection.101}%
+\contentsline {subsubsection}{\numberline {6.3.2}Variance Reduction Techniques}{19}{subsubsection.104}%
+\contentsline {subsubsection}{\numberline {6.3.3}Discretization and Time Stepping}{20}{subsubsection.105}%
+\contentsline {subsubsection}{\numberline {6.3.4}Training Objective: Differential Losses}{20}{subsubsection.106}%
+\contentsline {paragraph}{Differential loss objective.}{20}{section*.107}%
+\contentsline {paragraph}{Residual weighting.}{20}{section*.108}%
+\contentsline {paragraph}{Malliavin-gradient regularisation.}{20}{section*.109}%
+\contentsline {paragraph}{Dual-measure consistency.}{20}{section*.110}%
+\contentsline {subsubsection}{\numberline {6.3.5}Training Procedures and Diagnostics}{21}{subsubsection.112}%
+\contentsline {subsection}{\numberline {6.4}Implementation Snippet: JAX/Equinox/Optax}{21}{subsection.113}%
+\contentsline {subsection}{\numberline {6.5}Lean-to-LaTeX Verification Pipeline (Minted, 2025 — updated)}{22}{subsection.171}%
+\contentsline {section}{\numberline {7}Economic Implications: State-Dependent Dynamics}{23}{section.178}%
+\contentsline {subsection}{\numberline {7.1}State-Dependent Risk Premia}{24}{subsection.179}%
+\contentsline {subsection}{\numberline {7.2}Endogenous Correlation}{25}{subsection.185}%
+\contentsline {subsection}{\numberline {7.3}The Role of Dimensionality}{26}{subsection.189}%
+\contentsline {section}{\numberline {A}Appendix A: Mathematical Proofs and Verification}{26}{appendix.190}%
+\contentsline {subsection}{\numberline {A.1}Proofs for Section 3}{26}{subsection.191}%
+\contentsline {subsubsection}{\numberline {A.1.1}Proof of \cref {lem:C}}{26}{subsubsection.192}%
+\contentsline {subsubsection}{\numberline {A.1.2}Proof of \cref {lem:s}}{26}{subsubsection.194}%
+\contentsline {subsubsection}{\numberline {A.1.3}Proof of \cref {lem:cov_matrix_A}}{27}{subsubsection.196}%
+\contentsline {subsubsection}{\numberline {A.1.4}Proof of \cref {prop:sdf}}{27}{subsubsection.198}%
+\contentsline {subsubsection}{\numberline {A.1.5}Proof of \cref {cor:capm_trees}}{27}{subsubsection.202}%
+\contentsline {subsection}{\numberline {A.2}Proofs for Section 6 (Dimensionality Reduction)}{28}{subsection.204}%
+\contentsline {subsubsection}{\numberline {A.2.1}Proof of \cref {prop:homogeneity}}{28}{subsubsection.205}%
+\contentsline {subsubsection}{\numberline {A.2.2}Proof of \cref {lem:sQ}}{28}{subsubsection.207}%
+\contentsline {subsubsection}{\numberline {A.2.3}Proof of \cref {thm:valuation_pde_reduced}}{28}{subsubsection.211}%
+\contentsline {subsubsection}{\numberline {A.2.4}Proof of \cref {prop:boundary_vertices}}{30}{subsubsection.220}%
+\contentsline {subsubsection}{\numberline {A.2.5}Proof of \cref {lem:log_ratios}}{31}{subsubsection.222}%
+\contentsline {subsubsection}{\numberline {A.2.6}Proof of \cref {prop:fbsde}}{31}{subsubsection.226}%
+\contentsline {subsection}{\numberline {A.3}Appendix A.7: Verification Artifacts}{32}{subsection.228}%
+\contentsline {subsubsection}{\numberline {A.3.1}SymPy Verification Suite}{32}{subsubsection.229}%
+\contentsline {subsubsection}{\numberline {A.3.2}Lean4 Formalization (Partial)}{37}{subsubsection.230}%
+\contentsline {section}{\numberline {B}Appendix B: Algorithms}{41}{appendix.341}%
+\contentsline {section}{\numberline {C}Appendix B.1: Derivation of the BSDE for Price-Consumption Ratios}{43}{appendix.343}%
+\contentsline {paragraph}{Step-by-step derivation.}{43}{section*.344}%
+\contentsline {section}{\numberline {D}Appendix C: Implementation Illustration (Three Trees)}{45}{appendix.358}%
+\contentsline {subsection}{\numberline {D.1}(B) Compact, runnable JAX/Equinox code}{45}{subsection.359}%
+\contentsline {subsection}{\numberline {D.2}(C) Results and Visualization (3-Tree Illustration)}{48}{subsection.495}%
+\contentsline {subsection}{\numberline {D.3}(D) Literature matrix}{48}{subsection.496}%

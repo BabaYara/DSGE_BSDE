@@ -1,0 +1,29 @@
+% Minimal blueprint content mapping core results to Lean decls
+
+\section{Core statements and links}
+
+\begin{lemma}[Aggregate consumption dynamics]\label{lem:C}
+\\lean{LucasNotes.aggregate_consumption_drift}\\leanok
+\uses{}
+Under assumptions in Sec.~3, aggregate consumption satisfies Eq.~(3.1).
+\end{lemma}
+
+\begin{lemma}[Share dynamics]\label{lem:s}
+\\lean{LucasNotes.ito_quotient_rule_drift_algebra}\\leanok % algebraic identity uses
+\uses{lem:C}
+The share process obeys $\mathrm{d}s_i=\mu_{s,i}(\mathbf s)\,\mathrm{d}t+\sigma_{s,i}(\mathbf s)^\top \mathrm{d}\mathbf W_t$.
+\end{lemma}
+
+\begin{proposition}[SDF]\label{prop:sdf}
+\lean{LucasNotes.sdf_drift_algebra}
+\leanok
+\uses{lem:C}
+With log utility, $\Lambda_t=e^{-\rho t} C_t^{-1}$ and $\lambda_t=\sigma_C(\mathbf s_t)$. The algebraic drift identity is checked by
+the Lean theorem `LucasNotes.sdf_drift_algebra` (cancelling denominators with $C\neq 0$), used in the It\^o derivation.
+\end{proposition}
+
+\begin{theorem}[Valuation PDE]\label{thm:valuation_pde_reduced}
+\leanok
+\uses{lem:s,prop:sdf}
+$\mathcal L^{\mathbb Q}_{\mathbf s} g_i + \mathcal C_{\mathbf s} g_i - \rho g_i + s_i = 0$ on $\Delta^{N-1}$.
+\end{theorem}

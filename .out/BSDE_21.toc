@@ -1,0 +1,28 @@
+\contentsline {section}{Executive Summary }{2}{section*.2}%
+\contentsline {section}{\numberline {1}Notation and Acronyms}{3}{section.5}%
+\contentsline {section}{\numberline {2}Primitives and Assumptions}{4}{section.7}%
+\contentsline {section}{\numberline {3}Mathematical Setup: State Dynamics and Generators}{4}{section.19}%
+\contentsline {subsection}{\numberline {3.1}State space and transformations}{4}{subsection.20}%
+\contentsline {subsection}{\numberline {3.2}Dynamics of consumption and share}{4}{subsection.22}%
+\contentsline {subsection}{\numberline {3.3}Generator in $(C,s)$ coordinates}{6}{subsection.36}%
+\contentsline {section}{\numberline {4}Stochastic Discount Factor and CAPM}{7}{section.38}%
+\contentsline {section}{\numberline {5}Risk-Neutral Dynamics and Valuation PDE}{9}{section.71}%
+\contentsline {section}{\numberline {6}Constant-Share Benchmark and CAPM Components}{10}{section.76}%
+\contentsline {section}{\numberline {7}Dimensionality Reduction and the Valuation ODE}{11}{section.79}%
+\contentsline {subsection}{\numberline {7.1}Risk-Neutral Dynamics of the Share Process}{11}{subsection.82}%
+\contentsline {subsection}{\numberline {7.2}The Valuation ODE}{12}{subsection.86}%
+\contentsline {section}{\numberline {8}Boundary and Regularity Conditions}{12}{section.89}%
+\contentsline {section}{\numberline {9}Computation: Solution Strategies}{13}{section.90}%
+\contentsline {subsection}{\numberline {9.1}Classical ODE/PDE Methods}{13}{subsection.91}%
+\contentsline {subsection}{\numberline {9.2}Modern Probabilistic Methods (Deep BSDE)}{14}{subsection.96}%
+\contentsline {section}{\numberline {10}Verification and Diagnostics}{16}{section.117}%
+\contentsline {section}{\numberline {11}Economic Remarks}{16}{section.118}%
+\contentsline {section}{\numberline {A}Appendix A: Formal Verification (Lean4)}{16}{appendix.119}%
+\contentsline {section}{\numberline {B}Appendix B: Symbolic Verification (PythonTeX + SymPy)}{17}{appendix.179}%
+\contentsline {section}{\numberline {C}Appendix C: Computational Algorithms}{17}{appendix.180}%
+\contentsline {section}{\numberline {D}Implementation Addendum: Three Trees with Log Utility (Auditable)}{19}{appendix.196}%
+\contentsline {subsection}{\numberline {D.1}(A) Improved prompt for external auditor}{19}{subsection.197}%
+\contentsline {subsection}{\numberline {D.2}(B) Follow--through: compact, runnable JAX/Equinox code}{19}{subsection.198}%
+\contentsline {subsection}{\numberline {D.3}(C) One new robustness item}{25}{subsection.479}%
+\contentsline {subsection}{\numberline {D.4}(D) Required plots}{25}{subsection.480}%
+\contentsline {subsection}{\numberline {D.5}(E) Literature matrix (\(\ge \)35 sources; what we take)}{25}{subsection.481}%

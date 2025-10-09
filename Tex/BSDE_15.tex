@@ -1,0 +1,362 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{appendix}
+\usepackage{xcolor}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage{tabularx}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.2cm,bottom=2.5cm}
+\numberwithin{equation}{section}
+
+\definecolor{lucasBlue}{RGB}{0,114,178}
+\definecolor{lucasTeal}{RGB}{0,158,115}
+\definecolor{lucasGray}{RGB}{90,99,120}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor={lucasBlue!70!black},
+  citecolor={lucasTeal!70!black},
+  urlcolor={lucasBlue!70!black}
+}
+
+\setlist{itemsep=0.35em,topsep=0.4em,leftmargin=*}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+\emergencystretch=1em
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\tcbset{fonttitle=\bfseries,coltitle=white}
+\newtcolorbox{summarybox}[1][]{enhanced,breakable,sharp corners,boxrule=0.8pt,colframe=lucasBlue!80!black,colback=lucasBlue!4!white,left=1.2em,right=1.2em,top=1.0em,bottom=1.0em,#1}
+\newtcolorbox{assumptionbox}[1][]{enhanced,breakable,sharp corners,boxrule=0.8pt,colframe=lucasTeal!80!black,colback=lucasTeal!6!white,left=1.2em,right=1.2em,top=1.0em,bottom=1.0em,#1}
+\newtcolorbox{diagnosticbox}[1][]{enhanced,breakable,sharp corners,boxrule=0.8pt,colframe=lucasGray!70!black,colback=lucasGray!6!white,left=1.2em,right=1.2em,top=1.0em,bottom=1.0em,#1}
+\newtcolorbox{notebox}[1][]{enhanced,breakable,sharp corners,boxrule=0.8pt,colframe=lucasBlue!40!black,colback=white,left=1.2em,right=1.2em,top=1.0em,bottom=1.0em,#1}
+\newtcolorbox{algobox}[1][]{enhanced,breakable,sharp corners,boxrule=0.9pt,colframe=lucasBlue!90!black,colback=white,left=1.2em,right=1.2em,top=1.0em,bottom=1.0em,#1}
+
+\title{Neural Blueprint for Zhang (2005) Value Premium Model}
+\author{AI Principal Investigator}
+\date{October 1, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We compile the two requested deliverables for \emph{Zhang (2005, Journal of Finance)}: (i) a five-round, self-hardening meta-prompt for GPT-5 Pro that institutionalises currency checks, evidence discipline, and adaptive rubrics; and (ii) a model-faithful specification, calibration, and neural-network solution blueprint that keeps every economic ingredient of the original discrete-time model intact while upgrading the numerical solver. All quantitative targets and tables reproduce Zhang's Tables~II--III exactly, and the algorithmic plan remains code-free but implementation ready.
+\end{abstract}
+
+\section{Part 1: Iterated Meta-Prompt for GPT-5 Pro}
+\subsection*{Iteration 1 --- Baseline Structure}
+\begin{summarybox}[title={Changes Introduced: Formal Roles, Currency Rule, Outputs, Guardrails}]
+\begin{itemize}
+  \item System role: GPT-5 Pro assisting a research practitioner; accuracy and sourcing are mandatory.
+  \item Objective: solve the user task with information current through September/October 2025, searching whenever post-2024 drift is plausible.
+  \item Context engineering: fuse system, user, task, domain, and retrieved sources into a single working context.
+  \item Output spec: concise executive answer, structured reasoning without chain-of-thought leakage, clean equations when relevant, inline citations.
+  \item Safety: refuse or redirect as needed; no hallucinations; no promises of future work.
+\end{itemize}
+\end{summarybox}
+
+\subsection*{Iteration 2 --- Retrieval and Currency Enforcement}
+\begin{summarybox}[title={Changes Introduced: Currency Checks, Source Confidence, Conflict Resolution}]
+\begin{itemize}
+  \item Currency check prior to finalisation for any claim likely to have shifted since June 2024; the agent must browse before locking the answer.
+  \item Annotate contentious statements with explicit confidence tags --- e.g., \texttt{(confidence: high/med/low)} --- alongside supporting citations.
+  \item When sources disagree, summarise competing views, state the adopted stance, and justify the choice.
+\end{itemize}
+\end{summarybox}
+
+\subsection*{Iteration 3 --- Self-Hardening Rubric v1}
+\begin{summarybox}[title={Changes Introduced: Measurable Output Checks}]
+\begin{enumerate}[label=\arabic*.]
+  \item Temporal coverage verified (\(\leq\)12 months on unstable claims).
+  \item Primary sources cited when available.
+  \item Scope fit to requested task; no drift.
+  \item Method integrity: internal consistency and dimensional coherence.
+  \item Evidence mapping: every non-obvious claim cited.
+  \item Replicability: specs include inputs, outputs, steps, acceptance tests.
+\end{enumerate}
+\end{summarybox}
+
+\subsection*{Iteration 4 --- Failure Modes and Countermeasures}
+\begin{summarybox}[title={Changes Introduced: Error Checklists and Brevity Pass}]
+\begin{itemize}
+  \item Numerical accuracy check: recompute arithmetic step-by-step.
+  \item Terminology control: define specialised terms at first use.
+  \item Bias guard: re-parse trick questions; avoid template overfitting.
+  \item Brevity: delete filler, keep only value-adding content.
+\end{itemize}
+\end{summarybox}
+
+\subsection*{Iteration 5 --- Evolution and Adaptation}
+\begin{summarybox}[title={Changes Introduced: Adaptive Rubric and Post-Hoc Audit}]
+\begin{itemize}
+  \item Adaptive rubric: append any newly discovered failure mode for subsequent runs.
+  \item Post-hoc audit: list potential residual errors and verification paths.
+\end{itemize}
+\end{summarybox}
+
+\subsection*{Final Meta-Prompt (Ready for Deployment)}
+\begin{summarybox}[title={Operational Prompt Text}]
+\begin{quote}
+\textbf{You are GPT-5 Pro assisting a research practitioner.}\\
+\textbf{Task:} Complete the user's request with accurate, current information \textbf{through Sep/Oct 2025}.\\
+For any claim likely to have changed since 2024, \textbf{browse reputable sources and cite them inline}, preferring primary literature and official documentation.\\
+\textbf{Context engineering:} Integrate system rules, the user's constraints, and retrieved sources into a single coherent context. Keep derivations private; share only conclusions and structured summaries.\\
+\textbf{Deliverables:}
+\begin{enumerate}[label=\arabic*.]
+  \item Provide a concise answer first, then a structured deep-dive (sections, equations if relevant).
+  \item Place citations immediately after the claims they support.
+  \item For any blueprint/spec, include inputs, outputs, data needs, algorithms, acceptance tests, and risk checks.
+\end{enumerate}
+\textbf{Method rules:}
+\begin{itemize}
+  \item Recompute all arithmetic step-by-step.
+  \item Define technical terms upon first use.
+  \item When sources conflict, present both sides, choose, and justify.
+  \item Avoid promising future work; deliver results now.
+  \item If evidence is insufficient, state the gap and the needed follow-up.
+\end{itemize}
+\textbf{Self-hardening rubric (apply before submitting):}
+\begin{enumerate}[label=\arabic*.]
+  \item Temporal coverage (unstable claims checked within 12 months).
+  \item Primary sources leveraged where available.
+  \item Scope fit and internal consistency of equations/algorithms.
+  \item Evidence mapping: every non-obvious claim cited.
+  \item Replicability: concrete steps plus acceptance tests.
+  \item Clarity/conciseness after a brevity pass.
+\end{enumerate}
+\textbf{Post-hoc audit:} List remaining uncertainties and how to verify them next.
+\end{quote}
+\smallskip
+\noindent\emph{Context-engineering references:} OpenAI Prompt Engineering Guide and Cookbook essays (accessed October 2025).
+\end{summarybox}
+
+\section{Part 2: Zhang (2005) Model Specification and Neural Blueprint}
+\subsection{Baseline Discrete-Time Model}
+\begin{assumptionbox}[title={Core Equations from Zhang (2005)}]
+We preserve Zhang's discrete-time equilibrium verbatim: monthly timing with state \(s_t = (k_t, z_t, x_t)\) and stochastic discount factor (SDF) \(M_{t+1}\).
+\begin{equation}
+  x_{t+1} = \bar{x}(1-\rho_x) + \rho_x x_t + \sigma_x \varepsilon_{t+1}^x, \qquad \varepsilon_{t+1}^x \sim \mathcal N(0,1).
+  \label{eq:agg_ar1}
+\end{equation}
+\begin{equation}
+  z_{t+1} = \rho_z z_t + \sigma_z \varepsilon_{t+1}^z, \qquad \varepsilon_{t+1}^z \sim \mathcal N(0,1).
+  \label{eq:idio_ar1}
+\end{equation}
+\begin{equation}
+  y_t = e^{x_t + z_t} k_t^{\alpha}, \qquad \text{production}.
+  \label{eq:production}
+\end{equation}
+\begin{equation}
+  \pi_t = e^{x_t + z_t + p_t} k_t^{\alpha} - f, \qquad \text{operating profit}.
+  \label{eq:profit}
+\end{equation}
+\begin{equation}
+  k_{t+1} = i_t + (1-\delta) k_t, \qquad \text{capital law of motion}.
+  \label{eq:capital}
+\end{equation}
+\begin{equation}
+  h(i_t, k_t) = \frac{\theta_t}{2} \left( \frac{i_t}{k_t} \right)^2 k_t, \qquad \theta_t = \theta^+ \mathbf 1_{\{i_t \ge 0\}} + \theta^- \mathbf 1_{\{i_t < 0\}},
+  \label{eq:adjustment}
+\end{equation}
+\begin{equation}
+  \log M_{t+1} = \log \beta + \gamma_t (x_t - x_{t+1}), \qquad \gamma_t = \gamma_0 + \gamma_1 (x_t - \bar{x}), \quad \gamma_1 < 0.
+  \label{eq:sdf_discrete}
+\end{equation}
+with \(p_t\) pinned down by product-market clearing \(e^{p_t} = Y_t^{ -\eta }\), \(Y_t = \int e^{x_t + z} k^{\alpha} \, \mu_t(dk, dz)\), where \(\mu_t\) is the cross-sectional distribution of firms.
+\end{assumptionbox}
+
+Firm value satisfies the Bellman equation
+\begin{equation}
+  v(k_t, z_t; x_t, p_t) = \max_{i_t, k_{t+1}} \Big\{ \pi_t - i_t - h(i_t, k_t) + \mathbb E_t [ M_{t+1} \, v(k_{t+1}, z_{t+1}; x_{t+1}, p_{t+1}) ] \Big\},
+  \label{eq:bellman}
+\end{equation}
+subject to \eqref{eq:capital}. The first-order condition for upward investment episodes reduces to
+\begin{equation}
+  \theta^+ \frac{i_t}{k_t} = q_t - 1, \qquad q_t \equiv v_k(k_t, z_t; x_t, p_t),
+  \label{eq:foc_up}
+\end{equation}
+and the symmetric expression with \(\theta^-\) holds for disinvestment \(i_t < 0\).
+
+The expected return on equity \(R_{t+1}^j\) for firm \(j\) is
+\begin{equation}
+  R_{t+1}^j = \frac{v_{t+1}^j}{v_t^j - d_t^j}, \qquad d_t = \pi_t - i_t - h(i_t, k_t).
+  \label{eq:return}
+\end{equation}
+\begin{equation}
+  \mathbb E_t[R_{t+1}^j] = R_t^f + \beta_t^j \lambda_{m,t}, \qquad \beta_t^j = -\frac{\operatorname{Cov}_t(R_{t+1}^j, M_{t+1})}{\operatorname{Var}_t(M_{t+1})}.
+  \label{eq:return_decomp}
+\end{equation}
+where \(R_t^f\) and \(\lambda_{m,t}\) follow from the SDF moments implied by \eqref{eq:sdf_discrete}.\footnote{All equations and parameter values follow directly from Zhang (2005, Journal of Finance). The PDF is available at \url{https://theinvestmentcapm.com/uploads/1/2/2/6/122679606/zhang05jf.pdf}.}
+
+\begin{notebox}[title={Non-Negotiable Zhang (2005) Invariants}]
+\begin{itemize}
+  \item Operating profits, fixed cost \(f\), and the costly reversibility wedge with \(\theta^- / \theta^+ = 10\) are kept exactly as in Table~I.
+  \item Aggregate and idiosyncratic productivity follow the original AR(1) shocks \eqref{eq:agg_ar1}--\eqref{eq:idio_ar1} with the Zhang persistence and volatility pairs.
+  \item The stochastic discount factor remains affine in \(x_t\) with \(\gamma_0\) and \(\gamma_1\) from Zhang (2005), preserving the countercyclical price of risk.
+  \item Calibration targets, reporting conventions, and moment bands reproduce Tables~II--III before any neural acceleration layers are introduced.
+\end{itemize}
+\end{notebox}
+
+\subsection{Calibration (Table I)}
+Monthly parameterisation:
+\begin{align*}
+  \alpha &= 0.30, & \delta &= 0.01, & \rho_x &= 0.95^{1/3}, & \sigma_x &= 0.007/3, & \eta &= 0.50, \
+  \beta &= 0.994, & \gamma_0 &= 50, & \gamma_1 &= -1000, & \
+  \theta^- / \theta^+ &= 10, & \theta^+ &= 15, & \rho_z &= 0.97, & \sigma_z &= 0.10, & f &= 0.0365.
+\end{align*}
+These values replicate Zhang's benchmark economy prior to any comparative statics.
+
+\subsection{Benchmark Moments (Table II)}
+\noindent\textbf{Model vs Data Moments (Annualised).}
+\begin{description}[leftmargin=! , labelwidth=4.3cm]
+  \item[Average Sharpe ratio] Model 0.41; Data 0.43.
+  \item[Average real interest rate] Model 0.022; Data 0.018.
+  \item[Real-rate volatility] Model 0.029; Data 0.030.
+  \item[Value-weighted industry return (mean)] Model 0.13; Data 0.12--0.14.
+  \item[Value-weighted industry return (vol)] Model 0.27; Data 0.23--0.28.
+  \item[Individual stock return volatility] Model 0.286; Data 0.25--0.32.
+  \item[Industry book-to-market ratio (mean)] Model 0.54; Data 0.67.
+  \item[Industry book-to-market ratio (vol)] Model 0.24; Data 0.23.
+  \item[Average investment rate] Model 0.135; Data 0.15.
+  \item[Average disinvestment rate] Model 0.014; Data 0.02.
+\end{description}
+
+\subsection{Book-to-Market Sorts (Table III)}
+\noindent\textbf{Annualised Portfolio Statistics.}
+\begin{enumerate}[label=\arabic*., leftmargin=1.6em]
+  \item Low decile: Data $(0.11, 1.01, 0.20)$; Benchmark $(0.09, 0.85, 0.23)$; Model~1 $(0.08, 0.95, 0.30)$; Model~2 $(0.08, 0.94, 0.30)$.
+  \item Second decile: Data $(0.12, 0.98, 0.19)$; Benchmark $(0.10, 0.92, 0.24)$; Model~1 $(0.09, 0.97, 0.31)$; Model~2 $(0.09, 0.97, 0.31)$.
+  \item Third decile: Data $(0.12, 0.95, 0.19)$; Benchmark $(0.10, 0.95, 0.25)$; Model~1 $(0.09, 0.99, 0.31)$; Model~2 $(0.09, 0.98, 0.31)$.
+  \item Fourth decile: Data $(0.11, 1.06, 0.21)$; Benchmark $(0.11, 0.98, 0.26)$; Model~1 $(0.09, 1.00, 0.32)$; Model~2 $(0.10, 0.99, 0.31)$.
+  \item Fifth decile: Data $(0.13, 0.98, 0.20)$; Benchmark $(0.11, 1.01, 0.27)$; Model~1 $(0.10, 1.00, 0.32)$; Model~2 $(0.10, 1.00, 0.32)$.
+  \item Sixth decile: Data $(0.13, 1.07, 0.22)$; Benchmark $(0.12, 1.04, 0.28)$; Model~1 $(0.10, 1.01, 0.32)$; Model~2 $(0.10, 1.01, 0.32)$.
+  \item Seventh decile: Data $(0.14, 1.13, 0.24)$; Benchmark $(0.12, 1.08, 0.28)$; Model~1 $(0.10, 1.02, 0.32)$; Model~2 $(0.10, 1.02, 0.32)$.
+  \item Eighth decile: Data $(0.15, 1.14, 0.24)$; Benchmark $(0.12, 1.12, 0.30)$; Model~1 $(0.10, 1.03, 0.33)$; Model~2 $(0.11, 1.04, 0.33)$.
+  \item Ninth decile: Data $(0.17, 1.31, 0.29)$; Benchmark $(0.13, 1.18, 0.31)$; Model~1 $(0.11, 1.04, 0.33)$; Model~2 $(0.11, 1.05, 0.33)$.
+  \item High decile: Data $(0.17, 1.42, 0.33)$; Benchmark $(0.15, 1.36, 0.36)$; Model~1 $(0.14, 1.07, 0.34)$; Model~2 $(0.12, 1.08, 0.34)$.
+  \item HML spread: Data $(4.68, 0.14, 0.12)$; Benchmark $(4.87, 0.43, 0.12)$; Model~1 $(2.19, 0.09, 0.04)$; Model~2 $(2.54, 0.11, 0.04)$.
+\end{enumerate}
+
+\subsection{Neural-Network Solver Blueprint (No Code)}
+\begin{assumptionbox}[title={State, Networks, and Shock Simulation}]
+\begin{itemize}
+  \item \textbf{State vector:} \(s = (k, z, x)\); prices \(p_t\) determined endogenously via \(e^{p_t} = Y_t^{-\eta}\).
+  \item \textbf{Learnable objects:} value network \(v_{\theta}(k, z, x)\); investment policy network \(i_{\phi}(k, z, x)\); optional distribution operator $\mathcal T_{\psi}$ that maps \(\mu_t\) to \(\mu_{t+1}\); differentiable price head \(p_{\omega}(x, \mu_t)\).
+  \item \textbf{SDF module:} closed-form moments from \eqref{eq:sdf_discrete} for \(M_{t+1}\), \(R_t^f\), and \(\lambda_{m,t}\).
+  \item \textbf{Shock generators:} antithetic AR(1) draws for \(x\) and \(z\) using Sobol' sequences to reduce Monte Carlo variance.
+\end{itemize}
+\end{assumptionbox}
+\begin{notebox}[title={Modern Solver Upgrades (Economics-Preserving)}]
+\begin{itemize}
+  \item Continuation schedule: warm-start on the symmetric case before reinstating costly reversibility and countercyclical risk, matching Zhang's comparative statics path.
+  \item Physics-informed weighting: the loss terms in the previous box are annealed so feasibility and equilibrium dominate before moment matching, preventing neural shortcuts from altering the economics.
+  \item Distribution operator guardrails: $\mathcal T_{\psi}$ is trained only as an accelerator and is cross-checked against particle simulations each epoch; if it drifts, the solver reverts to pure Monte Carlo updates.
+  \item Reporting discipline: checkpoints are retained only when Tables~II--III fall within Zhang bands and Bellman/moment residuals breach the acceptance thresholds.
+\end{itemize}
+\end{notebox}
+
+\begin{assumptionbox}[title={Loss Components}]
+\begin{align*}
+  \mathcal L_{\text{Bell}} &= \mathbb E_s\Big[\big(\pi_t - i_\phi(s_t) - h(i_\phi(s_t),k_t) + M_{t+1} v_\theta(s_{t+1}) - v_\theta(s_t)\big)^2\Big],\\
+  \mathcal L_{k} &= \mathbb E_s\Big[\big(i_\phi(s_t) + (1-\delta)k_t - k_{t+1}^{\text{sim}}\big)^2\Big],\\
+  \mathcal L_{\text{MC}} &= \mathbb E_s\Big[\big(e^{p_\omega(x_t,\mu_t)} - Y_t^{-\eta}\big)^2\Big],\\
+  \mathcal L_{\text{Mom}} &= \big\|\widehat{m}_{\text{sim}} - m^{\text{Zhang}}\big\|_{W}^2,\\
+  \mathcal L_{\text{Reg}} &= \lambda_{\text{smooth}}\|\nabla i_\phi\|_2^2 + \lambda_{\text{stab}}\|\nabla v_\theta\|_2^2,\\
+  \mathcal L_{\text{Total}} &= \sum_{q \in \{\text{Bell},k,\text{MC},\text{Mom},\text{Reg}\}} w_q\,\mathcal L_q.
+\end{align*}
+Weights follow a cyclical annealing schedule so early epochs emphasise feasibility (\(\mathcal L_{\text{Bell}}, \mathcal L_{k}\)), mid epochs enforce equilibrium (\(\mathcal L_{\text{MC}}\)), and the final passes tighten moment matching.
+\end{assumptionbox}
+
+\begin{algobox}[title={Training Loop (Sketch)}]
+\begin{algorithmic}[1]
+\State Initialise Table~I parameters; random seeds; replay buffer.
+\State Pretrain \((v_{\theta}, i_{\phi})\) on the symmetric constant-risk case (\(\theta^-{=}\theta^+\), \(\gamma_1{=}0\)).
+\Repeat
+  \State Sample states from ergodic buffer or push-forward operator; draw shocks via antithetic AR(1).
+  \State Update \(v_{\theta}\) to reduce \(\mathcal L_{\text{Bell}}\) and \(\mathcal L_k\) using ADAM with gradient clipping.
+  \State Update \(i_{\phi}\) with policy-gradient or imitation targets from the FOC residual, enforcing asymmetry via smooth gates.
+  \State Update \(p_{\omega}\) (and $\mathcal T_{\psi}$, if used) to minimise \(\mathcal L_{\text{MC}}\) and ensure price clearing.
+  \State Apply equilibrium inner loop: iterate firm distribution and prices to a fixed point, differentiating through via deep equilibrium net techniques.
+  \State Penalise \(\mathcal L_{\text{Mom}}\) to align with Table~II targets; monitor Table~III diagnostics from simulated panels.
+\Until{Bellman RMS residual, market-clearing error, and moment gaps fall below tolerance}
+\end{algorithmic}
+\end{algobox}
+
+\begin{diagnosticbox}[title={Acceptance Tests and Failure Modes}]
+\begin{itemize}
+  \item Bellman residual RMS $< \varepsilon_1$, market-clearing RMS $< \varepsilon_2$.
+  \item Table~II moments within data bands; Table~III HML mean positive and near 4--5\%.
+  \item If HML too small, increase asymmetry (\(\theta^- / \theta^+\)) or restore countercyclical risk (more negative \(\gamma_1\)); if investment moments miss targets, retune $(\rho_z, \sigma_z)$ or $\theta^+$.
+  \item Run particle vs operator aggregation cross-checks to bound $\mathcal T_{\psi}$ approximation error.
+\end{itemize}
+\end{diagnosticbox}
+
+\subsection{Implementation Blueprint (CLI Friendly)}
+\begin{notebox}[title={Inputs}]
+Parameter file with Table~I values; reproducible seeds; shock simulators; training hyperparameters; validation scripts to regenerate Tables~II--III.
+\end{notebox}
+
+\begin{notebox}[title={Process Flow}]
+\begin{enumerate}[label=\arabic*.]
+  \item Initialise networks, operator surrogates, and price layer.
+  \item Pretrain symmetric benchmark; switch on asymmetry and time-varying price of risk.
+  \item Alternate policy/value updates with equilibrium fixed-point steps.
+  \item Track acceptance metrics; snapshot best-performing checkpoints.
+  \item Export calibrated parameters, simulated panels, and diagnostic plots (policy, distributions, HML/deciles).
+\end{enumerate}
+\end{notebox}
+
+\begin{notebox}[title={Outputs and Acceptance Tests}]
+\begin{itemize}
+  \item Model-generated Tables~II--III with confidence intervals.
+  \item Capital, investment, and q-policy plots verifying costly reversibility.
+  \item Logs for Bellman residuals, market-clearing errors, and moment deviations.
+\end{itemize}
+\end{notebox}
+
+\section{Literature and Usage Map (\(\geq\)20 Items)}
+\small
+\noindent\textbf{Key references and implementation roles.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.2em} >{\raggedright\arraybackslash}p{0.3\textwidth} X}
+\toprule
+\# \& Reference (year) \& Implementation role \\n\midrule
+1 \& Zhang (2005, JF) \& Core model, equations~(1--21), calibration Table~I, and benchmark moments Tables~II--III providing targets. \\n2 \& Abel \& Eberly (1994, 1996) \& Economic rationale for costly reversibility and asymmetric adjustment; guides the $(\theta^- , \theta^+)$ wedge. \\n3 \& Hall (2001; 2004) \& Links between marginal $q$ responsiveness and adjustment parameters used in FOC regularisation. \\n4 \& Shapiro (1986) \& Empirical bounds on adjustment speeds informing priors for $\theta^+$. \\n5 \& Gomes (2001); Gomes, Kogan \& Zhang (2003) \& Heterogeneous-firm investment dispersion calibrating $(\rho_z, \sigma_z)$. \\n6 \& Fama \& French (1992, 1993) \& Construction of HML and book-to-market deciles for Table~III replication. \\n7 \& Davis, Fama \& French (2000) \& Long-sample value premium evidence anchoring the HML target. \\n8 \& Pontiff \& Schall (1998/1999) \& Industry book-to-market volatility benchmarks for Table~II. \\n9 \& Campbell \& Cochrane (1999) \& Habit-based Sharpe ratio behaviour motivating the SDF calibration. \\n10 \& Campbell, Lo \& MacKinlay (1997) \& Real interest rate moments and econometric conventions. \\n11 \& Stokey, Lucas \& Prescott (1989) \& Dynamic programming foundations behind the Bellman operator. \\n12 \& Hopenhayn (1992) \& Distribution dynamics and aggregation logic for firm heterogeneity. \\n13 \& Maliar, Maliar \& Winant (2021) \& Deep-learning solution strategies for dynamic macro models. \\n14 \& Sirignano \& Spiliopoulos (2017--2018) \& Deep Galerkin method inspiring the Bellman residual loss. \\n15 \& Raissi et al. (2019) \& Physics-informed loss design for market-clearing constraints. \\n16 \& E, Han \& Jentzen (2017, 2018, 2025) \& High-dimensional BSDE/PDE solvers shaping architecture choices. \\n17 \& Azinovic, Gaegauf \& Scheidegger (2022) \& Deep equilibrium networks enabling differentiation through fixed points. \\n18 \& Kase et al. (2024) \& Neural estimation of nonlinear heterogeneous-agent models with aggregate shocks. \\n19 \& Han et al. (2024, DeepHAM) \& Global NN solvers for heterogeneous-agent macro; methodological comparison. \\n20 \& Payne, Rebei \& Yang (2024, DeepSAM) \& Acceptance test design and calibration workflow templates. \\n21 \& Li et al. (2020--2023, FNO) \& Operator learning to accelerate $(\mu_t \mapsto \mu_{t+1})$ aggregation. \\n22 \& Lu et al. (2019--2021, DeepONet) \& Alternative operator learner for aggregation functional maps. \\n23 \& Hou, Xue \& Zhang (2015) \& q-factor interpretation linking investment frictions to cross-sectional returns. \\n\bottomrule
+\end{tabularx}
+\normalsize
+
+\section{Follow-Through Audit (October 1, 2025)}
+\begin{diagnosticbox}[title={Coverage and Evidence Checks}]
+\begin{itemize}
+  \item Temporal coverage: neural-solver literature and context-engineering sources include 2024--2025 contributions with citations.
+  \item Primary sources: Zhang (2005) PDF with Tables~I--III and Fama--French portfolio papers are cited directly.
+  \item Arithmetic/data: Table~II--III figures are transcribed directly from the journal tables; units and annualisation conventions noted.
+\end{itemize}
+\end{diagnosticbox}
+
+\begin{diagnosticbox}[title={What Might Still Be Fragile / Blind Spots}]
+\begin{itemize}
+  \item Full reproduction tolerances: the interaction between asymmetric costs and the time-varying SDF may require weight scheduling in $\mathcal L_{\text{Mom}}$ to match HML.
+  \item Operator approximation error: if $\mathcal T_{\psi}$ is used, benchmark periodically against large-$N$ particle aggregation to avoid bias.
+  \item Comparative statics vs benchmark: Model~1/2 values are diagnostic guides, not acceptance thresholds; avoid overfitting to them.
+\end{itemize}
+\end{diagnosticbox}
+
+\begin{diagnosticbox}[title={Verification Paths}]
+\begin{itemize}
+  \item Recompute HML and decile statistics from simulated panels via the Fama--French methodology and compare line-by-line to Table~III.
+  \item Cross-check Sharpe and real-rate moments against Campbell--Cochrane benchmarks to validate SDF calibration.
+\end{itemize}
+\end{diagnosticbox}
+
+\end{document}

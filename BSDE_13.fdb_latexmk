@@ -1,16 +1,16 @@
 # Fdb version 4
-["biber BSDE_13"] 1758234404.37659 "BSDE_13.bcf" "BSDE_13.bbl" "BSDE_13" 1758234633.20352 0
-  "BSDE_13.bcf" 1758234632 110119 4f41b2c4c69d03fc9f26cbaf94b65528 "pdflatex"
+["biber BSDE_13"] 1758310822.94736 "BSDE_13.bcf" "BSDE_13.bbl" "BSDE_13" 1758310873.12761 0
+  "BSDE_13.bcf" 1758310872 110119 4f41b2c4c69d03fc9f26cbaf94b65528 "pdflatex"
   "Tex/references.bib" 1757545635 2097 9a8409a8f5743c7a888e89d27c2630f1 ""
   (generated)
   "BSDE_13.bbl"
   "BSDE_13.blg"
   (rewritten before read)
-["pdflatex"] 1758234618.76727 "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_13.tex" "BSDE_13.pdf" "BSDE_13" 1758234633.20468 0
-  "BSDE_13.aux" 1758234632 29287 400025bc7781303abc6bfda28e625745 "pdflatex"
-  "BSDE_13.bbl" 1758234407 10903 a003d17a234d6a982965aa4014cf3eae "biber BSDE_13"
-  "BSDE_13.run.xml" 1758234632 2336 565ff3126669596efe537cb18029752a "pdflatex"
-  "BSDE_13.toc" 1758234632 4673 b0450f81d6bca72cd693021d05b810eb "pdflatex"
+["pdflatex"] 1758310860.83547 "Tex/BSDE_13.tex" "BSDE_13.pdf" "BSDE_13" 1758310873.12946 0
+  "BSDE_13.aux" 1758310872 29322 e3b6466b6ff50177d6c44e8d02555148 "pdflatex"
+  "BSDE_13.bbl" 1758310833 10903 a003d17a234d6a982965aa4014cf3eae "biber BSDE_13"
+  "BSDE_13.run.xml" 1758310872 2336 565ff3126669596efe537cb18029752a "pdflatex"
+  "BSDE_13.toc" 1758310872 4673 d1391f84fdc58ec40f4a7473f142bd36 "pdflatex"
   "C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1757591226 361682 4b8982a9ceb6d7775f09b4b967a063fe ""
   "C:/Users/fababa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1755911573 13257779 e6f93eb87c199b1e8242852b87a7a9f9 ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -376,7 +376,7 @@
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/upquote/upquote.sty" 1335534756 1088 517e01cde97c1c0baf72e69d43aa5a2e ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/fababa/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_13.tex" 1758234581 201342 74f26291fe3c0ebccb96784a569fac84 ""
+  "Tex/BSDE_13.tex" 1758310802 203839 ff81e82edf86d8c3488df34cce862916 ""
   (generated)
   "BSDE_13.aux"
   "BSDE_13.bcf"

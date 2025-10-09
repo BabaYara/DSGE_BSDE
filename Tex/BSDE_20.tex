@@ -12,11 +12,12 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 % Allow listings/verbatim content in styled boxes
-	cbuselibrary{listings,skins,breakable}
 \usepackage{xparse} % legacy support for document environments
 % Safe code listings fallback using listings (no external minted dependency)
 \usepackage{listings}
 % Minimal language definitions to support minted-like usage
+\usepackage{alltt}
+\tcbuselibrary{listings,skins,breakable}
 \lstdefinelanguage{lean}{
   morekeywords={import,open,variable,variables,noncomputable,def,lemma,by,unfold,field_simp,namespace,end,example,theorem,Type,with,have,let,fun,match,if,then,else,do},
   sensitive=true,
@@ -39,9 +40,9 @@
   keepspaces=true,
   linewidth=\linewidth,
   % Map common Unicode symbols in code blocks to LaTeX-safe forms
-  literate={ℝ}{{\ensuremath{\mathbb{R}}}}1
-           {‖}{{\ensuremath{\Vert}}}1
-           {≠}{{\ensuremath{\neq}}}1
+  literate={R}{{\ensuremath{\mathbb{R}}}}1
+           {?}{{\ensuremath{\Vert}}}1
+           {?}{{\ensuremath{\neq}}}1
 }
 % Provide a minted-like environment via tcolorbox+listings (robust inside boxes)
 \NewDocumentEnvironment{minted}{m}{\begin{alltt}}{\end{alltt}}

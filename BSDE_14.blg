@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[1] Config.pm:331> INFO - Logfile is 'BSDE_14.blg'
+[409] biber-MSWIN64:342> INFO - === 
+[543] Biber.pm:421> INFO - Reading 'BSDE_14.bcf'
+[727] Biber.pm:1002> INFO - Found 6 citekeys in bib section 0
+[748] Biber.pm:4487> INFO - Processing section 0
+[778] Biber.pm:4678> INFO - Looking for bibtex file 'Tex/references.bib' for section 0
+[851] bibtex.pm:1713> INFO - LaTeX decoding ...
+[894] bibtex.pm:1519> INFO - Found BibTeX data source 'Tex/references.bib'
+[1112] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1113] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1113] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1113] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[1124] bbl.pm:676> INFO - Writing 'BSDE_14.bbl' with encoding 'UTF-8'
+[1133] bbl.pm:779> INFO - Output to BSDE_14.bbl

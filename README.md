@@ -130,6 +130,24 @@ For convenience, common actions are available via `Makefile` targets:
 
 Note: install an appropriate JAX wheel for your platform (CPU/GPU) before running tests or notebooks.
 
+### 2.4	Lean + TeX verification pipeline
+
+Lean proofs for the Lucas Orchard blueprint live in `lean/`. When you update those declarations or the TeX sources that cite them, run the end-to-end helper from the repository root:
+
+```powershell
+.\scripts\build_tex.ps1 -TexFile BSDE_31.tex
+```
+
+Pass either a bare filename (the helper searches `Tex/`) or a relative/absolute path when your sources live elsewhere.
+
+The script:
+
+- runs `lake build` (and, when defined, `lake exe lean4checker`) inside `lean/` to ensure the Lean project remains warning-free;
+- executes `leanblueprint checkdecls` if the CLI is available so every `\lean{}` tag is resolved before typesetting;
+- invokes `latexmk` with `Tex/latexmkrc` to compile the requested document and reuse the minted-friendly defaults.
+
+Use `-SkipLean` for TeX-only edits, `-SkipBlueprint` when blueprint checks are unnecessary, and override LaTeX engines with `-LatexmkArgs '-pdfxe','-shell-escape'` if you need XeLaTeX. The helper expects `lake`, `leanblueprint`, and `latexmk` on your `PATH` (TeX Live/MiKTeX provide `latexmk`). Run it under PowerShell (`pwsh`/`powershell`) from Windows so the TeX toolchain is detectable even if Lean is configured through WSL.
+
 ## 3\tKFAC for PINNs
 
 `KFACPINNSolver` wraps a network and loss in a tiny training loop. Each

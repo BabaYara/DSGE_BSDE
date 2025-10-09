@@ -1,0 +1,14 @@
+﻿#!/usr/bin/env python3
+from __future__ import annotations
+
+import os
+import runpy
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+LIB = os.path.join(HERE, "latexminted_lib")
+if os.path.isdir(LIB) and LIB not in sys.path:
+    sys.path.insert(0, LIB)
+
+if __name__ == "__main__":
+    runpy.run_module("latexminted.cmdline", run_name="__main__")

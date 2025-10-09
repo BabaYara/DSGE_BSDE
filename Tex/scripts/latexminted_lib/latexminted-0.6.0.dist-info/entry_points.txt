@@ -1,0 +1,2 @@
+[console_scripts]
+latexminted = latexminted.cmdline:main

@@ -15,6 +15,8 @@ help:
 	@echo "  table1-check    Run scripts/check_table1.py"
 	@echo "  strict-table1   Enforce STRICT_TABLE1 gating for CI/local"
 	@echo "  train-macro     Train MacroFinanceNet (short demo)"
+	@echo "  compat-test     Run OpenAI-compatible shim tests (optional deps)"
+	@echo "  test-uv         Run pytest via uv if available (fallback to pytest)"
 	@echo "  tex            Build Tex/BSDE_21.tex with latexmk (if available)"
 	@echo "  tex-12         Build Tex/BSDE_12.tex (shell-escape for minted/pythontex)"
 	@echo "  tex-safe-12    Build Tex/BSDE_12.tex without shell-escape (alltt fallback)"
@@ -56,12 +58,27 @@ strict-table1:
 train-macro:
 	$(PYTHON) scripts/train_macro_solver.py --epochs 200 --paths 1024 --dt 0.001 --steps 0 --eval-symmetric
 
-tex:
-	# Prefer latexmk; fall back to pdflatex if needed
-	@if command -v latexmk > /dev/null 2>&1; then \
-		latexmk -pdf -interaction=nonstopmode Tex/BSDE_21.tex; \
+.PHONY: compat-test
+compat-test:
+	@echo "Note: install optional deps first: pip install -e .[server]";
+	pytest -q tests/test_compat_server.py || true
+
+.PHONY: test-uv
+test-uv:
+	@if command -v uv > /dev/null 2>&1; then \
+		echo "Running tests via uv"; \
+		uv run -q pytest -q; \
 	else \
-		pdflatex -interaction=nonstopmode Tex/BSDE_21.tex || true; \
+		echo "uv not found; falling back to pytest"; \
+		pytest -q; \
+	fi
+
+tex:
+	# Prefer latexmk; use project rc to run pythontex and Lean build (fail-closed)
+	@if command -v latexmk > /dev/null 2>&1; then \
+		latexmk -pdf -interaction=nonstopmode -file-line-error -r Tex/latexmkrc Tex/BSDE_21.tex; \
+	else \
+		pdflatex -interaction=nonstopmode -file-line-error Tex/BSDE_21.tex || true; \
 	fi
 
 .PHONY: tex-12

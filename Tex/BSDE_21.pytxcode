@@ -1,0 +1,107 @@
+=>PYTHONTEX#pycon#default#default#0#console#####312#
+import sympy as sp
+from textwrap import fill
+
+sp.init_printing(use_unicode=False)
+
+COL_WIDTH = 60
+
+
+def ascii_eq(lhs, rhs, width=COL_WIDTH):
+  raw = f"{sp.sstr(lhs)} = {sp.sstr(rhs)}"
+  return fill(raw, width=width)
+
+
+def print_block(label, lhs, rhs):
+  print(label)
+  for line in ascii_eq(lhs, rhs).splitlines():
+    print(f"  {line}")
+
+
+# Symbols
+D1, D2 = sp.symbols('D1 D2', positive=True, real=True)
+s = sp.Function('s')
+mu1, mu2 = sp.symbols('mu1 mu2', real=True)
+sig1_sq, sig2_sq, sig1_sig2 = sp.symbols('sig1_sq sig2_sq sig1_sig2', real=True)
+
+# Define share s(D1,D2) and convenience vars
+C = D1 + D2
+s_expr = D1 / C
+
+# First and second partial derivatives
+sd_D1 = sp.diff(s_expr, D1)
+sd_D2 = sp.diff(s_expr, D2)
+sd_D1D1 = sp.diff(sd_D1, D1)
+sd_D2D2 = sp.diff(sd_D2, D2)
+sd_D1D2 = sp.diff(sd_D1, D2)
+
+# Drift via Ito formula in (D1,D2):
+#   f_D1 D1 mu1 + f_D2 D2 mu2
+# + 0.5 f_D1D1 <dD1,dD1> + 0.5 f_D2D2 <dD2,dD2> + f_D1D2 <dD1,dD2>
+drift_explicit = (
+  sd_D1 * D1 * mu1
+  + sd_D2 * D2 * mu2
+  + sp.Rational(1, 2) * sd_D1D1 * (D1**2 * sig1_sq)
+  + sp.Rational(1, 2) * sd_D2D2 * (D2**2 * sig2_sq)
+  + sd_D1D2 * (D1 * D2 * sig1_sig2)
+)
+
+# Express drift in terms of s and compare to stated form
+s_sym = sp.symbols('s', real=True)
+drift_s = sp.simplify(drift_explicit.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
+
+muC = s_sym * mu1 + (1 - s_sym) * mu2
+sig1_sigC = s_sym * sig1_sq + (1 - s_sym) * sig1_sig2
+sigC_sig2 = s_sym * sig1_sig2 + (1 - s_sym) * sig2_sq
+drift_stated = s_sym * (1 - s_sym) * (mu1 - mu2 + (sigC_sig2 - sig1_sigC))
+
+res_drift = sp.simplify(sp.factor(drift_s - drift_stated))
+
+# Diffusion: ||f_D1 D1 sigma1 + f_D2 D2 sigma2||^2
+diff_norm_sq = (
+  (sd_D1 * D1) ** 2 * sig1_sq
+  + (sd_D2 * D2) ** 2 * sig2_sq
+  + 2 * (sd_D1 * D1) * (sd_D2 * D2) * sig1_sig2
+)
+diff_norm_sq_s = sp.simplify(diff_norm_sq.subs({D1: s_sym * C, D2: (1 - s_sym) * C}))
+expected_norm_sq = (
+  (s_sym ** 2)
+  * ((1 - s_sym) ** 2)
+  * (sig1_sq + sig2_sq - 2 * sig1_sig2)
+)
+res_norm = sp.simplify(diff_norm_sq_s - expected_norm_sq)
+status = "PASS" if (res_drift == 0 and res_norm == 0) else "FAIL"
+print(f"{status}: drift and diffusion identities for ds")
+print()
+print_block("Drift identity (ASCII):", drift_s, drift_stated)
+print()
+print_block("Diffusion norm^2 identity (ASCII):", diff_norm_sq_s, expected_norm_sq)
+print()
+print("Residuals:")
+print(f"  drift: {res_drift}")
+print(f"  norm^2: {res_norm}")
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-BSDE_21
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|

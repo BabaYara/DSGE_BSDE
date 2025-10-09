@@ -1,0 +1,307 @@
+
+\makeatletter
+\def\PYG@reset{\let\PYG@it=\relax \let\PYG@bf=\relax%
+    \let\PYG@ul=\relax \let\PYG@tc=\relax%
+    \let\PYG@bc=\relax \let\PYG@ff=\relax}
+\def\PYG@tok#1{\csname PYG@tok@#1\endcsname}
+\def\PYG@toks#1+{\ifx\relax#1\empty\else%
+    \PYG@tok{#1}\expandafter\PYG@toks\fi}
+\def\PYG@do#1{\PYG@bc{\PYG@tc{\PYG@ul{%
+    \PYG@it{\PYG@bf{\PYG@ff{#1}}}}}}}
+\def\PYG#1#2{\PYG@reset\PYG@toks#1+\relax+\PYG@do{#2}}
+
+\@namedef{PYG@tok@w}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PYG@tok@c}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYG@tok@cp}{\def\PYG@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PYG@tok@k}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@kp}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@kt}{\def\PYG@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PYG@tok@o}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@ow}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PYG@tok@nb}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@nf}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYG@tok@nc}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYG@tok@nn}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYG@tok@ne}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PYG@tok@nv}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@no}{\def\PYG@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PYG@tok@nl}{\def\PYG@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PYG@tok@ni}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PYG@tok@na}{\def\PYG@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PYG@tok@nt}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@nd}{\def\PYG@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PYG@tok@s}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@sd}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@si}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PYG@tok@se}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PYG@tok@sr}{\def\PYG@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PYG@tok@ss}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@sx}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@m}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@gh}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PYG@tok@gu}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PYG@tok@gd}{\def\PYG@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PYG@tok@gi}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PYG@tok@gr}{\def\PYG@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PYG@tok@ge}{\let\PYG@it=\textit}
+\@namedef{PYG@tok@gs}{\let\PYG@bf=\textbf}
+\@namedef{PYG@tok@ges}{\let\PYG@bf=\textbf\let\PYG@it=\textit}
+\@namedef{PYG@tok@gp}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PYG@tok@go}{\def\PYG@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PYG@tok@gt}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PYG@tok@err}{\def\PYG@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PYG@tok@kc}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@kd}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@kn}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@kr}{\let\PYG@bf=\textbf\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@bp}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYG@tok@fm}{\def\PYG@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYG@tok@vc}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@vg}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@vi}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@vm}{\def\PYG@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYG@tok@sa}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@sb}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@sc}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@dl}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@s2}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@sh}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@s1}{\def\PYG@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYG@tok@mb}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@mf}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@mh}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@mi}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@il}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@mo}{\def\PYG@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYG@tok@ch}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYG@tok@cm}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYG@tok@cpf}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYG@tok@c1}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYG@tok@cs}{\let\PYG@it=\textit\def\PYG@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYGZbs{\char`\\}
+\def\PYGZus{\char`\_}
+\def\PYGZob{\char`\{}
+\def\PYGZcb{\char`\}}
+\def\PYGZca{\char`\^}
+\def\PYGZam{\char`\&}
+\def\PYGZlt{\char`\<}
+\def\PYGZgt{\char`\>}
+\def\PYGZsh{\char`\#}
+\def\PYGZpc{\char`\%}
+\def\PYGZdl{\char`\$}
+\def\PYGZhy{\char`\-}
+\def\PYGZsq{\char`\'}
+\def\PYGZdq{\char`\"}
+\def\PYGZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGZat{@}
+\def\PYGZlb{[}
+\def\PYGZrb{]}
+\makeatother
+
+\makeatletter
+\def\PYGdefault@reset{\let\PYGdefault@it=\relax \let\PYGdefault@bf=\relax%
+    \let\PYGdefault@ul=\relax \let\PYGdefault@tc=\relax%
+    \let\PYGdefault@bc=\relax \let\PYGdefault@ff=\relax}
+\def\PYGdefault@tok#1{\csname PYGdefault@tok@#1\endcsname}
+\def\PYGdefault@toks#1+{\ifx\relax#1\empty\else%
+    \PYGdefault@tok{#1}\expandafter\PYGdefault@toks\fi}
+\def\PYGdefault@do#1{\PYGdefault@bc{\PYGdefault@tc{\PYGdefault@ul{%
+    \PYGdefault@it{\PYGdefault@bf{\PYGdefault@ff{#1}}}}}}}
+\def\PYGdefault#1#2{\PYGdefault@reset\PYGdefault@toks#1+\relax+\PYGdefault@do{#2}}
+
+\@namedef{PYGdefault@tok@w}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PYGdefault@tok@c}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYGdefault@tok@cp}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PYGdefault@tok@k}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@kp}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@kt}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PYGdefault@tok@o}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@ow}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PYGdefault@tok@nb}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@nf}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYGdefault@tok@nc}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYGdefault@tok@nn}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYGdefault@tok@ne}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PYGdefault@tok@nv}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@no}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PYGdefault@tok@nl}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PYGdefault@tok@ni}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PYGdefault@tok@na}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PYGdefault@tok@nt}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@nd}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PYGdefault@tok@s}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@sd}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@si}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PYGdefault@tok@se}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PYGdefault@tok@sr}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PYGdefault@tok@ss}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@sx}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@m}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@gh}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PYGdefault@tok@gu}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PYGdefault@tok@gd}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PYGdefault@tok@gi}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PYGdefault@tok@gr}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PYGdefault@tok@ge}{\let\PYGdefault@it=\textit}
+\@namedef{PYGdefault@tok@gs}{\let\PYGdefault@bf=\textbf}
+\@namedef{PYGdefault@tok@ges}{\let\PYGdefault@bf=\textbf\let\PYGdefault@it=\textit}
+\@namedef{PYGdefault@tok@gp}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PYGdefault@tok@go}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PYGdefault@tok@gt}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PYGdefault@tok@err}{\def\PYGdefault@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PYGdefault@tok@kc}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@kd}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@kn}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@kr}{\let\PYGdefault@bf=\textbf\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@bp}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PYGdefault@tok@fm}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PYGdefault@tok@vc}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@vg}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@vi}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@vm}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PYGdefault@tok@sa}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@sb}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@sc}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@dl}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@s2}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@sh}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@s1}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PYGdefault@tok@mb}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@mf}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@mh}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@mi}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@il}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@mo}{\def\PYGdefault@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PYGdefault@tok@ch}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYGdefault@tok@cm}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYGdefault@tok@cpf}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYGdefault@tok@c1}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PYGdefault@tok@cs}{\let\PYGdefault@it=\textit\def\PYGdefault@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYGdefaultZbs{\char`\\}
+\def\PYGdefaultZus{\char`\_}
+\def\PYGdefaultZob{\char`\{}
+\def\PYGdefaultZcb{\char`\}}
+\def\PYGdefaultZca{\char`\^}
+\def\PYGdefaultZam{\char`\&}
+\def\PYGdefaultZlt{\char`\<}
+\def\PYGdefaultZgt{\char`\>}
+\def\PYGdefaultZsh{\char`\#}
+\def\PYGdefaultZpc{\char`\%}
+\def\PYGdefaultZdl{\char`\$}
+\def\PYGdefaultZhy{\char`\-}
+\def\PYGdefaultZsq{\char`\'}
+\def\PYGdefaultZdq{\char`\"}
+\def\PYGdefaultZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGdefaultZat{@}
+\def\PYGdefaultZlb{[}
+\def\PYGdefaultZrb{]}
+\makeatother
+\begin{pytx@SaveVerbatim}[commandchars=\\\{\}]{pytx@pycon@default@default@0}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{sympy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{sp}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{textwrap}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{fill}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sp}\PYG{o}{.}\PYG{n}{init\PYGZus{}printing}\PYG{p}{(}\PYG{n}{use\PYGZus{}unicode}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{COL\PYGZus{}WIDTH} \PYG{o}{=} \PYG{l+m+mi}{60}
+
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{ascii\PYGZus{}eq}\PYG{p}{(}\PYG{n}{lhs}\PYG{p}{,} \PYG{n}{rhs}\PYG{p}{,} \PYG{n}{width}\PYG{o}{=}\PYG{n}{COL\PYGZus{}WIDTH}\PYG{p}{)}\PYG{p}{:}
+\PYG{g+gp}{... }  \PYG{n}{raw} \PYG{o}{=} \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{sstr}\PYG{p}{(}\PYG{n}{lhs}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{sstr}\PYG{p}{(}\PYG{n}{rhs}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{g+gp}{... }  \PYG{k}{return} \PYG{n}{fill}\PYG{p}{(}\PYG{n}{raw}\PYG{p}{,} \PYG{n}{width}\PYG{o}{=}\PYG{n}{width}\PYG{p}{)}
+\PYG{g+gp}{... }
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{print\PYGZus{}block}\PYG{p}{(}\PYG{n}{label}\PYG{p}{,} \PYG{n}{lhs}\PYG{p}{,} \PYG{n}{rhs}\PYG{p}{)}\PYG{p}{:}
+\PYG{g+gp}{... }  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{label}\PYG{p}{)}
+\PYG{g+gp}{... }  \PYG{k}{for} \PYG{n}{line} \PYG{o+ow}{in} \PYG{n}{ascii\PYGZus{}eq}\PYG{p}{(}\PYG{n}{lhs}\PYG{p}{,} \PYG{n}{rhs}\PYG{p}{)}\PYG{o}{.}\PYG{n}{splitlines}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+\PYG{g+gp}{... }    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{  }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{line}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+gp}{... }
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Symbols}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{D1}\PYG{p}{,} \PYG{n}{D2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{D1 D2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{s} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Function}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{s}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{mu1}\PYG{p}{,} \PYG{n}{mu2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{mu1 mu2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sig1\PYGZus{}sq}\PYG{p}{,} \PYG{n}{sig2\PYGZus{}sq}\PYG{p}{,} \PYG{n}{sig1\PYGZus{}sig2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sig1\PYGZus{}sq sig2\PYGZus{}sq sig1\PYGZus{}sig2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Define share s(D1,D2) and convenience vars}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{C} \PYG{o}{=} \PYG{n}{D1} \PYG{o}{+} \PYG{n}{D2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{s\PYGZus{}expr} \PYG{o}{=} \PYG{n}{D1} \PYG{o}{/} \PYG{n}{C}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} First and second partial derivatives}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sd\PYGZus{}D1} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{s\PYGZus{}expr}\PYG{p}{,} \PYG{n}{D1}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sd\PYGZus{}D2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{s\PYGZus{}expr}\PYG{p}{,} \PYG{n}{D2}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sd\PYGZus{}D1D1} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{sd\PYGZus{}D1}\PYG{p}{,} \PYG{n}{D1}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sd\PYGZus{}D2D2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{sd\PYGZus{}D2}\PYG{p}{,} \PYG{n}{D2}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sd\PYGZus{}D1D2} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{sd\PYGZus{}D1}\PYG{p}{,} \PYG{n}{D2}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Drift via Ito formula in (D1,D2):}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{}   f\PYGZus{}D1 D1 mu1 + f\PYGZus{}D2 D2 mu2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} + 0.5 f\PYGZus{}D1D1 \PYGZlt{}dD1,dD1\PYGZgt{} + 0.5 f\PYGZus{}D2D2 \PYGZlt{}dD2,dD2\PYGZgt{} + f\PYGZus{}D1D2 \PYGZlt{}dD1,dD2\PYGZgt{}}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{drift\PYGZus{}explicit} \PYG{o}{=} \PYG{p}{(}
+\PYG{g+gp}{... }  \PYG{n}{sd\PYGZus{}D1} \PYG{o}{*} \PYG{n}{D1} \PYG{o}{*} \PYG{n}{mu1}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{n}{sd\PYGZus{}D2} \PYG{o}{*} \PYG{n}{D2} \PYG{o}{*} \PYG{n}{mu2}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Rational}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sd\PYGZus{}D1D1} \PYG{o}{*} \PYG{p}{(}\PYG{n}{D1}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sq}\PYG{p}{)}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{Rational}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sd\PYGZus{}D2D2} \PYG{o}{*} \PYG{p}{(}\PYG{n}{D2}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig2\PYGZus{}sq}\PYG{p}{)}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{n}{sd\PYGZus{}D1D2} \PYG{o}{*} \PYG{p}{(}\PYG{n}{D1} \PYG{o}{*} \PYG{n}{D2} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sig2}\PYG{p}{)}
+\PYG{g+gp}{... }\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Express drift in terms of s and compare to stated form}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{s\PYGZus{}sym} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{symbols}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{s}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{real}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{drift\PYGZus{}s} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{drift\PYGZus{}explicit}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{D1}\PYG{p}{:} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{n}{C}\PYG{p}{,} \PYG{n}{D2}\PYG{p}{:} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{n}{C}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{muC} \PYG{o}{=} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{n}{mu1} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{n}{mu2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sig1\PYGZus{}sigC} \PYG{o}{=} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sq} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sig2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{sigC\PYGZus{}sig2} \PYG{o}{=} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sig2} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sig2\PYGZus{}sq}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{drift\PYGZus{}stated} \PYG{o}{=} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{mu1} \PYG{o}{\PYGZhy{}} \PYG{n}{mu2} \PYG{o}{+} \PYG{p}{(}\PYG{n}{sigC\PYGZus{}sig2} \PYG{o}{\PYGZhy{}} \PYG{n}{sig1\PYGZus{}sigC}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{res\PYGZus{}drift} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{sp}\PYG{o}{.}\PYG{n}{factor}\PYG{p}{(}\PYG{n}{drift\PYGZus{}s} \PYG{o}{\PYGZhy{}} \PYG{n}{drift\PYGZus{}stated}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{c+c1}{\PYGZsh{} Diffusion: ||f\PYGZus{}D1 D1 sigma1 + f\PYGZus{}D2 D2 sigma2||\PYGZca{}2}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{diff\PYGZus{}norm\PYGZus{}sq} \PYG{o}{=} \PYG{p}{(}
+\PYG{g+gp}{... }  \PYG{p}{(}\PYG{n}{sd\PYGZus{}D1} \PYG{o}{*} \PYG{n}{D1}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sq}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{p}{(}\PYG{n}{sd\PYGZus{}D2} \PYG{o}{*} \PYG{n}{D2}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig2\PYGZus{}sq}
+\PYG{g+gp}{... }  \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{p}{(}\PYG{n}{sd\PYGZus{}D1} \PYG{o}{*} \PYG{n}{D1}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{sd\PYGZus{}D2} \PYG{o}{*} \PYG{n}{D2}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sig2}
+\PYG{g+gp}{... }\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{diff\PYGZus{}norm\PYGZus{}sq\PYGZus{}s} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{diff\PYGZus{}norm\PYGZus{}sq}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{D1}\PYG{p}{:} \PYG{n}{s\PYGZus{}sym} \PYG{o}{*} \PYG{n}{C}\PYG{p}{,} \PYG{n}{D2}\PYG{p}{:} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*} \PYG{n}{C}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{expected\PYGZus{}norm\PYGZus{}sq} \PYG{o}{=} \PYG{p}{(}
+\PYG{g+gp}{... }  \PYG{p}{(}\PYG{n}{s\PYGZus{}sym} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{g+gp}{... }  \PYG{o}{*} \PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{s\PYGZus{}sym}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{g+gp}{... }  \PYG{o}{*} \PYG{p}{(}\PYG{n}{sig1\PYGZus{}sq} \PYG{o}{+} \PYG{n}{sig2\PYGZus{}sq} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{sig1\PYGZus{}sig2}\PYG{p}{)}
+\PYG{g+gp}{... }\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{res\PYGZus{}norm} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{simplify}\PYG{p}{(}\PYG{n}{diff\PYGZus{}norm\PYGZus{}sq\PYGZus{}s} \PYG{o}{\PYGZhy{}} \PYG{n}{expected\PYGZus{}norm\PYGZus{}sq}\PYG{p}{)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{status} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{PASS}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{p}{(}\PYG{n}{res\PYGZus{}drift} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{res\PYGZus{}norm} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{FAIL}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{status}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{: drift and diffusion identities for ds}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+go}{FAIL: drift and diffusion identities for ds}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{print\PYGZus{}block}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Drift identity (ASCII):}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{drift\PYGZus{}s}\PYG{p}{,} \PYG{n}{drift\PYGZus{}stated}\PYG{p}{)}
+\PYG{g+go}{Drift identity (ASCII):}
+\PYG{g+go}{  s*(D1 + D2)*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))*(s \PYGZhy{} 1)*(\PYGZhy{}mu1*(s*(D1 \PYGZhy{}}
+\PYG{g+go}{  (D1 + D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1)) + mu2*(s*(D1 \PYGZhy{} (D1 +}
+\PYG{g+go}{  D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1)) + s*sig1\PYGZus{}sq*(D1 \PYGZhy{} (D1 +}
+\PYG{g+go}{  D2)*(s \PYGZhy{} 1)) \PYGZhy{} sig1\PYGZus{}sig2*(s*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1)) + (D1 +}
+\PYG{g+go}{  D2)*(s \PYGZhy{} 1)) + sig2\PYGZus{}sq*(D1 + D2)*(s \PYGZhy{} 1))/(s*(D1 \PYGZhy{} (D1 +}
+\PYG{g+go}{  D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**3 = s*(1 \PYGZhy{} s)*(mu1 \PYGZhy{} mu2}
+\PYG{g+go}{  + s*sig1\PYGZus{}sig2 \PYGZhy{} s*sig1\PYGZus{}sq \PYGZhy{} sig1\PYGZus{}sig2*(1 \PYGZhy{} s) + sig2\PYGZus{}sq*(1 \PYGZhy{}}
+\PYG{g+go}{  s))}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n}{print\PYGZus{}block}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Diffusion norm\PYGZca{}2 identity (ASCII):}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{diff\PYGZus{}norm\PYGZus{}sq\PYGZus{}s}\PYG{p}{,} \PYG{n}{expected\PYGZus{}norm\PYGZus{}sq}\PYG{p}{)}
+\PYG{g+go}{Diffusion norm\PYGZca{}2 identity (ASCII):}
+\PYG{g+go}{  s**2*(D1 + D2)**2*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**2*(s \PYGZhy{}}
+\PYG{g+go}{  1)**2*(\PYGZhy{}2*sig1\PYGZus{}sig2 + sig1\PYGZus{}sq + sig2\PYGZus{}sq)/(s*(D1 \PYGZhy{} (D1 +}
+\PYG{g+go}{  D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**4 = s**2*(1 \PYGZhy{}}
+\PYG{g+go}{  s)**2*(\PYGZhy{}2*sig1\PYGZus{}sig2 + sig1\PYGZus{}sq + sig2\PYGZus{}sq)}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Residuals:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+go}{Residuals:}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{  drift: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{res\PYGZus{}drift}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+go}{  drift: \PYGZhy{}s*(s \PYGZhy{} 1)*(D1*s \PYGZhy{} D1 + D2*s)*(D1**2*mu1*s**5 \PYGZhy{} 2*D1**2*mu1*s**4 \PYGZhy{} 2*D1**2*mu1*s**3 + 4*D1**2*mu1*s**2 + D1**2*mu1*s \PYGZhy{} D1**2*mu1 \PYGZhy{} D1**2*mu2*s**5 + 2*D1**2*mu2*s**4 + 2*D1**2*mu2*s**3 \PYGZhy{} 4*D1**2*mu2*s**2 \PYGZhy{} D1**2*mu2*s + D1**2*mu2 + 2*D1**2*s**6*sig1\PYGZus{}sig2 \PYGZhy{} D1**2*s**6*sig1\PYGZus{}sq \PYGZhy{} D1**2*s**6*sig2\PYGZus{}sq \PYGZhy{} 5*D1**2*s**5*sig1\PYGZus{}sig2 + 2*D1**2*s**5*sig1\PYGZus{}sq + 3*D1**2*s**5*sig2\PYGZus{}sq \PYGZhy{} 2*D1**2*s**4*sig1\PYGZus{}sig2 + 2*D1**2*s**4*sig1\PYGZus{}sq + 8*D1**2*s**3*sig1\PYGZus{}sig2 \PYGZhy{} 3*D1**2*s**3*sig1\PYGZus{}sq \PYGZhy{} 5*D1**2*s**3*sig2\PYGZus{}sq + 4*D1**2*s**2*sig1\PYGZus{}sig2 \PYGZhy{} 4*D1**2*s**2*sig1\PYGZus{}sq \PYGZhy{} 7*D1**2*s*sig1\PYGZus{}sig2 + 3*D1**2*s*sig1\PYGZus{}sq + 4*D1**2*s*sig2\PYGZus{}sq + D1**2*sig1\PYGZus{}sig2 \PYGZhy{} D1**2*sig2\PYGZus{}sq + 2*D1*D2*mu1*s**5 \PYGZhy{} 2*D1*D2*mu1*s**4 \PYGZhy{} 6*D1*D2*mu1*s**3 + 5*D1*D2*mu1*s**2 + 3*D1*D2*mu1*s \PYGZhy{} 2*D1*D2*mu1 \PYGZhy{} 2*D1*D2*mu2*s**5 + 2*D1*D2*mu2*s**4 + 6*D1*D2*mu2*s**3 \PYGZhy{} 5*D1*D2*mu2*s**2 \PYGZhy{} 3*D1*D2*mu2*s + 2*D1*D2*mu2 + 4*D1*D2*s**6*sig1\PYGZus{}sig2 \PYGZhy{} 2*D1*D2*s**6*sig1\PYGZus{}sq \PYGZhy{} 2*D1*D2*s**6*sig2\PYGZus{}sq \PYGZhy{} 6*D1*D2*s**5*sig1\PYGZus{}sig2 + 2*D1*D2*s**5*sig1\PYGZus{}sq + 4*D1*D2*s**5*sig2\PYGZus{}sq \PYGZhy{} 10*D1*D2*s**4*sig1\PYGZus{}sig2 + 6*D1*D2*s**4*sig1\PYGZus{}sq + 4*D1*D2*s**4*sig2\PYGZus{}sq + 12*D1*D2*s**3*sig1\PYGZus{}sig2 \PYGZhy{} 3*D1*D2*s**3*sig1\PYGZus{}sq \PYGZhy{} 9*D1*D2*s**3*sig2\PYGZus{}sq + 11*D1*D2*s**2*sig1\PYGZus{}sig2 \PYGZhy{} 8*D1*D2*s**2*sig1\PYGZus{}sq \PYGZhy{} 3*D1*D2*s**2*sig2\PYGZus{}sq \PYGZhy{} 13*D1*D2*s*sig1\PYGZus{}sig2 + 5*D1*D2*s*sig1\PYGZus{}sq + 8*D1*D2*s*sig2\PYGZus{}sq + 2*D1*D2*sig1\PYGZus{}sig2 \PYGZhy{} 2*D1*D2*sig2\PYGZus{}sq + D2**2*mu1*s**5 \PYGZhy{} 3*D2**2*mu1*s**3 + D2**2*mu1*s**2 + 2*D2**2*mu1*s \PYGZhy{} D2**2*mu1 \PYGZhy{} D2**2*mu2*s**5 + 3*D2**2*mu2*s**3 \PYGZhy{} D2**2*mu2*s**2 \PYGZhy{} 2*D2**2*mu2*s + D2**2*mu2 + 2*D2**2*s**6*sig1\PYGZus{}sig2 \PYGZhy{} D2**2*s**6*sig1\PYGZus{}sq \PYGZhy{} D2**2*s**6*sig2\PYGZus{}sq \PYGZhy{} D2**2*s**5*sig1\PYGZus{}sig2 + D2**2*s**5*sig2\PYGZus{}sq \PYGZhy{} 6*D2**2*s**4*sig1\PYGZus{}sig2 + 3*D2**2*s**4*sig1\PYGZus{}sq + 3*D2**2*s**4*sig2\PYGZus{}sq + 3*D2**2*s**3*sig1\PYGZus{}sig2 \PYGZhy{} 3*D2**2*s**3*sig2\PYGZus{}sq + 7*D2**2*s**2*sig1\PYGZus{}sig2 \PYGZhy{} 4*D2**2*s**2*sig1\PYGZus{}sq \PYGZhy{} 3*D2**2*s**2*sig2\PYGZus{}sq \PYGZhy{} 6*D2**2*s*sig1\PYGZus{}sig2 + 2*D2**2*s*sig1\PYGZus{}sq + 4*D2**2*s*sig2\PYGZus{}sq + D2**2*sig1\PYGZus{}sig2 \PYGZhy{} D2**2*sig2\PYGZus{}sq)/(\PYGZhy{}D1*s**2 + D1*s + D1 \PYGZhy{} D2*s**2 + D2)**3}
+\PYG{g+gp}{\PYGZgt{}\PYGZgt{}\PYGZgt{} }\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{  norm\PYGZca{}2: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{res\PYGZus{}norm}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+go}{  norm\PYGZca{}2: s**2*(s \PYGZhy{} 1)**2*((D1 + D2)**2*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**2*(\PYGZhy{}2*sig1\PYGZus{}sig2 + sig1\PYGZus{}sq + sig2\PYGZus{}sq) + (s*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**4*(2*sig1\PYGZus{}sig2 \PYGZhy{} sig1\PYGZus{}sq \PYGZhy{} sig2\PYGZus{}sq))/(s*(D1 \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1)) \PYGZhy{} (D1 + D2)*(s \PYGZhy{} 1))**4}
+\end{pytx@SaveVerbatim}
+

@@ -20,10 +20,12 @@ docs = [
   "jupyter",
 ]
 dev  = ["pytest", "ruff", "black", "mypy", "pre-commit", "jupyterlab", "sphinx"]
+server = ["fastapi>=0.112", "uvicorn>=0.30", "httpx>=0.27"]
 
 [project.scripts]
 pinn-demo = "bsde_dsgE.cli:pinn_demo"
 pinn-poisson2d = "bsde_dsgE.cli:pinn_poisson2d"
+compat-server = "bsde_dsgE.compat_server:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["bsde_dsgE"]

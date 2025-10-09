@@ -1,0 +1,2884 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  1 OCT 2025 21:53
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex
+(c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen149
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count283
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count284
+\leftroot@=\count285
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count286
+\DOTSCASE@=\count287
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count288
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count289
+\dotsspace@=\muskip17
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
+\tag@help=\toks20
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
+\andhelp@=\toks21
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks22
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks29
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count295
+\calc@Bcount=\count296
+\calc@Adimen=\dimen158
+\calc@Bdimen=\dimen159
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count297
+\calc@Cskip=\skip59
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count298
+\l_MT_multwidth_dim=\dimen160
+\origjot=\skip60
+\l_MT_shortvdotswithinadjustabove_dim=\dimen161
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen162
+\l_MT_above_intertext_sep=\dimen163
+\l_MT_below_intertext_sep=\dimen164
+\l_MT_above_shortintertext_sep=\dimen165
+\l_MT_below_shortintertext_sep=\dimen166
+\xmathstrut@box=\box55
+\xmathstrut@dim=\dimen167
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count299
+\Gm@cntv=\count300
+\c@Gm@tempcnt=\count301
+\Gm@bindingoffset=\dimen168
+\Gm@wd@mp=\dimen169
+\Gm@odd@mp=\dimen170
+\Gm@even@mp=\dimen171
+\Gm@layoutwidth=\dimen172
+\Gm@layoutheight=\dimen173
+\Gm@layouthoffset=\dimen174
+\Gm@layoutvoffset=\dimen175
+\Gm@dimlist=\toks31
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count302
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count303
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen176
+\Hy@linkcounter=\count304
+\Hy@pagecounter=\count305
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count306
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count307
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen177
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count308
+\Field@Width=\dimen178
+\Fld@charsize=\dimen179
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count309
+\c@Item=\count310
+\c@Hfootnote=\count311
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count312
+\c@bookmark@seq@number=\count313
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip61
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
+\MT@toks=\toks32
+\MT@tempbox=\box56
+\MT@count=\count314
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
+LaTeX Info: Redefining \leftprotrusion on input line 1088.
+\MT@prot@toks=\toks33
+LaTeX Info: Redefining \rightprotrusion on input line 1107.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen180
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count315
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdftex.def
+File: microtype-pdftex.def 2025/07/09 v3.2b Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 944.
+LaTeX Info: Redefining \lslig on input line 944.
+\MT@outer@space=\skip62
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
+File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen181
+\lightrulewidth=\dimen182
+\cmidrulewidth=\dimen183
+\belowrulesep=\dimen184
+\belowbottomsep=\dimen185
+\aboverulesep=\dimen186
+\abovetopsep=\dimen187
+\cmidrulesep=\dimen188
+\cmidrulekern=\dimen189
+\defaultaddspace=\dimen190
+\@cmidla=\count316
+\@cmidlb=\count317
+\@aboverulesep=\dimen191
+\@belowrulesep=\dimen192
+\@thisruleclass=\count318
+\@lastruleclass=\count319
+\@thisrulewidth=\dimen193
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip63
+\enit@outerparindent=\dimen194
+\enit@toks=\toks34
+\enit@inbox=\box57
+\enit@count@id=\count320
+\enitdp@description=\count321
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count322
+\float@exts=\toks35
+\float@box=\box58
+\@float@everytoks=\toks36
+\@floatcapt=\box59
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks37
+\c@algorithm=\count323
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudocode.sty
+Package: algpseudocode 
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count324
+\c@ALG@rem=\count325
+\c@ALG@nested=\count326
+\ALG@tlm=\skip64
+\ALG@thistlm=\skip65
+\c@ALG@Lnr=\count327
+\c@ALG@blocknr=\count328
+\c@ALG@storecount=\count329
+\c@ALG@tmpcounter=\count330
+\ALG@tmplength=\skip66
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count331
+\c@@ppsavesec=\count332
+\c@@ppsaveapp=\count333
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2025/07/08 version 6.7.1 text color boxes
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks38
+\pgfutil@tempdima=\dimen195
+\pgfutil@tempdimb=\dimen196
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box60
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen197
+\Gin@req@width=\dimen198
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks39
+\pgfkeys@temptoks=\toks40
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks41
+))
+\pgf@x=\dimen199
+\pgf@y=\dimen256
+\pgf@xa=\dimen257
+\pgf@ya=\dimen258
+\pgf@xb=\dimen259
+\pgf@yb=\dimen260
+\pgf@xc=\dimen261
+\pgf@yc=\dimen262
+\pgf@xd=\dimen263
+\pgf@yd=\dimen264
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count334
+\c@pgf@countb=\count335
+\c@pgf@countc=\count336
+\c@pgf@countd=\count337
+\t@pgf@toka=\toks42
+\t@pgf@tokb=\toks43
+\t@pgf@tokc=\toks44
+\pgf@sys@id@count=\count338
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count339
+\pgfsyssoftpath@bigbuffer@items=\count340
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen265
+\pgfmath@count=\count341
+\pgfmath@box=\box61
+\pgfmath@toks=\toks45
+\pgfmath@stack@operand=\toks46
+\pgfmath@stack@operation=\toks47
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count342
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen266
+\pgf@picmaxx=\dimen267
+\pgf@picminy=\dimen268
+\pgf@picmaxy=\dimen269
+\pgf@pathminx=\dimen270
+\pgf@pathmaxx=\dimen271
+\pgf@pathminy=\dimen272
+\pgf@pathmaxy=\dimen273
+\pgf@xx=\dimen274
+\pgf@xy=\dimen275
+\pgf@yx=\dimen276
+\pgf@yy=\dimen277
+\pgf@zx=\dimen278
+\pgf@zy=\dimen279
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen280
+\pgf@path@lasty=\dimen281
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen282
+\pgf@shorten@start@additional=\dimen283
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count343
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen284
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen285
+\pgf@pt@y=\dimen286
+\pgf@pt@temp=\dimen287
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen288
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen289
+\pgf@sys@shading@range@num=\count344
+\pgf@shadingcount=\count345
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box65
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box66
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen290
+\pgf@nodesepend=\dimen291
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen292
+\pgffor@skip=\dimen293
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count346
+\pgfplotmarksize=\dimen294
+)
+\tikz@lastx=\dimen295
+\tikz@lasty=\dimen296
+\tikz@lastxsaved=\dimen297
+\tikz@lastysaved=\dimen298
+\tikz@lastmovetox=\dimen299
+\tikz@lastmovetoy=\dimen300
+\tikzleveldistance=\dimen301
+\tikzsiblingdistance=\dimen302
+\tikz@figbox=\box67
+\tikz@figbox@bg=\box68
+\tikz@tempbox=\box69
+\tikz@tempbox@bg=\box70
+\tikztreelevel=\count347
+\tikznumberofchildren=\count348
+\tikznumberofcurrentchild=\count349
+\tikz@fig@count=\count350
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count351
+\pgfmatrixcurrentcolumn=\count352
+\pgf@matrix@numberofcolumns=\count353
+)
+\tikz@expandcount=\count354
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks50
+\verbatim@line=\toks51
+\verbatim@in@stream=\read3
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box71
+\tcb@upperbox=\box72
+\tcb@lowerbox=\box73
+\tcb@phantombox=\box74
+\c@tcbbreakpart=\count355
+\c@tcblayer=\count356
+\c@tcolorbox@number=\count357
+\l__tcobox_tmpa_box=\box75
+\l__tcobox_tmpa_dim=\dimen303
+\tcb@temp=\box76
+\tcb@temp=\box77
+\tcb@temp=\box78
+\tcb@temp=\box79
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.7.1'
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box80
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.7.1'
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.7.1'
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box81
+\tcb@totalupperbox=\box82
+\tcb@totallowerbox=\box83
+)) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen304
+\ar@mcellbox=\box84
+\extrarowheight=\dimen305
+\NC@list=\toks52
+\extratabsurround=\skip67
+\backup@length=\skip68
+\ar@cellbox=\box85
+)
+\TX@col@width=\dimen306
+\TX@old@table=\dimen307
+\TX@old@col=\dimen308
+\TX@target=\dimen309
+\TX@delta=\dimen310
+\TX@cols=\count358
+\TX@ftn=\toks53
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 50.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count359
+) (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_15.aux)
+\openout1 = `BSDE_15.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(62.59596pt, 711.319pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=711.319pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-46.67403pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 50.
+\@outlinefile=\write4
+\openout4 = `BSDE_15.out'.
+
+LaTeX Info: Redefining \microtypecontext on input line 50.
+Package microtype Info: Applying patch `item' on input line 50.
+Package microtype Info: Applying patch `toc' on input line 50.
+Package microtype Info: Applying patch `eqnum' on input line 50.
+Package microtype Info: Applying patch `footnote' on input line 50.
+Package microtype Info: Applying patch `verbatim' on input line 50.
+LaTeX Info: Redefining \microtypesetup on input line 50.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count360
+\scratchdimen=\dimen311
+\scratchbox=\box86
+\nofMPsegments=\count361
+\nofMParguments=\count362
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count363
+\MPscratchDim=\dimen312
+\MPnumerator=\count364
+\makeMPintoPDFobject=\count365
+\everyMPtoPDFconversion=\toks55
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 52.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 61.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 73.
+ (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+[1
+
+{C:/Users/fababa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 81.
+
+
+[2{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Overfull \hbox (0.45703pt too wide) in paragraph at lines 144--144
+[]\T1/lmr/bx/n/14.4 (-20) Part 2: Zhang (2005) Model Spec-i-fi-ca-tion and Neu-ral Blueprint 
+ []
+
+
+
+[3{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+
+LaTeX Warning: Reference `eq:capital' on page 4 undefined on input line 184.
+
+
+LaTeX Warning: Reference `eq:sdf_discrete' on page 4 undefined on input line 200.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 200.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 200.
+
+LaTeX Warning: Reference `eq:agg_ar1' on page 4 undefined on input line 205.
+
+
+LaTeX Warning: Reference `eq:idio_ar1' on page 4 undefined on input line 205.
+
+
+Overfull \hbox (302.8947pt too wide) detected at line 217
+[]
+ []
+
+
+
+[4{C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Warning: Reference `eq:sdf_discrete' on page 5 undefined on input line 256.
+
+
+
+[5]
+
+[6]
+
+[7]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 328.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 328.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 328.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 328.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 328.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex:335: Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.335 \end{tabularx}
+                    
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex:335: Misplaced \noalign.
+\bottomrule ->\noalign 
+                       {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global...
+l.335 \end{tabularx}
+                    
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (4.16048pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Ref- 
+ []
+
+
+Overfull \hbox (6.51128pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ence 
+ []
+
+
+Overfull \hbox (11.27109pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (year) 
+ []
+
+
+Overfull \hbox (1.3018pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Im- 
+ []
+
+
+Overfull \hbox (2.1189pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ple- 
+ []
+
+
+Overfull \hbox (7.56303pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) men- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (3.81618pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) role|  
+ []
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex:335: Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.335 \end{tabularx}
+                    
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (14.67755pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Zhang 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2005, 
+ []
+
+
+Overfull \hbox (1.81493pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) JF) 
+ []
+
+
+Overfull \hbox (8.17154pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Core 
+ []
+
+
+Overfull \hbox (15.19855pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) model, 
+ []
+
+
+Overfull \hbox (9.46912pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) equa- 
+ []
+
+
+Overfull \hbox (23.07687pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tions (1-- 
+ []
+
+
+Overfull \hbox (2.69345pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 21), 
+ []
+
+
+Overfull \hbox (1.57451pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cal- 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bra- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (7.61542pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ble I, 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (14.64108pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bench- 
+ []
+
+
+Overfull \hbox (9.81712pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mark 
+ []
+
+
+Overfull \hbox (2.66302pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mo- 
+ []
+
+
+Overfull \hbox (13.36542pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ments 
+ []
+
+
+Overfull \hbox (17.36537pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bles II-- 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pro- 
+ []
+
+
+Overfull \hbox (2.6757pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) vid- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (2.14626pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tar- 
+ []
+
+
+Overfull \hbox (7.65468pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gets.|  
+ []
+
+
+Overfull \hbox (7.77002pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Abel 
+ []
+
+
+Overfull \hbox (16.11017pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Eberly 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1994, 
+ []
+
+
+Overfull \hbox (9.74124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 1996) 
+ []
+
+
+Overfull \hbox (5.5217pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Eco- 
+ []
+
+
+Overfull \hbox (13.58856pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) nomic 
+ []
+
+
+Overfull \hbox (1.03012pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tio- 
+ []
+
+
+Overfull \hbox (5.42223pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) nale 
+ []
+
+
+Overfull \hbox (12.4571pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) costly 
+ []
+
+
+Overfull \hbox (19.90187pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) versibil- 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (11.70105pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) asym- 
+ []
+
+
+Overfull \hbox (5.92989pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) met- 
+ []
+
+
+Overfull \hbox (5.7123pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) just- 
+ []
+
+
+Overfull \hbox (10.83202pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ment; 
+ []
+
+
+Overfull \hbox (14.73221pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) guides 
+ []
+
+
+Overfull \hbox (1.61127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) the 
+ []
+
+
+Overfull \hbox (21.06038pt too wide) in paragraph at lines 335--335
+\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 ^^R[]; ^^R[]\OT1/lmr/m/n/10 (-20) )$ 
+ []
+
+
+Overfull \hbox (16.21762pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) wedge.|  
+ []
+
+
+Overfull \hbox (5.69443pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Hall 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2001; 
+ []
+
+
+Overfull \hbox (9.99124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2004) 
+ []
+
+
+Overfull \hbox (11.32964pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Links 
+ []
+
+
+Overfull \hbox (12.48888pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tween 
+ []
+
+
+Overfull \hbox (25.59346pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) marginal 
+ []
+
+
+Overfull \hbox (9.52884pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) spon- 
+ []
+
+
+Overfull \hbox (5.43475pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sive- 
+ []
+
+
+Overfull \hbox (5.53123pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ness 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (5.7123pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) just- 
+ []
+
+
+Overfull \hbox (9.22981pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ment 
+ []
+
+
+Overfull \hbox (6.50136pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ram- 
+ []
+
+
+Overfull \hbox (3.87082pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ters 
+ []
+
+
+Overfull \hbox (7.11002pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) used 
+ []
+
+
+Overfull \hbox (8.81966pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) FOC 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) reg- 
+ []
+
+
+Overfull \hbox (1.05722pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) lar- 
+ []
+
+
+Overfull \hbox (7.60004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion.|  
+ []
+
+
+Overfull \hbox (20.6937pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Shapiro 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1986) 
+ []
+
+
+Overfull \hbox (4.43242pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Em- 
+ []
+
+
+Overfull \hbox (1.60161pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pir- 
+ []
+
+
+Overfull \hbox (18.82094pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bounds 
+ []
+
+
+Overfull \hbox (5.7123pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) just- 
+ []
+
+
+Overfull \hbox (9.22981pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ment 
+ []
+
+
+Overfull \hbox (15.60902pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) speeds 
+ []
+
+
+Overfull \hbox (9.49574pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) form- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.60161pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pri- 
+ []
+
+
+Overfull \hbox (0.60396pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ors 
+ []
+
+
+Overfull \hbox (2.33345pt too wide) in paragraph at lines 335--335
+\OML/lmm/m/it/10 ^^R[]$\T1/lmr/m/n/10 (-20) .|  
+ []
+
+
+Overfull \hbox (16.97765pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Gomes 
+ []
+
+
+Overfull \hbox (15.38467pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2001); 
+ []
+
+
+Overfull \hbox (18.30984pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Gomes, 
+ []
+
+
+Overfull \hbox (1.84132pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Ko- 
+ []
+
+
+Overfull \hbox (3.2444pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gan 
+ []
+
+
+Overfull \hbox (14.67755pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Zhang 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2003) 
+ []
+
+
+Overfull \hbox (51.4731pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Heterogeneous- 
+ []
+
+
+Overfull \hbox (5.44908pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) firm 
+ []
+
+
+Overfull \hbox (6.2638pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) vest- 
+ []
+
+
+Overfull \hbox (9.22981pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ment 
+ []
+
+
+Overfull \hbox (1.62888pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) dis- 
+ []
+
+
+Overfull \hbox (3.51282pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) per- 
+ []
+
+
+Overfull \hbox (4.9322pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sion 
+ []
+
+
+Overfull \hbox (1.57451pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cal- 
+ []
+
+
+Overfull \hbox (7.59064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) brat- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (21.71875pt too wide) in paragraph at lines 335--335
+\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 ^^Z[]; ^^[[]\OT1/lmr/m/n/10 (-20) )$\T1/lmr/m/n/10 (-20) .|  
+ []
+
+
+Overfull \hbox (11.53044pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Fama 
+ []
+
+
+Overfull \hbox (16.72467pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) French 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1992, 
+ []
+
+
+Overfull \hbox (9.74124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 1993) 
+ []
+
+
+Overfull \hbox (7.01863pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Con- 
+ []
+
+
+Overfull \hbox (10.91187pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) struc- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (10.1487pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) HML 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (10.56906pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) book- 
+ []
+
+
+Overfull \hbox (17.69618pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) market 
+ []
+
+
+Overfull \hbox (15.82127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) deciles 
+ []
+
+
+Overfull \hbox (13.91634pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ble III 
+ []
+
+
+Overfull \hbox (8.67943pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) repli- 
+ []
+
+
+Overfull \hbox (7.60004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion.|  
+ []
+
+
+Overfull \hbox (13.20088pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Davis, 
+ []
+
+
+Overfull \hbox (11.53044pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Fama 
+ []
+
+
+Overfull \hbox (16.72467pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) French 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2000) 
+ []
+
+
+Overfull \hbox (10.96606pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Long- 
+ []
+
+
+Overfull \hbox (17.45416pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sample 
+ []
+
+
+Overfull \hbox (9.7791pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) value 
+ []
+
+
+Overfull \hbox (3.23503pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pre- 
+ []
+
+
+Overfull \hbox (12.49928pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mium 
+ []
+
+
+Overfull \hbox (11.95566pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) dence 
+ []
+
+
+Overfull \hbox (7.85724pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) chor- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.61127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) the 
+ []
+
+
+Overfull \hbox (10.1487pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) HML 
+ []
+
+
+Overfull \hbox (2.14626pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tar- 
+ []
+
+
+Overfull \hbox (3.78908pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) get.|  
+ []
+
+
+Overfull \hbox (6.33267pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Pon- 
+ []
+
+
+Overfull \hbox (13.31102pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Schall 
+ []
+
+
+Overfull \hbox (37.38245pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1998/1999) 
+ []
+
+
+Overfull \hbox (4.35106pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) dus- 
+ []
+
+
+Overfull \hbox (10.56906pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) book- 
+ []
+
+
+Overfull \hbox (17.69618pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) market 
+ []
+
+
+Overfull \hbox (16.00916pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) volatil- 
+ []
+
+
+Overfull \hbox (14.64108pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bench- 
+ []
+
+
+Overfull \hbox (13.94272pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) marks 
+ []
+
+
+Overfull \hbox (12.82198pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ble II.|  
+ []
+
+
+Overfull \hbox (15.18497pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Camp- 
+ []
+
+
+Overfull \hbox (3.52222pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bell 
+ []
+
+
+Overfull \hbox (28.31592pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Cochrane 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1999) 
+ []
+
+
+Overfull \hbox (13.82451pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Habit- 
+ []
+
+
+Overfull \hbox (12.01001pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) based 
+ []
+
+
+Overfull \hbox (17.70491pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Sharpe 
+ []
+
+
+Overfull \hbox (19.94395pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) haviour 
+ []
+
+
+Overfull \hbox (2.66302pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mo- 
+ []
+
+
+Overfull \hbox (2.6648pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) vat- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.61127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) the 
+ []
+
+
+Overfull \hbox (6.99806pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) SDF 
+ []
+
+
+Overfull \hbox (1.57451pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cal- 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bra- 
+ []
+
+
+Overfull \hbox (7.60004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n10 
+ []
+
+
+Overfull \hbox (15.18497pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Camp- 
+ []
+
+
+Overfull \hbox (4.85442pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bell, 
+ []
+
+
+Overfull \hbox (23.62497pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) MacKin- 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1997) 
+ []
+
+
+Overfull \hbox (7.19162pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Real 
+ []
+
+
+Overfull \hbox (1.60188pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ter- 
+ []
+
+
+Overfull \hbox (4.90521pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) rate 
+ []
+
+
+Overfull \hbox (2.66302pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mo- 
+ []
+
+
+Overfull \hbox (13.36542pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ments 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (13.5523pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) econo- 
+ []
+
+
+Overfull \hbox (5.92989pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) met- 
+ []
+
+
+Overfull \hbox (4.29669pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) con- 
+ []
+
+
+Overfull \hbox (4.03134pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ven- 
+ []
+
+
+Overfull \hbox (11.46564pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tions.|  
+ []
+
+
+Overfull \hbox (2.2444pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n11 
+ []
+
+
+Overfull \hbox (17.07718pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Stokey, 
+ []
+
+
+Overfull \hbox (1.16608pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Lu- 
+ []
+
+
+Overfull \hbox (1.12125pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cas 
+ []
+
+
+Overfull \hbox (23.33705pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Prescott 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1989) 
+ []
+
+
+Overfull \hbox (2.25534pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Dy- 
+ []
+
+
+Overfull \hbox (13.58856pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) namic 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pro- 
+ []
+
+
+Overfull \hbox (11.40135pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gram- 
+ []
+
+
+Overfull \hbox (9.23294pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ming 
+ []
+
+
+Overfull \hbox (8.37984pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) foun- 
+ []
+
+
+Overfull \hbox (8.74344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tions 
+ []
+
+
+Overfull \hbox (7.05537pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) hind 
+ []
+
+
+Overfull \hbox (1.61127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) the 
+ []
+
+
+Overfull \hbox (6.33804pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Bell- 
+ []
+
+
+Overfull \hbox (6.51074pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) man 
+ []
+
+
+Overfull \hbox (3.27179pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tor.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n12 
+ []
+
+
+Overfull \hbox (17.36887pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Hopen- 
+ []
+
+
+Overfull \hbox (8.68343pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) hayn 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (1992) 
+ []
+
+
+Overfull \hbox (3.67072pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Dis- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (8.1074pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) nam- 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gre- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (7.60004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) logic 
+ []
+
+
+Overfull \hbox (5.44908pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) firm 
+ []
+
+
+Overfull \hbox (3.20793pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) het- 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ero- 
+ []
+
+
+Overfull \hbox (8.65231pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gene- 
+ []
+
+
+Overfull \hbox (1.31696pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ity.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n13 
+ []
+
+
+Overfull \hbox (17.3986pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Maliar, 
+ []
+
+
+Overfull \hbox (15.86641pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Maliar 
+ []
+
+
+Overfull \hbox (19.33685pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Winant 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2021) 
+ []
+
+
+Overfull \hbox (11.23854pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep- 
+ []
+
+
+Overfull \hbox (22.32713pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) learning 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (14.17871pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) strate- 
+ []
+
+
+Overfull \hbox (3.84344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gies 
+ []
+
+
+Overfull \hbox (13.58856pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) namic 
+ []
+
+
+Overfull \hbox (14.16031pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) macro 
+ []
+
+
+Overfull \hbox (8.3852pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mod- 
+ []
+
+
+Overfull \hbox (1.66565pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) els.|  
+ []
+
+
+Overfull \hbox (2.8944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n14 
+ []
+
+
+Overfull \hbox (9.2238pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Sirig- 
+ []
+
+
+Overfull \hbox (8.68878pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) nano 
+ []
+
+
+Overfull \hbox (29.61859pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Spiliopou- 
+ []
+
+
+Overfull \hbox (13.64124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2017-- 
+ []
+
+
+Overfull \hbox (9.99124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2018) 
+ []
+
+
+Overfull \hbox (9.64188pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep 
+ []
+
+
+Overfull \hbox (24.84525pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Galerkin 
+ []
+
+
+Overfull \hbox (20.39977pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) method 
+ []
+
+
+Overfull \hbox (5.46721pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) spir- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.61127pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) the 
+ []
+
+
+Overfull \hbox (6.33804pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Bell- 
+ []
+
+
+Overfull \hbox (6.51074pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) man 
+ []
+
+
+Overfull \hbox (9.82283pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) resid- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ual 
+ []
+
+
+Overfull \hbox (6.07562pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) loss.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n15 
+ []
+
+
+Overfull \hbox (13.2894pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Raissi 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2019) 
+ []
+
+
+Overfull \hbox (21.41412pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Physics- 
+ []
+
+
+Overfull \hbox (25.86566pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) informed 
+ []
+
+
+Overfull \hbox (3.35342pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) loss 
+ []
+
+
+Overfull \hbox (4.9322pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sign 
+ []
+
+
+Overfull \hbox (19.56285pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) market- 
+ []
+
+
+Overfull \hbox (21.23837pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) clearing 
+ []
+
+
+Overfull \hbox (4.29669pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) con- 
+ []
+
+
+Overfull \hbox (22.70302pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) straints.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n16 
+ []
+
+
+Overfull \hbox (5.69441pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Han 
+ []
+
+
+Overfull \hbox (20.26534pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Jentzen 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2017, 
+ []
+
+
+Overfull \hbox (8.6822pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2018, 
+ []
+
+
+Overfull \hbox (9.99124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2025) 
+ []
+
+
+Overfull \hbox (10.01328pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) High- 
+ []
+
+
+Overfull \hbox (38.68732pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) dimensional 
+ []
+
+
+Overfull \hbox (40.26634pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) BSDE/PDE 
+ []
+
+
+Overfull \hbox (16.44202pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) solvers 
+ []
+
+
+Overfull \hbox (9.25105pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) shap- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.84111pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) chi- 
+ []
+
+
+Overfull \hbox (2.11917pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tec- 
+ []
+
+
+Overfull \hbox (5.4496pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ture 
+ []
+
+
+Overfull \hbox (20.44348pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) choices.|  
+ []
+
+
+Overfull \hbox (2.7444pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n17 
+ []
+
+
+Overfull \hbox (3.64452pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Azi- 
+ []
+
+
+Overfull \hbox (11.64906pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) novic, 
+ []
+
+
+Overfull \hbox (6.54237pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Gae- 
+ []
+
+
+Overfull \hbox (6.23878pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gauf 
+ []
+
+
+Overfull \hbox (11.64111pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Schei- 
+ []
+
+
+Overfull \hbox (4.29669pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) deg- 
+ []
+
+
+Overfull \hbox (0.89398pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ger 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2022) 
+ []
+
+
+Overfull \hbox (9.64188pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep 
+ []
+
+
+Overfull \hbox (7.29132pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) equi- 
+ []
+
+
+Overfull \hbox (8.17128pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) rium 
+ []
+
+
+Overfull \hbox (3.20793pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) net- 
+ []
+
+
+Overfull \hbox (12.21616pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) works 
+ []
+
+
+Overfull \hbox (14.13318pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) abling 
+ []
+
+
+Overfull \hbox (0.75766pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) dif- 
+ []
+
+
+Overfull \hbox (0.78503pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) fer- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (21.78273pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) through 
+ []
+
+
+Overfull \hbox (8.41684pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) fixed 
+ []
+
+
+Overfull \hbox (16.91002pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) points.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n18 
+ []
+
+
+Overfull \hbox (8.74367pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Kase 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2024) 
+ []
+
+
+Overfull \hbox (6.7467pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Neu- 
+ []
+
+
+Overfull \hbox (2.66302pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ma- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (5.38545pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) non- 
+ []
+
+
+Overfull \hbox (0.89398pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ear 
+ []
+
+
+Overfull \hbox (49.56747pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) heterogeneous- 
+ []
+
+
+Overfull \hbox (10.86346pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) agent 
+ []
+
+
+Overfull \hbox (8.3852pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) mod- 
+ []
+
+
+Overfull \hbox (6.6954pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) with 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gre- 
+ []
+
+
+Overfull \hbox (5.96687pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gate 
+ []
+
+
+Overfull \hbox (18.32585pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) shocks.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n19 
+ []
+
+
+Overfull \hbox (5.69441pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Han 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2024, 
+ []
+
+
+Overfull \hbox (11.23854pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep- 
+ []
+
+
+Overfull \hbox (14.32494pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) HAM) 
+ []
+
+
+Overfull \hbox (16.37886pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Global 
+ []
+
+
+Overfull \hbox (2.70004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) NN 
+ []
+
+
+Overfull \hbox (16.44202pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) solvers 
+ []
+
+
+Overfull \hbox (49.56747pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) heterogeneous- 
+ []
+
+
+Overfull \hbox (10.86346pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) agent 
+ []
+
+
+Overfull \hbox (15.49251pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) macro; 
+ []
+
+
+Overfull \hbox (21.99643pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) method- 
+ []
+
+
+Overfull \hbox (7.01888pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) olog- 
+ []
+
+
+Overfull \hbox (7.01865pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) com- 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) par- 
+ []
+
+
+Overfull \hbox (4.9322pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) son.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n20 
+ []
+
+
+Overfull \hbox (15.31847pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Payne, 
+ []
+
+
+Overfull \hbox (1.16609pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Re- 
+ []
+
+
+Overfull \hbox (0.80002pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bei 
+ []
+
+
+Overfull \hbox (9.38106pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Yang 
+ []
+
+
+Overfull \hbox (11.57344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2024, 
+ []
+
+
+Overfull \hbox (11.23854pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep- 
+ []
+
+
+Overfull \hbox (12.41931pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) SAM) 
+ []
+
+
+Overfull \hbox (0.64453pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Ac- 
+ []
+
+
+Overfull \hbox (3.75232pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cep- 
+ []
+
+
+Overfull \hbox (10.86688pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tance 
+ []
+
+
+Overfull \hbox (3.57372pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) test 
+ []
+
+
+Overfull \hbox (4.9322pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sign 
+ []
+
+
+Overfull \hbox (3.78879pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) and 
+ []
+
+
+Overfull \hbox (1.57451pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cal- 
+ []
+
+
+Overfull \hbox (3.7794pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) bra- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (9.94722pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) work- 
+ []
+
+
+Overfull \hbox (4.78418pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) flow 
+ []
+
+
+Overfull \hbox (5.92989pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tem- 
+ []
+
+
+Overfull \hbox (15.82126pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) plates.|  
+ []
+
+
+Overfull \hbox (2.2444pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n21 
+ []
+
+
+Overfull \hbox (13.64124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2020-- 
+ []
+
+
+Overfull \hbox (8.6822pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2023, 
+ []
+
+
+Overfull \hbox (12.01112pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) FNO) 
+ []
+
+
+Overfull \hbox (2.6635pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Op- 
+ []
+
+
+Overfull \hbox (10.85722pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) learn- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (1.03014pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cel- 
+ []
+
+
+Overfull \hbox (1.06688pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ate 
+ []
+
+
+Overfull \hbox (12.96532pt too wide) in paragraph at lines 335--335
+\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 ^^V[] \OMS/lmsy/m/n/10 7! 
+ []
+
+
+Overfull \hbox (10.31258pt too wide) in paragraph at lines 335--335
+\OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (-20) )$ 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gre- 
+ []
+
+
+Overfull \hbox (7.60004pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n22 
+ []
+
+
+Overfull \hbox (13.64124pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2019-- 
+ []
+
+
+Overfull \hbox (8.6822pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) 2021, 
+ []
+
+
+Overfull \hbox (11.23854pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Deep- 
+ []
+
+
+Overfull \hbox (13.78055pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ONet) 
+ []
+
+
+Overfull \hbox (1.60188pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ter- 
+ []
+
+
+Overfull \hbox (3.78372pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tive 
+ []
+
+
+Overfull \hbox (17.25452pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) learner 
+ []
+
+
+Overfull \hbox (2.69064pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) gre- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (7.83546pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) func- 
+ []
+
+
+Overfull \hbox (12.50003pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tional 
+ []
+
+
+Overfull \hbox (13.09854pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) maps.|  
+ []
+
+
+Overfull \hbox (2.9944pt too wide) in paragraph at lines 335--335
+[]|\T1/lmr/m/n/10 (-20) n23 
+ []
+
+
+Overfull \hbox (7.02661pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Hou, 
+ []
+
+
+Overfull \hbox (4.77003pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Xue 
+ []
+
+
+Overfull \hbox (14.67755pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) Zhang 
+ []
+
+
+Overfull \hbox (12.88248pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) (2015) 
+ []
+
+
+Overfull \hbox (12.5996pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) factor 
+ []
+
+
+Overfull \hbox (1.60188pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ter- 
+ []
+
+
+Overfull \hbox (3.23503pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) pre- 
+ []
+
+
+Overfull \hbox (4.87784pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tion 
+ []
+
+
+Overfull \hbox (5.6579pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) link- 
+ []
+
+
+Overfull \hbox (1.0666pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ing 
+ []
+
+
+Overfull \hbox (6.2638pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) vest- 
+ []
+
+
+Overfull \hbox (9.22981pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) ment 
+ []
+
+
+Overfull \hbox (3.50723pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) fric- 
+ []
+
+
+Overfull \hbox (8.74344pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) tions 
+ []
+
+
+Overfull \hbox (10.42184pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) cross- 
+ []
+
+
+Overfull \hbox (25.07687pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) sectional 
+ []
+
+
+Overfull \hbox (13.12616pt too wide) in paragraph at lines 335--335
+\T1/lmr/m/n/10 (-20) turns.|  
+ []
+
+c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_15.tex:335: Misplaced \noalign.
+\bottomrule ->\noalign 
+                       {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global...
+l.335 \end{tabularx}
+                    
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 335--335
+[][][]
+ []
+
+
+Overfull \hbox (204.34465pt too wide) in paragraph at lines 330--337
+\T1/lmr/bx/n/10 (-20) Key ref-er-ences and im-ple-men-ta-tion roles. [] 
+ []
+
+
+
+[8]
+
+[9]
+Overfull \vbox (6351.88254pt too high) has occurred while \output is active []
+
+
+
+[10]
+
+[11] (c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_15.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `BSDE_15.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `BSDE_15.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  B23A989DD75DD0E317072E6CD71D797B;2508.
+ ) 
+Here is how much of TeX's memory you used:
+ 29091 strings out of 468134
+ 566482 string characters out of 5430256
+ 1030443 words of memory out of 5000000
+ 56933 multiletter control sequences out of 15000+600000
+ 751246 words of font info for 237 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 116i,13n,121p,2669b,1045s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:\Users\fababa\Dropbox\AssetPricing\DSGE_BSDE\DSGE_BSDE\Tex\.out\BSDE_15.pdf (11 pages, 430771 bytes).
+PDF statistics:
+ 257 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
+ 68621 words of extra memory for PDF output out of 74296 (max. 10000000)
+

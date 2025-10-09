@@ -1,0 +1,120 @@
+=>PYTHONTEX#pycon#default#default#0#console#####1011#
+import sympy as sp
+
+# Generalized symbolic check for the structure of the share dynamics
+s_i, mu_i, mu_C = sp.symbols('s_i mu_i mu_C', real=True)
+sigma_C_sq, sigma_i_sigma_C = sp.symbols('sigma_C_sq sigma_i_sigma_C', real=True)
+
+# Drift (mu_s,i) from Ito's quotient rule
+drift_ito = s_i * (mu_i - mu_C) + s_i * (sigma_C_sq - sigma_i_sigma_C)
+drift_stated = s_i * (mu_i - mu_C + sigma_C_sq - sigma_i_sigma_C)
+assert sp.simplify(drift_ito - drift_stated) == 0
+=>PYTHONTEX#pycon#default#default#1#console#####1026#
+import sympy as sp
+
+C, s_i = sp.symbols('C s_i', positive=True, real=True)
+sigma_C_sq, sigma_i_sigma_C = sp.symbols('sigma_C_sq sigma_i_sigma_C', real=True)
+
+A_Csi = C * s_i * (sigma_i_sigma_C - sigma_C_sq)
+assert A_Csi == C * s_i * (sigma_i_sigma_C - sigma_C_sq)
+=>PYTHONTEX#pycon#default#default#2#console#####1038#
+import sympy as sp
+
+rho, C, mu_C, sigma_C_sq = sp.symbols('rho C mu_C sigma_C_sq', real=True)
+dt_term = -rho; dC_term = -1/C; dCC_term = 2/C**2
+
+drift = dt_term + dC_term * (C*mu_C) + 0.5 * dCC_term * (C**2*sigma_C_sq)
+expected_drift = -(rho + mu_C - sigma_C_sq)
+
+assert sp.simplify(sp.simplify(drift) - expected_drift) == 0
+=>PYTHONTEX#pycon#default#default#3#console#####1052#
+import sympy as sp
+
+s_i, mu_i, mu_C = sp.symbols('s_i mu_i mu_C', real=True)
+sigma_C_sq, sigma_i_sigma_C = sp.symbols('sigma_C_sq sigma_i_sigma_C', real=True)
+
+mu_i_Q = mu_i - sigma_i_sigma_C
+mu_C_Q = mu_C - sigma_C_sq
+
+mu_s_i = s_i * (mu_i - mu_C + sigma_C_sq - sigma_i_sigma_C)
+adjustment = s_i * (sigma_i_sigma_C - sigma_C_sq)
+mu_s_i_Q_Girsanov = mu_s_i - adjustment
+
+mu_s_i_Q_ItoQ = s_i * ((mu_i_Q - mu_C_Q) + sigma_C_sq - sigma_i_sigma_C)
+assert sp.simplify(mu_s_i_Q_Girsanov - mu_s_i_Q_ItoQ) == 0
+
+mu_s_i_Q_Incorrect = s_i * (mu_i_Q - mu_C_Q)
+discrepancy = sp.simplify(mu_s_i_Q_ItoQ - mu_s_i_Q_Incorrect)
+expected_discrepancy = s_i * (sigma_C_sq - sigma_i_sigma_C)
+assert sp.simplify(discrepancy - expected_discrepancy) == 0
+=>PYTHONTEX#pycon#default#default#4#console#####1076#
+import sympy as sp
+
+rho = sp.symbols('rho', positive=True, real=True)
+s_j = sp.symbols('s_j', real=True)
+Aggregate_PC_Ratio = 1/rho
+Derivative_Aggregate = sp.diff(Aggregate_PC_Ratio, s_j)
+assert Derivative_Aggregate == 0
+=>PYTHONTEX#pycon#default#default#5#console#####1088#
+import sympy as sp
+
+rho, t, T = sp.symbols('rho t T', positive=True, real=True)
+u = sp.symbols('u', real=True)
+
+integrand = sp.exp(-rho * (u - t))
+finite_horizon_price = sp.integrate(integrand, (u, t, T))
+
+infinite_horizon_price = sp.limit(finite_horizon_price, T, sp.oo)
+assert infinite_horizon_price == 1 / rho
+=>PYTHONTEX#pycon#default#default#6#console#####1103#
+import sympy as sp
+
+mu, sigma_sq = sp.symbols('mu sigma_sq', real=True)
+drift_logX = (1) * mu + 0.5 * (-1) * sigma_sq
+assert drift_logX == mu - sigma_sq/2
+=>PYTHONTEX#pycon#default#default#7#console#####1113#
+import sympy as sp
+
+s_i, rho = sp.symbols('s_i rho', positive=True)
+B_s, N_y = sp.symbols('B_s N_y', real=True)
+
+g_i_Prior = s_i / rho
+g_i_Ansatz = g_i_Prior + B_s * N_y
+assert g_i_Ansatz.subs(s_i, 0).subs(B_s, 0) == 0
+assert g_i_Ansatz.subs(s_i, 1).subs(B_s, 0) == 1/rho
+=>PYTHONTEX#pycon#default#default#8#console#####1127#
+import sympy as sp
+
+C, g_i = sp.symbols('C g_i', positive=True, real=True)
+sigma_C = sp.symbols('sigma_C', real=True)
+dgi_dsj, sigma_sj = sp.symbols('dgi_dsj sigma_sj', real=True)
+
+Z_structure = g_i * (C*sigma_C) + C*dgi_dsj * sigma_sj
+Z_stated = C * (g_i*sigma_C + dgi_dsj*sigma_sj)
+
+assert sp.simplify(Z_structure - Z_stated) == 0
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-BSDE_31
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|

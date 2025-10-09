@@ -1,0 +1,278 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, mathtools, bm}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[ruled,vlined]{algorithm2e}
+
+% ---------- Macros ----------
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,\, #2 \right\rangle}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\dw}{\Delta W}
+\newcommand{\dwt}{\Delta W^{\mathbb{Q}}}
+\newcommand{\given}{\,\vert\,}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ol}{\overline}
+\newcommand{\bs}{\boldsymbol}
+
+\title{Solving a Two--CRRA--Agent, Five--Tree Lucas Economy via Deep FBSDE with Malliavin--Gradient Regularization, Antithetic Coupling, and Adaptive RQMC}
+\author{Technical Note}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a practical recipe to compute equilibrium prices in a two--CRRA--agent endowment economy with five Lucas trees using a deep forward--backward stochastic differential equation (FBSDE) method. The approach leverages (i) Malliavin/differential regularization to stabilize the BSDE gradient process \(Z_t\), (ii) antithetic path coupling, and (iii) adaptive randomized quasi--Monte Carlo (scrambled Sobol') sampling for variance reduction. We formulate the social planner, derive the state--price density (SPD), risk premia, and risk--neutral dynamics, then solve five linear pricing BSDEs for the tree prices under \(\mathbb{Q}\). We provide training objectives that avoid free \(Y_0\) tuning, implementation advice, and built--in diagnostics. A pentanomial (five--branch) tree discretization variant is noted.
+\end{abstract}
+
+\section{Economic environment}\label{sec:model}
+\paragraph{Endowments (five Lucas trees).}
+There are \(K=5\) dividend streams \(D^k_t>0\), each following a correlated Itô diffusion in \(\R^5\) under the physical measure \(\mathbb{P}\):
+\begin{equation}\label{eq:div-diffusions}
+  \dd D^k_t \;=\; D^k_t\Big( \mu_k\,\dd t + \bs\sigma_k^\top \dd W_t\Big), 
+  \qquad k=1,\dots,5,
+\end{equation}
+where \(W_t\in\R^5\) is a standard Brownian motion with instantaneous covariance matrix \(\Gamma = I_5\) (correlations are embedded in the \(\bs\sigma_k\in\R^5\) loading vectors). Stack dividends as \(\bs D_t=(D^1_t,\dots,D^5_t)^\top\). Aggregate consumption is the single good
+\begin{equation}
+  C_t \;=\; \sum_{k=1}^5 D^k_t .
+\end{equation}
+Then
+\begin{align}
+  \dd C_t \;=\; \mu_C(\bs D_t)\,\dd t + \bs\sigma_C(\bs D_t)^\top \dd W_t,\qquad
+  \mu_C(\bs D) = \sum_{k=1}^5 D^k \mu_k,\quad
+  \bs\sigma_C(\bs D) = \sum_{k=1}^5 D^k \bs\sigma_k .
+\end{align}
+
+\paragraph{Agents.}
+Two infinitely--lived agents \(i\in\{1,2\}\) have time--additive CRRA utilities with common subjective discount rate \(\rho>0\):
+\begin{equation}
+  U_i = \E\Big[ \int_0^T e^{-\rho t}\, u_i(c_{i,t})\,\dd t \Big], 
+  \qquad 
+  u_i(c)=\frac{c^{1-\gamma_i}}{1-\gamma_i}, 
+  \quad \gamma_i>0,\;\gamma_i\neq1.
+\end{equation}
+Markets are complete (five risky assets span five shocks; no frictions). A competitive equilibrium is Pareto efficient.
+
+\paragraph{Planner's problem.}
+Fix Pareto weights \(\lambda_1,\lambda_2>0\). At each \(t\), the planner solves
+\begin{equation}\label{eq:planner-static}
+  \max_{c_{1,t},c_{2,t}} \; \lambda_1 u_1(c_{1,t}) + \lambda_2 u_2(c_{2,t})
+  \quad\text{s.t.}\quad c_{1,t}+c_{2,t}=C_t.
+\end{equation}
+FOC yield a common multiplier \(\psi_t>0\) such that
+\begin{equation}\label{eq:FOC}
+  \lambda_i u_i'(c_{i,t}) = \lambda_i c_{i,t}^{-\gamma_i} = \psi_t,
+  \qquad i=1,2.
+\end{equation}
+Therefore \(c_{i,t} = \big(\lambda_i/\psi_t\big)^{1/\gamma_i}\) and, using feasibility, \(\psi_t=\psi(C_t)\) is defined implicitly by
+\begin{equation}\label{eq:psi-implicit}
+  C_t \;=\; \sum_{i=1}^2 \Big(\frac{\lambda_i}{\psi_t}\Big)^{1/\gamma_i}.
+\end{equation}
+When \(\gamma_1=\gamma_2=\gamma\), the allocation is linear: \(c_{i,t} = \alpha_i C_t\) with \(\alpha_i=\lambda_i^{1/\gamma}/(\lambda_1^{1/\gamma}+\lambda_2^{1/\gamma})\), and
+\begin{equation}\label{eq:psi-equal-gamma}
+  \psi_t \;=\; \Big(\lambda_1^{1/\gamma}+\lambda_2^{1/\gamma}\Big)^{\gamma}\, C_t^{-\gamma}.
+\end{equation}
+
+\paragraph{State price density (SPD).}
+Let \(M_t\) denote the SPD. In a time--additive planner with constraint \eqref{eq:planner-static}, the Lagrange multiplier delivers
+\begin{equation}\label{eq:spd}
+  M_t = e^{-\rho t}\,\psi_t \;=\; e^{-\rho t}\,\psi(C_t).
+\end{equation}
+Write the diffusion of \(C_t\) as above, and consider \(\psi(C)\) as a \(C^2\) function. Using Itô, define
+\begin{align}
+  \psi'(C) &:= \frac{\dd \psi}{\dd C}, 
+  & \psi''(C) &:= \frac{\dd^2 \psi}{\dd C^2}, \\
+  \mu_\psi(C,\bs D) &:= \psi'(C)\,\mu_C(\bs D) + \tfrac{1}{2}\psi''(C)\,\norm{\bs\sigma_C(\bs D)}^2, 
+  & \bs\sigma_\psi(C,\bs D) &:= \psi'(C)\,\bs\sigma_C(\bs D).
+\end{align}
+Then the \(\mathbb{P}\)--dynamics of \(M_t\) is
+\begin{equation}\label{eq:spd-dynamics}
+  \frac{\dd M_t}{M_t} \;=\; -r_t\,\dd t \;-\; \bs\theta_t^\top \dd W_t,
+  \quad 
+  \bs\theta_t \;=\; -\frac{\bs\sigma_\psi}{\psi}(C_t,\bs D_t) 
+  \;=\; -\frac{\psi'(C_t)}{\psi(C_t)}\,\bs\sigma_C(\bs D_t),
+  \quad 
+  r_t \;=\; \rho - \frac{\mu_\psi}{\psi}(C_t,\bs D_t).
+\end{equation}
+In the equal--risk--aversion case \eqref{eq:psi-equal-gamma}, these simplify to
+\begin{equation}\label{eq:theta-r-equal-gamma}
+  \bs\theta_t \;=\; \frac{\gamma}{C_t}\,\bs\sigma_C(\bs D_t),
+  \qquad
+  r_t \;=\; \rho + \frac{\gamma\,\mu_C(\bs D_t)}{C_t} - \frac{\gamma(\gamma+1)}{2}\frac{\norm{\bs\sigma_C(\bs D_t)}^2}{C_t^2}.
+\end{equation}
+
+\section{Risk--neutralization and asset--pricing BSDEs}
+Define the risk--neutral measure \(\mathbb{Q}\) by the density \(M_t/M_0\). Under \(\mathbb{Q}\),
+\begin{equation}
+  \dd W_t^{\mathbb{Q}} = \dd W_t + \bs\theta_t\,\dd t,
+\end{equation}
+and each dividend process satisfies
+\begin{equation}\label{eq:D-under-Q}
+  \dd D^k_t \;=\; D^k_t\Big( \mu^Q_k(t,\bs D_t)\,\dd t + \bs\sigma_k^\top \dd W_t^{\mathbb{Q}}\Big),\qquad
+  \mu^Q_k(t,\bs D) := \mu_k - \bs\sigma_k^\top \bs\theta_t.
+\end{equation}
+Let \(P^k_t\) denote the ex--dividend price of tree \(k\) (terminal value \(P^k_T=0\), running dividend \(D^k_t\)). Its \(\mathbb{Q}\)--pricing PDE is linear:
+\begin{equation}\label{eq:PDE}
+  \partial_t u^k + \mathcal{L}^{\mathbb{Q}} u^k - r\,u^k + D^k = 0,\qquad u^k(T,\cdot)=0,
+\end{equation}
+where \(\mathcal{L}^{\mathbb{Q}}\) is the generator of \((\bs D_t)\) under \(\mathbb{Q}\). The equivalent BSDE is, for \(t\le T\),
+\begin{equation}\label{eq:BSDE}
+  Y^{k}_t 
+  \;=\; 
+  \int_t^T \Big( r_s\,Y^{k}_s - D^k_s\Big)\,\dd s \;-\; \int_t^T \big(\bs Z^{k}_s\big)^\top \dd W^{\mathbb{Q}}_s,
+  \qquad P^k_t = Y^k_t.
+\end{equation}
+We solve \eqref{eq:BSDE} for all \(k=1,\dots,5\) simultaneously with a single network (multi--task heads).
+
+\section{Time discretization}
+Let \(0=t_0<t_1<\cdots<t_N=T\) with \(t_{n+1}-t_n=\dt\). Denote path states by \(\bs X_n:=(\bs D_{t_n})\) and, when needed, augment with \(C_n=\sum_k D^k_{t_n}\). Simulate \((\bs X_n)\) under \(\mathbb{Q}\) using Euler--Maruyama:
+\begin{equation}\label{eq:forward-euler}
+  D^k_{n+1} = D^k_n\Big(1 + \mu^Q_k(t_n,\bs X_n)\,\dt + \bs\sigma_k^\top \dwt_n \Big),\qquad
+  \dwt_n \sim \mathcal{N}(\bs 0,\,\dt\, I_5)\ \text{ i.i.d.}
+\end{equation}
+(Using \(\mathbb{Q}\) ensures a linear BSDE drift for \(Y\).)
+
+Discretize \eqref{eq:BSDE} in residual form:
+\begin{equation}\label{eq:bsde-resid}
+  \mathcal{R}^{k}_n 
+   := \wh Y^k_{n+1} - \wh Y^k_{n} + \Big(r_n\,\wh Y^k_n - D^k_n\Big)\dt - \big(\wh{\bs Z}^{k}_n\big)^\top \dwt_n,
+  \quad n=0,\dots,N-1,
+\end{equation}
+with terminal condition \(\wh Y^k_N = 0\). Here \(\wh Y^k_n\) and \(\wh{\bs Z}^k_n\) are network outputs at \((t_n,\bs X_n)\).
+
+\section{Networks and \emph{differential} (Malliavin) regularization}\label{sec:diff-regularization}
+We parameterize a shared spatio--temporal representation \(\Phi_\vartheta(t,\bs X)\) with two task--heads per asset:
+\[
+  \wh Y^k_n = h^{(Y)}_{\phi_k}\!\big(\Phi_\vartheta(t_n,\bs X_n)\big),
+  \qquad
+  \wh{\bs Z}^k_n = h^{(Z)}_{\psi_k}\!\big(\Phi_\vartheta(t_n,\bs X_n)\big)\in\R^5.
+\]
+Let \(u^k_{\Theta}(t,\bs X):=h^{(Y)}_{\phi_k}(\Phi_\vartheta(t,\bs X))\) with \(\Theta=(\vartheta,\{\phi_k,\psi_k\}_{k=1}^5)\).
+By the Malliavin/Markov relation for semilinear BSDEs, the true \(Z\) satisfies 
+\(
+  \bs Z^{k} = \nabla_{\bs X} u^k\cdot \bs\sigma^{\mathbb{Q}}(\bs X)
+\)
+where \(\bs\sigma^{\mathbb{Q}}\) stacks the columns that map \(\dwt\) to \(\dd \bs X\). We introduce a \emph{gradient consistency} penalty:
+\begin{equation}\label{eq:malliavin-penalty}
+  \mathcal{L}_{\mathrm{Mall}} 
+  \;=\; \sum_{k=1}^5 \sum_{n=0}^{N-1} 
+  \lambda_n \,\Big\lVert \wh{\bs Z}^k_n 
+  - \Big(\nabla_{\bs X} u^k_{\Theta}(t_n,\bs X_n)\Big)\, \bs\sigma^{\mathbb{Q}}(t_n,\bs X_n) \Big\rVert^2,
+\end{equation}
+with an annealed schedule \(\lambda_n\) (start large, decay).
+
+\section{Losses without free \(Y_0\)}
+We avoid a free \(Y_0\) scalar by predicting \(Y\) at all times and penalizing both the terminal boundary and the pathwise BSDE residuals:
+\begin{equation}\label{eq:loss}
+  \mathcal{L}_{\mathrm{BSDE}}
+  \;=\; \frac{1}{B}\sum_{b=1}^B \sum_{k=1}^5 
+  \Bigg[
+    \underbrace{\big\lVert \wh Y^{k,(b)}_N - 0 \big\rVert^2}_{\text{terminal}}
+    \;+\;
+    \sum_{n=0}^{N-1} w_n \,\big\lVert \mathcal{R}^{k,(b)}_n \big\rVert^2
+  \Bigg],
+\end{equation}
+and the total objective is
+\begin{equation}\label{eq:total-loss}
+  \mathcal{L}_{\text{total}} \;=\; \mathcal{L}_{\mathrm{BSDE}} + \mathcal{L}_{\mathrm{Mall}}.
+\end{equation}
+Here \(B\) is the mini--batch size, \(w_n\) are residual weights (e.g., uniform or linearly increasing towards maturity).
+
+\section{Variance reduction: RQMC and antithetics}\label{sec:variance}
+\paragraph{Adaptive scrambled Sobol'.}
+Replace i.i.d.\ Gaussians by a scrambled Sobol' net in \([0,1]^{5N}\), mapped via inverse normal to obtain \(\dwt_n\). Increase either the number of points or the scramble depth across epochs (\emph{adaptive RQMC}). Use a fixed seed per epoch to stabilize the optimizer.
+
+\paragraph{Antithetic coupling.}
+For each Sobol' point \(U\), add its antithetic \(1-U\); equivalently, for Gaussian shocks pair \(\dwt_n\) with \(-\dwt_n\) pathwise. Average residuals within each pair before backpropagation. This greatly reduces variance in \(\wh Y\) and \(\wh{\bs Z}\).
+
+\section{Algorithmic recipe}
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\SetAlgoLined
+\KwIn{Horizon \(T\), steps \(N\), batch size \(B\), model params \(\{\mu_k,\bs\sigma_k\}_{k=1}^5\), CRRA \(\{\gamma_i,\lambda_i\}_{i=1}^2\), discount \(\rho\).}
+\KwOut{Trained \(\Theta\) that maps \((t,\bs X)\mapsto \{P^k=\wh Y^k, \wh{\bs Z}^k\}_{k=1}^5\).}
+Precompute \(\psi(C)\), \(\psi'(C)\), \(\psi''(C)\) either in closed form (if \(\gamma_1=\gamma_2\)) or via a robust 1D root solver with automatic differentiation.\;
+\For{epoch \(=1,\dots,E\)}{
+  Generate \(B\) pairs of RQMC paths under \(\mathbb{Q}\): for each pair, sample Sobol' point(s) in \([0,1]^{5N}\), scramble, map to \(\dwt_n\), and create antithetic \(-\dwt_n\).\;
+  \For{each path \(b=1,\dots,2B\)}{
+    Simulate forward \(\bs X^{(b)}_0 \to \bs X^{(b)}_N\) with \eqref{eq:forward-euler}, using \(r_n\) from \eqref{eq:spd-dynamics} and \(\mu^Q_k\) from \eqref{eq:D-under-Q}.\;
+    Evaluate network \(u^k_\Theta\) and \(h^{(Z)}\) along the path to obtain \(\wh Y^{k,(b)}_n,\,\wh{\bs Z}^{k,(b)}_n\).\;
+    Form residuals \(\mathcal{R}^{k,(b)}_n\) via \eqref{eq:bsde-resid}; compute the Malliavin penalty \eqref{eq:malliavin-penalty} with \(\nabla_{\bs X} u^k_\Theta\) from auto--diff.\;
+  }
+  For each antithetic pair, average losses before gradient accumulation.\;
+  Update \(\Theta\) by minimizing \(\mathcal{L}_{\text{total}}\) \eqref{eq:total-loss} (Adam or similar; gradient clipping recommended). Optionally anneal \(\lambda_n\) and increase RQMC resolution.\;
+}
+\caption{Deep FBSDE solver for five tree prices with differential regularization, antithetics, and adaptive RQMC.}
+\end{algorithm}
+
+\section{Recovering equilibrium objects and checks}
+After training, the price of tree \(k\) at state \((t,\bs X)\) is \(P^k(t,\bs X)=u^k_\Theta(t,\bs X)\). The dividend yield and risk premia follow from \eqref{eq:D-under-Q}, \eqref{eq:spd-dynamics}. Useful diagnostics:
+\begin{enumerate}[leftmargin=*, itemsep=0.25em]
+  \item \textbf{BSDE closure:} pathwise residual norms \(\norm{\mathcal{R}^k_n}\) are small and stable across time.
+  \item \textbf{Gradient consistency:} the Malliavin gap \(\norm{\wh{\bs Z}^k_n - (\nabla_{\bs X} u^k_\Theta)\,\bs\sigma^{\mathbb{Q}}}\) decays during training.
+  \item \textbf{No--arbitrage:} Euler checks under \(\mathbb{P}\): confirm \(\E_t^\mathbb{P}[M_{t+\dt} (P^k_{t+\dt}+D^k_{t+\dt})]/M_t \approx P^k_t\).
+  \item \textbf{Aggregation:} verify \( \sum_{k=1}^5 P^k_t \) against the price of the aggregate consumption claim priced by a single BSDE with running payoff \(C_t\).
+\end{enumerate}
+
+\section{Practical notes}\label{sec:practical}
+\begin{itemize}[leftmargin=*, itemsep=0.35em]
+  \item \textbf{State choice.} Use \(\bs X=(\log \bs D, \log C)\) or \((\bs D, C)\). Including \(C\) explicitly stabilizes \(\psi(C)\) and \(r_t\) evaluations.
+  \item \textbf{Equal--\(\gamma\) fast path.} If \(\gamma_1=\gamma_2=\gamma\), use the closed forms \eqref{eq:psi-equal-gamma}--\eqref{eq:theta-r-equal-gamma}. This considerably simplifies \(r_t\) and \(\bs\theta_t\).
+  \item \textbf{Two--head vs.\ single--head.} A single head \(u_\Theta^k\) with \( \wh{\bs Z}^k = (\nabla_{\bs X} u^k_\Theta)\,\bs\sigma^{\mathbb{Q}} \) \emph{enforces} gradient consistency but may be memory--heavier; the two--head + penalty in \eqref{eq:malliavin-penalty} is often more stable early on.
+  \item \textbf{Loss weights.} Start with \(w_n\equiv 1\) and \(\lambda_n=\lambda_0\) large (e.g., \(10^{-1}\)), halve \(\lambda_n\) every few epochs once residuals plateau.
+  \item \textbf{RQMC schedule.} Begin with a modest number of Sobol' points per epoch, then double every \(S\) epochs. Keep one scramble per epoch fixed to decouple optimizer noise from sampler noise.
+  \item \textbf{Antithetic batching.} Average losses and residuals across each antithetic pair before backpropagation; this is more effective than simply doubling the batch size.
+  \item \textbf{Gradient clipping \& LR.} Clip global norm (e.g., at 1--5); use a warmup and cosine decay or step decay; monitor the Malliavin gap to tune \(\lambda_n\).
+\end{itemize}
+
+\section{Appendix A: Computing \(\psi(C)\), \(\psi'(C)\), \(\psi''(C)\) for general \(\gamma_1\neq\gamma_2\)}
+Let \(a_i:=\lambda_i^{1/\gamma_i}\). From \eqref{eq:psi-implicit}, define \(\phi(\psi):=\sum_{i=1}^2 a_i \psi^{-1/\gamma_i}\) so that \(C=\phi(\psi)\).
+Then
+\begin{equation}
+  \phi'(\psi) = \sum_{i=1}^2 \Big(-\frac{a_i}{\gamma_i}\Big)\psi^{-1/\gamma_i-1},\qquad
+  \phi''(\psi) = \sum_{i=1}^2 \frac{a_i}{\gamma_i}\Big(\frac{1}{\gamma_i}+1\Big)\psi^{-1/\gamma_i-2}.
+\end{equation}
+By inversion,
+\begin{equation}
+  \psi'(C) = \frac{\dd \psi}{\dd C} = \frac{1}{\phi'(\psi)} 
+  \;=\; -\Bigg[\sum_{i=1}^2 \frac{a_i}{\gamma_i}\psi^{-1/\gamma_i-1}\Bigg]^{-1} < 0,
+\end{equation}
+and
+\begin{equation}
+  \psi''(C) = -\frac{\phi''(\psi)}{\big(\phi'(\psi)\big)^3}.
+\end{equation}
+Plug into \eqref{eq:spd-dynamics} to obtain \(r_t\) and \(\bs\theta_t\). For equal \(\gamma\), \eqref{eq:psi-equal-gamma} yields \(\psi'(C)=-\gamma\,\psi/C\) and \(\psi''(C)=\gamma(\gamma+1)\psi/C^2\), recovering \eqref{eq:theta-r-equal-gamma}.
+
+\section{Appendix B: A pentanomial (five--branch) variant}\label{subsec:pentanomial-variant}
+If you intended ``five--tree'' as a per--step pentanomial discretization of \(\mathcal{N}(0,\dt)\), replace RQMC by the symmetric scheme with increments 
+\(\{\,-2,-1,0,1,2\,\}\sqrt{\dt}\) and probabilities 
+\(p_{\pm2}=1/6\), \(p_{\pm1}=1/6\), \(p_{0}=1/3\).
+This matches mean \(0\), variance \(\dt\), and fourth moment \(3\dt^2\).
+Antithetics are obtained by flipping each token \(j\mapsto -j\) along the path. The BSDE loss \eqref{eq:total-loss} is unchanged.
+
+\section{Minimal checklist (TL;DR)}
+\begin{enumerate}[leftmargin=*, itemsep=0.35em]
+  \item Specify \(\{\mu_k,\bs\sigma_k\}_{k=1}^5\), \(\{\gamma_i,\lambda_i\}_{i=1}^2\), \(\rho\), \(T,N\).
+  \item Precompute \(\psi(C),\psi'(C),\psi''(C)\) (closed form if \(\gamma_1=\gamma_2\)).
+  \item Build \(r_t\) and \(\bs\theta_t\) from \eqref{eq:spd-dynamics}; get \(\mu_k^{\mathbb{Q}}\) via \eqref{eq:D-under-Q}.
+  \item Train a multi--head BSDE network with residual loss \eqref{eq:loss} + Malliavin penalty \eqref{eq:malliavin-penalty}.
+  \item Use scrambled Sobol' + antithetics; anneal \(\lambda_n\); monitor residuals and Malliavin gaps.
+  \item Read off \(P^k=u^k_\Theta\) and validate with Euler/SPD checks.
+\end{enumerate}
+
+\end{document}

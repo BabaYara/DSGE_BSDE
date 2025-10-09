@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  18 SEP 2025 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.22)  20 SEP 2025 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_13.tex
-(c:/Users/fababa/Dropbox/AssetPricing/DSGE_BSDE/DSGE_BSDE/Tex/BSDE_13.tex
+**./Tex/BSDE_13.tex
+(Tex/BSDE_13.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -856,6 +856,7 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
    defining Unicode char U+03B7 (decimal 951)
    defining Unicode char U+2248 (decimal 8776)
    defining Unicode char U+2207 (decimal 8711)
+   defining Unicode char U+2202 (decimal 8706)
    defining Unicode char U+2194 (decimal 8596)
    defining Unicode char U+2212 (decimal 8722)
    defining Unicode char U+2260 (decimal 8800)
@@ -1555,35 +1556,35 @@ Package cleveref Info: no abbreviation of names on input line 7852.
 )
 ==> First Aid for cleveref.sty applied!
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 307.
+h' as default language. on input line 308.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 30
-7.
+8.
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (BSDE_13.aux)
 \openout1 = `BSDE_13.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 308.
+LaTeX Font Info:    ... okay on input line 308.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1656,13 +1657,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \microtypecontext on input line 307.
-Package microtype Info: Applying patch `item' on input line 307.
-Package microtype Info: Applying patch `toc' on input line 307.
-Package microtype Info: Applying patch `eqnum' on input line 307.
-Package microtype Info: Applying patch `footnote' on input line 307.
-Package microtype Info: Applying patch `verbatim' on input line 307.
-LaTeX Info: Redefining \microtypesetup on input line 307.
+LaTeX Info: Redefining \microtypecontext on input line 308.
+Package microtype Info: Applying patch `item' on input line 308.
+Package microtype Info: Applying patch `toc' on input line 308.
+Package microtype Info: Applying patch `eqnum' on input line 308.
+Package microtype Info: Applying patch `footnote' on input line 308.
+Package microtype Info: Applying patch `verbatim' on input line 308.
+LaTeX Info: Redefining \microtypesetup on input line 308.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1683,7 +1684,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 307.
+or `english'. on input line 308.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1699,41 +1700,41 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'BSDE_13.bbl' found.
  (BSDE_13.bbl)
-Package biblatex Info: Reference section=0 on input line 307.
-Package biblatex Info: Reference segment=0 on input line 307.
+Package biblatex Info: Reference section=0 on input line 308.
+Package biblatex Info: Reference segment=0 on input line 308.
 \c@lstlisting=\count560
-Package hyperref Info: Link coloring ON on input line 307.
+Package hyperref Info: Link coloring ON on input line 308.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-09.
+10.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-09.
+10.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-309.
+310.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-309.
+310.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 309.
+(Font)              <12> on input line 310.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 309.
+(Font)              <8> on input line 310.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 309.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 309
+(Font)              <6> on input line 310.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 310
 .
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1742,7 +1743,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 309
+LaTeX Font Info:    Trying to load font information for U+msb on input line 310
 .
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1752,11 +1753,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 312.
+(Font)              <10> on input line 313.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 312.
+(Font)              <7> on input line 313.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 312.
+(Font)              <5> on input line 313.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1797,7 +1798,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [2]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 3
-28.
+29.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1806,7 +1807,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-34.
+35.
 
 (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1815,7 +1816,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [3
 
 {C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (236.08328pt too wide) in alignment at lines 435--435
+Overfull \hbox (236.08328pt too wide) in alignment at lines 436--436
 [][][] 
  []
 
@@ -1824,13 +1825,8 @@ Overfull \hbox (236.08328pt too wide) in alignment at lines 435--435
 [4
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 515.
-
-
-[5]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-545.
+494.
  (C:\Users\fababa\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1841,7 +1837,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package microtype Info: Character `texttrademark ' is missing
 (microtype)             in font `TS1/lmtt/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 535.
 
+
+[5]
 
 [6]
 
@@ -1869,7 +1869,7 @@ Package microtype Info: Character `texttrademark ' is missing
 
 [18]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1145.
+(Font)              <9> on input line 1151.
 
 
 [19]
@@ -1880,9 +1880,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [22]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1373.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1379.
 
-Overfull \hbox (194.67416pt too wide) in alignment at lines 1391--1391
+Overfull \hbox (194.67416pt too wide) in alignment at lines 1397--1397
 [][] 
  []
 
@@ -1915,14 +1915,14 @@ Overfull \hbox (194.67416pt too wide) in alignment at lines 1391--1391
 [35]
 
 [36]
+
+[37]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 2080.
+nput line 2114.
 
-
-[37]
 
 [38]
 
@@ -1938,12 +1938,36 @@ nput line 2080.
 
 [44]
 
+LaTeX Warning: Citation 'zhang_2005_value_premium' on page 45 undefined on inpu
+t line 2427.
+
+
+LaTeX Warning: Citation 'zhang_2005_value_premium' on page 45 undefined on inpu
+t line 2436.
+
+
+
 [45]
 
 [46]
 
 [47]
-Overfull \hbox (104.00717pt too wide) detected at line 2626
+
+[48]
+
+LaTeX Warning: Citation 'zhang_2005_value_premium' on page 49 undefined on inpu
+t line 2668.
+
+
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+Overfull \hbox (104.00717pt too wide) detected at line 2914
 [] \OMS/lmsy/m/n/10.95 T\OT1/lmr/m/n/10.95 [\OML/lmm/m/it/10.95 D[]mU\OT1/lmr/m
 /n/10.95 ](\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) \OML/lmm/m/it/10.95 m\OT
 1/lmr/m/n/10.95 (d\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.
@@ -1961,22 +1985,9 @@ lmr/m/n/10.95 (d\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 )\OML/lmm/m/it/10.95
 
 
 
-[48]
-
-[49]
-
-[50]
-
-[51]
-
-[52]
-
 [53]
 
 [54]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2939.
-
 
 [55]
 
@@ -1989,22 +2000,15 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
 [59]
 
 [60]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 3227.
+
 
 [61]
 
 [62]
-Overfull \hbox (217.29623pt too wide) in alignment at lines 3351--3351
-[][][] 
- []
-
-
 
 [63]
-Overfull \hbox (283.6717pt too wide) in alignment at lines 3441--3441
-[][][][] 
- []
-
-
 
 [64]
 
@@ -2013,7 +2017,7 @@ Overfull \hbox (283.6717pt too wide) in alignment at lines 3441--3441
 [66]
 
 [67]
-Overfull \hbox (1.21292pt too wide) in alignment at lines 3676--3676
+Overfull \hbox (217.29623pt too wide) in alignment at lines 3641--3641
 [][][] 
  []
 
@@ -2022,63 +2026,157 @@ Overfull \hbox (1.21292pt too wide) in alignment at lines 3676--3676
 [68]
 
 [69]
+Overfull \hbox (283.6717pt too wide) in alignment at lines 3731--3731
+[][][][] 
+ []
+
+
 
 [70]
 
 [71]
 
-[72] (BSDE_13.aux)
+[72]
+
+[73]
+Overfull \hbox (1.21292pt too wide) in alignment at lines 3966--3966
+[][][] 
+ []
+
+
+
+[74]
+
+[75]
+
+[76]
+
+[77]
+
+[78] (BSDE_13.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'BSDE_13.run.xml'.
 \openout1 = `BSDE_13.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61121 strings out of 468134
- 1426793 string characters out of 5430256
- 2681687 words of memory out of 5000000
- 87959 multiletter control sequences out of 15000+600000
- 798079 words of font info for 379 fonts, out of 8000000 for 9000
+ 61207 strings out of 468134
+ 1428002 string characters out of 5430256
+ 2630692 words of memory out of 5000000
+ 88004 multiletter control sequences out of 15000+600000
+ 798126 words of font info for 379 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,21n,121p,1261b,2877s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.p
-fb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.
-pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.
-pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc1
-0.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex
-10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
-i10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-mi12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mr10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mr12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mr17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mr5.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-r6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
-7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8
-.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.
-pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
-.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssb
-x10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-sy10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-msy6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-msy7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-msy8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-msy9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mtk10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmtt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/symbols/msam10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on BSDE_13.pdf (72 pages, 994456 bytes).
+ 116i,21n,121p,1206b,2831s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{equation.403} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{tcb@cnt@lemma.311} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{tcb@cnt@proposition.404} has been referenced but do
+es not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{tcb@cnt@definition.402} has been referenced but doe
+s not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.418} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.405} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.401} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.400} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.399} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.319} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.316} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.313} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.312} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.308} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.302} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.298} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.317} has been referenced but does not exis
+t, replaced by a fixed one
+
+<C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb
+><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pf
+b><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.
+pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
+.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi1
+0.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
+12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+12.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+17.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+5.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6
+.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.
+pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.p
+fb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pf
+b><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.p
+fb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx1
+0.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy
+10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
+y6.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
+y7.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
+y8.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
+y9.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmt
+k10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+tt10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mtti10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msam10.pfb><C:/Users/fababa/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on BSDE_13.pdf (78 pages, 1038686 bytes).
 PDF statistics:
- 1168 PDF objects out of 1200 (max. 8388607)
- 504 named destinations out of 1000 (max. 500000)
+ 1242 PDF objects out of 1440 (max. 8388607)
+ 545 named destinations out of 1000 (max. 500000)
  96269 words of extra memory for PDF output out of 106986 (max. 10000000)
 

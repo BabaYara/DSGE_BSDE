@@ -1,0 +1,22 @@
+# Ignore Lean4 Lake build artifacts and dependencies
+lean/.lake/
+lean/build/
+lean/deps/
+
+# Optional: common build caches
+.lake/
+/build/
+/deps/
+
+# Latex build artifacts (already in repo, but safe to exclude from Dropbox too)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+_minted-*/
