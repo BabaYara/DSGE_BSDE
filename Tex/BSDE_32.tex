@@ -397,7 +397,8 @@ We generalize the standard Lucas economy to $N$ trees driven by $d$ shocks. We f
 \begin{tcolorbox}[mathstyle]
   	\textbf{Rigor Check: GBM Formalization.} The assumption that dividends follow Geometric Brownian Motion (GBM) is standard but strong. We provide a formal definition of the stochastic process structure.
   \begin{leanproof}[title={Definition: Geometric Brownian Motion Structure}]
-  Lean stub recorded in Appendix~A.7.
+  Lean bookkeeping for this stochastic process model is staged in the blueprint; the
+  formal development remains a tracked TODO.
   \end{leanproof}
     
   	\textbf{Computational Implications of GBM.} The GBM assumption (constant coefficients $\mu_i, \bm{\sigma}_i$) is critical for the computational strategy. It allows for exact simulation of the underlying state dynamics when transformed into log-ratio coordinates (see \cref{sec:computation:log_ratios}), eliminating discretization error in the forward process of the FBSDE solver.
@@ -414,7 +415,8 @@ The share vector $\bm{s}_t$ lives on the $(N-1)$-dimensional unit simplex $\Delt
 \begin{tcolorbox}[mathstyle,title={State Space Transformation}]
 The transformation $\mathcal{T}: \R_+^N \to \R_+ \times \Delta^{N-1}$ defined by $\bm{D}\mapsto(C,\bm{s})$ is a bijection (a diffeomorphism). This allows us to analyze the dynamics in the reduced coordinate system without loss of information.
 \begin{leanproof}[title={Formal Definition: State Space and Simplex}]
-Lean stub recorded in Appendix~A.7.
+Lean formalization of the simplex chart is recorded in the blueprint backlog; the
+Lean code excerpts below focus on the algebraic components already verified.
 \end{leanproof}
 
 \begin{tcolorbox}[didacticstyle]
@@ -469,29 +471,7 @@ Aggregate consumption satisfies
 \begin{tcolorbox}[mathstyle]
 \textbf{Rigor Check: Aggregate Consumption Drift.} Summing the dividend diffusions and weighting by the shares underpins Lemma~\ref{lem:C}. A matching Lean skeleton is tracked in Appendix~A.7 while the blueprint pipeline is staged.
   \begin{leanproof}[title={Lean status: Aggregate consumption dynamics (\cref{lem:C})}]
-    \begin{lstlisting}[language=Lean]
-lemma aggregate_consumption_drift
-    {? d : Type*} [Fintype ?] [DecidableEq ?] [Fintype d]
-    (dividend : ? ? ?) (drift : ? ? ?) (diff : ? ? d ? ?)
-    (C : ?) (hC : C = ? i, dividend i) (hC_ne : C ? 0) :
-    let share : ? ? ? := fun i => dividend i / C
-    let driftC : ? := ? i, share i * drift i
-    let diffC : d ? ? := fun j => ? i, share i * diff i j
-    in (? i, share i = 1)
-      ? driftC = (1 / C) * ? i, dividend i * drift i
-      ? diffC = fun j => (1 / C) * ? i, dividend i * diff i j := by
-  classical
-  intro share driftC diffC
-  constructor
-  ? simp [share, driftC, diffC, hC, hC_ne, div_eq_mul_inv, Finset.mul_sum, mul_comm,
-      mul_left_comm, mul_assoc]
-  ? constructor
-    ? simp [driftC, share, div_eq_mul_inv, Finset.mul_sum, mul_comm, mul_left_comm,
-        mul_assoc]
-    ? funext j
-      simp [diffC, share, div_eq_mul_inv, Finset.mul_sum, mul_comm, mul_left_comm,
-        mul_assoc]
-    \end{lstlisting}
+    \leanfile[firstline=41,lastline=62]{lean/LucasNotes.lean}
   \end{leanproof}
 \end{tcolorbox}
 
@@ -508,7 +488,7 @@ The share process $s_{i,t}$ for tree $i$ obeys $\diff s_{i,t}=\mu_{s,i}(\bm{s}_t
 \begin{tcolorbox}[mathstyle]
   	\textbf{Rigor Check: It\^o's Quotient Rule.} The derivation relies on the precise application of It\^o's quotient rule, particularly the covariance terms that adjust the drift.
   \begin{leanproof}[title={Algebraic Structure of It\^o's Quotient Rule (\cref{lem:s})}]
-  The algebraic identity underlying the drift calculation is mirrored by a Lean snippet listed in Appendix~A.7 (see \cref{app:verification_artifacts}).
+    \leanfile[firstline=15,lastline=20]{lean/LucasNotes.lean}
   \end{leanproof}
 \end{tcolorbox}
 
@@ -575,7 +555,7 @@ The short rate is
 and the market price of risk is $\bm{\lambda}(\bm{s}_t)=\gamma\,\bm{\sigma}_C(\bm{s}_t)$.
 
 \begin{leanproof}[title={SDF Definition in the Log-Utility Benchmark}]
-Lean notes currently verify the $\gamma=1$ specialization (log utility); the CRRA case follows by the same calculation with $\gamma$ carried symbolically.
+  \leanfile[firstline=25,lastline=29]{lean/LucasNotes.lean}
 \end{leanproof}
 (Proof in \cref{app:proof:prop:sdf}.)
 \end{proposition}
@@ -1726,157 +1706,39 @@ assert sp.simplify(residual_Q - residual_P) == 0
 \subsubsection{Lean4 Formalization (Partial)}\label{app:lean_suite}
 
 \begin{leanproof}[title={A.7.11: Aggregate Consumption Drift (Ref: \cref{lem:C})}, label={lean:lemmaC_drift}]
-\begin{lstlisting}[language=Lean]
-lemma aggregate_consumption_drift
-    {? d : Type*} [Fintype ?] [DecidableEq ?] [Fintype d]
-    (dividend : ? ? ?) (drift : ? ? ?) (diff : ? ? d ? ?)
-    (C : ?) (hC : C = ? i, dividend i) (hC_ne : C ? 0) :
-    let share : ? ? ? := fun i => dividend i / C
-    let driftC : ? := ? i, share i * drift i
-    let diffC : d ? ? := fun j => ? i, share i * diff i j
-    in (? i, share i = 1)
-      ? driftC = (1 / C) * ? i, dividend i * drift i
-      ? diffC = fun j => (1 / C) * ? i, dividend i * diff i j := by
-  classical
-  intro share driftC diffC
-  constructor
-  ? simp [share, driftC, diffC, hC, hC_ne, div_eq_mul_inv, Finset.mul_sum, mul_comm,
-      mul_left_comm, mul_assoc]
-  ? constructor
-    ? simp [driftC, share, div_eq_mul_inv, Finset.mul_sum, mul_comm, mul_left_comm,
-        mul_assoc]
-    ? funext j
-      simp [diffC, share, div_eq_mul_inv, Finset.mul_sum, mul_comm, mul_left_comm,
-        mul_assoc]
-\end{lstlisting}
+\leanfile[firstline=41,lastline=62]{lean/LucasNotes.lean}
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.12: Definition: Geometric Brownian Motion (Ref: Sec 3)}, label={lean:gbm_definition}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Probability.Processes.Wiener
-import Mathlib.Data.Real.Basic
-
--- Simplified definition of a 1D GBM structure.
-structure GeometricBrownianMotion (O : Type*) [MeasureSpace O] (? s : R) :=
-  (X : R ? O ? R) (W : StdWienerProcess R O)
-  -- (sde_condition : ...) Requires stochastic integration definitions.
-  (explicit_form : ? t : R, t = 0 ?
-    X t = fun ? => X 0 ? * Real.exp ((? - s^2 / 2) * t + s * W t ?))
-\end{lstlisting}
-Status: Structural Definition.
+Lean scaffolding for the stochastic calculus required here is deferred to the blueprint track; no executable Lean excerpt is yet committed for this item.
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.13: State Space Definition (Ref: Sec 4.1)}, label={lean:state_space_definition}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Vector.Basic
-
--- Define R+ (positive reals)
-def R_plus := {x : R | x > 0}
--- Define the Unit Simplex Delta^{N-1} (represented in R^N)
-def Simplex (N : N) := {s : Vector R N | (? i, s.get i = 0) ? (s.toList.sum = 1)}
-\end{lstlisting}
-Status: Structural Definition.
+Lean bookkeeping for simplex coordinates is maintained separately; the present algebraic snippets cover the verified components of the model.
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.14: SDF and Log Utility (Ref: Prop 5.1)}, label={lean:sdf_log_utility}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-
-def u (C : R) : R := if C > 0 then Real.log C else 0
-def u' (C : R) (hC : C > 0) : R := 1 / C
-
-def SDF (rho t C_t : R) (hC_t : C_t > 0) : R :=
-  Real.exp (-rho * t) * u' C_t hC_t
-
-lemma sdf_log_utility_form (rho t C_t : R) (hC_t : C_t > 0) :
-  SDF rho t C_t hC_t = Real.exp (-rho * t) / C_t := by
-  simp [SDF, u']
-\end{lstlisting}
-Status: Proved.
+\leanfile[firstline=25,lastline=29]{lean/LucasNotes.lean}
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.15: Algebraic structure of SDF dynamics (Ref: Prop 5.1)}, label={lean:prop:sdf_algebra}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Data.Real.Basic
-
--- Formalizing the algebraic manipulation underlying the application of Ito's Lemma.
-variables {rho mu_C sigma_C_sq C : R} (hC_pos : C > 0)
-
--- The algebraic application of Ito's lemma for the drift of dLambda/Lambda
-theorem sdf_drift_algebra_correct :
-  (-rho) + (-1/C) * (C * mu_C) + (1/2) * (2/(C^2)) * (C^2 * sigma_C_sq) = -(rho + mu_C - sigma_C_sq) := by
-  have hC_ne_zero : C ? 0 := ne_of_gt hC_pos
-  field_simp [hC_ne_zero]
-  ring
-\end{lstlisting}
-Status: Proved (Algebraic steps).
+\leanfile[firstline=31,lastline=36]{lean/LucasNotes.lean}
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.16: Girsanov Transformation Structure (Ref: Sec 6.1)}, label={lean:girsanov_application}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Probability.RadonNikodym
--- Formal structure illustrating the change of measure.
-section Girsanov
-variable {O : Type*} [MeasureSpace O] (P : Measure O) (? : R ? O ? R)
-
--- The Radon-Nikodym derivative process (exponential martingale).
-noncomputable def dQ_dP (t : R) : O ? R := sorry -- Requires stochastic integration.
-
--- The risk-neutral measure Q.
-noncomputable def Q (t : R) : Measure O := P.withDensity (fun ? => dQ_dP t ?)
-end Girsanov
-\end{lstlisting}
-Status: Partial (Awaiting stochastic calculus in mathlib4).
+Lean support for the Girsanov change-of-measure step is pending integration of stochastic calculus APIs in mathlib4; this box tracks the requirement without duplicating placeholder code.
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.17: Algebraic Structure of It\^o's Quotient Rule (Ref: Lemma 4.2)}, label={lean:lemma_4_2_algebra}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Data.Real.Basic
-
--- Algebra of the drift in ds_i/s_i using Ito's quotient rule.
--- Drift = (?_i - ?_C) - s_i?s_C + ||s_C||^2
-variable {mu_i mu_C sigma_i_sigma_C sigma_C_sq : R}
-
-theorem ito_quotient_rule_drift_algebra :
-  (mu_i - mu_C) - sigma_i_sigma_C + sigma_C_sq
-  = mu_i - mu_C + sigma_C_sq - sigma_i_sigma_C := by
-  ring
-\end{lstlisting}
-Status: Proved (Algebraic identity).
+\leanfile[firstline=15,lastline=20]{lean/LucasNotes.lean}
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.18: CRRA Drift Identity for BSDE (Ref: \cref{prop:bsde_g})}, label={lean:prop_b1_algebra}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-
--- Algebraic identity underpinning the CRRA drift relation: r - mu_C_Q = kappa_gamma.
-variables {r mu_C_Q kappa_gamma : R}
-
-axiom crra_drift_identity : r - mu_C_Q = kappa_gamma
-
-theorem drift_cmp_zero : r - mu_C_Q - kappa_gamma = 0 := by
-  have h := crra_drift_identity
-  calc
-    r - mu_C_Q - kappa_gamma = (r - mu_C_Q) - kappa_gamma := by ring
-    _ = kappa_gamma - kappa_gamma := by simpa [h]
-    _ = 0 := sub_self _
-\end{lstlisting}
-Status: Proved (Algebraic identity under the CRRA drift relation).
+\leanfile[firstline=65,lastline=68]{lean/LucasNotes.lean}
 \end{leanproof}
 
 \begin{leanproof}[title={A.7.19: Leading-order cancellation on a simplex face}, label={lean:face_order}]
-\begin{lstlisting}[language=Lean]
-import Mathlib.Data.Real.Basic
-
-variables {s v : ℝ}
-
-theorem face_order_algebra :
-  s * v - ( (1 : ℝ) / 2 ) * (2 * s * v) = 0 := by
-  ring
-\end{lstlisting}
-Status: Proved (Algebraic leading-order cancellation used in \cref{sec:boundaries}).
+\leanfile[firstline=70,lastline=72]{lean/LucasNotes.lean}
 \end{leanproof}
 
 % For Alectryon outputs (goal states): place them in tcolorboxes for visual cohesion.

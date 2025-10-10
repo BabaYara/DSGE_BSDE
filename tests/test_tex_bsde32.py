@@ -72,3 +72,37 @@ def test_bsde32_compiles_with_latexmk(tmp_path):
     assert "undefined references" not in log_text.lower(), (
         "latexmk log reports undefined references; rerun or fix labels"
     )
+
+
+def test_bsde32_lean_snippets_reference_lucasnotes():
+    tex = Path("Tex/BSDE_32.tex").read_text(encoding="utf-8")
+    checks = [
+        "lean:lemmaC_drift",
+        "lean:sdf_log_utility",
+        "lean:prop:sdf_algebra",
+        "lean:lemma_4_2_algebra",
+        "lean:prop_b1_algebra",
+        "lean:face_order",
+    ]
+    for label in checks:
+        marker = f"label={{{label}}}"
+        try:
+            start = tex.index(marker)
+        except ValueError as err:  # pragma: no cover - informative assertion below
+            raise AssertionError(f"Lean proof block for {label} should be present") from err
+        end = tex.index("\\end{leanproof}", start)
+        segment = tex[start:end]
+        assert "lean/LucasNotes.lean" in segment, (
+            f"Lean proof block for {label} must include lucasnotes excerpt"
+        )
+
+
+def test_bsde32_main_text_lean_snippet_uses_lucasnotes():
+    tex = Path("Tex/BSDE_32.tex").read_text(encoding="utf-8")
+    snippet = re.search(
+        r"Lean status: Aggregate consumption dynamics[\s\S]*?\\end{leanproof}", tex
+    )
+    assert snippet, "Expected aggregate consumption Lean snippet"
+    assert "lean/LucasNotes.lean" in snippet.group(0), (
+        "Aggregate consumption Lean snippet must input LucasNotes"
+    )

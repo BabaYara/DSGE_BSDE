@@ -22,6 +22,12 @@ theorem ito_quotient_rule_drift_algebra
 /-!
 Log-utility SDF drift identity. Requires C ≠ 0 to clear denominators.
 -/
+def sdfLog (rho t C : Real) : Real := Real.exp (-rho * t) / C
+
+lemma sdf_log_simplify (rho t C : Real) (hC : C ≠ 0) :
+    sdfLog rho t C = Real.exp (-rho * t) * (1 / C) := by
+  field_simp [sdfLog, hC]
+
 theorem sdf_drift_algebra
     (rho muC sigma_C_sq C : Real) (hC : C ≠ 0) :
     (-rho) + (-1 / C) * (C * muC) + (1 / 2) * (2 / (C ^ 2)) * (C ^ 2 * sigma_C_sq)
@@ -54,6 +60,16 @@ lemma aggregate_consumption_drift
   refine ⟨share_total, drift_sum, ?_⟩
   intro j
   simpa using diff_sum j
+
+lemma drift_residual_zero
+    {r mu_C_Q kappa_gamma : Real} (h : r - mu_C_Q = kappa_gamma) :
+    r - mu_C_Q - kappa_gamma = 0 := by
+  have : r - mu_C_Q - kappa_gamma = (r - mu_C_Q) - kappa_gamma := by ring
+  simpa [this, h] using sub_self kappa_gamma
+
+lemma face_order_cancellation (s v : Real) :
+    s * v - ((1 : Real) / 2) * (2 * s * v) = 0 := by
+  ring
 
 end LucasNotes
 
