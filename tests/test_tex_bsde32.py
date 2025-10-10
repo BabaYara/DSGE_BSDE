@@ -66,4 +66,9 @@ def test_bsde32_compiles_with_latexmk(tmp_path):
 
     subprocess.run(cmd, check=True, cwd=Path("Tex"))
     pdf_path = outdir / f"{jobname}.pdf"
+    log_path = auxdir / f"{jobname}.log"
     assert pdf_path.exists(), "latexmk should produce a PDF output"
+    log_text = log_path.read_text(encoding="utf-8", errors="ignore")
+    assert "undefined references" not in log_text.lower(), (
+        "latexmk log reports undefined references; rerun or fix labels"
+    )
